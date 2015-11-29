@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "High Availability In AWS"
-date:   2015-01-01 08:00:00
+date:   2015-05-01 08:00:00
 categories: InfraArchitecture
 ---
 
