@@ -1,0 +1,27 @@
+# Site settings
+title: dveamer
+motto: 이상을 꿈꾸는 몽상가.. 코딩을 좋아함..
+email: dveamer@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://dveamer.github.io" # the base hostname & protocol for your site
+twitter_username: dveamer
+github_username:  dveamer
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+#  syntax_highlighter: rouge
+  highlighter:  rouge
+#  highlighter:  pygments
+
+#markdown: redcarpet
+#redcarpet:
+#  extensions: ["footnotes"]
+#paginate: 25
+#paginate_path: "page:num/"
+#permalink: "/:year/:month/:title.html"
