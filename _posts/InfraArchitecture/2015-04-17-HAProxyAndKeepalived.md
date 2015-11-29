@@ -4,10 +4,11 @@ title:  "HAProxy & Keepalived"
 date:   2015-04-17 08:00:00
 categories: InfraArchitecture
 ---
+
+![Haproxy](http://www.haproxy.org/img/logo-med.png) ![Keepalived](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr9Rnjps3xzfDUWDJRvgCfja9HZwVDQ7B22H5fDspl0SdJvDNMZA)
+
 * TOC
 {:toc}
-
- * 작성일 : 2015-04-17
 
 HAProxy(L4역할수행) 를 이용해서 서버 이중화를 구성
 HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 도 이중화 됨

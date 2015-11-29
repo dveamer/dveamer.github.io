@@ -19,7 +19,8 @@ mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장�
 그 당시의 계정, database, table 모두 유지되서 설치되네요.
 
 # Ubuntu version 확인 
-  ```
+
+```
   lsb_release -a
 
   result >
@@ -28,7 +29,7 @@ mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장�
     Description:	Ubuntu 14.04.3 LTS
     Release:	14.04
     Codename:	trusty
-  ```
+```
 
 # mariadb 공식 가이드문서
   * https://downloads.mariadb.org/mariadb/repositories/#mirror=kaist&distro=Ubuntu

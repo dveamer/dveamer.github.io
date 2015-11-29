@@ -4,6 +4,9 @@ title:  "High Availability In AWS"
 date:   2015-01-01 08:00:00
 categories: InfraArchitecture
 ---
+
+![AWS](https://media.amazonwebservices.com/blog/2007/big_pbaws_logo_300px.jpg) ![ELB](https://media.amazonwebservices.com/blog/2014/elb_instances_1.png)
+
 * TOC
 {:toc}
 

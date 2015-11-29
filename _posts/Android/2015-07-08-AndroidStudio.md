@@ -7,6 +7,9 @@ categories: Android
 
 ![AndroidStudio](http://1.bp.blogspot.com/-UGrENgc-ec8/VIJsFPD19aI/AAAAAAAABBk/ICFczO1O6mU/s1000/studio-logo.png)
 
+* TOC
+{:toc}
+
 # Previous Tasks
   * Install JDK Software
   * Set JAVA_HOME
