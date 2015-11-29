@@ -7,6 +7,8 @@ categories: telegram
 
 ![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg)
 
+<!--more-->
+
 * TOC
 {:toc}
 

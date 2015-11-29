@@ -7,7 +7,6 @@ categories: Mariadb Ubuntu
 
 ![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)
 
-
 mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장소를 업데이트 후 새로 설치해야합니다.
 
 근데 좀 편하게 가려고 구글링해서 다른 사람들의 글을 보고 시도했더니 자꾸 실패하더군요.
@@ -17,6 +16,8 @@ mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장�
 
 기존에 mariadb 5.5 를 사용 중이었는데 
 그 당시의 계정, database, table 모두 유지되서 설치되네요.
+
+<!--more-->
 
 # Ubuntu version 확인 
 

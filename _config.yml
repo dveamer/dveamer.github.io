@@ -10,6 +10,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://dveamer.github.io" # the base hostname & protocol for your site
 twitter_username: dveamer
 github_username:  dveamer
+excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown

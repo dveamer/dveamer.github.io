@@ -6,15 +6,15 @@ categories: InfraArchitecture
 ---
 
 ![Haproxy](http://www.haproxy.org/img/logo-med.png) ![Keepalived](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr9Rnjps3xzfDUWDJRvgCfja9HZwVDQ7B22H5fDspl0SdJvDNMZA)
-
-* TOC
-{:toc}
-
+WEB 서비스의 경우 일반적으로 Apache, NginX 와 같은 미들웨어를 이용하게되면 WAS의 이중화 서비스를 구성 가능
+하지만 시스템 형태가 Apache, Nginx 와 같은 미들웨어를 사용하지 않고 데몬을 띄운채 소켓통신하는 서비스 L4외에 마땅히 좋은 방법을 찾지 못함
 HAProxy(L4역할수행) 를 이용해서 서버 이중화를 구성
 HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 도 이중화 됨
 
-WEB 서비스의 경우 일반적으로 Apache, NginX 와 같은 미들웨어를 이용하게되면 WAS의 이중화 서비스를 구성 가능
-하지만 시스템 형태가 Apache, Nginx 와 같은 미들웨어를 사용하지 않고 데몬을 띄운채 소켓통신하는 서비스 L4외에 마땅히 좋은 방법을 찾지 못함
+<!--more-->
+
+* TOC
+{:toc}
 
 # Concept
 

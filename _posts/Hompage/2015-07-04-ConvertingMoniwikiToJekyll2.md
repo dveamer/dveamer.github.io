@@ -4,14 +4,15 @@ title:  "Converting Moniwiki to Jekyll"
 date:   2015-07-04 12:00:00
 categories: blog jekyll
 ---
-
 ![MoniWiki](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTBFZE9lzzo0D7abiWmVTqQn9FAGpnoTsZMQs3c-lnZlBV7HFOm) ![Jekyll Logo](http://jekyllrb.com/img/logo-2x.png 'Jekyll Logo')
-
-* TOC
-{:toc}
 
 Jekyll 로 블로그를 만들어보려고 하는데 기존에 사용하던 Moniwiki 페이지가 버리기엔 아깝고 둘다 쓰기에는 벅참
 Moniwiki를 Jekyll 로 변환해보기로 함
+
+<!--more-->
+
+* TOC
+{:toc}
 
 # Plan
 

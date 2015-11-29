@@ -4,13 +4,20 @@ title:  "Lecture Of Node.js"
 date:   2015-07-06 12:00:00
 categories: Node.js
 ---
+
 ![NodeJs](https://nodejs.org/images/logos/nodejs-dark.png "NodeJs Logo")
+
+<!--more-->
 
 * 강사
  - (주)에이티지랩 문성훈 이사 
  - moon9342@atglab.co.kr
 
+* TOC
+{:toc}
+
 # Tools
+
 ## WebStorm
  * 유료
  * http://www.jetbrains.com
@@ -20,6 +27,7 @@ categories: Node.js
   - Langueages & Framework > Javascript > Libraries : ECMAScript 6, Node.js Golbal 등 추가 체크
 
 # Node.js Introduction
+
 ## Chrome browser 의 javascript engine V8 기반
  * C++로 개발된 오픈소스
  * Garbage Collection 에 의한 메모리 관리 (완벽하진 않음)
@@ -121,6 +129,7 @@ module.exports.variableNm = 100;
 ```
     
 # ETC
+
 ## package.json
  * project 에 대한 설명
   - 띄어쓰기 허용안함
@@ -133,7 +142,9 @@ module.exports.variableNm = 100;
  * prune 
 
 # Node.js Web Application
+
 ## Express Module
+
 ### Features
  * 초경량
  * 유연함
@@ -153,7 +164,9 @@ module.exports.variableNm = 100;
 
 # Node.js Persisting Data
  Node.js는 NoSQL 종류와 궁합이 잘 맞지만 Node.js 강의을 위해 대부분 잘 알고 있는 RDB 종류로 진행
+
 ## MySQL
+
 ### Mysql Module
 
 ### Generic-pool Module
@@ -165,6 +178,7 @@ pool.acquire(function(err,conn){
 ```
 
 # Node.js Essential Module
+
 ## RSA
  * node-rsa module
  * jsencrypt.js : browser encryptor
@@ -187,6 +201,7 @@ pool.acquire(function(err,conn){
   - Redis 와 함께 사용
 
 ## Async
+
 ### Parallel Method
  * 여러 비동기 task가 모두 완료된 후 다음 task 를 수행할 수 있도록 도와줌
 

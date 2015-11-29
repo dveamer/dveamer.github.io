@@ -7,6 +7,8 @@ categories: java Ubuntu
 
 ![JAVA8](https://eclipse.org/xtend/images/java8_logo.png)
 
+<!--more-->
+
   * Ubuntu 14.04.2 LTS 64bit
 
 ### Install JDK

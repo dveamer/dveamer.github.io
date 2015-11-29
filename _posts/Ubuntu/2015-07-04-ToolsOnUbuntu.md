@@ -5,6 +5,8 @@ date:   2015-07-04 12:00:00
 categories: Ubuntu
 ---
 
+<!--more-->
+
 * TOC
 {:toc}
 
