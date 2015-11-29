@@ -44,8 +44,10 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
-
-
+.post-list img {
+    max-width: 200px; 
+    max-height: 200px; 
+}
 
 /**
  * Figures
