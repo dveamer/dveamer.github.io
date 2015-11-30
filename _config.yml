@@ -22,7 +22,7 @@ kramdown:
 #  highlighter:  rouge
 #  syntax_highlighter:  pygments
   syntax_highlighter_opts:
-    line_numbers: true
+    line_numbers: false
 
 #markdown: redcarpet
 #redcarpet:
