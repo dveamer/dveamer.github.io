@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lecture Of Node.js"
+title:  "Node.js Lecture"
 date:   2015-07-06 12:00:00
 categories: Node.js
 ---

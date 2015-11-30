@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Install Java 8 On Ubuntu"
+title:  "How to install Java 8 On Ubuntu"
 date:   2015-07-08 20:00:00
 categories: java Ubuntu
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Installing MariaDB 10.01 on Ubuntu 14.04 LTS"
+title:  "How to install MariaDB 10.01 on Ubuntu 14.04 LTS"
 date:   2015-09-20 15:35:00
 categories: Mariadb Ubuntu
 ---
