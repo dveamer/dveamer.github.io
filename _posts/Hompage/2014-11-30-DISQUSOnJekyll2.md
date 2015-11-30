@@ -40,68 +40,61 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
  * /_layouts/post.html 최하단에 아래 내용 추가
 
 ```html 
+  <div class="subtitle-header">
+    <h3 class="subtitle">
+      Disqus Social Community
+    </h3>
+    <small>SNS계정으로 댓글을 달아도 SNS에 글이 남지 않습니다.</small><br>
+    <small>SNS 계정이 없으신 분은 이메일 주소 입력으로 글을 남길 수 있으며, 답변글이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
+  </div>
 
-<div class="subtitle-header">
-  <h3 class="subtitle">
-    Disqus Social Community
-  </h3>
-  <small>SNS계정으로 댓글을 달아도 SNS에 글이 남지 않습니다.</small><br>
-  <small>SNS 계정이 없으신 분은 이메일 주소 입력으로 글을 남길 수 있으며, 답변글이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
-</div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES * * */
+      var disqus_shortname = '[[ site.disqus_comment_username ]]';
+      
+      var disqus_config = function () {
+          this.page.url = '[[ site.url ]][[ page.url | prepend: site.baseurl ]]';
+          this.page.identifier = '[[ page.url ]]';
+      };
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = '[[ site.disqus_comment_username ]]';
-    
-    var disqus_config = function () {
-        this.page.url = '[[ site.url ]][[ page.url | prepend: site.baseurl ]]';
-        this.page.identifier = '[[ page.url ]]';
-    };
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 ```
 
  * /_saas/_layout.scss 최하단에 아래 내용 추가
 
-```css
+```SCSS
+  .subtitle-header { 
+      padding: 10px 15px;
+      color: #fff;
+      background-color: #428bca;
+      border-color: #428bca;
+  }
 
-.subtitle-header { 
-    padding: 10px 15px;
-    color: #fff;
-    background-color: #428bca;
-    border-color: #428bca;
-}
-
-.subtitle {
-    font-weight:bolder; 
-    color:#fff;
-}
-
+  .subtitle {
+      font-weight:bolder; 
+      color:#fff;
+  }
 ```
 
  * /_config.yml 에 추가 ( disqus_shortname 수정 필요 )
 
 ```
-
   disqus_comment_username: disqus_shortname
-
 ```
 
 # Comment Counts
  * 포스트와 포스트 목록에 각 포스트별 댓글 개수를 출력합니다.
  * /index.html 에 추가 
 
-```html
-
+```HTML
   <span class="post-meta">[[ post.date | date: "%b %-d, %Y %H:%m" ]]</span> 
 
   <!-- 추가 내용 -->
@@ -114,7 +107,7 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
 
  * /_layouts/post.html 에 추가
 
-``` html
+```HTML
   <header class="post-header">
     <h1 class="post-title">[[ page.title ]]</h1>
     <p class="post-meta">[[ page.date | date: "%b %-d, %Y" ]]
@@ -128,7 +121,6 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
 
     </p>
   </header>
-
 ```
 
 # References
