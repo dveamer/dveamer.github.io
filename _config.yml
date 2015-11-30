@@ -13,11 +13,20 @@ github_username:  dveamer
 disqus_comment_username: Dveamer
 disqus_viewcount_username: Slipperholic
 excerpt_separator: <!--more-->
+encoding: utf-8
+
 
 # Build settings
-markdown: kramdown
-kramdown:
-  input: GFM
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "tables", "autolink", "fenced_code_blocks", "strikethrough"]
+
+# highlighter: pygments
+permalink: none
+  
+#markdown: kramdown
+#kramdown:
+#  input: GFM
 #  syntax_highlighter: rouge
 #  syntax_highlighter_opts:
 #    line_numbers: false
