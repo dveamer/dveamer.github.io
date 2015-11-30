@@ -20,7 +20,7 @@ categories: telegram
    - luasocket 설치 http://stackoverflow.com/questions/18011416/installation-of-luasocket-using-luarocks
    - socket.http 사용법 http://support.loadimpact.com/knowledgebase/articles/174637-lua-quick-start-guide
 
-``` ubuntu
+```
 /* install luasocket */
 luarocks install luasocket --only-server=http://luarocks.org/repositories/rocks-scm
 ```
