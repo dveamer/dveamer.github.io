@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Converting Moniwiki to Jekyll"
+title:  "How to Convert Moniwiki to Jekyll"
 date:   2015-07-04 12:00:00
 categories: blog jekyll
 ---
