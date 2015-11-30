@@ -40,6 +40,7 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
  * /_layouts/post.html 최하단에 아래 내용 추가
 
 ```html 
+
 <div class="subtitle-header">
   <h3 class="subtitle">
     Disqus Social Community
@@ -66,11 +67,13 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 ```
 
  * /_saas/_layout.scss 최하단에 아래 내용 추가
 
 ```css
+
 .subtitle-header { 
     padding: 10px 15px;
     color: #fff;
@@ -82,19 +85,23 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
     font-weight:bolder; 
     color:#fff;
 }
+
 ```
 
  * /_config.yml 에 추가 ( disqus_shortname 수정 필요 )
 
 ```
+
   disqus_comment_username: disqus_shortname
+
 ```
 
 # Comment Counts
  * 포스트와 포스트 목록에 각 포스트별 댓글 개수를 출력합니다.
  * /index.html 에 추가 
 
-``` html
+```html
+
   <span class="post-meta">[[ post.date | date: "%b %-d, %Y %H:%m" ]]</span> 
 
   <!-- 추가 내용 -->
@@ -121,6 +128,7 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
 
     </p>
   </header>
+
 ```
 
 # References
