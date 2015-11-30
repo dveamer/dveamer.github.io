@@ -39,7 +39,7 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
  * 일단, DISQUS 서비스에 가입하고 홈페이지를 등록합니다.
  * /_layouts/post.html 최하단에 아래 내용 추가
 
-``` html 
+```html 
 <div class="subtitle-header">
   <h3 class="subtitle">
     Disqus Social Community
@@ -70,7 +70,7 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
 
  * /_saas/_layout.scss 최하단에 아래 내용 추가
 
-``` scss
+```css
 .subtitle-header { 
     padding: 10px 15px;
     color: #fff;
