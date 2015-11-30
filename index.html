@@ -13,6 +13,8 @@ layout: default
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h3>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y %H:%m" }}</span>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <span class="post-meta disqus-comment-count" data-disqus-url="{{ site.url }}{{ post.url | prepend: site.baseurl }}">0 Comments</span>
         <hr id="line">
 		<div class="content">
 		{{ post.excerpt }}

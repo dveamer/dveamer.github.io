@@ -10,15 +10,19 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://dveamer.github.io" # the base hostname & protocol for your site
 twitter_username: dveamer
 github_username:  dveamer
+disqus_comment_username: Dveamer
+disqus_viewcount_username: Slipperholic
 excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
 kramdown:
   input: GFM
-#  syntax_highlighter: rouge
-  highlighter:  rouge
-#  highlighter:  pygments
+  syntax_highlighter: rouge
+#  highlighter:  rouge
+#  syntax_highlighter:  pygments
+  syntax_highlighter_opts:
+    line_numbers: true
 
 #markdown: redcarpet
 #redcarpet:

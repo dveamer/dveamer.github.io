@@ -9,7 +9,11 @@ layout: default
       {% if page.author %} • {{ page.author }}{% endif %}
       {% if page.meta %} • {{ page.meta }}{% endif %}
       <!-- {% if page.categories %} • {{ page.categories }} {% endif %} -->
+
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span class="post-meta disqus-comment-count" data-disqus-url="{{ site.url }}{{ page.url | prepend: site.baseurl }}">0 Comments</span>
     </p>
+
   </header>
 
   <article class="post-content">
@@ -17,12 +21,25 @@ layout: default
   </article>
 </div>
 
+<br/>
+<div class="subtitle-header">
+  <h3 class="subtitle">
+    Disqus Social Community
+  </h3>
+  <small>SNS계정으로 댓글을 달아도 SNS에 글이 남지 않습니다.</small><br>
+  <small>SNS 계정이 없으신 분은 이메일 주소 입력으로 글을 남길 수 있으며, 답변글이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
+</div>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'dveamer';
+    var disqus_shortname = '{{ site.disqus_comment_username }}';
     
+    var disqus_config = function () {
+        this.page.url = '{{ site.url }}{{ page.url | prepend: site.baseurl }}';
+        this.page.identifier = '{{ page.url }}';
+    };
+
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -31,3 +48,4 @@ layout: default
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
