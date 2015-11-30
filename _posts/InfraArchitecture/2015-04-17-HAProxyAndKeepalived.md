@@ -24,7 +24,7 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
     - 네트워크 스위치의 L4, L7 기능 -> High-Availiablility (고가용성)
     - Load-balancing (부하분산)
     - Proxy for TCP, HTTP
-  ![HAProxy](/post_img/HAProxy.png "HAProxy")
+  ![HAProxy](/images/post_img/HaproxyKeepalived/HAProxy.png "HAProxy")
 
   * 장점
     - TCP socket 통신에 대한 이중화 처리 가능
@@ -36,7 +36,7 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
 ## Keepalived
   * Routing software
   * VRRP 프로토콜을 이용해서 Active-Standby 가능하게 함
-  ![VRRP_Keepalived](/post_img/lvs-two-tier-1.png "VRRP_Keepalived")
+  ![VRRP_Keepalived](/images/post_img/HaproxyKeepalived/lvs-two-tier-1.png "VRRP_Keepalived")
  이미지 참조 사이트 : [access.redhat.com](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Load_Balancer_Administration/index.html)
   * 사용하는 기능
     - High-Availiablility (고가용성) ; VRRP 프로토콜 이용
@@ -59,19 +59,19 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
   * 다양한 방법으로 구성할 수 있지만 아래와 같이 구성 예정
   * L4 용 Routing 서버 두대(Active, Standby) 에 각각 Keepalvied, HAProxy 세팅
   * Keepalived 로 L4용 Routing 서버의 고가용성(HA) 보장
-  ![HAProxy_Keepalived_01](/post_img/HAProxy_Keepalived_01.png "HAProxy_Keepalived_01")
+  ![HAProxy_Keepalived_01](/images/post_img/HaproxyKeepalived/HAProxy_Keepalived_01.png "HAProxy_Keepalived_01")
 
   * Active Routing 서버의 문제 발생시
-  ![HAProxy_Keepalived](/post_img/HAProxy_Keepalived.png "HAProxy_Keepalived")
+  ![HAProxy_Keepalived](/images/post_img/HaproxyKeepalived/HAProxy_Keepalived.png "HAProxy_Keepalived")
  이미지 참조 사이트 : [helloworld.naver.com](http://helloworld.naver.com/helloworld/textyle/284659)
 
 
 ## Google Trend
 상대적인 관심도 그래프로써 수치는 상대적 %값
 
-![HAProxy & Keepalived](/post_img/googletrend_01.png)
+![HAProxy & Keepalived](/images/post_img/HaproxyKeepalived/googletrend_01.png)
 
-![HAProxy & L4](/post_img/googletrend_02.png "HAProxy & L4")
+![HAProxy & L4](/images/post_img/HaproxyKeepalived/googletrend_02.png "HAProxy & L4")
 
 
 #### References

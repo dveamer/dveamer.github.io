@@ -44,12 +44,12 @@ IntelliJ의 Genymotion plugin 으로 연동해서 app을 설치 & 실행 시키�
 
 ### VT-x is diabled in the BIOS 
   * Genymotion 에서 mobile VM 을 구동했으나 실패 
-  ![msg_genymotion_1.png](/post_img/Android/Test/msg_genymotion_1.png)
+  ![msg_genymotion_1.png](/images/post_img/Android/Test/msg_genymotion_1.png)
   Error message : Unalbe to start the virtual device. VirtualBox cannot start the virtual device.
 
   * VirtualBox 에서 직접 mobile VM 구동시도했으나 실패
-  ![virtualbox_android.png](/post_img/Android/Test/virtualbox_android.png)
-  ![msg_virtualbox_android_1.png](/post_img/Android/Test/msg_virtualbox_android_1.png)
+  ![virtualbox_android.png](/images/post_img/Android/Test/virtualbox_android.png)
+  ![msg_virtualbox_android_1.png](/images/post_img/Android/Test/msg_virtualbox_android_1.png)
   Errexeor message : VT-x is diabled in the BIOS (VERR_VMX_MSR_VMXON_DISABLED).
 
   * 재부팅해서 BIOS 설정 변경해준 후 재시도하니 성공
