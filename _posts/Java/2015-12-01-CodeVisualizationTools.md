@@ -33,8 +33,9 @@ Eclipse 플러그인 형태로 제공되며 Java 소스코드와 라이브러리
 클래스 다이어그램이 필요할 경우 ObjectAid 를 사용중이다.
 예전에는 Architexa 를 활용했지만 계정에 문제가 생겨서 활용에 실패한 경험이 있은 후 사용해보질 않았다.
 
-현재까지는 무료기능만 사용해나가고 있는데 
-아마도 조만간 유료 라이센스를 구매할 것 같다.
+현재까지는 무료기능만 사용해나가고 있는데 아마도 조만간 유료 라이센스를 구매할 것 같다.
+유료 라이센스 사용시에는 "Show Call Hierarchy for Method" 기능을 사용할 수 있는데 
+클래스, 메소드들간의 상관관계를 다이어그램에서 추출가능하므로 소스분석시 유용하다. 
 
 개인적으로 시퀀스 다이어그램은 거의 활용하지 않는다.
 
@@ -43,17 +44,15 @@ Eclipse 플러그인 형태로 제공되며 Java 소스코드와 라이브러리
  * 클래스 다이어그램, 시퀀스 다이어그램 제공
  * Eclipse plugin 형태로 제공
  * JAVA 만 사용가능
- * Architexa 라는 비슷한 plugin이 있는데 레이어 다이어그램도 제공
 
-## How to use it
+# Java Ddocs
+  * 소스코드의 내용과 주석들을 가지고 API 문서를 작성하는 방법입니다.
+  * 이클립스의 기본 기능을 활용해서 사용가능하다. ( 다른 IDE에서도 당연히 될 것으로 예상된다. )
+  * 객체명, 메소드명 그리고 주석에 평소 신경을 써두면 문서 작성에 추가적으로 힘을 쓸 필요가 없다.
+  * 주석 템플릿 설정을 해두면 유용하다.
 
-## License
-
-## Tips
-
-
-# Jdocs
-
-## How to use it
-
-## Tips
+## How to make it
+  * Eclipse > Project > Generate JavaDoc 
+    - javadoc command 세팅 : $JAVA_HOME/bin/javadoc
+    - document를 만들 프로젝트 선택
+    - Next 클릭
