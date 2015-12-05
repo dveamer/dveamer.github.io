@@ -9,9 +9,6 @@ categories: Infra-Architecture
 
 <!--more-->
 
-* TOC
-{:toc}
-
 # Load Balancer
 ## ELB
   * Elastic Load Balancing

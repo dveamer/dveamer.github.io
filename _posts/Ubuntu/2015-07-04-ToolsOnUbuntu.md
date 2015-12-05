@@ -7,9 +7,6 @@ categories: Ubuntu
 
 <!--more-->
 
-* TOC
-{:toc}
-
 # Sublime-Text 2
 ![Sublime-Text2](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQKm1UUFXw0H8iOslGxR4lXcJqkbJuKe_yKXT9r7-GJ6_sAwiNt)
 

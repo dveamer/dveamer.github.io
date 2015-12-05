@@ -8,9 +8,6 @@ categories: Android
 
 <!--more-->
 
-* TOC
-{:toc}
-
 # Previous Tasks
   * Install JDK Software
   * Set JAVA_HOME

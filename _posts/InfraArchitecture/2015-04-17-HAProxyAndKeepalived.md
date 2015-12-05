@@ -13,9 +13,6 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
 
 <!--more-->
 
-* TOC
-{:toc}
-
 # Concept
 
 ## HAProxy

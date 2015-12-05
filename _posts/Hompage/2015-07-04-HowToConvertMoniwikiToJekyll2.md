@@ -11,9 +11,6 @@ Moniwiki를 Jekyll 로 변환해보기로 함
 
 <!--more-->
 
-* TOC
-{:toc}
-
 # Plan
 
 ## HTML 2 Markdown

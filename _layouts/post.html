@@ -16,6 +16,10 @@ layout: default
 
   </header>
 
+  <div id="toc">= Contents =<br/></div>
+  <br/><br/>
+
+
   <article class="post-content">
     {{ content }}
   </article>
@@ -49,3 +53,18 @@ layout: default
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
+<script type="text/javascript">
+ $(document).ready(function(){
+      $("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").each(function(i,item){
+        var tag = $(item).get(0).localName;
+        $(item).attr("id","wow"+i);
+        $("#toc").append('<a class="new'+tag+'" href="#wow'+i+'">'+$(this).text()+'</a></br>');
+        $(".newh1").css("margin-left",0);
+        $(".newh2").css("margin-left",20);
+        $(".newh3").css("margin-left",40);
+        $(".newh4").css("margin-left",60);
+        $(".newh5").css("margin-left",80);
+        $(".newh6").css("margin-left",100);
+      });
+ });
+</script>

@@ -9,9 +9,6 @@ categories: telegram
 
 <!--more-->
 
-* TOC
-{:toc}
-
 # Plan
 
 ## Recieve msg
