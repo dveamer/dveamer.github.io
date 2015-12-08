@@ -9,10 +9,6 @@ categories: Node.js
 
 <!--more-->
 
-* 강사
- - (주)에이티지랩 문성훈 이사 
- - moon9342@atglab.co.kr
-
 # Tools
 
 ## WebStorm
@@ -31,7 +27,7 @@ categories: Node.js
  * compile 해서 최적화하는 구조
  * 고성능 standalone 사용가능
 
-### Week Point
+### Weak Point
  * Javascript spec상 코드 명확성이 떨어짐
 
 ## 빠르고 확장 가능한 Network 프로그램 개발에 특화
@@ -42,7 +38,7 @@ categories: Node.js
  * 연산작업은 다른 thread에서 처리하도록 작업필요
  * 많은 request가 있을 때 장점 발휘
 
-### Week Point
+### Weak Point
  * Client 접점에서 call을 받는 부분은 block방식으로 진행됨
  * Call 받는 부분에서 연산작업이 많으면 다음 call 을 받지 못함
 
@@ -50,7 +46,7 @@ categories: Node.js
  * Async module을 이용하면 콜백지옥을 어느정도 해결가능
  * 비동기 방식으로 프로그래밍해야함
 
-### Week Point
+### Weak Point
  * 콜백지옥은 디버깅이 어려움
  * 비동기 방식으로 프로그래밍하지 않으면 동기방식의 기존 프로그램과 성능차이 없음
 
@@ -108,7 +104,7 @@ categories: Node.js
 
 ```
 (function(exports, require, module, __filename, __dirname){
-	// 특정 모듈 파일의 컨텐츠
+  // 특정 모듈 파일의 컨텐츠
 }) (); 
 ```
 
