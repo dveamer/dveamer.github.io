@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Install Ctrix Clietn On Ubuntu 14.04 LTS"
+title:  "Install Ctrix Receiver On Ubuntu 14.04 LTS"
 date:   2015-12-09 01:00:00
 categories: Ubuntu Ctrix
 ---
