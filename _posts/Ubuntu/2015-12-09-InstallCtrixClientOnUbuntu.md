@@ -7,32 +7,32 @@ categories: Ubuntu Ctrix
 
 ![ctrix](https://lh3.ggpht.com/l6-eLEJbx230dQt3vt-02yMM-gVOcbfUC50uezBUICGSvBei85d-EPsPqDRUsNYySbo=w300-rw) ![ctrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png)
 
-회사 클라우드 컴퓨터에 접속하기 위해서는 Ctrix Receiver가 필요하다.
+제가 다니는 회사의 클라우드 컴퓨터에 접속하기 위해서는 Ctrix Receiver가 필요합니다.
 모든 데이터가 클라우드 컴퓨터에 보관되고 작업 환경이 구성되어 있기 때문에 
-사무실에서도 로컬 컴퓨터로는 할 수 있는 것이 없고 일단 Ctrix 로 클라우드 컴퓨터에 접속을 해야만한다.
+사무실에서도 로컬 컴퓨터로는 할 수 있는 것이 없고 일단 Ctrix 로 클라우드 컴퓨터에 접속을 해야만하죠.
 
 지금까지 단 한번도 우분투에서 접속을 시도해본 적이 없었는데 
-갑자기 회사 로컬 컴퓨터를 우분투로 꾸며보고 싶다는 생각이 들어서 시도해보게 됐다. 
-일단 집에서 테스트겸으로 시도해봤는데 접속이 잘 되네..
+갑자기 회사 로컬 컴퓨터를 우분투로 꾸며보고 싶다는 생각이 들어서 시도해보기로 했습니다.
+일단 집에서 테스트겸으로 시도해봤는데 접속이 잘 되네요.
 
 <!--more-->
 
-## Test Environment
+## 컴퓨터 환경사항
   * Ubuntu 14.04 LTS
   * 64-bit
 
 ## Install
 
 ### Download the Citrix Receiver for Linux .deb package
-  * [Download Ctrix Receiver](https://www.citrix.com/downloads/citrix-receiver/legacy-receiver-for-linux/receiver-for-linux-13-2.html) 접속
-  * 페이지 하단으로 스크롤해서 64-bit, deb 확장자 파일 다운로드
+  * [Download Ctrix Receiver](https://www.citrix.com/downloads/citrix-receiver/legacy-receiver-for-linux/receiver-for-linux-13-2.html) 접속합니다.
+  * 페이지 하단으로 스크롤해서 64-bit, deb 확장자 파일을 다운로드 합니다.
 
   ![download64bit](/images/post_img/CtrixReceiver/CtrixReceiverDownload64bit.png) 
 
 ### Enable i386 Multiarch (64-bit only) 
-  * 64-bit OS 사용자에게만 해당된다.
-  * 64-bit Ctrix Receiver는 32-bit의 몇가지 패키지들과 의존관계가 있다고 한다.
-  * 해당 패키지들을 이용하기 위해서 아래와 같이 설정하는 것으로 보여진다.
+  * 64-bit OS 사용자에게만 해당됩니다.
+  * 64-bit Ctrix Receiver는 32-bit의 몇가지 패키지들과 의존관계가 있다고 합니다.
+  * 해당 패키지들을 이용하기 위해서 아래와 같이 설정하는 것으로 보여집니다.
 
 ```
   sudo dpkg --add-architecture i386
@@ -40,7 +40,7 @@ categories: Ubuntu Ctrix
 ``` 
 
 ### Install the downloaded package(s) and dependencies
-  * 다운받아 둔 파일을 가지고 설치를 진행한다.	
+  * 다운받아 둔 파일을 가지고 설치를 진행합니다.
 
 ```
   sudo dpkg -i ~/Downloads/icaclient_*.deb ctxusb_*.deb
@@ -48,7 +48,7 @@ categories: Ubuntu Ctrix
 ```
 
 ### Add more SSL certificates
-  * SSL 인증서가 필요한 모양인데 mozilla 에서 제공하는 인증서를 빌려쓰려는 의도로 보인다.
+  * SSL 인증서가 필요한 모양인데 mozilla 에서 제공하는 인증서를 빌려쓰려는 의도로 보입니다.
 
 ```
   sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/
@@ -56,13 +56,13 @@ categories: Ubuntu Ctrix
 ```
 
 ### Configure Citrix Receiver
-  * Configuration Manager 를 실행시킨다. 
+  * Configuration Manager 를 실행시킵니다.
 
 ```
   /opt/Citrix/ICAClient/util/configmgr &
 ```
 
-  * Ctrix 와 공유할 로컬 컴퓨터의 폴더를 지정한다.
+  * Ctrix 와 공유할 로컬 컴퓨터의 폴더를 지정합니다.
   * File access tab > add > save
 
   ![configuration](/images/post_img/CtrixReceiver/CtrixReceiverConfiguration.png)
