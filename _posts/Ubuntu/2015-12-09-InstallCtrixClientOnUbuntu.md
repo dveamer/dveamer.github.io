@@ -17,19 +17,19 @@ categories: Ubuntu Ctrix
 
 <!--more-->
 
-## 컴퓨터 환경사항
+# Test Environment
   * Ubuntu 14.04 LTS
   * 64-bit
 
-## Install
+# Install
 
-### Download the Citrix Receiver for Linux .deb package
+## Download the Citrix Receiver for Linux .deb package
   * [Ctrix Receiver Download Page](https://www.citrix.com/downloads/citrix-receiver/legacy-receiver-for-linux/receiver-for-linux-13-2.html) 접속합니다.
   * 페이지 하단으로 스크롤해서 64-bit, deb 확장자 파일을 다운로드 합니다.
 
   ![download64bit](/images/post_img/CtrixReceiver/CtrixReceiverDownload64bit.png) 
 
-### Enable i386 Multiarch (64-bit only) 
+## Enable i386 Multiarch (64-bit only) 
   * 64-bit OS 사용자에게만 해당됩니다.
   * 64-bit Ctrix Receiver는 32-bit의 몇가지 패키지들과 의존관계가 있다고 합니다.
   * 해당 패키지들을 이용하기 위해서 아래와 같이 설정하는 것으로 보여집니다.
@@ -39,7 +39,7 @@ categories: Ubuntu Ctrix
   sudo apt-get update
 ``` 
 
-### Install the downloaded package(s) and dependencies
+## Install the downloaded package(s) and dependencies
   * 다운받아 둔 파일을 가지고 설치를 진행합니다.
 
 ```
@@ -47,7 +47,7 @@ categories: Ubuntu Ctrix
   sudo apt-get -f install
 ```
 
-### Add more SSL certificates
+## Add more SSL certificates
   * SSL 인증서가 필요한 모양인데 mozilla 에서 제공하는 인증서를 빌려쓰려는 의도로 보입니다.
 
 ```
@@ -55,7 +55,7 @@ categories: Ubuntu Ctrix
   sudo c_rehash /opt/Citrix/ICAClient/keystore/cacerts/
 ```
 
-### Configure Citrix Receiver
+## Configure Citrix Receiver
   * Configuration Manager 를 실행시킵니다.
 
 ```
@@ -67,7 +67,7 @@ categories: Ubuntu Ctrix
 
   ![configuration](/images/post_img/CtrixReceiver/CtrixReceiverConfiguration.png)
 
-### Configure Chrome/Chromium
+## Configure Chrome/Chromium
   * 아래와 같이 실행해주고나면 크롬으로 접속이 가능합니다.
 
 ```
@@ -78,7 +78,7 @@ categories: Ubuntu Ctrix
   * 만약 이 단계까지 진행했는데 접속이 안된다면 아래 내용을 진행해보시기 바랍니다.
   * 아래의 내용은 Firefox 브라우저에 대한 설정 내용이라 크롬과는 상관없지만 저는 실수로 아래 내용을 수행했고 안되시는 분들과 차이가 있다면 이 내용이 가장 유력한 후보일 것이기 때문에 기록해둡니다. ( 되돌린 다음 테스트해보면 되지만 귀차니즘이.. )
 
-### Fix Firefox plugin installation (64-bit only) 
+## Fix Firefox plugin installation (64-bit only) 
   * Firefox 로 접속할 때 필요한 설정들의 일부분입니다. 
   * Firefox 로 접속하기 위해서는 브라우저에서 설정이 추가적으로 필요합니다. ( Reference 참고 )
   
