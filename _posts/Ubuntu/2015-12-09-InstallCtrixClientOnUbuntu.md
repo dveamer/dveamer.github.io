@@ -24,7 +24,7 @@ categories: Ubuntu Ctrix
 ## Install
 
 ### Download the Citrix Receiver for Linux .deb package
-  * [Download Ctrix Receiver](https://www.citrix.com/downloads/citrix-receiver/legacy-receiver-for-linux/receiver-for-linux-13-2.html) 접속합니다.
+  * [Ctrix Receiver Download Page](https://www.citrix.com/downloads/citrix-receiver/legacy-receiver-for-linux/receiver-for-linux-13-2.html) 접속합니다.
   * 페이지 하단으로 스크롤해서 64-bit, deb 확장자 파일을 다운로드 합니다.
 
   ![download64bit](/images/post_img/CtrixReceiver/CtrixReceiverDownload64bit.png) 
