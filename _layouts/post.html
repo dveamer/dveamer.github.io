@@ -12,11 +12,28 @@ layout: default
 
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <span class="post-meta disqus-comment-count" data-disqus-url="{{ site.url }}{{ page.url | prepend: site.baseurl }}">0 Comments</span>
+
+      {% if page.categories.size > 0 %}
+          <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          {% for category in page.categories %}
+            <span class="post-meta">{{ category }}</span>
+            &nbsp;
+          {% endfor %}
+      {% endif %}
+
+      {% if page.tags.size > 0 %}
+          <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          {% for tag in page.tags %}
+            <span class="post-meta">{{ tag }}</span>
+            &nbsp;
+          {% endfor %}
+      {% endif %}
+
     </p>
 
   </header>
 
-  <div id="toc">= Contents =<br/></div>
+  <div id="toc">== Contents ==<br/></div>
   <br/><br/>
 
 
@@ -31,7 +48,7 @@ layout: default
     Disqus Social Community
   </h3>
   <small>SNS계정으로 댓글을 달아도 SNS에 글이 남지 않습니다.</small><br>
-  <small>SNS 계정이 없으신 분은 이메일 주소 입력으로 글을 남길 수 있으며, 답변글이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
+  <small>이메일 주소 입력으로 글을 남길 수 있으며, 답변글이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
 </div>
 
 <div id="disqus_thread"></div>
@@ -55,16 +72,20 @@ layout: default
 
 <script type="text/javascript">
  $(document).ready(function(){
-      $("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").each(function(i,item){
+    $("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").each(function(i,item){
+      if( $(item).html() != "Reference" && $(item).html() != "References" ){
         var tag = $(item).get(0).localName;
-        $(item).attr("id","wow"+i);
-        $("#toc").append('<a class="new'+tag+'" href="#wow'+i+'">'+$(this).text()+'</a></br>');
-        $(".newh1").css("margin-left",0);
-        $(".newh2").css("margin-left",20);
-        $(".newh3").css("margin-left",40);
-        $(".newh4").css("margin-left",60);
-        $(".newh5").css("margin-left",80);
-        $(".newh6").css("margin-left",100);
-      });
+        $(item).attr("id","content_"+i);
+        $("#toc").append('<a class="new'+tag+'" href="#content_'+i+'">'+$(this).text()+'</a></br>');
+      }
+
+    });
+
+    $(".newh1").css("margin-left",0);
+    $(".newh2").css("margin-left",20);
+    $(".newh3").css("margin-left",40);
+    $(".newh4").css("margin-left",60);
+    $(".newh5").css("margin-left",80);
+    $(".newh6").css("margin-left",100);
  });
 </script>

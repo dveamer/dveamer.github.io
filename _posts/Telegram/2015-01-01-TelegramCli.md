@@ -2,7 +2,8 @@
 layout: post
 title:  "Interface with Telegram-Cli"
 date:   2015-01-01 12:00:00
-categories: telegram
+categories: Telegram
+tags: Lua Telegram-Cli
 ---
 
 ![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg)
@@ -74,7 +75,7 @@ abcd = {
    - nickname 등록방법 : add_contact
    - telegram-cli 가 nickname 정보를 잃어버리면 갖고있는 모든 phone number에 nickname을 새로 매핑하면됨.
 
-#### References
+## References
   - recieve_msg http://truefeel.tistory.com/224
   - telegram-cli 설치 및 기본구동 http://coffeenix.net/board_view.php?bd_code=1759
   - request_msg http://codeholic.net/post/98145891792/telegram-cli

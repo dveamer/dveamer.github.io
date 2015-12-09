@@ -2,10 +2,13 @@
 layout: post
 title:  "High Availability In AWS"
 date:   2015-05-01 08:00:00
-categories: Infra-Architecture
+categories: Architecture
+tags: AWS ELB HA Auto-Scaling HAProxy
 ---
 
 ![AWS](https://media.amazonwebservices.com/blog/2007/big_pbaws_logo_300px.jpg) ![ELB](https://media.amazonwebservices.com/blog/2014/elb_instances_1.png)
+
+AWS의 ELB를 이용한 환경구성과 HAProxy를 이용한 환경구성을 대충 비교해봤다.
 
 <!--more-->
 
@@ -27,13 +30,13 @@ categories: Infra-Architecture
     - 어떤 Support를 이용해야하는지는 잘 모르겠음
   * ELB : $0.025/hour + $0.008/GB
 
-#### Reference
+### Reference
   * [AWS Support 가격 & 기능](https://aws.amazon.com/ko/premiumsupport/)
   * [AWS ELB 사용사례](http://www.slideshare.net/awskorea/gaming-on-aws-aws-dev-test)
   * [AWS ELB 가격](http://aws.amazon.com/ko/elasticloadbalancing/pricing/)
 
 ## HAProxy With Keepalived
-#### Performance
+### Performance
   * 1 vCPU + 1GB memory로 10~ 100k HTTP reqeust/sec 처리
     - ulimit, conntract 등의 설정이 필요
   * 1대의 HAProxy 처리용량을 초과하는 트래픽이 발생하면 DNS roundrobin 을 함께 활용하는 방법이 있음
@@ -58,10 +61,11 @@ categories: Infra-Architecture
 ### Price
   * AWS Support 를 developer 버전으로 사용가능하다면 HAProxy에비해 비용차원에서 월등히 유리함
 
-#### Reference
+### Reference
   * [Comparison Analysis:Amazon ELB vs HAProxy EC2](http://harish11g.blogspot.in/2012/11/amazon-elb-vs-haproxy-ec2-analysis.html)
 
 # Auto-Scaling
+  * Auto Scaling은 EC2 인스턴스를 자동으로 생성하고 삭제해주는 서비스입니다.
 
-#### Reference
+## Reference
   * [AWS Auto-Scaling 사용법](https://opentutorials.org/course/608/3302)

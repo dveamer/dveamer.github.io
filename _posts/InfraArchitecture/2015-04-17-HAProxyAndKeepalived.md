@@ -2,14 +2,16 @@
 layout: post
 title:  "HAProxy & Keepalived"
 date:   2015-04-17 08:00:00
-categories: Infra-Architecture
+categories: Architecture
+tags: HAProxy Keepalived L4 VRRP
 ---
 
 ![Haproxy](http://www.haproxy.org/img/logo-med.png) ![Keepalived](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr9Rnjps3xzfDUWDJRvgCfja9HZwVDQ7B22H5fDspl0SdJvDNMZA)
-WEB 서비스의 경우 일반적으로 Apache, NginX 와 같은 미들웨어를 이용하게되면 WAS의 이중화 서비스를 구성 가능
-하지만 시스템 형태가 Apache, Nginx 와 같은 미들웨어를 사용하지 않고 데몬을 띄운채 소켓통신하는 서비스 L4외에 마땅히 좋은 방법을 찾지 못함
-HAProxy(L4역할수행) 를 이용해서 서버 이중화를 구성
-HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 도 이중화 됨
+WEB-WAS 서비스의 경우 일반적으로 Apache, NginX 와 같은 WEB서버를 이용해서 WAS의 이중화 서비스를 구성 가능합니다.
+하지만 시스템 형태가 WEB서버를 사용하지 않고 데몬을 띄운채 자체 프로토콜로 소켓통신하는 서비스는 이중화를 위해서는 L4외에 마땅히 좋은 방법을 찾지 못했습니다.
+
+HAProxy를 L4로 이용해서 백엔드 서버를 Active-Active 형태로 이중화를 구성했습니다.
+HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-Standby 형태로 이중화 했습니다.
 
 <!--more-->
 
@@ -63,7 +65,7 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
  이미지 참조 사이트 : [helloworld.naver.com](http://helloworld.naver.com/helloworld/textyle/284659)
 
 
-## Google Trend
+# Google Trend
 상대적인 관심도 그래프로써 수치는 상대적 %값
 
 ![HAProxy & Keepalived](/images/post_img/HaproxyKeepalived/googletrend_01.png)
@@ -71,7 +73,7 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
 ![HAProxy & L4](/images/post_img/HaproxyKeepalived/googletrend_02.png "HAProxy & L4")
 
 
-#### References
+## References
   * Keepalived/ipvs을 이용한 리눅스 L4 - DR(Direct Routing) 구축
     - http://netggio.pe.kr/wiki/index.php/Keepalived/ipvs을_이용한_리눅스_L4_-_DR(Direct_Routing)_구축
   * [L4/L7 스위치의 대안, 오픈 소스 로드 밸런서 HAProxy](http://helloworld.naver.com/helloworld/textyle/284659)
@@ -80,7 +82,7 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
 
 # Installation
 
-## 환경
+## Environment
   * RHEL 6.6
   * 2 core 4 GB / 2 core 4 GB
 
@@ -370,7 +372,7 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
     [root@localhost ~] # service keepalived stop
     ```
 
-#### Reference
+# Reference
   * [Keepalived 수동설치](http://www.cyberciti.biz/faq/rhel-centos-fedora-keepalived-lvs-cluster-configuration/)
   * [Keepalived 설정 for HAProxy](http://www.leaseweblabs.com/2011/09/setting-up-keepalived-on-ubuntu-load-balancing-using-haproxy-on-ubuntu-part-2/)
   * [Proxy keywords matrix](http://cbonte.github.io/haproxy-dconv/configuration-1.5.html#4.1)
@@ -379,5 +381,5 @@ HAProxy 의 이중화(Active-Standby) 를 위해 Keepalived 이용함. 즉, L4 �
   * [yum repo 삭제](https://www.howtoforge.com/community/threads/how-do-i-uninstall-rpm-packages.8/)
   * [HAProxy Log Setting](http://xmodulo.com/haproxy-http-load-balancer-linux.html)
   
-#### Reforence Future
+# Reforence for future
   * [HAProxy 로 MySQL 로드밸런싱 구축하기 - CentOS 5.x](http://saksin.tistory.com/1108)

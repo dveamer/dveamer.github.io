@@ -2,7 +2,8 @@
 layout: post
 title:  "Code Visualization Tools"
 date:   2015-12-01 01:00:00
-categories: Java Eclipse
+categories: Java
+tags: ObjectAid Java-Docs Eclipse Class-Diagram
 ---
 
 ![ObjectAid](http://www.objectaid.com/static/images/java-perspective.png;jsessionid=38E7A9419700C4B4FD0102256016089D)
@@ -45,7 +46,7 @@ Eclipse 플러그인 형태로 제공되며 Java 소스코드와 라이브러리
  * Eclipse plugin 형태로 제공
  * JAVA 만 사용가능
 
-# Java Ddocs
+# Java docs
   * 소스코드의 내용과 주석들을 가지고 API 문서를 작성하는 방법입니다.
   * 이클립스의 기본 기능을 활용해서 사용가능하다. ( 다른 IDE에서도 당연히 될 것으로 예상된다. )
   * 객체명, 메소드명 그리고 주석에 평소 신경을 써두면 문서 작성에 추가적으로 힘을 쓸 필요가 없다.

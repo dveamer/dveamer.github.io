@@ -3,6 +3,7 @@ layout: post
 title:  "Android Studio"
 date:   2015-07-08 22:00:00
 categories: Android
+tags: IDE Android-Studio
 ---
 ![AndroidStudio](http://1.bp.blogspot.com/-UGrENgc-ec8/VIJsFPD19aI/AAAAAAAABBk/ICFczO1O6mU/s1000/studio-logo.png)
 
@@ -50,7 +51,7 @@ sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
   * 앱의 기본적인 모양이 나올 때까진 에뮬레이터를 사용하지 않기로함
   * 핸드폰을 유선으로 연결해서 테스트 진행
 
-#### References
+### References
   * https://help.ubuntu.com/community/KVM/Installation
   * [에뮬레이터 실행속도 올리는 법](https://www.davidlab.net/ko/tech/how-to-setup-android-dev-env-on-ubuntu-part2/)
 
@@ -67,7 +68,7 @@ sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
     - 프로젝트 우클릭 > Open Module Setting > Flavors > Min SDK Version 변경
     - 핸드폰 버전보다 낮게 변경
 
-#### References
+### References
   * http://blog.daum.net/_blog/BlogTypeView.do?blogid=0qFz3&articleno=3&_bloghome_menu=recenttext
 
 

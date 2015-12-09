@@ -3,13 +3,14 @@ layout: post
 title:  "Test Methods Of Android"
 date:   2015-07-12 16:00:00
 categories: Android
+tags: Virtual-Machine Genymotion IntelliJ
 ---
 
 <!--more-->
 
 # Packet Trace
 
-#### References
+## References
   * [capturing-mobile-phone-traffic-on-wireshark](http://stackoverflow.com/questions/9555403/capturing-mobile-phone-traffic-on-wireshark)
 
 
@@ -23,16 +24,16 @@ IDE와 별개로 VM을 구성해서 다양한 디바이스 테스트를 진행�
 
 ## Install Virtual Box & Genymotion 
 
-#### References
+### References
   * [install-genymotion-in-ubuntu-14-04](http://sysads.co.uk/2014/06/install-genymotion-in-ubuntu-14-04/)
 
 
-## Install The Genymotion Plugin In IntelliJ 
+## Install the Genymotion plugin in IntelliJ 
 단순히 자신의 apk 파일을 drag and drop 만으로도 VM에 app을 설치 & 실행 가능합니다.
 하지만 테스트 단계이기 때문에 에러로그를 보는 것이 필수죠.
 IntelliJ의 Genymotion plugin 으로 연동해서 app을 설치 & 실행 시키고 로그는 IntelliJ 를 통해 보는 것으로 진행하기로 합니다.
 
-#### References
+### References
   * [Genymotion Drag And Drop](https://www.genymotion.com/#!/)
   * [Genymotion plugin 설치 및 설정](http://webnautes.tistory.com/461)
 
@@ -53,7 +54,7 @@ IntelliJ의 Genymotion plugin 으로 연동해서 app을 설치 & 실행 시키�
 #### References
   * [VT-x is diabled in the BIOS](http://roadrunner.tistory.com/81)
 
-### Resource Lack
+### Resource lack
 Genymotion으로 mobile VM을 하나 띄운 채로 AndroidStudio에서 app을 구동했더니 컴퓨터가 멈춰버렸습니다.
 재부팅 후 AndroidStudio에서 app을 구동하니 mobile VM이 자동으로 띄워집니다.
 제 컴퓨터의 리소스 문제일 것 같은 느낌이 드네요.

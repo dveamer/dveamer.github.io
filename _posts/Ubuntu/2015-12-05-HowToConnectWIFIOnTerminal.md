@@ -3,6 +3,7 @@ layout: post
 title:  "Ubuntu Terminal로 wifi 접속하기"
 date:   2015-12-05 12:00:00
 categories: Ubuntu
+tags: Network
 ---
 
 맨날 집에서 키보드를 깎다가 정말 오랜만에 분위기 전환겸 카페에 왔다.
@@ -22,14 +23,14 @@ Terminal에서 Network-Manager를 재기동 후 재연결을 시도하면 될줄
 
 이제서야 맘편히 작업할 수 있겠구나
 
-# Network-Manager
+## Network-Manager
   * restart
 
 ```
   sudo service network-manager restart
 ```
 
-# Network-Manager Client
+## Network-Manager Client
   * WIFI list
 
 ```

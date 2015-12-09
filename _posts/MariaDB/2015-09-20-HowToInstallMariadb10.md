@@ -2,7 +2,8 @@
 layout: post
 title:  "How to install MariaDB 10.01 on Ubuntu 14.04 LTS"
 date:   2015-09-20 15:35:00
-categories: Mariadb Ubuntu
+categories: Database
+tags: MariaDB Ubuntu
 ---
 
 ![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)
@@ -19,7 +20,9 @@ mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장�
 
 <!--more-->
 
-# Ubuntu version 확인 
+# Install
+
+## Check the version of Ubuntu
 
 ```
   lsb_release -a
@@ -32,6 +35,5 @@ mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장�
     Codename:	trusty
 ```
 
-# mariadb 공식 가이드문서
-  * https://downloads.mariadb.org/mariadb/repositories/#mirror=kaist&distro=Ubuntu
-  * 확인 해둔 ubuntu version에 맞는 가이드 검색
+## References
+  * [mariadb 공식 가이드문서](https://downloads.mariadb.org/mariadb/repositories/#mirror=kaist&distro=Ubuntu)에서 ubuntu version에 맞는 가이드 검색 후 참고

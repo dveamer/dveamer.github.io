@@ -2,7 +2,8 @@
 layout: post
 title:  "DISQUS on Jekyll2"
 date:   2015-11-30 16:50:00
-categories: jekyll
+categories: Hompage
+tags: Jekyll DISQUS
 ---
 
 DISQUS 는 소셜 댓글 서비스 입니다. 
@@ -21,12 +22,13 @@ DISQUS와 를 연동한 결과를 보시려면 이 글의 최하단으로 내려
 
 DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 참고해주시기 바랍니다.
 
-# Weak Point
+# Weak point
  * 로딩시간이 생각보다 오래걸림
  * 홈페이지 도메인이 바뀌면 모든 댓글을 조회 못할 수도 있음
  * 게시글의 url이 바뀌면 해당 글의 댓글을 조회 못할 수도 있음
+   - domain과 sequence를 제공해서 처리하는 방법 있음
 
-# Attention Required
+# A word of warnning
  * 소스수정 사항은 해당 블로그를 기준으로 진행합니다.
  * 즉, Jekyll-Pithy 외 다른 Theme 의 경우 수정대상이 되는 파일, 폴더 명이 다를 수 있습니다.
  * Jekyll2 외에도 HTML을 수정가능한 모든 종류의 소셜에 적용 가능합니다.
@@ -43,7 +45,7 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
       Disqus Social Community
     </h3>
     <small>SNS계정으로 댓글을 달아도 SNS에 글이 남지 않습니다.</small><br>
-    <small>SNS 계정이 없으신 분은 이메일 주소 입력으로 글을 남길 수 있으며, 답변글이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
+    <small>이메일 주소 입력으로 글을 남길 수 있으며, 답변글이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
   </div>
 
   <div id="disqus_thread"></div>
@@ -88,7 +90,8 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
   disqus_comment_username: disqus_shortname
 ```
 
-# Comment Counts
+
+# Comment counts
  * 포스트와 포스트 목록에 각 포스트별 댓글 개수를 출력합니다.
  * /index.html 에 추가 
 

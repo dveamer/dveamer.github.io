@@ -2,21 +2,26 @@
 layout: post
 title:  "How to install Java 8 On Ubuntu"
 date:   2015-07-08 20:00:00
-categories: java Ubuntu
+categories: Java
+tags: Java8 Ubuntu
 ---
 
 ![JAVA8](https://eclipse.org/xtend/images/java8_logo.png)
 
 <!--more-->
 
+# Install JAVA 8
+
+## Environment
   * Ubuntu 14.04.2 LTS 64bit
 
-### Install JDK
+## Install JDK
+
 ``` 
 sudo apt-get install openjdk-8-jre
 ```
 
-### Set JAVA_HOME
+## Set JAVA_HOME
   * /etc/profile 파일의 맨 아래 라인에 JAVA_HOME, PATH 설정을 추가
     - Shift + G : 맨 아래로 이동 ( VI 단축키 )
 
@@ -30,7 +35,8 @@ PATH=$JAVA_HOME/bin:$PATH
 ```
   * Log out & Log in
 
-### Check
+## Check
+
 ```
 java -version
 ```
