@@ -6,6 +6,11 @@ categories: Android
 tags: Virtual-Machine Genymotion IntelliJ
 ---
 
+Android 개발을 해보면서 느꼈던 가장 큰 어려움은 테스트였습니다.
+테스트하는데 시간도 오래걸리고 다양한 디바이스도 필요하고 테스트 할 때는 항상 사람의 손이 필요하고..
+
+그 중에서 테스트 시간과 다양한 디바이스에 대한 어려움을 약간은 해소시켜준 것이 Virtual Machine 입니다.
+
 <!--more-->
 
 # Packet Trace

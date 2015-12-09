@@ -8,7 +8,7 @@ tags: AWS ELB HA Auto-Scaling HAProxy
 
 ![AWS](https://media.amazonwebservices.com/blog/2007/big_pbaws_logo_300px.jpg) ![ELB](https://media.amazonwebservices.com/blog/2014/elb_instances_1.png)
 
-AWS의 ELB를 이용한 환경구성과 HAProxy를 이용한 환경구성을 대충 비교해봤다.
+AWS의 ELB를 이용한 환경구성과 HAProxy를 이용한 환경구성을 대충 비교해봤습니다.
 
 <!--more-->
 

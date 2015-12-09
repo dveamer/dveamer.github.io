@@ -6,6 +6,8 @@ categories: Ubuntu-Tools
 tags: Sublime-Text Remote-Desktop Gedit Tools 
 ---
 
+Ubuntu에서 활용하는 툴들과 유용한 기능에 대해서 기록해나갈 예정입니다.
+
 <!--more-->
 
 # Sublime-Text 2
