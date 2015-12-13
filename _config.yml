@@ -11,7 +11,7 @@ url: "https://dveamer.github.io" # the base hostname & protocol for your site
 twitter_username: dveamer
 github_username:  dveamer
 disqus_comment_username: Dveamer
-disqus_viewcount_username: Slipperholic
+disqus_domain: "https://dveamer.github.io" # fixed
 excerpt_separator: <!--more-->
 encoding: utf-8
 

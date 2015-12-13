@@ -4,6 +4,7 @@ title:  "Install Ctrix Receiver On Ubuntu 14.04 LTS"
 date:   2015-12-09 01:00:00
 categories: Ubuntu-Tools
 tags: Ctrix 
+identifier: 20151209-485155446
 ---
 
 ![citrix](http://docs.citrix.com/content/dam/docs/en-us/legacy-edocs/receiver-windows-43/receiver-x1-icon.png) ![citrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png)
