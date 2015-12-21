@@ -3,7 +3,7 @@ layout: post
 title:  "HAProxy & Keepalived"
 date:   2015-04-17 08:00:00
 categories: Architecture
-tags: HAProxy Keepalived L4 VRRP
+tags: HAProxy Keepalived L4 VRRP RedHat RHEL
 ---
 
 ![Haproxy](http://www.haproxy.org/img/logo-med.png) ![Keepalived](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr9Rnjps3xzfDUWDJRvgCfja9HZwVDQ7B22H5fDspl0SdJvDNMZA)

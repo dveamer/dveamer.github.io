@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Install Ctrix Receiver On Ubuntu 14.04 LTS"
+title:  "Install Ctrix Receiver On Ubuntu"
 date:   2015-12-09 01:00:00
 categories: Ubuntu-Tools
 tags: Ctrix 
