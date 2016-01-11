@@ -38,7 +38,7 @@ layout: default
 
   </header>
 
-  <div id="toc">== Contents ==<br/></div>
+  <div id="toc" hidden>== Contents ==<br/></div>
   <br/><br/>
 
 
@@ -93,6 +93,7 @@ layout: default
         var tag = $(item).get(0).localName;
         $(item).attr("id","content_"+i);
         $("#toc").append('<a class="new'+tag+'" href="#content_'+i+'">'+$(this).text()+'</a></br>');
+        $("#toc").attr('hidden', false);
       }
 
     });
