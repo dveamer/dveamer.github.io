@@ -12,6 +12,28 @@
 					<a href="/index.html">home</a>
 				</li>			
 			{% endif %}
+			{% if page.path == "category.html" %}
+			<span class="title">
+				<li>
+					<a href="/category.html">tech</a>
+				</li>
+			</span>			
+			{% else %}
+				<li>
+					<a href="/category.html">tech</a>
+				</li>			
+			{% endif %}
+			{% if page.path == "diary.html" %}
+			<span class="title">
+				<li>
+					<a href="/diary.html">diary</a>
+				</li>
+			</span>			
+			{% else %}
+				<li>
+					<a href="/diary.html">diary</a>
+				</li>			
+			{% endif %}
 			{% if page.path == "archive.html" %}
 			<span class="title">
 				<li>
@@ -21,17 +43,6 @@
 			{% else %}
 				<li>
 					<a href="/archive.html">archive</a>
-				</li>			
-			{% endif %}
-			{% if page.path == "category.html" %}
-			<span class="title">
-				<li>
-					<a href="/category.html">category</a>
-				</li>
-			</span>			
-			{% else %}
-				<li>
-					<a href="/category.html">category</a>
 				</li>			
 			{% endif %}
 			{% if page.path == "about.html" %}
