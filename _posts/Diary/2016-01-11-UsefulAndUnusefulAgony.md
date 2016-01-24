@@ -3,6 +3,7 @@ layout: post
 title:  "쓸데없지만 쓸데없지 않은 고민"
 date:   2016-01-12 00:00:00
 categories: Diary
+tags: 고민
 ---
 
 ![agony](http://image.slidesharecdn.com/npeaworkshopfinaldraftweb-120409161657-phpapp02/95/implementing-effective-family-engagement-strategies-2-728.jpg?cb=1335541538)
@@ -31,10 +32,11 @@ categories: Diary
 목적지에 대한 고민도 쓸데없다
 특히, 한 걸음에 목적지를 찍으려는 고민은.. 정말 쓸데없다
 
+
+
 </br></br></br>
 
-
-
+  
 예를들면
 "너 꿈은 뭐니?" 라는 질문에 대한 고민이다
 

@@ -38,7 +38,9 @@ layout: default
 
   </header>
 
-  <div id="toc" hidden>== Contents ==<br/></div>
+  <div id="toc" hidden>
+    <H3 class="index">== I N D E X ==</H3>
+  </div>
   <br/><br/>
 
 
@@ -88,21 +90,24 @@ layout: default
 
 <script type="text/javascript">
  $(document).ready(function(){
-    $("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").each(function(i,item){
+    var tag = null;
+    $("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").not(".index").each(function(i,item){
       if( $(item).html() != "Reference" && $(item).html() != "References" ){
-        var tag = $(item).get(0).localName;
+        tag = $(item).get(0).localName;
         $(item).attr("id","content_"+i);
         $("#toc").append('<a class="new'+tag+'" href="#content_'+i+'">'+$(this).text()+'</a></br>');
-        $("#toc").attr('hidden', false);
       }
-
     });
 
-    $(".newh1").css("margin-left",0);
-    $(".newh2").css("margin-left",20);
-    $(".newh3").css("margin-left",40);
-    $(".newh4").css("margin-left",60);
-    $(".newh5").css("margin-left",80);
-    $(".newh6").css("margin-left",100);
+    if(tag !=null ){
+      $(".newh1").css("margin-left",0);
+      $(".newh2").css("margin-left",20);
+      $(".newh3").css("margin-left",40);
+      $(".newh4").css("margin-left",60);
+      $(".newh5").css("margin-left",80);
+      $(".newh6").css("margin-left",100);
+
+      $("#toc").attr('hidden', false);
+    }
  });
 </script>

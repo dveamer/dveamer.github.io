@@ -26,7 +26,7 @@ layout: default
             {% if forloop.index < 4 %}
               <span class="post-meta">{{ category }}</span>
               &nbsp;
-            {% else %}
+            {% else if forloop.index == 5 %}
               <span class="post-meta">...</span>
               &nbsp;
             {% endif %}
@@ -39,7 +39,7 @@ layout: default
             {% if forloop.index < 4 %}
               <span class="post-meta">{{ tag }}</span>
               &nbsp;
-            {% else %}
+            {% else if forloop.index == 5 %}
               <span class="post-meta">...</span>
               &nbsp;
             {% endif %}
