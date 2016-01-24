@@ -10,12 +10,12 @@ tags: Command Memory
   ps -eo user,pid,ppid,rss,vsz,size,pmem,pcpu,time,comm
 
   Result>
-  USER       PID  PPID   RSS    VSZ  SIZE %MEM %CPU     TIME CMD
-  user1     2699  2615 431076 1421496 991748  7.1 0.9 00:07:44 /opt/google/chrome/
-  user1     2584  2016 242248 1266588 596076  4.0 0.9 00:08:06 /opt/google/chrome/
-  user1     1750  2615 172932 925232 562376  2.8 0.4 00:00:15 /opt/google/chrome/c
-  user1     2841  2016 163652 735372 281308  2.7 0.0 00:00:13 /usr/bin/python3 /us
-  user2     1099     1 147772 956008 899016  2.4 0.0 00:00:48 /usr/sbin/mysqld
+  USER   PID   PPID  RSS     VSZ      SIZE    %MEM  %CPU  TIME      CMD
+  user1  2699  2615  431076  1421496  991748  7.1   0.9   00:07:44  /opt/google/chrome/
+  user1  2584  2016  242248  1266588  596076  4.0   0.9   00:08:06  /opt/google/chrome/
+  user1  1750  2615  172932  925232   562376  2.8   0.4   00:00:15  /opt/google/chrome/c
+  user1  2841  2016  163652  735372   281308  2.7   0.0   00:00:13  /usr/bin/python3 /us
+  user2  1099     1  147772  956008   899016  2.4   0.0   00:00:48  /usr/sbin/mysqld
 ```
 
 프로세스별로 메모리, CPU 등의 상태를 파악하는데 유용합니다.
