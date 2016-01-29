@@ -26,15 +26,17 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
   ![HAProxy](/images/post_img/HaproxyKeepalived/HAProxy.png "HAProxy")
 
   * 장점
-    - TCP socket 통신에 대한 이중화 처리 가능
-      HTTP의 경우 WEB-Server(Nginx, Apache 등) 에서도 WAS 영역에 대한 이중화 설정이 가능
-    - HAProxy 설정추가를 통해 scale-out 도 쉽게 가능함
+    - 비싼 하드웨어 구매 없이 L4 를 구성 가능합니다.
+    - HTTP 같은 표준 프로토콜이 아닌 TCP socket 통신에 대해서도 이중화 처리 가능합니다.
+    - HTTP 통신의 경우 WEB-Server(Nginx, Apache 등)를 이중화 시켜줄 수 있습니다. WEB서버 설정으로만으로도 WAS는 이중화 가능합니다.
+    - HAProxy 설정추가를 통해 scale-out 도 쉽게 가능합니다.
+
   * References
-    -  GitHub, Bitbucket, Stack Overflow, Reddit, Tumblr, Twitter and ETC
+    - GitHub, Bitbucket, Stack Overflow, Reddit, Tumblr, Twitter and ETC
 
 ## Keepalived
   * Routing software
-  * VRRP 프로토콜을 이용해서 Active-Standby 가능하게 함
+  * VRRP 프로토콜을 이용해서 Active-Standby 가능하게 합니다.
 
   ![VRRP_Keepalived](/images/post_img/HaproxyKeepalived/lvs-two-tier-1.png "VRRP_Keepalived")
 
@@ -46,21 +48,21 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
     ```
       < VRRP 란? >
       - Virtual Router Redundancy Protocol
-      - 하나 이상의 Standby 라우터를 가질 수 있는 방법을 제공하는 인터넷 프로토콜
-      - VIP(Virtual IP) 필요
-      - 각 서버들은 Master, Standby 으로 역할이 나뉘며 Master는 VIP 를 사용함
+      - 하나 이상의 Standby 라우터를 가질 수 있는 방법을 제공하는 인터넷 프로토콜입니다.
+      - VIP(Virtual IP)가 필요합니다.
+      - 각 서버들은 Master, Standby 으로 역할이 나뉘며 Master는 VIP 를 사용합니다.
       - Health-ckeck를 통해 Master 에게 문제가 발생이 인지되는 경우,
-        Master 서버의 역할이 Standby 서버로 전환
-        Standby 서버중 하나의 역할이 Master 로 전환 그리고 VIP를 넘겨받음
+        Master 서버의 역할이 Standby 서버로 전환됩니다.
+        Standby 서버중 하나의 역할이 Master 로 전환 그리고 VIP를 넘겨받습니다.
     ```
 
   * 주의사항
-    - Active와 stnadby 장비는 인증절차 없이 양방향 ssh접속필요 (ssh-keygen -t rsa로 구글링)
+    - Active와 stnadby 장비는 인증절차 없이 양방향 ssh접속필요 합니다. (ssh-keygen -t rsa로 구글링)
 
 ## HAProxy with Keepalived
-  * 다양한 방법으로 구성할 수 있지만 아래와 같이 구성 예정
-  * L4 용 Routing 서버 두대(Active, Standby) 에 각각 Keepalvied, HAProxy 세팅
-  * Keepalived 로 L4용 Routing 서버의 고가용성(HA) 보장
+  * 다양한 방법으로 구성할 수 있지만 아래와 같이 구성 했습니다.
+  * L4 용 Routing 서버 두대(Active, Standby) 에 각각 Keepalvied, HAProxy 세팅합니다.
+  * Keepalived 로 L4용 Routing 서버의 고가용성(HA) 보장합니다.
   ![HAProxy_Keepalived_01](/images/post_img/HaproxyKeepalived/HAProxy_Keepalived_01.png "HAProxy_Keepalived_01")
 
   * Active Routing 서버의 문제 발생시
@@ -91,16 +93,17 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 
 ## HAProxy
 
-  * Active, Standby L4 서버 모두 동일하게 진행 : 설정파일 수정만 다르게 진행
+  * Active, Standby L4 서버 모두 동일하게 진행합니다. 설정파일 수정만 다르게 진행됩니다.
   * HAProxy 설치 : 수동으로 설치
     - yum 을 이용한 설치 실패 : Ubuntu에서는 쉽게 깔았는데..
-      * haproxy package 를 검색실패
-      * fedora 의 EPEL repository를 이용하라는 가이드가 많지만 EPEL 에서도 검색실패
-      * RHEL 6.4 부터 EPEL 과 policy 문제로 인해 EPEL repository 에서 HAProxy 제거된 것으로 파악됨
+      * haproxy package 를 검색실패했습니다.
+      * fedora 의 EPEL repository를 이용하라는 가이드가 많지만 EPEL 에서도 검색실패 했습니다.
+      * RHEL 6.4 부터 EPEL 과 policy 문제로 인해 EPEL repository 에서 HAProxy 제거된 것으로 파악됩니다.
         http://serverfault.com/questions/482017/installing-haproxy-on-centos-6-3
         http://serverfault.com/questions/645343/install-haproxy-on-redhat-6-6
-      * RHEL 7 에서는 HAProxy 를 내장한 것으로 예상됨 ( 7 document에는 HAProxy 내용이 포함되어있음 )
-      * HAProxy를 보유한 repository를 찾아보려고했으나 잘 모르겠어서 진행안함
+      * RHEL 7 에서는 HAProxy 를 내장한 것으로 예상됩니다. ( 7 document에는 HAProxy 내용이 포함되어있음 )
+      * HAProxy를 보유한 repository를 찾아보려고했으나 잘 모르겠어서 진행 안했습니다.
+
     - 수동으로 설치
 
     ```
@@ -127,10 +130,10 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
     ```
 
   * Configuration
-    - default health-check 는 해당 port 에 connection 여부로 체크를 함
-    - tcp-check send/expect 를 이용해서 application 레벨의 체크를 진행 가능.
-    - HAProxy의 listen port 와 application의 port는 같아도 된다. 만약 같은 서버내에 구성하게되면 포트 충돌이 일어나므로 다르게 구성해야하며 client는 HAProxy listen port 로 송신해야함
-    - /etc/haproxy/haproxy.cfg 변경
+    - default health-check 는 해당 port 에 connection 여부로 체크를 합니다.
+    - tcp-check send/expect 를 이용해서 application 레벨의 체크를 진행 가능합니다.
+    - HAProxy의 listen port 와 application의 port는 같아도 된다. 만약 같은 서버내에 구성하게되면 포트 충돌이 일어나므로 다르게 구성해야하며 client는 HAProxy listen port 로 송신해야합니다.
+    - /etc/haproxy/haproxy.cfg 변경합니다.
       vi /etc/haproxy/haproxy.cfg
 
       ```
@@ -210,11 +213,11 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
     ```
 
   * Status 확인
-    - xxx.xxx.xxx.xxx/haproxy.stats 접속
+    - xxx.xxx.xxx.xxx/haproxy.stats 접속합니다.
 
 
 ## Keepalived
-  * Active, Standby L4 서버 모두 동일하게 진행 : 설정파일 수정만 다르게 진행
+  * Active, Standby L4 서버 모두 동일하게 진행합니다. 설정파일 수정만 다르게 진행합니다.
 
   * Keepalived 설치 : 수동으로 설치
     - yum 을 이용한 설치 실패 : Ubuntu에서는 쉽게 깔았는데..
@@ -307,9 +310,9 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
         }
     }
     ```
-    - Event가 발생하게되면 e-mail로 알림을 받게 됨. master, backup의 vrrp_instance 명칭을 다르게 세팅하지 않으면 상황파악 어려움.
+    - Event가 발생하게되면 e-mail로 알림을 받게 됨. master, backup의 vrrp_instance 명칭을 다르게 세팅하지 않으면 상황파악 어렵습니다.
     - 설정파일(/usr/local/etc/keepalived/keepalived.conf) 수정 : Standby(BACKUP) L4
-      아래 내용만 다르게 세팅
+      아래 내용만 다르게 세팅합니다.
 
       ```
       vrrp_instance VI_2 {
@@ -323,8 +326,8 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
       keepalived 실행시 입력되는 파라미터 값
       P 옵션은 VRRP 만 이용하겠다는 의미
       f 옵션은 configuration 위치 지정
-      HAProxy와 함께 사용하면서 keepalived는 VRRP 기능만 이용할 것이라 P옵션을 사용
-      수동으로 설치하면서 configuration 위치를 찾지 못하는 현상이 있어서 직접 위치입력
+      HAProxy와 함께 사용하면서 keepalived는 VRRP 기능만 이용할 것이라 P옵션을 사용했습니다.
+      수동으로 설치하면서 configuration 위치를 찾지 못하는 현상이 있어서 직접 위치를 입력합니다.
 
       ```
       # 변경 전
@@ -343,7 +346,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
     ```
 
    - 아래와 같은 메시지로 실패시
-     /etc/init.d/keepalived 파일 수정필요
+     /etc/init.d/keepalived 파일 수정필요합니다.
      vi /etc/init.d/keepalived
 
      ```
