@@ -35,8 +35,11 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 ## Keepalived
   * Routing software
   * VRRP 프로토콜을 이용해서 Active-Standby 가능하게 함
+
   ![VRRP_Keepalived](/images/post_img/HaproxyKeepalived/lvs-two-tier-1.png "VRRP_Keepalived")
- 이미지 참조 사이트 : [access.redhat.com](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Load_Balancer_Administration/index.html)
+
+  (출처 : [access.redhat.com](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Load_Balancer_Administration/index.html))
+
   * 사용하는 기능
     - High-Availiablility (고가용성) ; VRRP 프로토콜 이용
 
@@ -62,7 +65,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 
   * Active Routing 서버의 문제 발생시
   ![HAProxy_Keepalived](/images/post_img/HaproxyKeepalived/HAProxy_Keepalived.png "HAProxy_Keepalived")
- 이미지 참조 사이트 : [helloworld.naver.com](http://helloworld.naver.com/helloworld/textyle/284659)
+  (출처 : [helloworld.naver.com](http://helloworld.naver.com/helloworld/textyle/284659))
 
 
 # Google Trend
