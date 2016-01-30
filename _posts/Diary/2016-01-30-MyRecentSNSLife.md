@@ -6,6 +6,9 @@ categories: Diary
 tags: SNS Twitter Facebook Battery Data-Usage
 ---
 
+![Andorid Battery](http://developer.android.com/sdk/images/battery.png)
+(이미지 출처 : [http://developer.android.com](http://developer.android.com/about/versions/android-1.6-highlights.html))
+
 요새 핸드폰 베터리 사용량이랑 데이터 사용량을 가끔씩 보고있는데...
 항상 상위에 자리 잡고 있는 것이 페이스 북이다.
 페이스북과 트위터를 비교하면 데이터는 2배 더 사용하고 베터리는 10배 더 사용한다.
@@ -13,6 +16,7 @@ tags: SNS Twitter Facebook Battery Data-Usage
 고작 데이터랑 베타리에 쪼잔하게 굴려는 건 아닌데 ㅋㅋㅋㅋㅋ (아.. 발 저려....... )
 그냥 신기할 정도로 페이스북이 항상 눈에 치여서 글을 남겨 본다
 
+<!--more-->
 
 굉장히 주관적이지만..
 
