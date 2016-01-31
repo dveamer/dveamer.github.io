@@ -40,6 +40,8 @@ Java 8이 내놓은 핵심 기능은 Stream에 의한 functional programming 이
 
 하지만 전체적인 내용을 훑으며 Java 8의 functional programming에 대해서 감을 잡기에 좋은 책인 것 같다.
 
+한번 다시 읽어봐야할 것 같고 다른 책도 한권 더 사서 읽어봐야 할 것 같다.
+
 </br>
 
 책을 사게 된 계기는 
