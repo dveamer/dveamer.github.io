@@ -7,6 +7,11 @@ tags: Programming
 ---
 
 ![Functional Programming in Java 8](http://image.aladin.co.kr/product/4213/39/cover/1195149239_1.jpg)
+( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=42133916) )
+
+ * 벤컷 수브라마니암 지음
+ * 장독대 옮김
+ * 루비페이퍼 출판
 
 Java 8 이 release 된지 1년 반이나 지난 이 시점에서야 책을 구매했다.
 
