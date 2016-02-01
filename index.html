@@ -24,11 +24,9 @@ layout: default
           {% for category in post.categories %}
 
             {% if forloop.index < 4 %}
-              <span class="post-meta">{{ category }}</span>
-              &nbsp;
+              <span class="post-meta">{{ category | capitalize }}</span>
             {% else if forloop.index == 5 %}
               <span class="post-meta">...</span>
-              &nbsp;
             {% endif %}
           {% endfor %}
         {% endif %}
@@ -38,10 +36,8 @@ layout: default
           {% for tag in post.tags %}
             {% if forloop.index < 4 %}
               <span class="post-meta">{{ tag }}</span>
-              &nbsp;
             {% else if forloop.index == 5 %}
               <span class="post-meta">...</span>
-              &nbsp;
             {% endif %}
           {% endfor %}
         {% endif %}
@@ -49,6 +45,9 @@ layout: default
         <hr id="line">
 		<div class="content">
 		{{ post.excerpt }}
+        </div>
+        <div>
+        ... <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">더 읽기</a>
         </div>
 		<br>
       </li>

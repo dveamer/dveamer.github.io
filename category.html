@@ -12,7 +12,7 @@ layout: default
     <h2 class="category" id="{{ word }}">{{ word | capitalize }}</h2>
     <ul>
     {% for post in site.categories[word] %}{% if post.title != null %}
-    <li><span>{{ post.date | date: "%b %d" }}</span>» <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+    <li><span>{{ post.date | date: "%b %d %Y" }}</span>» <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
     {% endif %}{% endfor %}
     </ul>
 {% endunless %}
