@@ -139,7 +139,9 @@ jekyll 3.1.1
 
 # _config.yml 변경
 기존의 redcarpet과 pygments 를 제거했더니 highliter가 다 깨집니다.. ㅜㅡ
-어떻게 변경해야하는지는 아직 파악 중입니다.
+Github Pages로 올리면 신기하게도 안 깨지네요.
+
+PC에 깔린 kramdown, rouge 등의 버전이 안맞는 것인지 확인이 필요할 것 같습니다. 확인 중입니다.
 
   * 변경 전
 
