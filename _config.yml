@@ -17,26 +17,7 @@ encoding: utf-8
 
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "tables", "autolink", "fenced_code_blocks", "strikethrough", "hard_wrap"]
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-# highlighter: pygments
-permalink: none
-  
-#markdown: kramdown
-#kramdown:
-#  input: GFM
-#  syntax_highlighter: rouge
-#  syntax_highlighter_opts:
-#    line_numbers: false
-
-#  highlighter:  rouge
-#  syntax_highlighter:  pygments
-
-#markdown: redcarpet
-#redcarpet:
-#  extensions: ["footnotes"]
-#paginate: 25
-#paginate_path: "page:num/"
-#permalink: "/:year/:month/:title.html"

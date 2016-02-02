@@ -25,7 +25,7 @@ layout: default
 
             {% if forloop.index < 4 %}
               <span class="post-meta">{{ category | capitalize }}</span>
-            {% else if forloop.index == 5 %}
+            {% elsif forloop.index == 4 %}
               <span class="post-meta">...</span>
             {% endif %}
           {% endfor %}
@@ -36,7 +36,7 @@ layout: default
           {% for tag in post.tags %}
             {% if forloop.index < 4 %}
               <span class="post-meta">{{ tag }}</span>
-            {% else if forloop.index == 5 %}
+            {% elsif forloop.index == 4 %}
               <span class="post-meta">...</span>
             {% endif %}
           {% endfor %}
