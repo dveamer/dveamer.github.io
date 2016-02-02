@@ -7,6 +7,7 @@ tags: HAProxy Keepalived L4 VRRP RedHat RHEL
 ---
 
 ![Haproxy](http://www.haproxy.org/img/logo-med.png) ![Keepalived](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr9Rnjps3xzfDUWDJRvgCfja9HZwVDQ7B22H5fDspl0SdJvDNMZA)
+
 WEB-WAS 서비스의 경우 일반적으로 Apache, NginX 와 같은 WEB서버를 이용해서 WAS의 이중화 서비스를 구성 가능합니다.
 하지만 시스템 형태가 WEB서버를 사용하지 않고 데몬을 띄운채 자체 프로토콜로 소켓통신하는 서비스는 이중화를 위해서는 L4외에 마땅히 좋은 방법을 찾지 못했습니다.
 
