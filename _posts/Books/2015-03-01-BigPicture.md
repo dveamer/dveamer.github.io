@@ -7,6 +7,7 @@ tags: Novel
 ---
 
 ![빅 픽처](http://image.aladin.co.kr/product/714/36/cover/8984371025_1.jpg)
+
 ( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=7143629) )
 
   * 더글라스 케네디 지음

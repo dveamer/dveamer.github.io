@@ -7,7 +7,8 @@ tags: Programming Novel
 ---
 
 ![뉴욕의 프로그래머](http://image.aladin.co.kr/product/97/93/cover150/8979145128_1.jpg)
-( 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=979386) )
+
+( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=979386) )
 
  * 임백준 지음
  * 한빛미디어 출판

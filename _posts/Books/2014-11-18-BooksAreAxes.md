@@ -6,6 +6,7 @@ categories: Books
 tags: humanities
 ---
 ![책은 도끼다](http://image.aladin.co.kr/product/1318/66/cover/8956055467_2.jpg)
+
 ( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=13186604) )
 
   * 박웅현 지음

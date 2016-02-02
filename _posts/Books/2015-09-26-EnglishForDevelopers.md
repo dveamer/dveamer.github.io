@@ -7,6 +7,7 @@ tags: Programming
 ---
 
 ![English for Developers](http://image.aladin.co.kr/product/6526/71/cover/8968482195_1.jpg)
+
 ( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=65267102) )
 
  * 박재호, 이해영 지음

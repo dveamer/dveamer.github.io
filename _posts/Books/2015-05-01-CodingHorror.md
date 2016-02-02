@@ -7,6 +7,7 @@ tags: Programming Essay
 ---
 
 ![코딩 호러가 들려주는 진짜 소프트웨어 개발이야기](http://image.aladin.co.kr/product/3334/44/cover/8998139367_1.jpg)
+
 ( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=33344454) )
 
   * Jeff Atwood 지음
