@@ -192,10 +192,15 @@ kramdown:
 
   * 기존에는 엔터만 쳐도 다음 라인으로 넘어가도록 세팅되어있었는데 kramdown의 기본 모드에서는 안되는 모양입니다. 대신 표준 마크다운 문법인 스페이스 두번으로 문서들을 변경해줬습니다.
 
+# Category 페이지 변경
+Jekyll 2.0에서는 site.categories 에서 카테고리 리스트를 뽑으면 그 결과가 전부 소문자로 출력됐었다.  
+Jekyll 3.0에서는 입력한대로 대소문자가 합쳐서 출력된다.   
+근데 문제는 엔터, 스페이스가 섞여들어있어서 작성해둔 카테고리별 post를 동적으로 출력해주는 페이지에서 에러가 났다.  
+strip_newlines와 lstrip, rstrip 으로 엔터와 스페이스를 제거해야한다.
 
 # References
   * [GitHub Pages now faster and simpler with Jekyll 3.0](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0)
   * [Jekyll 홈페이지의 업그레이드 가이드](http://jekyllrb.com/docs/upgrading/2-to-3/)
   * [Jekyll Release 소식](https://jekyllrb.com/news/2015/10/26/jekyll-3-0-released/)
   * https://github.com/kersulis/kersulis.github.io/blob/master/_config.yml
-
+  * [Jekyll 문법](http://jekyll.pygmeeweb.com/tests/)
