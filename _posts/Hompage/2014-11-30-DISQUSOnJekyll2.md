@@ -6,13 +6,13 @@ categories: Hompage
 tags: Jekyll DISQUS
 ---
 
-DISQUS 는 소셜 댓글 서비스 입니다. 
+DISQUS 는 소셜 댓글 서비스 입니다.  
 쇼셜의 종류에 상관없이 특정 계정으로 댓글을 남길 수 있으며 관리가 가능합니다.
 
-Github Page에서 돌아가는 이 블로그는 매순간의 댓글을 저장할 공간이 없습니다.
+Github Page에서 돌아가는 이 블로그는 매순간의 댓글을 저장할 공간이 없습니다.  
 하지만 DISQUS 와 연동은 HTMl, javascript 만으로도 가능하므로 댓글 기능을 사용 할 수 있습니다.
 
-post에 댓글 추가, 댓글 조회 기능을 추가할 수 있고
+post에 댓글 추가, 댓글 조회 기능을 추가할 수 있고  
 post-list에 댓글 수 기능을 추가할 수 있습니다.
 
 <!--more-->

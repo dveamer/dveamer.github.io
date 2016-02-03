@@ -31,13 +31,13 @@ tags: Walk Animal
 
 ![Gangster Pigeons](https://lh3.googleusercontent.com/g2qTCrJXvEi4Mvk8wM-Jnnkpwtak0Kj9kBodBTsffrvSJqcKW-SKVKOf2I1EWfx0aP38OQijeeeAULA-jATcHmMHTlghZN_XqYO7a5myHveqyU9KVd9TZgV1vBpSbd2JT19mSTehpzasFccAX98r8Zq7hZ1-LlU5mpzL_YCgnVteHq5UQ8YhNVWhxGxNxuUhelamPxHi6E7XMDSTJIkdzPmYXT6r46buGD9SSFqupU2ltFz0SVedu5LfLsLG9BI5MWqYCTqDotq6xF9IAo9mdTcXOiQxXTiYOa_lVng9rExCFtU4Tcja09VI_7CGTqxYNtfI1zRc-uQ9nQFt3fnO_cGIt9PT90cVzmNS3XErIYwj6BIEcAfSrjiDMqhPrOLmbABRejzd_DDknhrmi579GSGiqyy0O9qfrD7K2zju0onRKLZsT4fp5bmgGKeSYhGJoNvKD306BIMBUwrogw2FM6tWUz3ZFDcml1TG2F2lLlqHECjyOcqlTqJkkMPPpzjCqhuTe-H9VLjcPLehBb6FDK6Gp2B1RKNwrwzrsn0Q82J834fULf7mKG-xPsWXWJ2r5Ayn=w513-h683-no)
 
-이번 사진은
+이번 사진은  
 이 거리를 주름 잡는 비둘기 일당들이다.
 
-날씨가 추워진 이후 산책을 하다보면 
+날씨가 추워진 이후 산책을 하다보면   
 항상 저 위치에 비둘기들이 모여서 주머니에 손 푹 찔러 넣은채 무리지어 서있다.
 
-내 경험상 
+내 경험상  
 볕이 좀 잘들고 바람이 덜 부는 위치인 것으로 생각된다.
 
 게다가 편의점 옆이니 먹거리도 손 쉽게 구할 수 있고 ㅋ
@@ -47,7 +47,7 @@ tags: Walk Animal
 <br><br>
 
 
-추운 겨울..
-고양이도, 비둘기도 살기 어렵지만
+추운 겨울..  
+고양이도, 비둘기도 살기 어렵지만  
 어떻게든 살아간다..
 
