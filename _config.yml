@@ -24,4 +24,4 @@ kramdown:
   syntax_highlighter: rouge
 
 
-permalink: /:year:month:day-:title/
+permalink: /:categories/title.html
