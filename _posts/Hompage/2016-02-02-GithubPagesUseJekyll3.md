@@ -6,6 +6,9 @@ categories: Homepage
 tags: Jekyll Github-Pages
 ---
 
+![Github Pages의 Jekyll3.0 업그레이드](/images/post_img/Homepage/GithubPagesUseJekyll3.0.png)
+
+
 오늘 아침 Github 트위터 계정을 통해 Github Pages의 새로운 소식을 들었습니다.
 
 [GitHub Pages now faster and simpler with Jekyll 3.0](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0)
@@ -25,10 +28,10 @@ Jekyll & Github Pages 구성이라면 평생토록 유지보수 없이 사용이
 
 <!--more-->
 
-일단 내 노트북의 Jekyll 버전을 3.0 으로 올리고 
-KRamdown 과 Rouge로 설정을 바꿔서 정상적으로 출력되는지 확인해봐야겠습니다.
+일단 노트북의 Jekyll 버전을 3.0 으로 올리고 
+KRamdown 과 Rouge로 설정을 바꾼 후 정상적으로 출력되도록 post들을 수정했습니다.
 
-# 변경사항
+# Github, Jekyll 정책 변경사항
   * Kramdown 만 사용가능 : Markdown
     - 2016.05.01 부터
     - Rdiscount, Redcarpet 사용불가
@@ -36,6 +39,15 @@ KRamdown 과 Rouge로 설정을 바꿔서 정상적으로 출력되는지 확인
   * Rouge 만 사용가능 : Syntax Highlighter
     - 2016.02.01 부터
     - Pygments 사용불가
+
+  * Relative permalinks 사용불가
+    - Jekyll 3.0에서 지원하지 않음
+ 
+  * Textile 사용불가
+    - 2016.02.01 부터
+
+Relative permalinks와 Textile 는 정확히 무엇을 의미하는지 모르겠으나 전 사용하지 않으므로 생략합니다.
+
 
 # Jekyll 3.0 환경세팅
 
@@ -136,9 +148,8 @@ jekyll 3.1.1
 ~~~
 
 # _config.yml 변경
-기존의 redcarpet과 pygments 를 kramdown과 rouge로 변경했더니 highliter가 다 깨집니다. 
-Line break 도 깨지네요. 문서도 변경해줘야합니다. 저는 아직 글을 많이 올리지 않은 상황이라 다행입니다.
-
+기존의 redcarpet과 pygments 를 kramdown과 rouge로 변경했더니 highliter와 line break 등 문서가 조금씩 깨집니다. 
+저는 아직 글을 많이 올리지 않은 상황 그나마 다행입니다.
 
   * 변경 전
 
@@ -165,7 +176,9 @@ kramdown:
   * Highlighter 관련 자료 : [Rouge Sample](http://rouge.jayferd.us/demo)
 
 # posts 변경
-  * Highlight
+툴을 이용해서 폴더 내의 모든 문서를 한꺼번에 변경하시면 편하실 것 같습니다.
+
+  * Highlight for Code Blocks 
 
 ~~~
 ``` 표시를 ~~~ 으로 변경
