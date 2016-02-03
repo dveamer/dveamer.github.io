@@ -9,6 +9,8 @@ identifier: 20151209-485155446
 
 ![citrix](http://docs.citrix.com/content/dam/docs/en-us/legacy-edocs/receiver-windows-43/receiver-x1-icon.png) ![citrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png)
 
+( 이미지 출처 : [http://docs.citrix.com](http://docs.citrix.com), [https://upload.wikimedia.org](https://upload.wikimedia.org) )
+
 제가 다니는 회사의 클라우드 컴퓨터에 접속하기 위해서는 Ctrix Receiver가 필요합니다.
 모든 데이터가 클라우드 컴퓨터에 보관되고 작업 환경이 구성되어 있기 때문에 
 사무실에서도 로컬 컴퓨터로는 할 수 있는 것이 없고 일단 Ctrix 로 클라우드 컴퓨터에 접속을 해야만하죠.
@@ -36,33 +38,33 @@ identifier: 20151209-485155446
   * 64-bit Ctrix Receiver는 32-bit의 몇가지 패키지들과 의존관계가 있다고 합니다.
   * 해당 패키지들을 이용하기 위해서 아래와 같이 설정하는 것으로 보여집니다.
 
-```
+~~~
   sudo dpkg --add-architecture i386
   sudo apt-get update
-``` 
+~~~ 
 
 ## Install the downloaded package(s) and dependencies
   * 다운받아 둔 파일을 가지고 설치를 진행합니다.
 
-```
+~~~
   sudo dpkg -i ~/Downloads/icaclient_*.deb ctxusb_*.deb
   sudo apt-get -f install
-```
+~~~
 
 ## Add more SSL certificates
   * SSL 인증서가 필요한 모양인데 mozilla 에서 제공하는 인증서를 빌려쓰려는 의도로 보입니다.
 
-```
+~~~
   sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts/
   sudo c_rehash /opt/Citrix/ICAClient/keystore/cacerts/
-```
+~~~
 
 ## Configure Citrix Receiver
   * Configuration Manager 를 실행시킵니다.
 
-```
+~~~
   /opt/Citrix/ICAClient/util/configmgr &
-```
+~~~
 
   * Ctrix 와 공유할 로컬 컴퓨터의 폴더를 지정합니다.
   * File access tab > add > save
@@ -72,9 +74,9 @@ identifier: 20151209-485155446
 ## Configure Chrome/Chromium
   * 아래와 같이 실행해주고나면 크롬으로 접속이 가능합니다.
 
-```
+~~~
   sudo xdg-mime default wfica.desktop application/x-ica
-```
+~~~
 
   * 이 단계까지 진행했으면 크롬 브라우저로 접속이 되어야 합니다.
   * 만약 이 단계까지 진행했는데 접속이 안된다면 아래 내용을 진행해보시기 바랍니다.
@@ -84,14 +86,14 @@ identifier: 20151209-485155446
   * Firefox 로 접속할 때 필요한 설정들의 일부분입니다. 
   * Firefox 로 접속하기 위해서는 브라우저에서 설정이 추가적으로 필요합니다. ( Reference 참고 )
   
-```
+~~~
    sudo mv /usr/lib/mozilla/plugins/npwrapper.npica.so /usr/lib/mozilla/plugins/npwrapper.npica.so_bak
    sudo mv /usr/lib/firefox/plugins/npwrapper.npica.so /usr/lib/firefox/plugins/npwrapper.npica.so_bak
    sudo mv /usr/lib/mozilla/plugins/npica.so /usr/lib/mozilla/plugins/npica.so_bak
    
    sudo ln -s /opt/Citrix/ICAClient/npica.so /usr/lib/mozilla/plugins/npica.so
    sudo ln -s /opt/Citrix/ICAClient/npica.so /usr/lib/firefox-addons/plugins/npica.so
-```
+~~~
 
 ## References
  * https://help.ubuntu.com/community/CitrixICAClientHowTo

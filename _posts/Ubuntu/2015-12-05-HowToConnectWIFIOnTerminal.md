@@ -26,19 +26,19 @@ Terminal에서 Network-Manager를 재기동 후 재연결을 시도하면 될줄
 ## Network-Manager
   * restart
 
-```
+~~~
   sudo service network-manager restart
-```
+~~~
 
 ## Network-Manager Client
   * WIFI list
 
-```
+~~~
   nmcli dev wifi list
-```
+~~~
 
   * connect WIFI 
 
-```
+~~~
   nmcli dev wifi con 'SSID' password 'wifi-password'
-```
+~~~

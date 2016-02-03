@@ -8,6 +8,8 @@ tags: Java8 Ubuntu
 
 ![JAVA8](https://eclipse.org/xtend/images/java8_logo.png)
 
+( 이미지 출처 : [https://eclipse.org](https://eclipse.org) )
+
 기본적인 Java 설치 내용입니다.
 
 Java 8 의 변화의 정말 일부분만 사용해봤지만
@@ -25,26 +27,26 @@ HashMap 도 많은 데이터를 보관시에는 성능이 더 좋아졌다고 �
 
 ## Install JDK
 
-``` 
+~~~ 
 sudo apt-get install openjdk-8-jre
-```
+~~~
 
 ## Set JAVA_HOME
   * /etc/profile 파일의 맨 아래 라인에 JAVA_HOME, PATH 설정을 추가
     - Shift + G : 맨 아래로 이동 ( VI 단축키 )
 
-``` 
+~~~ 
 sudo vi /etc/profile
-```
+~~~
 
-``` 
+~~~ 
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 PATH=$JAVA_HOME/bin:$PATH
-```
+~~~
   * Log out & Log in
 
 ## Check
 
-```
+~~~
 java -version
-```
+~~~

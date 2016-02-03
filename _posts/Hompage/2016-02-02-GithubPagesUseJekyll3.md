@@ -37,17 +37,15 @@ KRamdown 과 Rouge로 설정을 바꿔서 정상적으로 출력되는지 확인
     - 2016.02.01 부터
     - Pygments 사용불가
 
-  * 
-
 # Jekyll 3.0 환경세팅
 
 ## Jekyll 2.5.3 제거
 
 [Jekyll 홈페이지의 업그레이드 가이드](http://jekyllrb.com/docs/upgrading/2-to-3/)대로 Jekyll 버전을 업데이트를 해봤습니다.
 
-```
+~~~
 sudo gem update jekyll
-```
+~~~
 
 실패합니다. 실패메시지도 제대로 출력되지 않습니다.
 인터넷을 찾아보고 이것저것 시도해서 얻은 결론은 Ruby와 Gem의 버전 문제입니다.
@@ -61,37 +59,37 @@ Jekyll 3.0을 설치하기 위해서는 Ruby2.0, Ruby 2.0-dev, gem2.0 이상의 
 근데 재미있는 점이 있습니다. Ruby2.0을 설치하고나면 Jekyll 2.5.3 버전이 삭제가 되지 않습니다. 
 즉, 업데이트 실패하게 됩니다. Ruby2.0 으로 올리기 전에 먼저 제거 작업을 진행합니다.
 
-```
+~~~ 
 sudo gem uninstall jekyll
-```
+~~~
 
 ## Ruby 2.0 설치
 
 현재 버전을 확인합니다.
 
-```
+~~~ 
 ruby -version
 
 result>
 ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
-```
+~~~
 
 Ruby 2.0 설치를 진행합니다.
 
-```
+~~~
 sudo apt-get install ruby2.0
 sudo apt-get install ruby2.0-dev
 sudo ln -sf /usr/bin/ruby2.0 /usr/bin/ruby
-```
+~~~
 
 버전을 확인합니다.
 
-```
+~~~
 ruby -version
 
 result>
 ruby 2.0.0p384 (2014-01-12) [x86_64-linux-gnu]
-```
+~~~
 
 ## Gem 2.0 설치
 Ruby 설치 후 재시도를 해봤지만 동일한 에러메시지가 발생합니다. 
@@ -99,53 +97,52 @@ Ruby 설치 후 재시도를 해봤지만 동일한 에러메시지가 발생합
 
 현재 Gem 버전을 확인합니다.
 
-```
+~~~
 gem --version
 
 result>
 1.8.23
-```
+~~~
 
 Gem을 업그레이드 합니다.
 
-```
+~~~
 sudo apt-get upgrade gem
 sudo ln -sf /usr/bin/gem2.0 /usr/bin/gem
-```
+~~~
 
 버전을 확인합니다.
 
-```
+~~~
 gem --version
 
 result>
 2.0.14
-```
+~~~
 
 ## Jekyll 3.0 설치
 
-```
+~~~
 sudo gem install jekyll
-```
+~~~
 
 버전을 확인합니다.
 
-```
+~~~
 jekyll -version
 
 result>
 jekyll 3.1.1
-```
+~~~
 
 # _config.yml 변경
-기존의 redcarpet과 pygments 를 제거했더니 highliter가 다 깨집니다.. ㅜㅡ
-Github Pages로 올리면 신기하게도 안 깨지네요.
+기존의 redcarpet과 pygments 를 kramdown과 rouge로 변경했더니 highliter가 다 깨집니다. 
+Line break 도 깨지네요. 문서도 변경해줘야합니다. 저는 아직 글을 많이 올리지 않은 상황이라 다행입니다.
 
-PC에 깔린 kramdown, rouge 등의 버전이 안맞는 것인지 확인이 필요할 것 같습니다. 확인 중입니다.
 
   * 변경 전
 
-```
+~~~
   # Build settings
   markdown: redcarpet
   redcarpet:
@@ -153,11 +150,32 @@ PC에 깔린 kramdown, rouge 등의 버전이 안맞는 것인지 확인이 필�
 
   # highlighter: pygments
   permalink: none
-```
+~~~
 
   * 변경 후 
 
+~~~
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+~~~
+
   * Highlighter 관련 자료 : [Rouge Sample](http://rouge.jayferd.us/demo)
+
+# posts 변경
+  * Highlight
+
+~~~
+``` 표시를 ~~~ 으로 변경
+~~~
+
+  * line break 변경
+
+~~~
+</br> 을 <br> 로 변경
+~~~
 
 # References
   * [GitHub Pages now faster and simpler with Jekyll 3.0](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0)

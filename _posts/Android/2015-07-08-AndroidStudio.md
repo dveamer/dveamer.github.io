@@ -7,6 +7,8 @@ tags: IDE Android-Studio
 ---
 ![AndroidStudio](http://1.bp.blogspot.com/-UGrENgc-ec8/VIJsFPD19aI/AAAAAAAABBk/ICFczO1O6mU/s1000/studio-logo.png)
 
+( 이미지 출처 : [http://1.bp.blogspot.com](http://1.bp.blogspot.com) )
+
 <!--more-->
 
 # Previous Tasks
@@ -28,12 +30,12 @@ tags: IDE Android-Studio
 ## KVM is not installed on this machine
   * 에뮬레이터를 동작시키는 과정에서 아래와 같은 에러 메시지 발생
 
-```
+~~~
 /home/mret/Android/Sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_5_API_22_x86
 emulator: ERROR: x86 emulation currently requires hardware acceleration!
 Please ensure KVM is properly installed and usable.
 CPU acceleration status: KVM is not installed on this machine (/dev/kvm is missing).
-```
+~~~
 
 ### Reason
   * CPU 가 VT(Virtualization Technology) 을 지원해야함 : 지원함
@@ -44,9 +46,9 @@ CPU acceleration status: KVM is not installed on this machine (/dev/kvm is missi
 ### Solution
   * KVM 을 설치하고 관련 모듈을 설치 시도했으나 쉽게 풀리지 않을 것을 것으로 예상되서 중단
 
-```
+~~~
 sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
-```
+~~~
 
   * 앱의 기본적인 모양이 나올 때까진 에뮬레이터를 사용하지 않기로함
   * 핸드폰을 유선으로 연결해서 테스트 진행

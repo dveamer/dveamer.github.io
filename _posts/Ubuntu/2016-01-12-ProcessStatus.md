@@ -6,7 +6,7 @@ categories: Linux Ubuntu
 tags: Command Memory
 ---
 
-```
+~~~
   ps -eo user,pid,ppid,rss,vsz,size,pmem,pcpu,time,comm
 
   Result>
@@ -16,7 +16,7 @@ tags: Command Memory
   user1  1750  2615  172932  925232   562376  2.8   0.4   00:00:15  /opt/google/chrome/c
   user1  2841  2016  163652  735372   281308  2.7   0.0   00:00:13  /usr/bin/python3 /us
   user2  1099     1  147772  956008   899016  2.4   0.0   00:00:48  /usr/sbin/mysqld
-```
+~~~
 
 프로세스별로 메모리, CPU 등의 상태를 파악하는데 유용합니다.
 
@@ -31,18 +31,18 @@ Ubuntu의 용어와 명령어를 기준으로 설명합니다.
 # 명령어 팁
 
 ## 상위 N개 출력
-  * 상위 10개를 추력하기 위해서는 맨 뒤에 ```--sort -rss | head -n 10``` 을 추가합니다.
+  * 상위 10개를 추력하기 위해서는 맨 뒤에 ~~~--sort -rss | head -n 10~~~ 을 추가합니다.
 
-```
+~~~
   ps -eo user,pid,ppid,rss,vsz,size,pmem,pcpu,time,comm --sort -rss | head -n 10
-```
+~~~
 
 ## Command 상세하게 출력
   * comm를 cmd로 변경합니다.
 
-```
+~~~
   ps -eo user,pid,ppid,rssize,vsize,size,pmem,pcpu,time,cmd --sort -rss | head -n 10
-```
+~~~
 
 
 # 메모리 출력량

@@ -7,9 +7,10 @@ tags: 고민
 ---
 
 ![agony](http://image.slidesharecdn.com/npeaworkshopfinaldraftweb-120409161657-phpapp02/95/implementing-effective-family-engagement-strategies-2-728.jpg?cb=1335541538)
+
 (이미지 출처 : [http://image.slidesharecdn.com](http://image.slidesharecdn.com))
 
-</br>
+<br>
 쓸데없는 고민과 쓸데없지 않은 고민..
 
 이 두가지 고민은 간혹 헷갈린다
@@ -23,7 +24,7 @@ tags: 고민
 혹시나 해서 말하지만 
 걱정은 쓸데 없는 고민보다 더 부질없다
 
-</br></br></br>
+<br><br><br>
 
 
 
@@ -35,7 +36,7 @@ tags: 고민
 
 
 
-</br></br></br>
+<br><br><br>
 
   
 예를들면
@@ -46,7 +47,7 @@ tags: 고민
 "30년 뒤에도 일을 하려면 어떤 커리어를 쌓아야할까.."
 
 
-</br></br></br>
+<br><br><br>
 
 과일이라고는 사과와 배만 두 종류만 먹어본 아이에게 
 평생 먹을 과일을 하나를 고르라는 질문과 동일하다
@@ -54,7 +55,7 @@ tags: 고민
 얼마나 끔찍한가..
 
 
-</br></br></br>
+<br><br><br>
 
 
 
@@ -64,7 +65,7 @@ tags: 고민
 고민은.. 자신을 찾을 수 있는 유일한 길이라고 생각한다
 
 
-</br></br></br>
+<br><br><br>
 
 
 
@@ -74,7 +75,7 @@ tags: 고민
 나를 다듬어갈 방법과 같은 다른 고민이 필요하다
 
 
-</br></br></br>
+<br><br><br>
 
 
 
@@ -90,4 +91,4 @@ tags: 고민
 
 역시나 어렵다
 
-</br></br></br>
+<br><br><br>

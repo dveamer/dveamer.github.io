@@ -27,7 +27,7 @@ tags: Walk Animal
 
 추위 좀 풀리고 하면 부지런히 돌아댕겨서 다른 것도 챙겨먹어라~
 
-</br></br>
+<br><br>
 
 ![Gangster Pigeons](https://lh3.googleusercontent.com/g2qTCrJXvEi4Mvk8wM-Jnnkpwtak0Kj9kBodBTsffrvSJqcKW-SKVKOf2I1EWfx0aP38OQijeeeAULA-jATcHmMHTlghZN_XqYO7a5myHveqyU9KVd9TZgV1vBpSbd2JT19mSTehpzasFccAX98r8Zq7hZ1-LlU5mpzL_YCgnVteHq5UQ8YhNVWhxGxNxuUhelamPxHi6E7XMDSTJIkdzPmYXT6r46buGD9SSFqupU2ltFz0SVedu5LfLsLG9BI5MWqYCTqDotq6xF9IAo9mdTcXOiQxXTiYOa_lVng9rExCFtU4Tcja09VI_7CGTqxYNtfI1zRc-uQ9nQFt3fnO_cGIt9PT90cVzmNS3XErIYwj6BIEcAfSrjiDMqhPrOLmbABRejzd_DDknhrmi579GSGiqyy0O9qfrD7K2zju0onRKLZsT4fp5bmgGKeSYhGJoNvKD306BIMBUwrogw2FM6tWUz3ZFDcml1TG2F2lLlqHECjyOcqlTqJkkMPPpzjCqhuTe-H9VLjcPLehBb6FDK6Gp2B1RKNwrwzrsn0Q82J834fULf7mKG-xPsWXWJ2r5Ayn=w513-h683-no)
 
@@ -44,7 +44,7 @@ tags: Walk Animal
 
 아 참고로 라면 마니아 고양이의 편의점과는 1km 정도 떨어져있다.
 
-</br></br>
+<br><br>
 
 
 추운 겨울..

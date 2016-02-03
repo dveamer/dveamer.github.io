@@ -17,7 +17,11 @@ encoding: utf-8
 
 
 # Build settings
+markdown: kramdown
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+
+permalink: /:year:month:day-:title/

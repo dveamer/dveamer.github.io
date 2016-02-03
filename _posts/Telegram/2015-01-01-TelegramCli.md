@@ -8,6 +8,7 @@ tags: Lua Telegram-Cli
 
 ![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg)
 
+( 이미지 출처 : [http://ausdroid.net](http://ausdroid.net) )
 Telegram-Cli와 Lua script를 이용해서 Telegram 서버의 API 와 직접 연계합니다.
 
 즉, 스케쥴러에 의해서 컴퓨터가 Telegram 메시지를 특정인에게 전달하는 것이 가능합니다.
@@ -22,20 +23,20 @@ Telegram-Cli와 Lua script를 이용해서 Telegram 서버의 API 와 직접 연
    - luasocket 설치 http://stackoverflow.com/questions/18011416/installation-of-luasocket-using-luarocks
    - socket.http 사용법 http://support.loadimpact.com/knowledgebase/articles/174637-lua-quick-start-guide
 
-```
+~~~
 /* install luasocket */
 luarocks install luasocket --only-server=http://luarocks.org/repositories/rocks-scm
-```
+~~~
 
-``` lua
+~~~ lua
 /* Way 1 to use socket */
  http.request_batch({
      {"POST", "http://test.loadimpact.com/login.php"
             , data="login=test_user&password=123"}
  })
-```
+~~~
 
-``` lua
+~~~ lua
 /* Way 2 to use socket */
 local http = require("socket.http")
 	local notiUrl = "http://localhost:xxxxx/abcd?abcd=aaa"
@@ -51,7 +52,7 @@ local result, respcode, respheaders, respstatus = http.request {
     --]]
     sink = ltn12.sink.table(respbody)
 }
-```
+~~~
   * Result
     - batch 방식은 진행실패.
     - localhost와 통신이라 get method로 진행.
@@ -64,14 +65,14 @@ local result, respcode, respheaders, respstatus = http.request {
  * request_msg 용 telegram-cli르 기동,종료하는 과정이 recieve_msg 용 telegram-cli에 영향을 줘서 메시지 수신이 멈추는 현상 생김. telegram-cli의 configure 를 두개로 분리해서 진행.
    - ./tg/bin/telegram-cli -c "conf위치" -k "key위치" -s "luaScript위치" -W
  
-```
+~~~
 //configure 파일내용
 default_profile = "abcd;
 
 abcd = {
     config_directory = ".telegram-cli/abcd";
 };
-```
+~~~
 
 ## ETC 
  * .으로 시작하는 메시지 필터링 : .? , .기능 , .등록 등등
@@ -92,7 +93,7 @@ abcd = {
  * 행아웃으로 진행하기
    - http://clien.net/cs2/bbs/board.php?bo_table=lecture&wr_id=260006&sca=%5BPC%2F%EB%AA%A8%EB%B0%94%EC%9D%BC%5D
 
-```
+~~~
     서버에서 발생하는 특정 이벤트를 별도의 앱 설치없이 폰으로 받고 싶은 경우를 위한 간단한 팁입니다.
     - 구글톡의 행아웃연동으로 안드로이드 폰인 경우 가능한 방식인데, 아이폰은 앱을 깔아야 할거라...
     - 당연히 서버는 인터넷에 연결 가능해야 하고, sendxmpp 라는 패키지 설치가 필요합니다.
@@ -105,4 +106,4 @@ abcd = {
        (예: cat job2748_result.txt | sendxmpp -t -u sendalarm -o gmail.com receivealarm
     5. 받을 사람이 여러명이라면 구글 친구추가와 마지막 전송시 수신ID를 추가해주면 됩니다.
     프로그래머라면 xmpp library 사용해서 프로그램 안에 sendxmpp 가 수행하는 기능을 직접 구현해도 될텐데, 이건 프로그래밍 강좌가 아니니 여기까지... ^^
-```
+~~~

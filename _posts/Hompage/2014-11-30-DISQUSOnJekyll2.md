@@ -66,7 +66,7 @@ DISQUS에 대한 자세한 설명은 DISQUS 홈페이지 혹은 References 를 �
 
  * identifier 세팅
 
-```
+~~~
 ---
 layout: post
 title:  "DISQUS on Jekyll2"
@@ -75,7 +75,7 @@ categories: Hompage
 tags: Jekyll DISQUS
 identifier: 201512011177213790
 ---
-```
+~~~
 
 ## How to do it
 ### DISQUS 서비스 가입
@@ -85,7 +85,7 @@ identifier: 201512011177213790
  * /_layouts/post.html 최하단에 아래 내용 추가
   - {, } 기호를 [, ] 로 변환 후 사용하시길 바랍니다.
 
-```html
+~~~html
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var identifier = (function()[
@@ -115,11 +115,11 @@ identifier: 201512011177213790
         ]);
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-```
+~~~
 
  * /_saas/_layout.scss 최하단에 아래 내용 추가
 
-```scss
+~~~scss
     .subtitle-header { 
       padding: 10px 15px;
       color: #fff;
@@ -131,18 +131,18 @@ identifier: 201512011177213790
       font-weight:bolder; 
       color:#fff;
     }
-```
+~~~
 
  * /_config.yml 에 추가 ( disqus_shortname 수정 필요 )
 
-```
+~~~
     disqus_domain: "xxxxx.github.io" # your domain
     disqus_comment_username: disqus_shortname # your disqus shortname
-```
+~~~
 
  * /scripts/custom.js 파일 생성 후 아래 내용 추가
 
-```js
+~~~js
 String.prototype.hashCode = function() {
   var hash = 0, i, chr, len;
   if (this.length === 0) return hash;
@@ -165,20 +165,20 @@ var getIdentifier = function(staticIdentifier, date, title) {
     var result = ''.concat(date).concat(partOfTitle.hashCode());
     return result;
 };
-```
+~~~
 
  * /_layouts/post.html 임의의 위치에 아래 태그 추가
 
-```html
+~~~html
     <span id="identifier">☛</span>
-```
+~~~
 
 # Comment counts
  * 포스트와 포스트 목록에 각 포스트별 댓글 개수를 출력합니다.
  * /index.html 에 추가 
   - {, } 기호를 [, ] 로 변환 후 사용하시길 바랍니다.
 
-```html
+~~~html
   <span class="post-meta">[[ post.date | date: "%b %-d, %Y %H:%m" ]]</span> 
 
   <!-- 추가 내용 -->
@@ -190,12 +190,12 @@ var getIdentifier = function(staticIdentifier, date, title) {
   <!-- 추가 내용 -->
 
   <hr id="line"> 
-```
+~~~
 
  * /_layouts/post.html 에 추가
   - {, } 기호를 [, ] 로 변환 후 사용하시길 바랍니다.
 
-```html
+~~~html
   <header class="post-header">
     <h1 class="post-title">[[ page.title ]]</h1>
     <p class="post-meta">[[ page.date | date: "%b %-d, %Y" ]]
@@ -211,7 +211,7 @@ var getIdentifier = function(staticIdentifier, date, title) {
 
     </p>
   </header>
-```
+~~~
 
 # References
  * [Adding comment count links to your homepage](https://help.disqus.com/customer/portal/articles/565624-adding-comment-count-links-to-your-home-page)
