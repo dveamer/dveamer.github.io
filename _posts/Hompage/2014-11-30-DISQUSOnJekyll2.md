@@ -2,7 +2,7 @@
 layout: post
 title:  "DISQUS on Jekyll2"
 date:   2015-11-30 16:50:00
-categories: Hompage
+categories: Homepage
 tags: Jekyll DISQUS
 ---
 
