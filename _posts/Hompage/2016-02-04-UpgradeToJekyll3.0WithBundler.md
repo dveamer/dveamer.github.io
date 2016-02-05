@@ -45,9 +45,9 @@ gem 'github-pages'
 
 https://rubygems.org/ 에 등록되어있는 github-pages 관련 잼을 이용하라는 내용으로 보여집니다.
 
-## bundle install
+## Github-Pages 관련 Bundle 설치
 
-홈페이지 폴더 최상단에서 아래와 같이 입력합니다.
+Gemfile을 위치시킨 홈페이지 폴더 최상단에서 아래와 같이 입력합니다.
 
 ```
 bundle install
