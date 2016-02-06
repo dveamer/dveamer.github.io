@@ -6,7 +6,7 @@ categories: Homepage
 tags: Jekyll Github-Pages
 ---
 
-![Github Pages의 Jekyll3.0 업그레이드](/images/post_img/Homepage/GithubPagesUseJekyll3.0.png)
+![Github Pages 의 Jekyll3.0 업그레이드](/images/post_img/Homepage/GithubPagesUseJekyll3.0.png)
 
 
 오늘 아침 Github 트위터 계정을 통해 Github Pages의 새로운 소식을 들었습니다.
@@ -19,7 +19,7 @@ tags: Jekyll Github-Pages
 
 중요해 보이는 것들은 변경사항들..
 
-오늘부터 syntax highlighter 를 Rouge 만으로 사용이 제한되며  
+오늘부터 syntax highlighter 는 Rouge 만으로 사용이 제한되며  
 2016.05.01 부터는 Markdown는 Kramdown 만 사용가능하다고 합니다.
 
 그 외에도 변경사항들이 더 있습니다.
