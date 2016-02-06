@@ -6,7 +6,7 @@ categories: Diary
 tags: SNS Twitter Facebook Battery Data-Usage
 ---
 
-![Andorid Battery](http://developer.android.com/sdk/images/battery.png)
+![Andorid Battery](http://developer.android.com/sdk/images/battery.png)  
 (이미지 출처 : [http://developer.android.com](http://developer.android.com/about/versions/android-1.6-highlights.html))
 
 요새 핸드폰 베터리 사용량이랑 데이터 사용량을 가끔씩 보고있는데...  

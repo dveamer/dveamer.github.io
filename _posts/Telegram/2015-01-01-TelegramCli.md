@@ -6,9 +6,9 @@ categories: Telegram
 tags: Lua Telegram-Cli
 ---
 
-![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg)
-
+![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg)  
 ( 이미지 출처 : [http://ausdroid.net](http://ausdroid.net) )
+
 Telegram-Cli와 Lua script를 이용해서 Telegram 서버의 API 와 직접 연계합니다.
 
 즉, 스케쥴러에 의해서 컴퓨터가 Telegram 메시지를 특정인에게 전달하는 것이 가능합니다.
