@@ -25,6 +25,9 @@ gem 'github-pages'
 
 <!--more-->
 
+다만, Github-Pages 의 2016.05.01 변화를 대응하시기 위한 분이시라면
+이 포스트의 하단에 위치한 Bundler를 이용한 Jekyll 3.0 업그레이드의 [단점](#단점)을 읽어보시고 진행하시기 바랍니다.
+
 # Bundler 설치
 
 ~~~
@@ -73,7 +76,7 @@ Jekyll 3.0에서는 사용불가하다는 Textile, Redcarpet 등이 깔리는 �
 현재 Github-Pages는 어중간한 상태입니다. Jekyll 3.0로 새단장을 했지만 Jekyll 2.0 엔진을 이용할 때 지원하던  
 Textile, Redcarpet 등이 2016.04.30 까지는 여전히 사용가능한 상태입니다.
 
-2016.05.01부터 Github-Pages 는 Kramdown, Rouge 만 지원하고 Redcarpet, Pygments 등은 지원이 중단됩니다.
+2016.05.01부터 Github-Pages 는 Kramdown, Rouge 만 지원하고 Redcarpet, Pygments 등은 지원이 중단됩니다.  
 즉, Bundler를 이용해서 현재의 Github-Pages와 동일한 환경을 맞춘다고해도  
 그것은 2016.05.01 을 대비한 환경세팅이라고 보기는 좀 어려운 것 같습니다.
 
@@ -81,7 +84,7 @@ Textile, Redcarpet 등이 2016.04.30 까지는 여전히 사용가능한 상태�
 
 ## 설치 된 프로그램 52개 리스트
 
-```
+~~~
 Installing RedCloth 4.2.9 with native extensions
 Installing i18n 0.7.0
 Installing json 1.8.3 with native extensions
@@ -135,8 +138,9 @@ Installing jekyll-redirect-from 0.9.1
 Installing jekyll-seo-tag 0.1.4
 Installing jemoji 0.5.1
 Installing github-pages 45
-```
+~~~
 
 # References
   * https://riseshia.github.io/2016/02/02/upgrade-to-jekyll-3-0.html
+  * https://help.github.com/articles/using-jekyll-with-pages/
   * http://ruby-korea.github.io/bundler-site/

@@ -94,8 +94,8 @@ layout: default
     $("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").not(".index").each(function(i,item){
       if( $(item).html() != "Reference" && $(item).html() != "References" ){
         tag = $(item).get(0).localName;
-        $(item).attr("id","content_"+i);
-        $("#toc").append('<a class="new'+tag+'" href="#content_'+i+'">'+$(this).text()+'</a></br>');
+        $(item).attr("id",$(this).text());
+        $("#toc").append('<a class="new'+tag+'" href="#'+$(this).text()+'">'+$(this).text()+'</a></br>');
       }
     });
 

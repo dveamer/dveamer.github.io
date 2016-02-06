@@ -153,7 +153,7 @@ result>
 2.0.14
 ~~~
 
-## Jekyll 3.0 설치
+## Jekyll 3 설치
 
 ~~~
 sudo gem install jekyll
@@ -235,6 +235,72 @@ Jekyll 3.0에서는 대소문자가 포스트 작성시 입력한대로 출력�
 근데 이유는 모르겠지만 엔터, 스페이스가 섞여들어 있습니다. 그 때문에 카테고리 페이지에서 에러가 발생했습니다.  
 Ruby, Jekyll 관련 문법을 제대로 몰라서 검색 좀 했네요.  
 strip_newlines와 lstrip, rstrip 으로 엔터와 스페이스를 제거해서 처리했습니다.
+
+# Jekyll 3 와 함께 설치되는 패키지 리스트
+
+제 노트북에 설치 된 gem list를 깨끗하게 모두 제거 후 Jekyll 3.0을 설치해봤습니다.
+Jekyll 3.1.1 과 함께 설치되는 프로그램 리스트는 아래와 같습니다. 총 14개 입니다.
+
+~~~
+Fetching: safe_yaml-1.0.4.gem (100%)
+Successfully installed safe_yaml-1.0.4
+Fetching: rouge-1.10.1.gem (100%)
+Successfully installed rouge-1.10.1
+Fetching: mercenary-0.3.5.gem (100%)
+Successfully installed mercenary-0.3.5
+Fetching: liquid-3.0.6.gem (100%)
+Successfully installed liquid-3.0.6
+Fetching: kramdown-1.9.0.gem (100%)
+Successfully installed kramdown-1.9.0
+Fetching: ffi-1.9.10.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed ffi-1.9.10
+Fetching: rb-inotify-0.9.6.gem (100%)
+Successfully installed rb-inotify-0.9.6
+Fetching: rb-fsevent-0.9.7.gem (100%)
+Successfully installed rb-fsevent-0.9.7
+Fetching: listen-3.0.5.gem (100%)
+Successfully installed listen-3.0.5
+Fetching: jekyll-watch-1.3.1.gem (100%)
+Successfully installed jekyll-watch-1.3.1
+Fetching: sass-3.4.21.gem (100%)
+Successfully installed sass-3.4.21
+Fetching: jekyll-sass-converter-1.4.0.gem (100%)
+Successfully installed jekyll-sass-converter-1.4.0
+Fetching: colorator-0.1.gem (100%)
+Successfully installed colorator-0.1
+Fetching: jekyll-3.1.1.gem (100%)
+Successfully installed jekyll-3.1.1
+Parsing documentation for safe_yaml-1.0.4
+Installing ri documentation for safe_yaml-1.0.4
+Parsing documentation for rouge-1.10.1
+Installing ri documentation for rouge-1.10.1
+Parsing documentation for mercenary-0.3.5
+Installing ri documentation for mercenary-0.3.5
+Parsing documentation for liquid-3.0.6
+Installing ri documentation for liquid-3.0.6
+Parsing documentation for kramdown-1.9.0
+Installing ri documentation for kramdown-1.9.0
+Parsing documentation for ffi-1.9.10
+Installing ri documentation for ffi-1.9.10
+Parsing documentation for rb-inotify-0.9.6
+Installing ri documentation for rb-inotify-0.9.6
+Parsing documentation for rb-fsevent-0.9.7
+Installing ri documentation for rb-fsevent-0.9.7
+Parsing documentation for listen-3.0.5
+Installing ri documentation for listen-3.0.5
+Parsing documentation for jekyll-watch-1.3.1
+Installing ri documentation for jekyll-watch-1.3.1
+Parsing documentation for sass-3.4.21
+Installing ri documentation for sass-3.4.21
+Parsing documentation for jekyll-sass-converter-1.4.0
+Installing ri documentation for jekyll-sass-converter-1.4.0
+Parsing documentation for colorator-0.1
+Installing ri documentation for colorator-0.1
+Parsing documentation for jekyll-3.1.1
+Installing ri documentation for jekyll-3.1.1
+14 gems installed
+~~~
 
 # References
   * [GitHub Pages now faster and simpler with Jekyll 3.0](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0)
