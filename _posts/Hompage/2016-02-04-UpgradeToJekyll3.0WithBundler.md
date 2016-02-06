@@ -76,7 +76,7 @@ Textile, Redcarpet 등이 2016.04.30 까지는 여전히 사용가능한 상태�
 즉, Bundler를 이용해서 Github-Pages와 동일한 환경을 맞춘다고해도  
 그것은 2016.05.01 을 대비한 환경세팅이라고 보기는 좀 어려운 것 같습니다.
 
-[Github Pages의 Jekyll 3.0 업그레이드](homepage/GithubPagesUseJekyll3.html) 을 통해서 2016.05.01을 대비한 환경세팅을 설명드리겠습니다.
+[Github Pages의 Jekyll 3.0 업그레이드](/homepage/GithubPagesUseJekyll3.html) 을 통해서 2016.05.01을 대비한 환경세팅을 설명드리겠습니다.
 
 ## 설치 된 프로그램 52개 리스트
 
