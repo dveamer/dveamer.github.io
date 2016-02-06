@@ -2,9 +2,7 @@
 title: Dveamer
 motto: 이상을 꿈꾸는 몽상가.. 프로그래밍을 좋아함..
 email: dveamer@gmail.com
-description: 
-현실에서 살고 있지만 이상에 대한 꿈을 버리지 못한 몽상가의 홈페이지 입니다.
-개인적인 기록을 주 목적으로 하며 일상과 프로그래밍 관련 글을 포스팅합니다.
+description: "현실에서 살고 있지만 이상에 대한 꿈을 버리지 못한 몽상가의 홈페이지 입니다. 개인적인 기록을 주 목적으로 하며 일상과 프로그래밍 관련 글을 포스팅합니다."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://dveamer.github.io" # the base hostname & protocol for your site
 twitter_username: dveamer
