@@ -8,21 +8,21 @@ tags: Walk Animal
 
 ![Ramyun Mania Cat](https://lh3.googleusercontent.com/lFUTbYnSzyibYBzZ2LOV6CFwJV9Ojr7uO84fdJvEEv63wn487nzLrMzgPI45ifJR2S21GdYLS-x8NR9u_tb_aQ_7Npdhh586gxbWt5owJTaEXeFD7G2rYSr2lDPrK-k6jrraM8_PIWaraADpl7TKgG9vwxUyb75_WmcLypAsGzmaQwhcw9hFoGXHgNcbos8JEoHQ1XmRdL4U060DBRpJiFR9kuG0i_Y2eitbSo0sEo8PIxRXbmUmMH_sxH3ir3JVnbwCQsj8PAcYJoTbcY9iHiR0J9z2mrf5b9BpaEczePeJC-YAKQ-8thIZiaSdungxSsi-QBvvxEj4aNAh0_loZ41jwxAX4Nn9N8svXzcyWhkXE7ge2HrtUV9LKqJ9IDa5jQH5Rf-eVakRNFGHIWE6gU17QlGEHZV7doMoCSU3nkHHdi845DeDxkMDAPXT8sAUqysh03rw_yfhzMPcAxRhvncv8YbDrM4TEqPWRSujFBx2LbI5vKpbLqohZ1AJV0QlDfjdnhpvUiFvkUdUB7jL7FBarSBF6dbNez9j2HJAKimWmpTk2iS5clWrbQYm03-qlYHx=w776-h437-no)
 
-한강에서 산책을 하면 
-거의 매번 산책 후 컵라면을 즐기기 위해 편의점에 들린다.
+한강에서 산책을 하면   
+거의 매번 컵라면을 즐기기 위해 편의점에 들린다.
 
 근데 오늘 나보다 더 라면 마니아인 고양이를 만났다.
 
 <!--more-->
 
-군대에서 자주 보던 짬타이거의 친척급인 것 같은데 
+군대에서 자주 보던 짬타이거의 친척급인 것 같은데   
 얘는 라면에 꽂힌 것 같다. 
 
-새끼 고양이 두마리와 같이 찬 바람을 피해서 좀 쉬고 있다가 
+새끼 고양이 두마리와 같이 찬 바람을 피해서 좀 쉬고 있다가   
 입이 좀 심심하면 슬금슬금 걸어와 면발을 한가닥씩 꺼내먹는다
 
-이 고양이도 그렇고 새끼 고양이들도 
-하루 종일.. 몇날 몇일.. 라면만 먹을 것 같은데.. 
+이 고양이도 그렇고 새끼 고양이들도   
+하루 종일.. 몇날 몇일.. 라면만 먹을 것 같은데..   
 나보다 더 매니아 인듯 ㅋ
 
 추위 좀 풀리고 하면 부지런히 돌아댕겨서 다른 것도 챙겨먹어라~
