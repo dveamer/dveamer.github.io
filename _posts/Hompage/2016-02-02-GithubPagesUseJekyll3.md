@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Github Pages의 Jekyll3.0 업그레이드"
+title:  "Github Pages의 Jekyll 3.0 업그레이드"
 date:   2016-02-02 23:00:00
 categories: Homepage
 tags: Jekyll Github-Pages
