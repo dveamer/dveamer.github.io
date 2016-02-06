@@ -90,11 +90,11 @@ Jekyll 3.0을 설치하기 위해서는 Ruby2.0, Ruby 2.0-dev, gem2.0 이상의 
 근데 재미있는 점이 있습니다. Ruby2.0을 설치하고나면 Jekyll 2.5.3 버전이 삭제가 되지 않습니다.   
 즉, 업데이트 실패하게 됩니다. Ruby2.0 으로 올리기 전에 먼저 제거 작업을 진행합니다.
 
-그래도 혹시 모르니 먼저 [Jekyll 홈페이지의 업그레이드 가이드](http://jekyllrb.com/docs/upgrading/2-to-3/)처럼 진행해보시기 바랍니다.
-
 ~~~ 
 sudo gem uninstall jekyll
 ~~~
+
+그래도 일단 [Jekyll 홈페이지의 업그레이드 가이드](http://jekyllrb.com/docs/upgrading/2-to-3/)처럼 진행해보시기 바랍니다. 혹시 성공할지도 모르니까요 ^^
 
 ## Ruby 2.0 설치
 
