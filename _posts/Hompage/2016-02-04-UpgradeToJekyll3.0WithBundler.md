@@ -73,10 +73,11 @@ Jekyll 3.0에서는 사용불가하다는 Textile, Redcarpet 등이 깔리는 �
 현재 Github-Pages는 어중간한 상태입니다. Jekyll 3.0로 새단장을 했지만 Jekyll 2.0 엔진을 이용할 때 지원하던  
 Textile, Redcarpet 등이 2016.04.30 까지는 여전히 사용가능한 상태입니다.
 
-즉, Bundler를 이용해서 Github-Pages와 동일한 환경을 맞춘다고해도  
+2016.05.01부터 Github-Pages 는 Kramdown, Rouge 만 지원하고 Redcarpet, Pygments 등은 지원이 중단됩니다.
+즉, Bundler를 이용해서 현재의 Github-Pages와 동일한 환경을 맞춘다고해도  
 그것은 2016.05.01 을 대비한 환경세팅이라고 보기는 좀 어려운 것 같습니다.
 
-[Github Pages의 Jekyll 3.0 업그레이드](/homepage/GithubPagesUseJekyll3.html) 을 통해서 2016.05.01을 대비한 환경세팅을 설명드리겠습니다.
+[Github Pages의 Jekyll 3.0 업그레이드](/homepage/GithubPagesUseJekyll3.html) 을 통해서 그 때를 대비해 제가 진행한 작업을 설명드리겠습니다.
 
 ## 설치 된 프로그램 52개 리스트
 
