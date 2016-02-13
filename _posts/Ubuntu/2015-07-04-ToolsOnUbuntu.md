@@ -20,6 +20,7 @@ Windows 에서 작성했던 문서를 열어보니 한글이 깨집니다.
 dconf-editor 를 이용해서 gedit 의 encoding 설정을 수정해야합니다.
 
 dconf-tools 가 설치되어있지 않다면 설치하세요.
+
 ~~~
 sudo apt-get install dconf-tools
 ~~~
