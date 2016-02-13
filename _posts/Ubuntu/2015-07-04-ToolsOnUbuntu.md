@@ -34,9 +34,9 @@ dconf-editor
 좌측 탐색기(?)에서 org > gnome > gedit > proferences > encodings 을 선택합니다.  
 auto-detcted 의 값에 'UHC' 를 추가합니다.
 
-![Gedit encoding](/post_img/Ubuntu/gedit_encoding.png)
+![Gedit encoding](/images/post_img/Ubuntu/gedit_encoding.png)
 
-UHC(Unified Hangul Code) 인코딩 방식은 CP949 라고도 불리며 EUC-KR 인코딩방식에다가 8,822 글자가 추가된 방식입니다.  
+UHC(Unified Hangul Code) 인코딩 방식은 CP949 라고도 불리며 EUC-KR 에다가 8,822 글자가 추가된 방식입니다.  
 
 
 # Sublime-Text 2
