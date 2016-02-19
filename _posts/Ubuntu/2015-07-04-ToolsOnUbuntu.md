@@ -32,7 +32,7 @@ dconf-editor
 ~~~
 
 좌측 탐색기(?)에서 org > gnome > gedit > proferences > encodings 을 선택합니다.  
-auto-detcted 의 값에 'UHC' 를 추가합니다.
+auto-detected 의 값에 'UHC' 를 추가합니다.
 
 ![Gedit encoding](/images/post_img/Ubuntu/gedit_encoding.png)
 
