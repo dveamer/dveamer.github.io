@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DISQUS on Jekyll2"
+title:  "DISQUS on Jekyll"
 date:   2015-11-30 16:50:00
 categories: Homepage
 tags: Jekyll DISQUS
