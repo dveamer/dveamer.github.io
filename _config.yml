@@ -22,4 +22,4 @@ kramdown:
 
 
 permalink: /:categories/:title.html
-timezone: '+0900'
+timezone: '-0900'
