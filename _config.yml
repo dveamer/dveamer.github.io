@@ -22,4 +22,3 @@ kramdown:
 
 
 permalink: /:categories/:title.html
-timezone: '-0900'

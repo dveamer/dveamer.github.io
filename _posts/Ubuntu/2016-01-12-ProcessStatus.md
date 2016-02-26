@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Process Status 사용법"
-date:   2016-01-12 01:00:00 
+date:   2016-01-12 12:00:00 
 categories: Linux Ubuntu
 tags: Command Memory
 ---

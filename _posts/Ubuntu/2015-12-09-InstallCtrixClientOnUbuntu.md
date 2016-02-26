@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Install Ctrix Receiver On Ubuntu"
-date:   2015-12-09 01:00:00
+date:   2015-12-09 12:00:00
 categories: Ubuntu-Tools
 tags: Ctrix 
 identifier: 20151209-485155446

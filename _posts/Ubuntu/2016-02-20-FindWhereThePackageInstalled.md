@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "패키지가 설치 된 위치 찾기 in Ubuntu"
-date:   2016-02-20 00:00:00 
+date:   2016-02-20 12:00:00 
 categories: Ubuntu
 tags: Package Install Directory Where
 ---
