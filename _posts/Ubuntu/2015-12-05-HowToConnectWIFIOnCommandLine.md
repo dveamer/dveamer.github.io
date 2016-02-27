@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ubuntu Terminal로 wifi 접속하기"
+title:  "Ubuntu Command Line으로 wifi 접속하기"
 date:   2015-12-05 12:00:00
 categories: Ubuntu
 tags: Network
