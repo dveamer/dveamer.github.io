@@ -23,6 +23,17 @@
 					<a href="/diary.html">Diary</a>
 				</li>			
 			{% endif %}
+			{% if page.path == "book.html" %}
+			<span class="title">
+				<li>
+					<a href="/book.html">Books</a>
+				</li>
+			</span>			
+			{% else %}
+				<li>
+					<a href="/book.html">Books</a>
+				</li>			
+			{% endif %}
 			{% if page.path == "category.html" %}
 			<span class="title">
 				<li>
