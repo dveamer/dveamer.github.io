@@ -145,12 +145,12 @@ List<Integer> transactionsIds =
 여러분은 어떠신가요?  
 
 그리고 Java 8 을 공부하기 직전에  
-멀티 쓰레드를 이용해서 작성한 [Chopsticks](https://github.com/dveamer/Chopsticks) 이라는 프로그램이 있었습니다.  
-근데 Stream 으로 다시 짜보고 나서 기존 버전은 바로 폐기처분했답니다.  
-아.. [Chopsticks](https://github.com/dveamer/Chopsticks) 은 아직 완성버전이 아닙니다.
+멀티 쓰레드를 이용해서 작성한 프로그램이 있었습니다.  
+근데 Stream 으로 다시 작성하고나서 기존 버전은 바로 폐기처분했답니다.  
+프로그램 이름은 [Chopsticks](https://github.com/dveamer/Chopsticks) 이고 아직 미완성입니다.  
 
 Stream 을 이해하기 위해서는  
-Lambda, default methodm, lazy style 등에 대한 이해가 필요합니다.  
+Lambda, default method, lazy style 등에 대한 이해가 필요합니다.  
 그에 대해서는 추후에 다시 글을 작성하며 정리해보겠습니다.
 
 # Reference
