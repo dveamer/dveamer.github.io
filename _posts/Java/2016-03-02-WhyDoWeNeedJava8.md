@@ -19,7 +19,7 @@ Stream 을 이용하면 멀티코어 프로세서상에서 병렬처리가 너�
 
 <!--more-->
 
-권유 이상의 상세한 설명은 다음에 작성하는 문서에서 설명하겠습니다.
+권유 이상의 좀 더 구체적인 설명은 다음에 작성하는 문서에서 설명하겠습니다.
 
 # Stream  
 
@@ -40,7 +40,7 @@ Stream 은 하나의 source로부터 제공받은 요소들의 연속체입니�
 또한 Stream 은 병렬 처리도 가능합니다.
 
 
-## 프로그래밍 스타일 비교
+## Before & After Code Style
 
 아래는 Java 7 이전버전에서  Collection API를 이용해서 작성된 코드입니다.  
 코드의 목적은 transactions 중에서 GROCERY 만 필터링하고 value로 정렬 후 ID 리스트를 얻는 것입니다.  
@@ -101,7 +101,6 @@ filter, sort, map, collect 와 같이 명확한 표현만 남았다고 보시면
 다만, 좀 난감해보이는 점이있다면  
 기존 Java 에서 볼 수 없었던 문법이 많이 포함되어있습니다.  
 이것은 Lambda 와 default method 에 대한 설명이 필요합니다.  
-추후에 이에 대한 설명을 담은 문서를 작성하겠습니다.  
 
 ## Parallel
   
@@ -133,13 +132,24 @@ List<Integer> transactionsIds =
 병렬처리를 했음에도 불구하고 코드의 가독성이 여전히 좋습니다.  
 게다가 개발자의 실수로 thread safe 하지 못한 코드가 만들어질 경우가 거의 없어보입니다.  
 
-저는 다른 것보다 parallel 때문에라도 Stream 을 무조건 익혀야겠다는 생각을 했습니다.  
-여러분은 어떠신가요?  
-
 ### 주의사항
 
 병렬처리가 항상 좋은 것은 아닙니다.  
 개수가 많지 않다면 병렬처리가 오히려 더 성능이 좋지 않을 수 있습니다.  
+
+# 결론
+
+저는 다른 것보다 parallel 때문에라도 Stream 을 무조건 익혀야겠다는 생각을 했습니다.  
+여러분은 어떠신가요?  
+
+그리고 Java 8 을 공부하기 직전에  
+멀티 쓰레드를 이용해서 작성한 [Chopsticks](https://github.com/dveamer/Chopsticks) 이라는 프로그램이 있었습니다.  
+근데 Stream 으로 다시 짜보고 나서 기존 버전은 바로 폐기처분했답니다.  
+아.. [Chopsticks](https://github.com/dveamer/Chopsticks) 은 아직 완성버전이 아닙니다.
+
+Stream 을 이해하기 위해서는  
+Lambda, default methodm, lazy style 등에 대한 이해가 필요합니다.  
+그에 대해서는 추후에 다시 글을 작성하도록 하겠습니다.  
 
 # Reference
   * [docs.oracle.com/Stream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html)
