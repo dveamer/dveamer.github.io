@@ -6,6 +6,10 @@ categories: Java
 tags: Stream Java8
 ---
 
+![http://eclipsesource.com/](http://eclipsesource.com/blogs/wp-content/uploads/2014/03/java8_logo-281x300.png)
+
+( 출처 : [http://eclipsesource.com/](http://eclipsesource.com/blogs/2014/03/24/how-to-use-swt-with-java-8/) )
+
 Java 8 이 새로 나오고 인터넷의 다양한 매체로부터 Lambda 라는 용어를 수없이 많이 들었습니다.  
 
 그 때문이었을까요.. Java 8 의 변화는 Lambda 라는 잘못된 인식을 가졌고  
