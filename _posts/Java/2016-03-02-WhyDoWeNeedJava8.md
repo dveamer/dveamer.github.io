@@ -6,7 +6,7 @@ categories: Java
 tags: Stream Java8
 ---
 
-![http://eclipsesource.com/](http://eclipsesource.com/blogs/wp-content/uploads/2014/03/java8_logo-281x300.png)
+![http://eclipsesource.com/](http://eclipsesource.com/blogs/wp-content/uploads/2014/03/java8_logo-281x300.png)  
 
 ( 출처 : [http://eclipsesource.com/](http://eclipsesource.com/blogs/2014/03/24/how-to-use-swt-with-java-8/) )
 
