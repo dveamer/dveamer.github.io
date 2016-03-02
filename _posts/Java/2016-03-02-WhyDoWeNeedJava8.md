@@ -19,8 +19,6 @@ Stream 을 이용하면 멀티코어 프로세서상에서 병렬처리가 너�
 
 <!--more-->
 
-권유 이상의 좀 더 구체적인 설명은 다음에 작성하는 문서에서 설명하겠습니다.
-
 # Stream  
 
 > A sequence of elements from a source that supports aggregate operations.  
@@ -149,7 +147,7 @@ List<Integer> transactionsIds =
 
 Stream 을 이해하기 위해서는  
 Lambda, default methodm, lazy style 등에 대한 이해가 필요합니다.  
-그에 대해서는 추후에 다시 글을 작성하도록 하겠습니다.  
+그에 대해서는 추후에 다시 글을 작성하며 정리해보겠습니다.
 
 # Reference
   * [docs.oracle.com/Stream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html)
