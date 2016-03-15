@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /index.html
+Disallow: /tag.html
+Disallow: /diary.html
+Disallow: /category.html
+Disallow: /book.html
+
+Sitemap: http://dveamer.github.io/sitemap.xml
