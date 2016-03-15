@@ -90,8 +90,10 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 # Installation
 
 ## Environment
-  * RHEL 6.6
-  * 2 core 4 GB / 2 core 4 GB
+  * RHEL 5.5
+  * 1 core 2 GB / 2 core 4 GB
+
+  마스터 서버를 1core 로 설정했습니다.
 
 ## HAProxy
 
