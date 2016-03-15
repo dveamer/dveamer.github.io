@@ -69,16 +69,15 @@ Sitemap 을 등록하게 됩니다.
 
 # Daum 등록
 
-[DAUM 검색등록](https://register.search.daum.net/index.daum) 에 접속합니다.
+[DAUM 검색등록](https://register.search.daum.net/index.daum) 에 접속 후 로그인합니다.  
 
-로그인 후  
-"등록" 탭에서 "블로그 RSS등록" 을 선택하고 "블로그 URL" 과 "블로그RSS URL" 을 입력 후 확인버튼을 클릭합니다. 
+"등록" 탭에서 "블로그 RSS등록" 을 선택하고 "블로그 URL" 과 "블로그RSS URL" 을 입력 후 확인버튼을 클릭합니다.  
 
-![daum rss feed](https://lh3.googleusercontent.com/8KiXI9yrt3jCl-eJOthd2HeER2zn3mw-j-wDrXQ35LTHvGG1qKf88Oz2g6KwpmKISjGGMVkyeswwDcilucwyUfN7oWUJym8kCoKmT1KJQ9sMi4NWrpFov0nnqz7cf6PzzhBEx1sLcVT2-zmYEFoMjJ_5aGntnXJSMqJWpWWWEI2wduxYy6SY6UJy00RZQ0UoeuG1FGPrhJBC6KeOPJ8bCooPh2rI4hsJTcYrlzeFSrhYWcOqODggT2CpoSDvFb5CGCuSG-n-ct8aZfsKd29yiSXDPq59JcQ0B4WGZ8gUjMQIns5O7e4mr3r-7EXJKg9h7Na7ov-YCDvI1OsxJ9y4nEa54SNaMnE1vMH8iwH9WD2P-2fv0Xz4C9ACwO9AHkSVTT8oCHI8tyiv4_a6JUmLFra-jLp3w41OSRUvJ6Cxcjx396Tuiqxax9x6h1I_ggKeH6A5xs9eiZSU0sq7Rga3gf1uQLBybJyiVLR3l3QkPJNQt4ofp_WKVhEUQrrZwKngUUknDWmwI1XA0DVevsb8G_E6IrDs4dXMYXvjCnpy2RhkStD_AmC_8rcpMkHE3IPZnYTL=w1310-h683-no)
+![daum rss feed](https://lh3.googleusercontent.com/8KiXI9yrt3jCl-eJOthd2HeER2zn3mw-j-wDrXQ35LTHvGG1qKf88Oz2g6KwpmKISjGGMVkyeswwDcilucwyUfN7oWUJym8kCoKmT1KJQ9sMi4NWrpFov0nnqz7cf6PzzhBEx1sLcVT2-zmYEFoMjJ_5aGntnXJSMqJWpWWWEI2wduxYy6SY6UJy00RZQ0UoeuG1FGPrhJBC6KeOPJ8bCooPh2rI4hsJTcYrlzeFSrhYWcOqODggT2CpoSDvFb5CGCuSG-n-ct8aZfsKd29yiSXDPq59JcQ0B4WGZ8gUjMQIns5O7e4mr3r-7EXJKg9h7Na7ov-YCDvI1OsxJ9y4nEa54SNaMnE1vMH8iwH9WD2P-2fv0Xz4C9ACwO9AHkSVTT8oCHI8tyiv4_a6JUmLFra-jLp3w41OSRUvJ6Cxcjx396Tuiqxax9x6h1I_ggKeH6A5xs9eiZSU0sq7Rga3gf1uQLBybJyiVLR3l3QkPJNQt4ofp_WKVhEUQrrZwKngUUknDWmwI1XA0DVevsb8G_E6IrDs4dXMYXvjCnpy2RhkStD_AmC_8rcpMkHE3IPZnYTL=w1310-h683-no)  
 
 # Naver 등록
 
-[네이버 웹마스터 도구](http://webmastertool.naver.com/) 에 접속합니다.
+[네이버 웹마스터 도구](http://webmastertool.naver.com/) 에 접속합니다.  
 
 일단 로그인을 하고 사이트를 등록합니다. 그 과정에서 "사이트 소유 확인" 이라는 과정이 있습니다.  
 소유를 확인하면 Google Analystics 와 비슷한 서비스를 받을 것으로 예상됩니다.  
