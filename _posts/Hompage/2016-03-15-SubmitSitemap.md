@@ -37,9 +37,6 @@ robots.txt 파일에 sitemap 파일 위치를 등록해두면
 검색엔진의 크롤러들이 홈페이지를 크롤링하는데 도움을 주게 됩니다.  
 
 /robots.txt 파일을 만들고 아래와 같이 입력합니다. 반드시 root 위치에 파일을 만드세요.  
-특정 검색엔진만 허용하기 위해서는 User-agent에 검색엔진 명을 넣으면 됩니다.  
-저는 Github-Pages 를 이용하기 때문에 별 생각없이 모든 검색엔진으로 세팅했지만  
-개인적으로 작은서버를 돌리시는 분은 고민이 필요하실 수도 있습니다.  
 
 ~~~
 User-agent: *
@@ -47,6 +44,10 @@ Disallow: /index.html
 
 Sitemap: http://dveamer.github.io/sitemap.xml
 ~~~
+
+특정 검색엔진만 허용하기 위해서는 User-agent에 검색엔진 명을 넣으면 됩니다.  
+저는 Github-Pages 를 이용하기 때문에 별 생각없이 모든 검색엔진으로 세팅했지만  
+개인적으로 작은서버를 돌리시는 분은 고민이 필요하실 수도 있습니다.  
 
 # Google Search Console 등록
 
@@ -65,7 +66,6 @@ Sitemap 을 등록하게 됩니다.
 시간이 지나서 색인이 처리가 되면 구글링으로 검색되어집니다.  
 제 경우는 "접수중" 표시가 사라질 때까지 만 2일 걸린 것 같습니다.  
 
-![SearchConsole_Hit](https://lh3.googleusercontent.com/wrtKRI9LBH4RC9PkwybmCtmLNq5DKtZ1zbPEwwWcLs4k5fmjT0HHv11uNUHVbgc7ZczCF-fxxftD-vyJq3jhLVNVgTirfC8R5SyuB7BD8cR_oaA29vhAElCXi9F3S0R1lXAO7oL1OPLZC40tbP6NhlC4cRvaSkPENcKPQKHCXfNBLLb0J8s3vkynvUlRE0HbVYcM6vG74vGfLiG43wO2fDdqtsfxQ2OfZKfl_ezQ5FcVY8Yc-NV_yu2nQwWMz9CvUHaYr3TSooI7IgZZOHxjOekvUeJQM-qkMfea2Chjcj3BImKQx__9V_-RBy6nNE7unHoz5yrHsbka6_xlQ89SqeLPJX6HWodCWIEeuLxEkFY8YLyIvGrF6A5mOiGYH5sOEWddYC9myv-EKhYReaeuzXfc98XvQyc8pKSWMRsDRR3vTq-XNElSKL-PMtymum8SdeMLx47QpaHFslhdVqRCUVQA5cM_u5P2WM0Yg4WEBUmmDMAvPSkwZNosoPBx5Dlod_HTeU_tlQgTLtp3rkLJ9-TGcEPKG6gHVtjnHo5qBgybLwWNO_4h1FVxrEDZxKbQ2KsM=w385-h683-no)  
 
 # Daum 등록
 
