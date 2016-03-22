@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /
 Disallow: /index.html
 Disallow: /tag.html
 Disallow: /diary.html
