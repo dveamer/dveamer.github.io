@@ -49,6 +49,9 @@ Sitemap: http://dveamer.github.io/sitemap.xml
 저는 Github-Pages 를 이용하기 때문에 별 생각없이 모든 검색엔진으로 세팅했지만  
 개인적으로 작은서버를 돌리시는 분은 고민이 필요하실 수도 있습니다.  
 
+크롤링 되길 원치 않는 페이지가 있다면 robots.txt파일에 ```Disallow: /pagename.html``` 을 추가해주시면 됩니다.
+
+
 # Google Search Console 등록
 
 Sitemap 을 등록하게 됩니다.  
