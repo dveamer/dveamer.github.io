@@ -1,3 +1,10 @@
 User-agent: *
+Disallow: /
+
+User-agent: Googlebot
+User-agent: DAUMOA
+User-agent: NaverBot
+User-agent: ZumBot
+Allow: /
 
 Sitemap: http://dveamer.github.io/sitemap.xml
