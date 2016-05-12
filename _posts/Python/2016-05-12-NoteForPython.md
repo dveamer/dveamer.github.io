@@ -43,18 +43,18 @@ Python 학습을 했습니다. 실제로 사용하면서 무엇을 만들어본 
 import sys
 x = sys.maxsize # python 2.x 에서의 integer 최대 값
 print("Bit Length of {} : {}".format(x, x.bit_length()))
-# 결과 : Bit Length of 2147483647 : 31
+# 결과 : Bit Length of 9223372036854775807 : 63
 
 y = x<<99 # left bit shift 연산자
-print("Bit Length of {} : {}".format(y, x.bit_length()))
-# 결과 : Bit Length of 1361129467049928553739383728978721243136 : 31
+print("Bit Length of {} : {}".format(y, y.bit_length()))
+# 결과 : Bit Length of 5846006549323611672180914030751017377875378569216 : 162
 
 z = x<<100
-print("Bit Length of {} : {}".format(z, x.bit_length()))
-# 결과 : Bit Length of 2722258934099857107478767457957442486272 : 31
+print("Bit Length of {} : {}".format(z, z.bit_length()))
+# 결과 : Bit Length of 11692013098647223344361828061502034755750757138432 : 163
 
 print(z/y)
-# 결과 : 2
+# 결과 : 2.0
 ~~~
 
 ## Boolean
