@@ -4,6 +4,7 @@ title:  "홈페이지 검색 잘 되도록 만들기"
 date:   2016-03-15 12:00:00 
 categories: Homepage
 tags: 검색 Search sitemap rss feed google daum naver 
+lastmod : 2016-05-12 12:00:00
 ---
 
 ![SearchConsole_Hit](https://lh3.googleusercontent.com/wrtKRI9LBH4RC9PkwybmCtmLNq5DKtZ1zbPEwwWcLs4k5fmjT0HHv11uNUHVbgc7ZczCF-fxxftD-vyJq3jhLVNVgTirfC8R5SyuB7BD8cR_oaA29vhAElCXi9F3S0R1lXAO7oL1OPLZC40tbP6NhlC4cRvaSkPENcKPQKHCXfNBLLb0J8s3vkynvUlRE0HbVYcM6vG74vGfLiG43wO2fDdqtsfxQ2OfZKfl_ezQ5FcVY8Yc-NV_yu2nQwWMz9CvUHaYr3TSooI7IgZZOHxjOekvUeJQM-qkMfea2Chjcj3BImKQx__9V_-RBy6nNE7unHoz5yrHsbka6_xlQ89SqeLPJX6HWodCWIEeuLxEkFY8YLyIvGrF6A5mOiGYH5sOEWddYC9myv-EKhYReaeuzXfc98XvQyc8pKSWMRsDRR3vTq-XNElSKL-PMtymum8SdeMLx47QpaHFslhdVqRCUVQA5cM_u5P2WM0Yg4WEBUmmDMAvPSkwZNosoPBx5Dlod_HTeU_tlQgTLtp3rkLJ9-TGcEPKG6gHVtjnHo5qBgybLwWNO_4h1FVxrEDZxKbQ2KsM=w385-h683-no)  
@@ -40,17 +41,54 @@ robots.txt 파일에 sitemap 파일 위치를 등록해두면
 
 ~~~
 User-agent: *
-Disallow: /index.html
+Allow: /
 
 Sitemap: http://dveamer.github.io/sitemap.xml
 ~~~
 
+참고로 
 특정 검색엔진만 허용하기 위해서는 User-agent에 검색엔진 명을 넣으면 됩니다.  
 저는 Github-Pages 를 이용하기 때문에 별 생각없이 모든 검색엔진으로 세팅했지만  
 개인적으로 작은서버를 돌리시는 분은 고민이 필요하실 수도 있습니다.  
 
+예를들어 구글, 다음, 네이버만 허용하려면 아래와 같이 하시면 됩니다. 
+
+~~~
+User-agent: Googlebot
+User-agent: DAUMOA
+User-agent: NaverBot
+Allow: /
+
+Sitemap: http://dveamer.github.io/sitemap.xml
+~~~
+
+
 크롤링 되길 원치 않는 페이지가 있다면 robots.txt파일에 ```Disallow: /pagename.html``` 을 추가해주시면 됩니다.
 
+예를들어 http:dveamer.gihub.io/diary/ 아래의 모든 페이지의 크롤링을 원치 않는다면 아래와 같이 하면 됩니다.
+
+~~~
+User-agent: *
+Allow: /
+User-agent: *
+Disallow: /diary/
+
+Sitemap: http://dveamer.github.io/sitemap.xml
+~~~
+
+베드봇 차단하고 싶다면 아래와 같이 하면 됩니다.
+ 
+~~~
+User-agent: *
+Allow: /
+User-agent: BadBot
+Disallow: /
+
+Sitemap: http://dveamer.github.io/sitemap.xml
+~~~
+
+## List of User-Agents
+ * [List of User-Agents](http://www.user-agents.org/) 
 
 # Google Search Console 등록
 
