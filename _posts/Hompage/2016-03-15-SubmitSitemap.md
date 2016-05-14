@@ -4,7 +4,7 @@ title:  "홈페이지 검색 잘 되도록 만들기"
 date:   2016-03-15 12:00:00 
 categories: Homepage
 tags: 검색 Search sitemap rss feed google daum naver 
-lastmod : 2016-05-12 12:00:00
+lastmod : 2016-05-14 12:00:00
 ---
 
 ![SearchConsole_Hit](https://lh3.googleusercontent.com/wrtKRI9LBH4RC9PkwybmCtmLNq5DKtZ1zbPEwwWcLs4k5fmjT0HHv11uNUHVbgc7ZczCF-fxxftD-vyJq3jhLVNVgTirfC8R5SyuB7BD8cR_oaA29vhAElCXi9F3S0R1lXAO7oL1OPLZC40tbP6NhlC4cRvaSkPENcKPQKHCXfNBLLb0J8s3vkynvUlRE0HbVYcM6vG74vGfLiG43wO2fDdqtsfxQ2OfZKfl_ezQ5FcVY8Yc-NV_yu2nQwWMz9CvUHaYr3TSooI7IgZZOHxjOekvUeJQM-qkMfea2Chjcj3BImKQx__9V_-RBy6nNE7unHoz5yrHsbka6_xlQ89SqeLPJX6HWodCWIEeuLxEkFY8YLyIvGrF6A5mOiGYH5sOEWddYC9myv-EKhYReaeuzXfc98XvQyc8pKSWMRsDRR3vTq-XNElSKL-PMtymum8SdeMLx47QpaHFslhdVqRCUVQA5cM_u5P2WM0Yg4WEBUmmDMAvPSkwZNosoPBx5Dlod_HTeU_tlQgTLtp3rkLJ9-TGcEPKG6gHVtjnHo5qBgybLwWNO_4h1FVxrEDZxKbQ2KsM=w385-h683-no)  
@@ -51,21 +51,20 @@ Sitemap: http://dveamer.github.io/sitemap.xml
 저는 Github-Pages 를 이용하기 때문에 별 생각없이 모든 검색엔진으로 세팅했지만  
 개인적으로 작은서버를 돌리시는 분은 고민이 필요하실 수도 있습니다.  
 
-예를들어 구글, 다음, 네이버만 허용하려면 아래와 같이 하시면 됩니다. 
+예를들어 구글, 다음, 네이버, 줌만 허용하려면 아래와 같이 하시면 됩니다.  
 
 ~~~
 User-agent: Googlebot
 User-agent: DAUMOA
 User-agent: NaverBot
+User-agent: ZumBot
 Allow: /
 
 Sitemap: http://dveamer.github.io/sitemap.xml
 ~~~
 
-
-크롤링 되길 원치 않는 페이지가 있다면 robots.txt파일에 ```Disallow: /pagename.html``` 을 추가해주시면 됩니다.
-
-예를들어 http:dveamer.gihub.io/diary/ 아래의 모든 페이지의 크롤링을 원치 않는다면 아래와 같이 하면 됩니다.
+만약 크롤링 되길 원치 않는 페이지가 있다면 robots.txt파일에 ```Disallow: /pagename.html``` 을 추가해주시면 됩니다.  
+예를들어 http:dveamer.gihub.io/diary/ 아래의 모든 페이지의 크롤링을 원치 않는다면 아래와 같이 하면 됩니다.  
 
 ~~~
 User-agent: *
@@ -89,6 +88,7 @@ Sitemap: http://dveamer.github.io/sitemap.xml
 
 ## List of User-Agents
  * [List of User-Agents](http://www.user-agents.org/) 
+ * [User Agent 정리](http://www.mimul.com/pebble/default/2007/11/30/1196425260000.html)
 
 # Google Search Console 등록
 
@@ -132,6 +132,83 @@ Sitemap 을 등록하게 됩니다.
 도메인을 포함한 URL 을 입력하시고 확인 버튼을 클릭합니다.  
 
 ![naver rss feed](https://lh3.googleusercontent.com/8R12rpShMt_2SRiW7IzxERkiRi41n0K6X-GmWhQmDR-HA6NFTFauduh0Th2DNQjPt_zSqPrg7hmtHmkkRP_aWmvn3LU7OfkBpw5LYg5ggSK00KczfwdD2irjWXwOhvD2nUhdPu2PlelBIrpFaI6dIesupSCDOuvqZi8o6REgTz6H86TadYUg_KXDRxYI-dkF92mb8kGJCxjUQD2IwtIMBMKnGk_bCUmf8K_R1SRJTlbQsFHN-eFHAwetqVUG6mTHr0NNQYmRv-tGVdgZyVrI3HWQmPDiqTji_wTbl_9D052eVH1IJYvfaRqipawapWchyiyvw895r6T6bz5zQ75O0QKz1VK_QrfC6AumDBg4pWFVtkFceJBYgs0G-xRnlT5mkOeHxksm8ADE1Wtx-tZHzQO-jcs-Ui4ywjtrdWJsa5XHDgWWMvut-8e-vmoWiT4xMgPdqsWL-3aYuWBFg-G4AT-OFhNqPKHAzKIrYhRcaozuqK15nXcbI9mrqNN91sb1ULMwN09lTzCMLj965HAaZP9Is87GkIGLWO6pMb9N9d6wGd8B12VOvrgy52kr4d1HnEFM=w1303-h663-no)  
+
+
+# 검색 결과 
+
+첫 등록을 하고 2개월 정도 지난 시점에서 검색을 해봤습니다.  
+Daum 을 제외하고 Google, Naver 에서는 검색이 잘 되더군요.  
+[Google Analytics](https://www.google.com/analytics/) 로 모니터링을 하고 있는데  
+Daum 을 통한 접근이 다른 곳에 비해 현저히 적다는 것은 알고 있었지만  
+Daum 사용자 수가 적어서 그런가보다 하고 있었는데.. 그게 아니었습니다.  
+
+평소 방문자가 없는 글은 검색해도 저 조차 찾을 수 없을 것 같기에..
+평소 방문자가 꾸준히 있는 글을 검색해봤습니다.  
+
+근데 생각보다 상위에 검색이 되서 놀랬습니다.  
+
+대중적인 주제가 아니고, 제 글의 제목에 포함된 단어들로만 검색을 했으니 당연한 결과일 수도 있습니다.  
+
+## Google
+  * 검색어 : Log4j 2 설정  
+    검색시점 : 2016년 5월 14일  
+    검색 결과 : 8번째  
+![Log4j 2 설정](https://lh3.googleusercontent.com/WyartDp23J7WA1YzhDqK8NnSN1IR9SJPtjlqKrtr64ieAdz9MG5FVGinrzxJXkR0_h1jtffGFFl4I2HAqmlyVTOHDOtxwdqqxPV0QaoQiiLlugOeuDhEC1F4MHZEnOTFXDB1CzEMpBI5eSUt6KPZQ0CJlmjvqiSwUwWdu-Vzrh7f5vnmRCMCosyeTJTs_2voCyicO5v2YMBPlO0gdPcTWbEj3fNnNY2hgmqQlAPIgnICGy77ekQayOmyRVilyLf_wQL5neP2VS8xJLzw22m7m-vnaXTBgxtsRcHOUv2eDUsXtUmmMe96sZ_gtAdbpkDeVVOb4PresnDoMxDZMAjHxXWpIYTRYhhsbAcXqvndgp64QqsuV5Ro7J7UiB8Y65LdBcIgMIdPHSZM4ZcgHK7kYlc7e28Zrkq5wxQm1lHaLsBM1S1W931Bbw5Rw8PZYKOR3fwUG5Dev_DdKL7JcWP3nsz2QL8xIilAa-Hx-5WKZSDQEKlGfAiU7Xhny6IfUVjTv05WDJA5SIY7FTrnb97cbDFfzpAzbAanMA65X_Ss2tvQQ3IChnmYp8wxcI_tAD5Dw8BDsRfpGGZMaltAFxB49OIYT47slUw=w490-h662-no)
+
+
+  * 검색어 : haproxy keepalived  
+    검색시점 : 2016년 5월 14일  
+    검색 결과 : 2 페이지 끝에서 2번째  
+![HAProxy Keepalived](https://lh3.googleusercontent.com/zzy31aGGuVZmELRT1loHIeWNReQpDqDycbg2HESnGLbEzGQlPif4U62Uk6I2DlLAI32yNbFfuBeCUKa61Zg9GXupAIYXeMC0zeQKd0BuqvsePxgii59zrWzoKs5wUiKU0poixoa8X2IgCj07Pv8IzES3punZkc1JjFIXsbYhyYSYe7EqzwVtrIWAOLTN7y2qURC0NP0M6uB74dvP-YH-ZkM5Rib6hsuZgSlkBt3qU2HB2b3mDUowBCDlSag-mVO_R8Hu1XW95UlaVHBFtf5gCZ95yGiD2N1xqmU1yOytZ_FZSf4ATClzpls1nr5YEhOAsgDY2_c1BAJzxvd8i0DEI2DGGhlqV31z2jw_Z2iuV_NjpiySuIL7mbFNXM8Zqo66ezfDoULy0C-XPBWhJ_wvEFPT7DzxHNS93fzIa57Jx3LQGPUMJsZAfWqk6wDTVcZKevPRBwD7VISeQ4ngA5sjmxwHG7wYmM2UUsCQc6qVEPWt4WB60O3ZSkQpSX859xP-RgOXpb0Xvg3wfmn7qz8H0d2aol1RWFhurxzneAYtmlueLTKYMyt256yzeiVtGVpTU0INZWyQOfR0bqrDBpNl2UGuqHLwG1Y=w708-h662-no)
+
+## Daum
+  * 검색어 : Log4j 2 설정  
+    검색시점 : 2016년 5월 14일  
+    검색 결과 : 1번째  
+![Log4j 2 설정](https://lh3.googleusercontent.com/I9TCrPGAvnflr2Xr0_7zI9eJpXTy9Ul-EU8fe_8c1ONR2Dsa4FDq8r5r21OaJ6nf3_XiwZygp38LB1JdXm3T0h2mZ1gFXKfwTbDGn6ElJrgQ5Z3WAm31OFAsIhq3DrZKhY6QK-lmzx9OM25fd2ebG4rlm30HbienLox-QQBqYbHsrmk04EuNEuDtXx5ndYplx6SygiBvLx94bePfCiEKdRg_lSFBxdVGKOgiUgmtCbqoMca4QoDVDbRt43o4CcRekfJ53Y4TuwfySDvQKQvvFsiKTMomcBh3Bm8N-AHaT-o4GbojcnqOL1FoPXaXmOVipXCIuhV0DqGPQv6AriIrZa6ZtqfodaRDgyEpNI2dov7BpJKyyLUXTQfZgsQ_WgJRfXuyJiQx8ThuIw5PJgynfrZM0TGixZ8Gma37oeDPadYleBTmRGbAoXFSH1QsImoCaJ1Rl_ERiRv5MxxfIEAp4Q2uLWwGP8nH7bTF69T25fURjP6nWqjapYl7WLC9evNoUFdwI9ArN3ZeoNJR-7p-o9Wkw4j1bmsWs-t2Kn_gNijOjJQnGr4eMMZETLPcUkB8Xopl_5EOG19iTTHAUGt6LeM6y6so3RI=w783-h662-no)
+
+
+  * 검색어 : haproxy keepalived  
+    검색시점 : 2016년 5월 14일  
+    검색 결과 : 검색 안됨  
+
+검색어를 "haproxy keepalived dveamer" 로 해봐도 검색이 안됩니다.  
+dveamer 로 검색해보니 딱 2개의 글만 검색이 되더군요. 
+
+검색안되는 이유는 두가지 정도로 추측해보고 있습니다.  
+
+첫번째 추측은,  
+글을 작성한 시점이 Daum 에 RSS 를 등록한 시점보다 더 과거인데  
+Daum 에서 수집하는 로직 과정에서 과거 글을 수집하지 않는 것이 아닐까? 합니다.  
+최근변경일자(lastmod)를 최근으로 세팅해줘야 수집이 되려나.. 추측해보고 있습니다.  
+
+"설마.. 그럴까.." 라고 생각이 들 정도로 엉뚱한 추측이지만  
+일단 검색이 되는 글 2개는 모두 lastmod 가 세팅되어있습니다. 좀 설득력이 있죠? ㅋ  
+그러나 lastmod 가 세팅된 글이 2개밖에 없는 것은 아니기 때문에.. 다시 설득력이 떨어집니다.  
+
+두번째 추측은,  
+robot.txt 파일에 구글, 다음, 네이버, 줌의 봇에게만 접근을 허용하도록 설정했는데  
+Daum User-agent 값이 잘 못들어간 것이 아닌가 추측중입니다.  
+
+2개 글이 검색되고 있다는 점에서 좀 설득력이 떨어지긴 합니다.  
+
+일단 robot.txt 를 전체 허용으로 수정하고 지켜본 후  
+변화가 없으면 lastmod 를 [HAProxy & Keepalived](/architecture/HAProxyAndKeepalived.html) 글에도 추가해보려고 합니다.  
+
+
+## Naver
+  * 검색어 : Log4j 2 설정  
+    검색시점 : 2016년 5월 14일  
+    검색 결과 : 1번째  
+![Log4j 2 설정](https://lh3.googleusercontent.com/hZ8TqypgzELFD5ybmnE5JE97-18_aNvD4yY4kxBVvHNDm8KhlKxHt_v2sqwwrddirfB2fLi-uRidcT6yvpvcGMH4ZLRzGAnJ_n8Z7K_CI2w8hLsFtuikf-z2Tb1EGTqLhBw4GNperwSHSxUO6wgl2efIfW9cFL3TcT5QNn0svTMdUV-ovi3rNl3qJ1bLmx5sacYlo5Kbg6GY84e75nBRB8m06wWqo2Zd2IpraAe-EBPKvjOgq-Whw8lQ5m2fjr6sPVWHGoPr6SAV7h5YBXEKrxA-zi7olRaZ7Tp25DAM9C-gM-XfeOTHiG5gCQWEKxnycH0X9LpZ53S7tOlmCRic5M_PasW19YsZIbN_3ykCBxiWZhNOo56K4xXOG9D-erPZ82Opl1BE_riZaJ9qrqcZgU1nnlCpfqAYkww_e8znPLWpxeA6pgWC34CPArY-8-a9C7qIY4-WFc0UZtm8V6_tUBZ1aec3b3k_fNEexPDEerWI-CVFW363QbRK505sSG7KQo62EB-Ts0ySo28VNaXlZCMUHITw0JGeGlNj-UeR4F3ZL4Sd4utJ55kaDsJ2wpNTz5UzVGhZXk6ziTbkVejcVuBKRMpJk1M=w680-h662-no)
+
+
+
+  * 검색어 : haproxy keepalived  
+    검색시점 : 2016년 5월 14일  
+    검색 결과 : 3번째  
+![HAProxy Keepalived](https://lh3.googleusercontent.com/iW2aHQmLRakrmBbXbg8Cq40xrnMPoBFSaAJ72jNyNbpzhkhjjCvQdnG_FvSe1cMV1wIC7Xa4s_i4i6T_VP-ZJr2hhhGiwUWKpG4pJeTFQFckENJ_ddt3u6WCNzTECGz4K7nEQrC4TUAnHsLH-eYwSRscCKjE-yPxkc8_zsx6Iohcw0OZjW_D6TfjjWLqQzUzUpvDhioVryBPGMhRwwq1GyLuYCYlgo33Uh1sLAY3RGXmgJNw_t75Y-ClusJmKaurzdv049XNU0a3UnkT382tcBFqY-hcLijrXHXbOGsAJdqAazuwxwFGgsje4_qD_c0BktMiW1OXIKFlRsrms6vsuEzC1gSfbTJzoYC0Y6f-w6GSVNK3TPe21geCktxzEqmLvHEWgkNGnNZ3FMsr8Z5I8xwNqjEuKdod6KEaVRZ6eiF0TBvKWuBiGI8yGY1VTAzjSrTYr0vSZNyT98lpKHBFbmoTao3bQzlxRVeocG-DYgMBGCvYLI27DKozxmW5Me5RghvI_lh8Qn0MPLilAw_E7ygrLCJ_8TKgP-CVJ7_qGdT9XgUczvrKLwhBR4H0vKcsPsg18ZUOY9Myd2UA2gpaM1R3rKyVtEw=w680-h662-no)
+
 
 
 
