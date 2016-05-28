@@ -44,7 +44,10 @@ layout: default
   <br/><br/>
 
 
-  <article class="post-content">
+  <article class="post-content" style="
+      {% if page.background %} background-image: url('{{ page.background }}'); {% endif %} 
+      {% if page.style %} {{ page.style }} {% endif %}
+  ">
     {{ content }}
   </article>
 </div>
