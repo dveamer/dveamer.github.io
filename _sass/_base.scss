@@ -114,7 +114,29 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 
+.post-content > h3, 
+.post-content > h4, 
+.post-content > h5, 
+.post-content > h6 {
+    display: inline-block;
+}
 
+.post-content > h2, 
+.post-content > h3 {
+    border-bottom: thick solid yellowgreen;
+}
+
+.post-content > h4 {
+    border-bottom: thick dotted yellowgreen;
+}
+
+.post-content > h5 {
+    border-bottom: thin solid yellowgreen;
+}
+
+.post-content > h6 {
+    border-bottom: thin dotted yellowgreen;
+}
 
 /**
  * Links
