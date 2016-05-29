@@ -3,6 +3,7 @@ layout: post
 title:  "Python 학습내용 기록"
 date:   2016-05-12 12:00:00
 categories: Python
+lastmod: 2016-05-29 12:00:00
 ---
 
 ![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/260px-Python_logo_and_wordmark.svg.png)  
@@ -265,6 +266,7 @@ def say_hello_local(name, msg):
   print(name, msg)
 
 say_hello_local(name, msg)
+print(name)
 
 # 결과
 # Dveamer 씨 안녕하세요.
@@ -604,7 +606,7 @@ for chair in chairs:
 ~~~
 
   * Metaclass 는 Java 의 interface 과 가장 유사한 개념이다.
-  * @abstract 선언해주면 구현체에서 구현을 안할시 에러 메시지를 준다.
+  * @abstractmethod 선언해주면 구현체에서 구현을 안할시 에러 메시지를 준다.
 
 # Multi Inheritance
   * 다중 상속도 가능하다.
