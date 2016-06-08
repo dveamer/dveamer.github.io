@@ -6,6 +6,9 @@ categories: Database
 tags: MariaDB
 ---
 
+![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)  
+( 이미지 출처 : [https://downloads.mariadb.org](https://downloads.mariadb.org) )
+
 기록은 중요하다.  
 특히, 간혹가다가 발생하는 작업은 기록이 필수다.  
 
