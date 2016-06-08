@@ -11,7 +11,7 @@ tags: Python Algorithm Hackerank
 
 지인의 권유로 [Xor-sequence](https://www.hackerrank.com/challenges/xor-se) 라는 문제를 풀어봤다.  
 
-테스트 데이터를 N 개 넣었을 때 O(N)의 성능을 보이도록 프로그래밍했으므로  
+1개의 테스트 케이스에 대해서 O(1)의 성능을 보이도록 프록르매이했으므로  
 아마도 "최선의 답일 것이다" 라고 생각하며 뿌듯해하고 있었다.  
 
 문제를 다 풀고 나니까 다른 사람의 풀이도 볼 수 있게되서 둘러보고 있었다.  
