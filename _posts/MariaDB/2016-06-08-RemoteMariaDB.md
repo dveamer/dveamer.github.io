@@ -9,13 +9,20 @@ tags: MariaDB
 ![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)  
 ( 이미지 출처 : [https://downloads.mariadb.org](https://downloads.mariadb.org) )
 
+MariaDB 를 초기 세팅할 때 필요한 계정생성, 권한설정 방법에 대해서 알아보고  
+외부접속을 위한 설정에 대해서 알아보자.  
+
+<!--more-->
+
+<br>
+
+매번 세팅을 하면서 느끼는 것이지만..  
+
 기록은 중요하다.  
-특히, 간혹가다가 발생하는 작업은 기록이 필수다.  
+특히, 세팅작업처럼 간혹가다가 발생하는 작업은 기록이 필수다.  
 
 DB 초기 세팅 및 외부접속 허용은 몇번이나 해봤던 작업인데  
 오늘 또 한가지 작업을 까먹고 30분 가량을 헤맸다.  
-
-<!--more-->
 
 # 방화벽 설정
 
