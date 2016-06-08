@@ -3,8 +3,11 @@ layout: post
 title:  "[Hackerank Challenges] Xor-sequence"
 date:   2016-06-07 12:00:00
 categories: Programming
-tags: Python Algorism Hackerank
+tags: Python Algorithm Hackerank
 ---
+
+![Hackerrank Logo](https://d3keuzeb2crhkn.cloudfront.net/hackerrank/assets/brand/wordmark_for_work_sm-9a35b2885d5592f8878bcefc673f1221.png)  
+( 이미지 출처 : [https://www.hackerrank.com/](https://www.hackerrank.com/) )  
 
 지인의 권유로 [Xor-sequence](https://www.hackerrank.com/challenges/xor-se) 라는 문제를 풀어봤다.  
 
