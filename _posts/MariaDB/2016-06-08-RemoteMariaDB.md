@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MariaDB 초기세팅 & 외부접속 설정"
+title:  "MariaDB 외부접속 설정 & 계정 생성"
 date:   2016-06-08 12:00:00
 categories: Database
 tags: MariaDB
@@ -9,8 +9,8 @@ tags: MariaDB
 ![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)  
 ( 이미지 출처 : [https://downloads.mariadb.org](https://downloads.mariadb.org) )
 
-MariaDB 를 초기 세팅할 때 필요한 계정생성, 권한설정 방법에 대해서 알아보고  
-외부접속을 위한 설정에 대해서 알아보자.  
+MariaDB 외부접속을 하기 위해  
+어떠한 설정작업들이 있는지 확인해보고 작업방법에 대해서 간략하게 알아보자.  
 
 <!--more-->
 
