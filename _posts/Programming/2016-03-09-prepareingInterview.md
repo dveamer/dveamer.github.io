@@ -36,6 +36,11 @@ tags: Career
 
   * Generic : JDK 1.5부터 제공
   * Annotation : JDK 1.5부터 제공
+    - public <A extends Annotation> A getAnnotation(Class<A> annotationClass)
+    - public Annotation[][] getParameterAnnotations()
+    - @Retention(RetentionPolicy.RUNTIME)
+    - @Target
+    - 주로 Reflection 에 의해 활용됨
   * Stream, Functional Programming
   * Process 와 Thread 차이
 
@@ -211,15 +216,29 @@ Collections.sort(contacts, new Comparator<Contact>() {
 #### References
  * [JAVA NIO의 ByteBuffer와 Channel로 File Handling에서 더 좋은 Perfermance 내기!](http://eincs.com/2009/08/java-nio-bytebuffer-channel-file/)
 
-## Framework
+## Spring Framework
+
   * 제어의 역행(IoC : Inversion of Control)
   * DI (Dependence Injection)
-  * Spring 장단점
   * POJO ( Plain Old Java Object )
-  * Spring 에서 @Autowired, @Resource 차이
-    * @Resource 는 프로퍼티 이름을 가지고 빈을 소환
-    * @Autowired 프로퍼티 타입을 가지고 빈을 소환 
-    * 그러나 @Qualifier 함께 사용하면 이름으로 소환할 수 있다.
+
+### Strength
+  * Context로부터 DI받은 target객체를 client가 호출하면 실제적으로는 context가 target 객체를 제어함
+  * 위와 같은 IoC 덕분에, Spring의 다양한 기능을 client 소스를 수정하지 않고 누릴 수 있음
+  * 예를들어 AOP를 설정하면 context가 target 객체를 호출하기 전/후에 AOP를 수행해주도록 처리됨
+  * AOP : Transaction, Controller Request/Response Mapping, Async(Easy Multi Threading), Scheduling 등 
+  * Annotation으로도 대부분의 설정이 가능
+
+  * DI로 제공한 target 객체의 생명주기는 기본적으로 singleton
+  * 매번 인스턴스를 새로 생성하려면 component에다가 @Scope("prototype")으로 설정필요
+
+### @Autowired, @Resource 차이
+  * @Resource 는 기본적으로 프로퍼티 이름을 가지고 빈을 소환
+    - @Resource(name="multiLanguageSource") 처럼 @Bean(name="multiLanguageSource") 라고 name이 설정된 bean 을 불러올 수 있음
+    - 프로퍼티 혹은 setter method만 사용가능 : 파라미터가 하나인 setter
+  * @Autowired 기본적으로 프로퍼티 타입을 가지고 빈을 소환 
+    - 프로퍼티, 생성자, 모든 method에서 사용가능
+    - 프로퍼티의 타입만으로 제어가 힘들 때는 @Qualifier("value")를 bean과 client에 함께 적용하면 됨
 
 ## J2EE
   * Servlet 의 생명주기 
