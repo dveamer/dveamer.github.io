@@ -18,7 +18,7 @@ mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장�
 결국 공식 사이트에서 내 ubuntu version에 맞는 설치가이드 문서를 제공받아서 설치 성공했습니다.
 
 기존에 mariadb 5.5 를 사용 중이었는데   
-그 당시의 계정, database, table 모두 유지되서 설치되네요.
+그 당시의 계정, database, table 모두 유지되서 설치되네요.  
 
 <!--more-->
 
@@ -27,15 +27,16 @@ mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장�
 ## Check the version of Ubuntu
 
 ~~~
-  lsb_release -a
+$ lsb_release -a
 
-  result >
-    No LSB modules are available.
-    Distributor ID:	Ubuntu
-    Description:	Ubuntu 14.04.3 LTS
-    Release:	14.04
-    Codename:	trusty
+result >
+  No LSB modules are available.
+  Distributor ID:	Ubuntu
+  Description:	Ubuntu 14.04.3 LTS
+  Release:	14.04
+  Codename:	trusty
 ~~~
 
 ## References
   * [mariadb 공식 가이드문서](https://downloads.mariadb.org/mariadb/repositories/#mirror=kaist&distro=Ubuntu)에서 ubuntu version에 맞는 가이드 검색 후 참고
+
