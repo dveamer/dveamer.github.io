@@ -51,6 +51,26 @@ public class Biz {
 동시에 1000개의 호출이 이뤄진다면 동시에 1000개의 thread가 생성되는 방식입니다.  
 Thread를 관리하기 위해서는 JDK 1.5부터 제공하는 java.util.concurrent.ExecutorService를 사용하면 됩니다.  
 
+~~~java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Biz {
+
+    ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+    public void save(String message) throws Exception {
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                // save message
+            }            
+        });
+    }
+
+}
+~~~
+
 하지만 ExecutorService를 사용하더라도 save method를 수정해야합니다.  
 그리고 비동기방식으로 처리하고 싶은 method마다 동일한 작업들을 진행해야할 것입니다.  
 
