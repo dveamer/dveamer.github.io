@@ -15,7 +15,7 @@ tags: Asynchronous Multi-Thread
 
 SpringBoot 를 사용했으며 java based configuration 방식을 이용했습니다.  
 
-# 비동기방식 처리  
+# Java 비동기방식 처리  
 
 메시지를 저장하는 내용의 method가 있습니다.
 
