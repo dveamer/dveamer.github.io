@@ -73,25 +73,29 @@ jekyll serve
  Github-Page를 이용하면 html 호스팅을 무료로 쉽게 사용가능하며  
  Github가 Jekyll를 지원하기 때문에 Github 에 접속해서 블로그 글을 추가, 수정 할 수도 있습니다.
  
- * 테마 선택
-  - [Jekyll Themes](http://jekyllthemes.org/) 에서 다양한 샘플 확인 후 맘에 드는 테마 선택
-  - 해당 테마의 소스가 Github로 공유되어있는지 확인
+## Github-Page 생성
 
- * 해당 테마의 repository를 Fork 하기
-  - 해당 테마의 repository에 접근해서 Fork 버튼 클릭
-  - Fork 하게 되면 해당 테마의 reopository가 본인의 repositories로 복사됨
+  * 테마 선택
+    - [Jekyll Themes](http://jekyllthemes.org/) 에서 다양한 샘플 확인 후 맘에 드는 테마 선택
+    - 해당 테마의 소스가 Github로 공유되어있는지 확인
 
- * Repository 이름 변경
-  - repository의 setting 클릭
-  - username.github.io 로 repository 이름 변경<br/>
-    ![Change Repository Name](http://ilmol.com/assets/img/blog/2015reponame.png)
-  - 반드시 본인의 Github username과 동일하게 변경해줘야 Github-Page 기능을 사용가능
+  * 해당 테마의 repository를 Fork 하기
+    - 해당 테마의 repository에 접근해서 Fork 버튼 클릭
+    - Fork 하게 되면 해당 테마의 reopository가 본인의 repositories로 복사됨
 
- * 확인
-  - 웹브라우저에서 https://username.github.io 접속
+  * Repository 이름 변경
+    - repository의 setting 클릭  
+    - username.github.io 로 repository 이름 변경  
+      ![Change Repository Name](http://ilmol.com/assets/img/blog/2015reponame.png)  
+      ( 이미지 출처 : [Jekyll,Git 을 몰라도 무료 Github Pages 즐기기](https://ilmol.com/2015/01/Jekyll,Git-%EC%9D%84-%EB%AA%B0%EB%9D%BC%EB%8F%84-%EB%AC%B4%EB%A3%8C-Github-Pages-%EC%A6%90%EA%B8%B0%EA%B8%B0.html) )  
+      
+    - 반드시 본인의 Github username과 동일하게 변경해줘야 Github-Page 기능을 사용가능
 
- * 로컬에서 관리하기
-  - Github 에서 로컬로 clone
+  * 웹브라우저에서 https://username.github.io 접속해서 생성여부 확인
+
+## 로컬에서 관리하기
+
+  * Github 에서 로컬로 clone
 
 ~~~
   mkdir username.github.io.git
@@ -99,21 +103,36 @@ jekyll serve
   git clone https://github.com/username/username.github.io.git .
 ~~~
 
-  - 글 수정, 추가 후 로컬 저장소에 반영하기
-  - 저는 RabbitVCS Git 이라는 툴을 사용합니다.
+  * 글 수정, 추가 후 로컬 저장소에 반영하기
+    - 저는 RabbitVCS Git 이라는 툴을 사용합니다.
 
 ~~~
   git add.
-  git commit -m "commit message"
+  git commit -m "commit message" ./*
 ~~~
 
-  - 수정사항에 대해서 Github로 올리기 
+## Github Pages 로 올리기 
+
+  * origin 정보 저장 (최초 1회)
+
+~~~
+  # 추가
+  git remote add origin https://username@github.com/username/username.github.io.git
+
+  # 등록여부 확인
+  git remote -v
+
+  # 필요시 삭제 (후 재등록)
+  git remote remove origin
+~~~
+
+  * 수정사항에 대해서 Github로 올리기 
 
 ~~~
   git push -u origin master
 ~~~
 
-## References
+#### References
  * Jekyll Template Site http://jekyllthemes.org/
  * [How to use GitHub Page](http://ilmol.com/2015/01/Jekyll,Git%20%EC%9D%84%20%EB%AA%B0%EB%9D%BC%EB%8F%84%20%EB%AC%B4%EB%A3%8C%20Github%20Pages%20%EC%A6%90%EA%B8%B0%EA%B8%B0.html)
  * Choosed theme (MIT License) http://jekyllthemes.org/themes/pithy/
