@@ -42,7 +42,7 @@ sudo gem install jekyll --no-rdoc --no-ri
 jekyll -v
 ~~~
 
-## References
+#### References
  * http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/
 
 # Create a blog on local computer
@@ -63,7 +63,7 @@ jekyll serve
   - Open the site(http://localhost:4000) on your browser
   ![JekyllInitialPage](/images/post_img/Jekyll2/JekyllInitialPage.png 'JekyllInitialPage')
 
-## References
+#### References
  * http://michaelchelen.net/81fa/install-jekyll-2-ubuntu-14-04/
 
 # Create a blog with theme on Github-Page
