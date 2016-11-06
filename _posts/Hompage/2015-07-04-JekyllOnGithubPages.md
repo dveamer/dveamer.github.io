@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Github-Pages 에 Jekyll 설치하기"
-date:   2015-11-06 12:00:00
+date:   2015-07-04 12:00:00
+lastmod : 2016-11-06 12:00:00
 categories: Homepage
 tags: Jekyll Github-Pages
 ---
