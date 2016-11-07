@@ -62,5 +62,11 @@ $ sudo apt-get install lib32stdc++6 lib32z1
     ```Enable Instant Run to hot swap code/resource change on deploy (default enable)``` 라고 적힌  
     첫번째 콤보박스를 해제하면 해결됩니다.  
 
+# RabbitVCS
 
+~~~
+$ sudo apt-get update
+$ sudo apt-get install rabbitvcs-nautilus3
+$ chown -R $USER:$USER ~/.config/rabbitvcs
+~~~
 
