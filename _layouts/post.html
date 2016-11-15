@@ -38,19 +38,105 @@ layout: default
 
   </header>
 
-  <div id="toc" hidden>
-    <H3 class="index">== I N D E X ==</H3>
+  <div id="index_popup" hidden>
+    </br>
+    <div id="toc">
+      <div class="subtitle-header">
+        <h3 class="subtitle">
+          I N D E X
+        </h3>
+      </div>
+      <br/>
+      <ul class="post-list"></ul>
+      <br/>
+    </div>
+
+    <div id="associated_posts">
+      <div class="subtitle-header">
+        <h3 class="subtitle">
+          Associated Posts
+        </h3>
+      </div>
+      <br/>
+      <ul class="post-list">
+        {% for post in site.posts %}  
+          {% assign exist = false %}
+
+          {% if post.title == page.title %}
+            {% assign exist = true %}
+          {% endif %}
+
+          {% for post_tag in post.tags %}
+            {% for page_tag in page.tags %}
+              {% if exist == true %}
+                {% break %}
+              {% endif %}
+              {% if page_tag == post_tag %}
+                <li>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </li>
+                {% assign exist = true %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+      <br/>
+    </div>
   </div>
-  <br/><br/>
 
 
-  <article class="post-content" style="
-      {% if page.background %} background-image: url('{{ page.background }}'); {% endif %} 
-      {% if page.style %} {{ page.style }} {% endif %}
-  ">
+  <article id="post_content" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
     {{ content }}
   </article>
 </div>
+
+<br/><br/>
+
+<div class="subtitle-header">
+  <h3 class="subtitle">
+    Associated Posts
+  </h3>
+  <small>관련된 주제를 살펴볼 수 있도록 동일한 Tag를 가진 글들을 모아뒀습니다. 제목을 눌러주세요.</small><br>
+</div>
+
+<div class="associated_posts">
+  <ul class="post-list">
+    {% for post in site.posts %}  
+      {% assign exist = false %}
+
+      {% if post.title == page.title %}
+        {% assign exist = true %}
+      {% endif %}
+
+      {% for post_tag in post.tags %}
+        {% for page_tag in page.tags %}
+          {% if exist == true %}
+            {% break %}
+          {% endif %}
+          {% if page_tag == post_tag %}
+            <li>
+              <br/>
+              <h3>
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </h3>
+
+              <hr id="line">
+	            <div class="content">
+	            {{ post.excerpt }}
+              </div>
+              <div>
+              ... <a href="{{ post.url | prepend: site.baseurl }}">더 읽기</a>
+              </div>
+            </li>
+            {% assign exist = true %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>
+
 
 <br/>
 <div class="subtitle-header">
@@ -94,11 +180,14 @@ layout: default
 <script type="text/javascript">
  $(document).ready(function(){
     var tag = null;
-    $("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").not(".index").each(function(i,item){
+
+    //$("h1,h2,h3,h4,h5,h6").not(".subtitle").not(".post-title").not(".index")
+    $("article.post-content").find("h1,h2,h3,h4,h5,h6")
+    .each(function(i,item){
       if( $(item).html() != "Reference" && $(item).html() != "References" ){
         tag = $(item).get(0).localName;
         $(item).attr("id",$(this).text());
-        $("#toc").append('<a class="new'+tag+'" href="#'+$(this).text()+'">'+$(this).text()+'</a></br>');
+        $("#toc ul").append('<li><a class="new'+tag+'" href="#'+$(this).text()+'">'+$(this).text()+'</a></li>');
       }
     });
 
@@ -110,7 +199,13 @@ layout: default
       $(".newh5").css("margin-left",80);
       $(".newh6").css("margin-left",100);
 
-      $("#toc").attr('hidden', false);
+      //$("#toc").attr('hidden', false);
     }
  });
 </script>
+
+
+<div id="goindex">></div>
+
+
+

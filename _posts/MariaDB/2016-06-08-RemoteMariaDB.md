@@ -34,7 +34,7 @@ MariaDB port (default port : 3306) 에 대한 inbound 설정을 한다.
 
 ```bind_address``` 라인을 주석처리하거나 0.0.0.0 으로 세팅한다.  
 
-~~~
+~~~console
 $ sudo vi /etc/mysql/my.cnf 
 
 ...
@@ -46,7 +46,7 @@ $ sudo vi /etc/mysql/my.cnf
 
 ## MariaDB 재기동
 
-~~~
+~~~console
 $ sudo service mysql restart
 ~~~
 
@@ -57,13 +57,13 @@ $ sudo service mysql restart
 
 ## root 계정으로 MariaDB 접속  
 
-~~~
+~~~console
 $ mysql -u root -p
 ~~~
 
 ## 계정 생성 
 
-~~~mariadb
+~~~sql
 /* 내부 접속용 */
 create user 'RemoteUser'@'localhost' identified by 'localPassword';
 
@@ -80,7 +80,7 @@ create user 'RemoteUser'@'192.168.2.%' identified by 'remotePassword';
 
 ## 계정 생성 & 권한설정
 
-~~~mariadb
+~~~sql
 /* 내부 접속용 */
 grant all privileges on DB_NAME.* to RemoteUser@'localhost';
 

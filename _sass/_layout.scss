@@ -192,6 +192,17 @@ li {
 
 #gotop {
     position: fixed;
+    right: 65px;
+    bottom: 20px;    
+    padding: 10px 15px;    
+    font-size: 20px;
+    background: #515865;
+    color: white;
+    cursor: pointer;
+}
+
+#goindex {
+    position: fixed;
     right: 20px;
     bottom: 20px;    
     padding: 10px 15px;    
@@ -201,7 +212,11 @@ li {
     cursor: pointer;
 }
 
-
+#index_popup {
+    background: #FFFFFF;
+    padding-left : 30px;
+    padding-right : 30px;
+}
 
 /**
  * ETC

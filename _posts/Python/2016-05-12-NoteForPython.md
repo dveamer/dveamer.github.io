@@ -697,7 +697,7 @@ try:
         raise TypeError("Unsupported type. Only Integer.")
     print(a/b)
 except TypeError as ex:
-	trace_msg = traceback.print_exc() # trace msg 를 string 으로 받는다.
+    trace_msg = traceback.print_exc() # trace msg 를 string 으로 받는다.
     print(trace_msg)
 except ZeroDivisionError as ex:
     print(ex) ## 해당 exception 의 __str__ 를 출력한다.

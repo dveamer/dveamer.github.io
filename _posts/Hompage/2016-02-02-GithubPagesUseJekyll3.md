@@ -4,7 +4,7 @@ title:  "Github Pages의 Jekyll 3.0 업그레이드"
 date:   2016-02-02 23:00:00
 lastmod: 2016-04-23 00:00:00
 categories: Homepage
-tags: Jekyll Github-Pages Kramdown Rouge Upgrade Update Suport
+tags: Jekyll Github-Pages Kramdown Rouge Upgrade Update Support
 ---
 
 ![Github Pages 의 Jekyll3.0 업그레이드](/images/post_img/Homepage/GithubPagesUseJekyll3.0.png)
