@@ -27,20 +27,20 @@ Github에다가 Markdown 형식의 문서를 올리면 Github가 Jekyll를 이�
 # Install Jekyll 2 on Ubuntu 14.04 LTS
  * Ruby, NodeJs 설치
 
-~~~
-sudo apt-get install ruby ruby-dev make gcc nodejs
+~~~console
+$ sudo apt-get install ruby ruby-dev make gcc nodejs
 ~~~
 
  * Jekyll2 설치
 
-~~~
-sudo gem install jekyll --no-rdoc --no-ri
+~~~console
+$ sudo gem install jekyll --no-rdoc --no-ri
 ~~~
 
  * 확인
 
-~~~
-jekyll -v
+~~~console
+$ jekyll -v
 ~~~
 
 #### References
@@ -49,15 +49,15 @@ jekyll -v
 # Create a blog on local computer
  * 기본 블로그 생성
 
-~~~
-jekyll new my-awesome-site
+~~~console
+$ jekyll new my-awesome-site
 ~~~
 
  * Jekyll server 실행
 
-~~~
-cd my-awesome-site
-jekyll serve
+~~~console
+$ cd my-awesome-site
+$ jekyll serve
 ~~~
 
  * 서버기동 확인 (local computer)
@@ -98,39 +98,39 @@ jekyll serve
 
   * Github 에서 로컬로 clone
 
-~~~
-  mkdir username.github.io.git
-  cd username.github.io.git
-  git clone https://github.com/username/username.github.io.git .
+~~~console
+$ mkdir username.github.io.git
+$ cd username.github.io.git
+$ git clone https://github.com/username/username.github.io.git .
 ~~~
 
   * 글 수정, 추가 후 로컬 저장소에 반영하기
     - 저는 RabbitVCS Git 이라는 툴을 사용합니다.
 
-~~~
-  git add.
-  git commit -m "commit message" ./*
+~~~ console
+$ git add.
+$ git commit -m "commit message" ./*
 ~~~
 
 ## Github Pages 로 올리기 
 
   * origin 정보 저장 (최초 1회)
 
-~~~
-  # 추가
-  git remote add origin https://username@github.com/username/username.github.io.git
+~~~console
+ # 추가
+$ git remote add origin https://username@github.com/username/username.github.io.git
 
-  # 등록여부 확인
-  git remote -v
+ # 등록여부 확인
+$ git remote -v
 
-  # 필요시 삭제 (후 재등록)
-  git remote remove origin
+ # 필요시 삭제 (후 재등록)
+$ git remote remove origin
 ~~~
 
   * 수정사항에 대해서 Github로 올리기 
 
-~~~
-  git push -u origin master
+~~~console
+$ git push -u origin master
 ~~~
 
 #### References

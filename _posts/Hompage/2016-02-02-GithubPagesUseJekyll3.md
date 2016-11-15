@@ -79,8 +79,8 @@ rouge에 에 대한 옵션들을 설정해서 기존 문법을 그대로 재활�
 
 [Jekyll 홈페이지의 업그레이드 가이드](http://jekyllrb.com/docs/upgrading/2-to-3/)대로 Jekyll 버전을 업데이트를 해봤습니다.
 
-~~~
-sudo gem update jekyll
+~~~console
+$ sudo gem update jekyll
 ~~~
 
 실패합니다. 실패메시지도 제대로 출력되지 않습니다.  
@@ -91,8 +91,8 @@ Jekyll 3.0을 설치하기 위해서는 Ruby2.0, Ruby 2.0-dev, gem2.0 이상의 
 근데 재미있는 점이 있습니다. Ruby2.0을 설치하고나면 Jekyll 2.5.3 버전이 삭제가 되지 않습니다.   
 즉, 업데이트 실패하게 됩니다. Ruby2.0 으로 올리기 전에 먼저 제거 작업을 진행합니다.
 
-~~~ 
-sudo gem uninstall jekyll
+~~~console 
+$ sudo gem uninstall jekyll
 ~~~
 
 그래도 일단 [Jekyll 홈페이지의 업그레이드 가이드](http://jekyllrb.com/docs/upgrading/2-to-3/)처럼 진행해보시기 바랍니다. 혹시 성공할지도 모르니까요 ^^
@@ -101,8 +101,8 @@ sudo gem uninstall jekyll
 
 현재 버전을 확인합니다.
 
-~~~ 
-ruby -version
+~~~console 
+$ ruby -version
 
 result>
 ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
@@ -110,16 +110,16 @@ ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
 
 Ruby 2.0 설치를 진행합니다.
 
-~~~
-sudo apt-get install ruby2.0
-sudo apt-get install ruby2.0-dev
-sudo ln -sf /usr/bin/ruby2.0 /usr/bin/ruby
+~~~console
+$ sudo apt-get install ruby2.0
+$ sudo apt-get install ruby2.0-dev
+$ sudo ln -sf /usr/bin/ruby2.0 /usr/bin/ruby
 ~~~
 
 버전을 확인합니다.
 
-~~~
-ruby -version
+~~~console
+$ ruby -version
 
 result>
 ruby 2.0.0p384 (2014-01-12) [x86_64-linux-gnu]
@@ -131,8 +131,8 @@ Ruby 설치 후 재시도를 해봤지만 동일한 에러메시지가 발생합
 
 현재 Gem 버전을 확인합니다.
 
-~~~
-gem --version
+~~~console
+$ gem --version
 
 result>
 1.8.23
@@ -140,15 +140,15 @@ result>
 
 Gem을 업그레이드 합니다.
 
-~~~
-sudo apt-get upgrade gem
-sudo ln -sf /usr/bin/gem2.0 /usr/bin/gem
+~~~console
+$ sudo apt-get upgrade gem
+$ sudo ln -sf /usr/bin/gem2.0 /usr/bin/gem
 ~~~
 
 버전을 확인합니다.
 
-~~~
-gem --version
+~~~console
+$ gem --version
 
 result>
 2.0.14
@@ -156,14 +156,14 @@ result>
 
 ## Jekyll 3 설치
 
-~~~
-sudo gem install jekyll
+~~~console
+$ sudo gem install jekyll
 ~~~
 
 버전을 확인합니다.
 
-~~~
-jekyll -version
+~~~console
+$ jekyll -version
 
 result>
 jekyll 3.1.1
@@ -207,6 +207,7 @@ Github-Pages 를 이용하는 상황에서 해당 설정을 바꿀수는 없는 
 
 다만, 아래와 같이 Config에 timezone을 설정하면  
 화면에 출력될 때 UTC +09 기준으로 출력할 수는 있습니다.  
+
 ~~~
 timezone: '+0900'  
 

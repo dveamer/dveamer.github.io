@@ -28,7 +28,7 @@ HashMap 도 많은 데이터를 보관시에는 성능이 더 좋아졌다고 �
 
 ## Install JDK
 
-~~~
+~~~console
 $ sudo add-apt-repository ppa:openjdk-r/ppa
 
 $ sudo apt-get update
@@ -44,11 +44,11 @@ $ sudo update-alternatives --config javac
   * /etc/profile 파일의 맨 아래 라인에 JAVA_HOME, PATH 설정을 추가
     - Shift + G : 맨 아래로 이동 ( VI 단축키 )
 
-~~~ 
+~~~console
 $ sudo vi /etc/profile
 ~~~
 
-~~~ 
+~~~bash 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin
 PATH=$JAVA_HOME/bin:$PATH
 ~~~
@@ -56,7 +56,7 @@ PATH=$JAVA_HOME/bin:$PATH
 
 ## Check
     
-~~~
+~~~console
 $ java -version
 ~~~
 

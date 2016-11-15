@@ -110,7 +110,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 
     - 수동으로 설치
 
-    ~~~
+    ~~~console
     [root@localhost ~] # yum install openssl-devel
     [root@localhost ~] # cd /usr/local/src
     [root@localhost src] # wget http://www.haproxy.org/download/1.5/src/haproxy-1.5.12.tar.gz
@@ -128,7 +128,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 
   * Required Softlinks 설정
 
-    ~~~
+    ~~~console
     [root@localhost haproxy-1.5.3] # cd /usr/sbin
     [root@localhost sbin] # ln -s /usr/local/sbin/haproxy haproxy
     ~~~
@@ -175,10 +175,10 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
     - Log 설정
       
 
-      ~~~
+      ~~~console
         # HAProxy log 폴더 생성
-        cd /var/log
-        mkdir haproxy
+        $ cd /var/log
+        $ mkdir haproxy
       ~~~
 
       ~~~
@@ -191,14 +191,14 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
         local0.* ~
       ~~~
 
-      ~~~
+      ~~~console
         # rsyslog restart
-        service rsyslog restart
+        $ service rsyslog restart
       ~~~
 
   * 실행
 
-    ~~~
+    ~~~console
     [root@localhost ~] # /etc/init.d/haproxy restart
     또는
     [root@localhost ~] # service haproxy start
@@ -206,13 +206,13 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 
   * 부팅시 자동실행 설정
 
-    ~~~
+    ~~~console
     [root@localhost ~] # chkconfig haproxy on
     ~~~
 
   * 종료
 
-    ~~~
+    ~~~console
     [root@localhost ~] # service haproxy stop
     ~~~
 
@@ -227,26 +227,26 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
     - yum 을 이용한 설치 실패 : Ubuntu에서는 쉽게 깔았는데..
     - 수동으로 설치
 
-    ~~~
+    ~~~console
     [root@ ~] # cd /usr/local/src
     [root@localhost src] # wget http://www.keepalived.org/software/keepalived-1.2.16.tar.gz
     [root@localhost src] # tar -zxvf keepalived-1.2.16.tar.gz
     ~~~
   * Kernel Headers 설치
 
-    ~~~
+    ~~~console
     [root@localhost ~] # yum -y install kernel-headers kernel-devel
     ~~~
   * Keepalived 컴파일
 
-    ~~~
+    ~~~console
     [root@localhost ~] # cd /usr/local/src/keepalived-1.2.16
     [root@localhost keepalived-1.2.16] # ./configure --with-kernel-dir=/lib/modules/$(uname -r)/build
     [root@localhost keepalived-1.2.16] # make && make install
     ~~~
   * Required Softlinks 설정
 
-    ~~~
+    ~~~console
     [root@localhost ~] # cd /etc/sysconfig
     [root@localhost sysconfig] # ln -s /usr/local/etc/sysconfig/keepalived .
     [root@localhost sysconfig] # cd /etc/rc3.d/
@@ -259,14 +259,16 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
       /etc/sysctl.conf 수정 : 아래 라인 추가
       vi /etc/sysctl.conf
 
-      ~~~
+      ~~~vim
       net.ipv4.ip_nonlocal_bind=1
       ~~~
+
       아래 명령어 수행
 
-    ~~~
+    ~~~console
     [root@localhost ~] # sysctl -p
     ~~~
+
     - /usr/local/etc/keepalived/keepalived.conf 생성 혹은 변경 : Active(MASTER) L4
       vi /usr/local/etc/keepalived/keepalived.conf
 
@@ -314,6 +316,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
         }
     }
     ~~~
+
     - Event가 발생하게되면 e-mail로 알림을 받게 됨. master, backup의 vrrp_instance 명칭을 다르게 세팅하지 않으면 상황파악 어렵습니다.
     - 설정파일(/usr/local/etc/keepalived/keepalived.conf) 수정 : Standby(BACKUP) L4
       아래 내용만 다르게 세팅합니다.
@@ -326,6 +329,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
         ...
       }
       ~~~
+
     - 설정파일(/usr/local/etc/sysconfig/keepalived) 수정
       keepalived 실행시 입력되는 파라미터 값
       P 옵션은 VRRP 만 이용하겠다는 의미
@@ -343,7 +347,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 
   * 실행
 
-    ~~~
+    ~~~console
     [root@localhost ~] # /etc/init.d/keepalived start
     또는
     [root@localhost ~] # service keepalived start
@@ -372,13 +376,13 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
 
   * 부팅시 자동실행 설정
 
-    ~~~
+    ~~~console
     [root@localhost ~] # chkconfig keepalived on
     ~~~
 
   * 종료
 
-    ~~~
+    ~~~console
     [root@localhost ~] # service keepalived stop
     ~~~
 

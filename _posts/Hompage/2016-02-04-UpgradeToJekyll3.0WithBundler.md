@@ -17,10 +17,10 @@ Bundler는 미리 입력되어있는 의존성에 따라 필요한 프로그램�
 
 아래와 같은 간단한 의존성 기입만으로도 Github-Pages와 동일한 환경을 구성할 수 있습니다.
 
-~~~
-source 'https://rubygems.org/'
+~~~console
+$ source 'https://rubygems.org/'
 
-gem 'github-pages'
+$ gem 'github-pages'
 ~~~
 
 <!--more-->
@@ -30,8 +30,8 @@ gem 'github-pages'
 
 # Bundler 설치
 
-~~~
-gem install bundler
+~~~console
+$ gem install bundler
 ~~~
 
 # Jekyll 3.0 설치 
@@ -40,11 +40,11 @@ gem install bundler
 
 홈페이지 / 블로그 폴더 최상단에 Gemfile 이라는 이름의 파일을 만들고 아래와 같이 입력합니다.
 
-```
-source 'https://rubygems.org/'
+~~~console
+$ source 'https://rubygems.org/'
 
-gem 'github-pages'
-```
+$ gem 'github-pages'
+~~~
 
 https://rubygems.org/ 에 등록되어있는 github-pages 관련 잼을 이용하라는 내용으로 보여집니다.
 
@@ -52,17 +52,17 @@ https://rubygems.org/ 에 등록되어있는 github-pages 관련 잼을 이용�
 
 Gemfile을 위치시킨 홈페이지 폴더 최상단에서 아래와 같이 입력합니다.
 
-```
-bundle install
-```
+~~~console
+$ bundle install
+~~~
 
 # Jekyll 실행
 
 Bundler에 의해 설치된 의존성 프로그램들을 이용하기 위해서는 아래와 같이 실행시켜야 합니다.
 
-```
+~~~console
 bundle exec jekyll serve --watch
-```
+~~~
 
 # 단점
 
