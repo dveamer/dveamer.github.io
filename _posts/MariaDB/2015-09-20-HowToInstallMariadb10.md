@@ -3,7 +3,7 @@ layout: post
 title:  "How to install MariaDB 10.01 on Ubuntu 14.04 LTS"
 date:   2015-09-20 15:35:00
 categories: Database
-tags: MariaDB Ubuntu
+tags: MariaDB Ubuntu Setting
 ---
 
 ![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)

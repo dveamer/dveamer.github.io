@@ -70,3 +70,13 @@ $ sudo apt-get install rabbitvcs-nautilus3
 $ chown -R $USER:$USER ~/.config/rabbitvcs
 ~~~
 
+# Git  
+
+~~~
+$ sudo apt-get git
+~~~
+
+
+
+
+
