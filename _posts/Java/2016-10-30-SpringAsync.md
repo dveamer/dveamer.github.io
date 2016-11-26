@@ -3,7 +3,7 @@ layout: post
 title:  "Spring @Async 비동기처리"
 date:   2016-10-30 12:00:00 
 categories: Java
-tags: Asynchronous Multi-Thread 
+tags: Spring Asynchronous Multi-Thread 
 ---
 
 ![https://spring.io/](https://spring.io/img/spring-by-pivotal.png)  
@@ -15,31 +15,33 @@ tags: Asynchronous Multi-Thread
 
 SpringBoot 를 사용했으며 java based configuration 방식을 이용했습니다.  
 
+최종 결과물에 대한 [샘플](https://github.com/dveamer/SpringBootSample/tree/master/Async)을 Github에 올려뒀으니 참고하시기 바랍니다.  
+
 # Java 비동기방식 처리  
 
 메시지를 저장하는 내용의 method가 있습니다.
 
 ~~~java
-public class Biz {
+public class GreetingService {
 
-    public void save(String message) throws Exception {
-        // save message
+    public void method1(String message) throws Exception {
+        // do something
     }
 
 }
 ~~~
 
-가장 소스를 조금 변경해서 save method를 비동기방식으로 처리해봅시다.  
-save method가 실행되면 새로운 thread를 만들고 그 thread에서 메시지를 저장하도록 처리하면 됩니다.  
+가장 소스를 조금 변경해서 method를 비동기방식으로 처리해봅시다.  
+method가 실행되면 새로운 thread를 만들고 그 thread에서 메시지를 저장하도록 처리하면 됩니다.  
 
 ~~~java
-public class Biz {
+public class GreetingService {
 
-    public void save(String message) throws Exception {
+    public void method1(final String message) throws Exception {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // save message
+                // do something
             }            
         }).start();
     }
@@ -55,15 +57,15 @@ Thread를 관리하기 위해서는 JDK 1.5부터 제공하는 java.util.concurr
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Biz {
+public class GreetingService {
 
     ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-    public void save(String message) throws Exception {
+    public void method1(final String message) throws Exception {
         executorService.submit(new Runnable() {
             @Override
             public void run() {
-                // save message
+                // do something
             }            
         });
     }
@@ -71,7 +73,7 @@ public class Biz {
 }
 ~~~
 
-하지만 ExecutorService를 사용하더라도 save method를 수정해야합니다.  
+하지만 ExecutorService를 사용하더라도 method를 수정해야합니다.  
 그리고 비동기방식으로 처리하고 싶은 method마다 동일한 작업들을 진행해야할 것입니다.  
 
 비동기방식으로 처리하고 싶은 method마다 반복적으로 수정작업을 해야한다는 점을 기억해주시기 바랍니다.  
@@ -81,14 +83,23 @@ public class Biz {
 ## @Async with SimpleAsyncTaskExecutor
 
 Spring의 @Async annotation을 이용하면 간단하게 처리가 가능합니다.  
-메소드 위에 @Async annotation만 추가하면 save method는 비동기방식으로 처리됩니다.  
+Application 클래스에 @EnableAsync를 설정하고  
+메소드 위에 @Async annotation만 추가하면 method는 비동기방식으로 처리됩니다.  
 
 ~~~java
-public class Biz {
+@EnableAsync
+@SpringBootApplication
+public class Application {
+    ...
+}
+~~~
+
+~~~java
+public class GreetingService {
 
     @Async
-    public void save(String message) throws Exception {
-        // save message
+    public void method1(String message) throws Exception {
+        // do something
     }
 
 }
@@ -100,10 +111,13 @@ public class Biz {
 ## @Async with ThreadPoolTaskExecutor
 
 Thread pool을 이용해서 thread를 관리가능한 방식입니다.  
-아래의SpringAsyncConfig 클래스를 추가해주시기 바랍니다.  
+아래의 SpringAsyncConfig 클래스를 추가해주시기 바랍니다.  
 
-Application 클래스에 @EnableAutoConfiguration 설정이 되어있다면  
-@Configuration 설정을 한 SpringAsyncConfig 클래스를 추가하면 런타임시 threadPoolTaskExecutor bean 정보를 읽어들입니다.  
+그리고 앞서 설정한 Application 클래스의 @EnableAsync을 제거해주시기 바랍니다.  
+SpringAsyncConfig 클래스에 설정해뒀기 때문에 중복됩니다.  
+
+Application 클래스에 @EnableAutoConfiguration(혹은 @SpringBootApplication) 설정이 되어있다면  
+런타임시 @Configuration가 설정된 SpringAsyncConfig 클래스의 threadPoolTaskExecutor bean 정보를 읽어들입니다.  
 
 ~~~java
 import org.springframework.context.annotation.Bean;
@@ -136,11 +150,11 @@ public class SpringAsyncConfig {
 SimpleAsyncTaskExecutor가 아닌 설정한 TaskExecutor로 thread를 관리하게 됩니다.  
 
 ~~~java
-public class Biz {
+public class GreetingService {
 	
     @Async("threadPoolTaskExecutor")
-    public void save(String message) throws Exception {
-        // save message
+    public void method1() throws Exception {
+        // do something
     }
 
 }
@@ -165,16 +179,16 @@ save method에 대한 수정없이 처리가 가능하다는 점이 장점입니
   * pulbic method에만 사용가능 합니다.  
   * 같은 객체내의 method끼리 호출시 async method는 동작하지 않습니다.  
 
+[Spring @Async AspectJ 비동기처리](/java/SpringAsyncAspectJ.html) 글에서 AspectJ를 이용해서 제약사항을 회피하는 방법을 설명드립니다.  
+
 ## @Async with Logging Exception
 
-save method에서 exception이 발생하면 어떻게 될까요?  
-Process에는 영향없고 해당 thread는 죽습니다.  
-
-Logging이 어떻게 될지는 저도 체크를 안해봐서 추측만해보자면..  
-ThreadPoolTaskExecutor 에서 logging을 해뒀다 할지라도  
-Log 설정을 어떻게 하느냐에 따라 log파일에 출력여부가 달라질 것입니다.  
-
+비동기로 처리되는 method에서 exception이 발생하면 어떻게 될까요?  
+해당 thread만 죽습니다.  
+전체 프로세스에는 영향이 없지만 해당 thread가 소리없이 죽기 때문에 관리가 되지 않습니다.  
 이번에는 SpringAsyncConfig 를 수정해서 logging 처리까지 해보도록 하겠습니다.  
+
+Github에 올려둔 [샘플](https://github.com/dveamer/SpringBootSample/tree/master/Async)을 참고하시기 바랍니다.  
 
 ~~~java
 import org.slf4j.Logger;
@@ -188,8 +202,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
-
-import io.dveamer.test.NotiException;
 
 @Configuration
 @EnableAsync
@@ -241,11 +253,7 @@ public class SpringAsyncConfig {
                 @Override
                 public T call() throws Exception {
                     try {
-                        logger.info("async test");
                         return task.call();
-                    } catch (NotiException ex) {
-                        handle(ex);
-                        throw ex;
                     } catch (Exception ex) {
                         handle(ex);
                         throw ex;
@@ -259,7 +267,6 @@ public class SpringAsyncConfig {
                 @Override
                 public void run() {
                     try {
-                        logger.info("async test");
                         task.run();
                     } catch (Exception ex) {
                         handle(ex);
@@ -273,10 +280,6 @@ public class SpringAsyncConfig {
             errorLogger.error("Failed to execute task. ",ex);
         }
 
-        private void handle(NotiException ex) {
-            errorLogger.info("Stop a task. : {}", ex.getMessage());
-        }
-
     }
 
 }
@@ -287,11 +290,11 @@ public class SpringAsyncConfig {
 비동기 방식에서 void가 아닌 다른 return type은 Future로 전달합니다.  
 
 ~~~java
-public class Biz {
+public class GreetingService {
 
     @Async("threadPoolTaskExecutor")
-    public Future<String> save(String message) throws Exception {
-        // save message
+    public Future<String> method1(String message) throws Exception {
+        // do something
         return new AsyncResult<String>("Success");
     }
 }
