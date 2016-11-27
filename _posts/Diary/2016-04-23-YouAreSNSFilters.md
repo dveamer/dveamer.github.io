@@ -2,7 +2,7 @@
 layout: post
 title:  "당신은 SNS Filter"
 date:   2016-04-23 00:00:00
-categories: Dairy
+categories: Diary
 tags: SNS
 ---
 
