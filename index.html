@@ -8,7 +8,7 @@ layout: default
       <li>
         <br>
         <h3>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
         </h3>
 
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -45,7 +45,7 @@ layout: default
 		{{ post.excerpt }}
         </div>
         <div>
-        ... <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">더 읽기</a>
+        ... <a class="post-link" href="{{ post.url }}">더 읽기</a>
         </div>
 		<br>
       </li>
