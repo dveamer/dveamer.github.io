@@ -94,6 +94,8 @@ figcaption {
 /**
  * Lists
  */
+
+
 ul, ol {
     margin-left: $spacing-unit;
 }
@@ -103,9 +105,16 @@ li {
     > ol {
          margin-bottom: 0;
     }
+
 }
 
+ul.titles, ol.titles {
+    margin-left: 5%;
 
+    > li > div {
+      display: inline-block;
+    }
+}
 
 /**
  * Headings
@@ -255,3 +264,6 @@ pre {
         }
     }
 }
+
+
+

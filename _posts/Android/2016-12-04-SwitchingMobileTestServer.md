@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "모바일 앱 테스트 팁 - 운영서버, 개발서버 스위칭"
+title:  "모바일 앱 테스트 팁 - 운영, 개발 서버 스위칭"
 date:   2016-12-04 12:00:00
 categories: Android
 tags: Test

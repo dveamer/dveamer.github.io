@@ -14,11 +14,12 @@ layout: default
         {% capture word %}{{ category[item] | strip_newlines | lstrip | rstrip }}{% endcapture %}
         {% if word != "Diary" and word != "Books" %}
             <h2 class="category" id="{{ word }}">{{ word }}</h2>
-            <ul>
+            <ul class="titles">
             {% for post in site.categories[word] %}
                 {% if post.title != null %}
-                    <li><span>{{ post.date | date: "%b %d %Y" }}</span>» 
-                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    <li>
+                        <div>{{ post.date | date: "%b %d %Y" }}»</div> 
+                        <div><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
                     </li>
                 {% endif %}
             {% endfor %}

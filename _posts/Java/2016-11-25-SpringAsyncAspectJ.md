@@ -124,7 +124,7 @@ dependencies {
 
   * ```apply plugin: "aspectj"```를 추가할 때 aspectjVersion 변수보다 아래 라인에서 추가해야만 합니다.  
 
-## SpringAsyncConfig.java 설정파일 수정
+## SpringAsyncConfig.java 설정 수정
 
 ~~~java
 @Configuration
