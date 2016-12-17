@@ -15,13 +15,13 @@ dnsmasq라는 프로그램을 이용해서 nameserver를 대체했습니다.
 실제로 nameserver의 모든 기능을 갖추지는 못하겠지만 제 목적을 달성하기에는 충분한 프로그램입니다.  
 설치나 사용법은 굉장히 간단합니다.  
 
+<!--more-->
+
 nameserver 선택을 위해서는 집의 WIFI AP(예:ipTIME) 혹은 DNS changer와 같은 앱을 이용합니다.  
 
 안드로이드 앱, ipTIME, Ubuntu OS를 가지고 진행했지만  
 아이폰도 당연히 가능할 것으로 생각되고  
 다른 WIFI AP, OS도 모두 대체제를 가지고 있을 것으로 생각됩니다.  
-
-<!--more-->
 
 # 어떤 상황에서 유용할까?
 
