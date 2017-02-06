@@ -69,9 +69,9 @@ Apache-Tomcat을 설치해둔 디렉토리의 파일권한을 tomcat 계정, 그
 tomcat 계정으로 Apache-Tomcat을 실행 시킬 수 있습니다.  
 
 ~~~terminal
-$ chown tomcat:tomcat /usr/local/server/apache-tomcat-7.0.73
-$ chown tomcat:tomcat /usr/local/server/tomcat
-$ chown 755 /usr/local/server/tomcat
+$ chown -R tomcat:tomcat /usr/local/server/apache-tomcat-7.0.73
+$ chown -R tomcat:tomcat /usr/local/server/tomcat
+$ chmod 755 /usr/local/server/tomcat
 ~~~ 
 
 ## Modify /etc/profile 
