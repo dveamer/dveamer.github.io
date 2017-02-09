@@ -37,5 +37,12 @@ $(function(){
       $("#index_popup").bPopup();
       //$("#index_popup").show();
     });
+
+    $("input.search").keydown(function(key) {
+      if(key.keyCode == '13') { // Enter key
+        window.open('https://www.google.com/search?q=inurl%3Adveamer.github.io ' + $(this).val(), '_blank');
+      }
+    });
 });
+
 

@@ -266,4 +266,21 @@ pre {
 }
 
 
+/**
+ * search
+ */ 
+.search {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Ios-search.svg/768px-Ios-search.svg.png') no-repeat;
+//    background: url('https://upload.wikimedia.org/wikipedia/commons/7/77/Search_icon-72a7cf.svg') no-repeat;
 
+    background-size : contain;
+    padding-left:20px;
+    background-color: rgba(255,0,0,0);
+    border:none;
+    border-bottom : 1px solid #959BA6;
+}
+
+::-webkit-input-placeholder { color: #959BA6; }
+::-moz-input-placeholder { color: #959BA6; }
+:-ms-input-placeholder { color: #959BA6; }
+:-o-input-placeholder { color: #959BA6; }
