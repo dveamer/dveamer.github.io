@@ -6,6 +6,12 @@ categories: BackEnd
 tags: Setting Nginx SSL 
 ---
 
+
+![Nginx Logo](https://cdn.wp.nginx.com/wp-content/uploads/2015/04/NGINX_logo_rgb-01.png){:class="imgTitle"}
+![SSL](https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ambox_padlock_green.svg/2000px-Ambox_padlock_green.svg.png){:class="imgTitle"}  
+(이미지 출처 : [https://www.nginx.com](https://www.nginx.com), [https://commons.wikimedia.org/wiki/Main_Page/](https://commons.wikimedia.org/wiki/Main_Page/))  
+
+
 인증기관(CA)으로부터 인증서를 발급 받은 이후  
 Nginx에 SSL을 적용하는 방법을 설명합니다.  
 
@@ -157,7 +163,7 @@ Tomcat 쪽도 설정을 수정해줘야합니다.
 SSL을 적용하는 service의 server.xml 파일을 수정해야합니다.  
 
 ~~~terminal
-$ $CATALINA_HOME/conf/server.xml
+$ vi $CATALINA_HOME/conf/server.xml
 ~~~
 
 Connector 관련 설정에 ```scheme="https"```와 ```SSLEngine="on"``` 설정을 추가 합니다. 

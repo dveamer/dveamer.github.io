@@ -74,8 +74,14 @@ img {
     max-width: 250px; 
     max-height: 250px; 
 }
+
 .post img {
     max-width: 100%; 
+}
+
+img.imgTitle {
+    max-width: 250px; 
+    max-height: 250px; 
 }
 
 /**
@@ -284,3 +290,5 @@ pre {
 ::-moz-input-placeholder { color: #959BA6; }
 :-ms-input-placeholder { color: #959BA6; }
 :-o-input-placeholder { color: #959BA6; }
+
+

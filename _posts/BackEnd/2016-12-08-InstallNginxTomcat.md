@@ -2,12 +2,12 @@
 layout: post
 title:  "How to install Nginx & Tomcat"
 date:   2016-12-07 20:00:00
-categories: Java
+categories: BackEnd
 tags: Setting Nginx Tomcat
 ---
 
-![Nginx Logo](https://cdn.wp.nginx.com/wp-content/uploads/2015/04/NGINX_logo_rgb-01.png)
-![Tomcat Logo](http://tomcat.apache.org/images/tomcat.png)  
+![Nginx Logo](https://cdn.wp.nginx.com/wp-content/uploads/2015/04/NGINX_logo_rgb-01.png){:class="imgTitle"}
+![Tomcat Logo](https://tomcat.apache.org/images/tomcat.png){:class="imgTitle"}  
 (이미지 출처 : [https://www.nginx.com](https://www.nginx.com), [http://tomcat.apache.org/](http://tomcat.apache.org/))  
 
 Nginx와 Tomcat을 이용해서 기본적인 WEB-WAS 환경을 구성해보겠습니다.  
@@ -102,7 +102,7 @@ $ source /etc/profile
 
 ## Startup Apache-Tomcat
 
-tocat 계정으로 접속해서 실행시킵니다.  
+tomcat 계정으로 접속해서 실행시킵니다.  
 
 ~~~terminal
 $ su tomcat
