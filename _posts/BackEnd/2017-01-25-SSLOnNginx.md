@@ -125,7 +125,7 @@ ssl_certificatte 와 ssl_certificatte_key 를 절대주소로 설정해줍니다
 
 ...
 
-ssl_certificatte /etc/nginx/ssl/unified-example.com.crt;
+ssl_certificate /etc/nginx/ssl/unified-example.com.crt;
 ssl_certificate_key /etc/nginx/ssl/private.key;
 
 server {
