@@ -2,8 +2,9 @@
 layout: post
 title:  "Ubuntu 설치 후 초기세팅"
 date:   2016-07-19 12:00:00
+lastmod: 2017-09-09 12:00:00
 categories: Ubuntu
-tags: Setting
+tags: Ubuntu Setting
 ---
 
 Ubuntu 재설치 후 제가 개인적으로 필요로하는 프로그램들을 기록합니다.  
@@ -11,10 +12,7 @@ Ubuntu 재설치 후 제가 개인적으로 필요로하는 프로그램들을 �
 <!--more-->
 
 # Subversion
-
-~~~
-$ sudo apt-get install subversion
-~~~
+  * [복원하기](/programming/SettingSubversion.html)
 
 # Gradle
 
