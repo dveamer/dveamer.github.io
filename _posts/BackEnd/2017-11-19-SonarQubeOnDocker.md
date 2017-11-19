@@ -119,7 +119,7 @@ property "sonar.projectName", "PUBGLog"
 
 해당 설정에 관해서는 다른 글에서 다룰 예정입니다. 관련 tag 글을 참고하세요.  
 
-  * [Android 소스코드 SonarQube 연동](/android/SonarqubeForAndroid.html)
+  * [Android 소스코드 SonarQube 연동](/android/SonarQubeForAndroid.html)
 
 
 ## 외부 DB 연동하기
