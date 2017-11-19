@@ -2,7 +2,7 @@
 layout: post
 title:  "Perfect Trainer for PokemonGo 포켓몬고"
 date: 2017-03-17 12:00:00
-categories: Project PerfectTrainer
+categories: Side-Project
 tags: PerfectTrainer PokemonGo 포켓몬고 Android
 ---
 

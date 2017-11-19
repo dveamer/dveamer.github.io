@@ -2,7 +2,7 @@
 layout: post
 title:  "BlindDate 개인정보처리방침"
 date: 2017-03-04 12:00:00
-categories: Project BlindDate
+categories: Side-Project
 ---
 
 # 개인정보처리방침
