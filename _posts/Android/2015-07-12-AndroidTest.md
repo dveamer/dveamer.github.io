@@ -3,7 +3,7 @@ layout: post
 title:  "Test Methods Of Android"
 date:   2015-07-12 16:00:00
 categories: Android
-tags: Virtual-Machine Genymotion IntelliJ
+tags: Virtual-Machine Genymotion IntelliJ Test
 ---
 
 Android 개발을 해보면서 느꼈던 가장 큰 어려움은 테스트였습니다.  
