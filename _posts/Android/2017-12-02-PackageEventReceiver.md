@@ -53,9 +53,7 @@ public class PackageEventReceiver extends BroadcastReceiver {
 
             // do something...
         }
-
     }
-
 }
 
 ~~~
@@ -104,24 +102,46 @@ AndroidManifest.xml 을 통한 등록방법만 기술하겠습니다.
 ~~~
 
 
-```manifest > application``` 아래에 ```receiver```를 추가합니다. 
+```manifest > application``` 아래에 ```receiver```를 추가합니다.  
 
 ```receiver android:name```에는 위에서 생성한 PackageEventReceiver의 정보를 적어주면 됩니다. (변경필요)  
+
 ```intent-filter > action android:name```에는 처리하고자하는 intent action 을 적어주면 됩니다. (필요시 추가 필요)  
+
 ```intent-filter > data android:path```에는 만들고 있는 앱의 package 명을 적어주시면 됩니다. (변경필요)  
 
 ## 주의사항
 
 보통 자신이 만들고 있는 앱이 업데이트 되었을 때 그 이벤트를 받아서 처리하기 위해서 이 글을 검색하셨을 겁니다.  
-근데 BroadcastReceiver 구현체 등록시에 ```intent-filter > data android:path``` 를 작성하지 않으면,  
-사용자의 모바일에 설치되어있는 모든 앱에 대해서 앱 업데이트가 일어날 때마다 이벤트를 받게 됩니다.  
-해당 앱의 이벤트를 알림 받고 싶으시다면 path에 해당 앱의 package를 반드시 적어주셔야 합니다.  
+근데 BroadcastReceiver는 모바일에 설치되어있는 모든 앱에 대해서 앱 업데이트가 일어날 때마다 이벤트를 받게 됩니다.  
+자신이 만든 앱의 이벤트만 알림을 받고 싶다면 아래와 같이 구현체에서 조건문으로 처리해야합니다.  
 
-만약 다른 앱의 이벤트를 알림 받고 처리하고 싶으시다면,  
-receiver를 하나 더 추가해서 path에 해당 앱의 package를 적어주시면 됩니다.  
+~~~java
+package your.app.pakcage.sample;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 
-<br><br>
+public class PackageEventReceiver extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String action = intent.getAction();
+
+        if(action.equals(Intent.ACTION_PACKAGE_REPLACED)){
+            // Broadcast Action: A new version of an application package has been installed, replacing an existing version that was previously installed. 
+            // 새로운 버전의 앱 패키지가 설치 되거나 업데이트 되었을 때 
+
+            if (intent.getDataString().contains("your.app.pakcage")){
+                // do something...
+            }
+        }
+    }
+}
+
+~~~
+
 
 이와 관련해서 저는 굉장히 당혹스러운 사건을 겪었습니다.  
 
@@ -130,7 +150,7 @@ receiver를 하나 더 추가해서 path에 해당 앱의 package를 적어주�
 
 AWS 네트워크 비용이 예상보다 많이나와서 살펴보니  
 사용자별로 하루 1회 혹은 앱 업데이트시 1회 실행되도록 설계한 API를 하루에 100회 이상 호출하는 사용자들이 있었습니다.  
-(그래봐야 지난달에 3만원정도의 수준입니다. 걱정해주지 않으셔도 괜찮습니다 ^^ )
+(그래봐야 지난달에 3만원정도의 수준입니다. 걱정해주지 않으셔도 괜찮습니다 ^^ )  
 
 처음에는 제 코드에 문제가 있나 하고 코드를 이리저리 살펴보고 테스트해보느라 삽질을 했습니다.  
 그리고는 "HttpConnection 객체가 retry하는 기능이 있나?" 하고 검색을해보니 slient retry 라는 이슈글이 몇개 있더군요. 그래서 열심히 파봤지만 삽질이었습니다.  
