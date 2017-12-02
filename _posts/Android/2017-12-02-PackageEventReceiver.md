@@ -70,7 +70,9 @@ public class PackageEventReceiver extends BroadcastReceiver {
 동적인 방법은 실행된 Activity 혹은 Service 같은 다른 class에서 등록해주는 방법입니다.  
 Java 코드로 등록 과정을 기술하면서 상황에 따라 다르게 등록할 수 있습니다.  
 
-저는 정적인 방법인 AndroidManifest.xml 을 통한 등록방법만 기술하도록 하겠습니다.  
+
+앱 패키지 설치, 업데이트 이벤트의 경우는 정적인 방법이 더 어울리므로  
+AndroidManifest.xml 을 통한 등록방법만 기술하겠습니다.  
 
 ~~~xml
 
@@ -139,6 +141,9 @@ AWS 네트워크 비용이 예상보다 많이나와서 살펴보니
 그래도 저는 서버로 호출하는 내용이 있어서 발견을 했지만  
 서버와 교류없이 내부에서만 처리하는 앱이라면 발견하기 굉장히 힘들 것 같네요.  
 
+사실 BroadcastReceiver를 이해하고 있었다면 당연히 피했어야할 상황이지만  
+귀찮다고 다른 한글 블로그의 설명을 생각없이 따라가다보니 겪은 사건이었습니다.  
+Android의 공통 action을 사용할 때는 좀 더 자세히 살펴봐야할 필요가 있는 것 같습니다.  
 
 # 다른 Package Actions 
 
