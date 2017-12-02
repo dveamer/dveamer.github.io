@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Android 앱 업데이트 이벤트 처리"
+title:  "Android 앱 설치 / 업데이트 이벤트 처리"
 date:   2017-12-02 01:00:00
 categories: Android 
 tags: Android_BroadcastReceiver
@@ -9,7 +9,7 @@ tags: Android_BroadcastReceiver
 ![Android Logo](https://developer.android.com/_static/images/android/touchicon-180.png){:class="imgTitle"}  
 (이미지 출처 : [https://developer.android.com](https://developer.android.com))  
 
-Google Play와 같은 스토어를 통해서 앱이 업데이트 되었을 때, 그 이벤트를 알림받고 처리하는 방법에 대해서 설명합니다.  
+Google Play와 같은 스토어를 통해서 앱이 설치 / 업데이트 되었을 때, 그 이벤트를 알림받고 처리하는 방법에 대해서 설명합니다.  
 
 그리고 특정 앱의 이벤트만 알람을 받는 방법도 알아보고 관련해서 제가 겪은 당혹스러운 사건도 적어보겠습니다.  
 
@@ -23,7 +23,7 @@ Google Play와 같은 스토어를 통해서 앱이 업데이트 되었을 때, 
 # BroadcastReceiver 추가하기  
 
 BroadcastReceiver는 Android 시스템으로부터 broadcast intent를 전달받고 처리할 수 있는 추상객체(abstract class)입니다.  
-BroadcastReceiver를 통해서 Android 시스템으로부터 앱 패키지 업데이트 이벤트를 전달받고 처리하고자 합니다.  
+BroadcastReceiver를 통해서 Android 시스템으로부터 앱 패키지 설치 / 업데이트 이벤트를 전달받고 처리하고자 합니다.  
 
 BroadcastReceiver를 사용하기 위해서는 아래 두 과정이 필요합니다.  
 
@@ -142,7 +142,7 @@ AWS 네트워크 비용이 예상보다 많이나와서 살펴보니
 
 # 다른 Package Actions 
 
-지금까지 앱 패키지 업데이트 이벤트를 처리하기 위해서  
+지금까지 앱 패키지 설치 / 업데이트 이벤트를 처리하기 위해서  
 Android 시스템으로부터 ACTION_PACKAGE_REPLACED 라는 boradcast intent를 받아서 처리하는 내용을 살펴봤습니다.  
 
 앱 패키지 업데이트 이벤트만이 아니라 다양한 이벤트들을 전달 받을 수 있습니다.  
