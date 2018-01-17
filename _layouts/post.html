@@ -86,12 +86,34 @@ layout: default
   </div>
 
 
+  {% assign content_array = page.content | split: site.excerpt_separator %}
+  {% assign excerpt_only = content_array | first %}
+  {% assign content_remainder = content_array | last %}
+
+
+  <article id="post_excerpt" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
+    {{ excerpt_only | append: '</p>'}}
+  </article>
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- post_bottom2 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-1213240297656328"
+       data-ad-slot="3963543437"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
   <article id="post_content" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
-    {{ content }}
+    {{ content_remainder | remove_first: '</p>'}}
   </article>
 </div>
 
 <br/><br/>
+
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- post_bottom -->
@@ -182,18 +204,6 @@ layout: default
 
 
 <br/>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- post_bottom2 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1213240297656328"
-     data-ad-slot="3963543437"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 <br/>
 
 
