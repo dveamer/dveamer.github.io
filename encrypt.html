@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>    
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Google crypto-js : https://code.google.com/archive/p/crypto-js/downloads/CryptoJS v3.1.2.zip -->
+    <script src="./scripts/aes.js"></script>
+
+    <script>
+      var encrypt = function() {
+
+        var pass = document.getElementById("passphrase").value;
+        var textbox = document.getElementById("textbox").value;
+
+        var encrypted = CryptoJS.AES.encrypt(textbox, pass); 
+
+        document.getElementById("textbox").value = encrypted;
+      };
+
+      var decrypt = function() {
+        var pass = document.getElementById("passphrase").value;
+        var textbox = document.getElementById("textbox").value;
+
+        var decrypted = CryptoJS.AES.decrypt(textbox, pass).toString(CryptoJS.enc.Utf8);
+
+        document.getElementById("textbox").value = decrypted;
+      };
+
+    </script>
+  </head>
+
+<body>
+
+<div>
+  <textarea rows="3" cols="100" id="textbox" placeholder="암호화 혹은 복호화할 문자열을 입력하세요. (copy a text for encryption/decryption.)" ></textarea>  
+</div>
+
+<div>
+  <textarea rows="1" cols="100" id="passphrase" placeholder="비밀 키를 입력하세요. (type in passphrase.)" ></textarea>  
+</div>
+
+<div>
+  <button onclick="encrypt();" >암호화 (Encrypt)</button>
+  <button onclick="decrypt();" >복호화 (Decrypt)</button>
+<div>
+
+
+
+</body>
+</html>
