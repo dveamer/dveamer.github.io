@@ -8,6 +8,7 @@ tags: Setting Apache
 
 Apache HTTP Server 설치방법을 알아봅니다.
 
+아직 작성중인 글입니다. 실수로 올라가버렸네요..;;
 <!--more-->
 
 # Environment
