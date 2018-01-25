@@ -54,7 +54,7 @@ $ cd /tmp/nghttp2
 $ wget https://github.com/nghttp2/nghttp2/releases/download/v1.29.0/nghttp2-1.29.0.tar.gz
 $ tar xfz nghttp2-1.29.0.tar.gz
 $ cd nghttp2-1.29.0
-$ export LDFLAGS='-l/usr/local/ssl/include"
+$ export LDFLAGS="-l/usr/local/ssl/include"
 $ export OPENSSL_CFLAGS="-l/usr/local/ssl/include"
 $ export OPENSSL_LIBS="-L/usr/local/ssl -lssl -lcrypto"
 $ ./configure --prefix=/usr/local/nghttp2
@@ -79,9 +79,8 @@ Tomcat과 같이 JVM 위에서 돌아가는 프로그램들은 압축만 풀어�
 Apache는 C언어로 짜여진 프로그램이기 때문에 컴파일 설치가 필요합니다.  
 OS 종류, 버전이 달라지면 새롭게 컴파일이 필요하므로 서버 이관 작업, scale-out 시에 고려해야할 사항입니다.  
 
-Ubuntu에서는  ```apt-get install```로 설치가 가능하지만 그 방법도 내부적으로는 컴파일이 진행될 것 입니다.  
-
-저는 직접 컴파일해서 설치, 운영해본 경험밖에 없는 관계로 컴파일을 통한 방법을 다루겠습니다.  
+Ubuntu에서는  ```apt-get install```로 설치가 가능하지만  
+저는 컴파일로 설치, 운영해본 경험밖에 없는 관계로 컴파일을 통한 방법을 다루겠습니다.  
 
 
 ## Install Apache
