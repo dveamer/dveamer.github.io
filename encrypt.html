@@ -10,8 +10,19 @@
       var encrypt = function() {
 
         var pass = document.getElementById("passphrase").value;
-        var textbox = document.getElementById("textbox").value;
 
+        if(pass.length < 16){
+          alert("암호화키는 16글자 이상만 가능합니다.\n\nuse more longer passphrase than 16 letters.");
+          return;
+        }
+
+        var re_pass = document.getElementById("re-passphrase").value;
+        if(pass != re_pass){
+          alert("재입력한 암호화키가 불일치합니다. (correctly re-type in passphrase.)");
+          return;
+        }
+
+        var textbox = document.getElementById("textbox").value;
         var encrypted = CryptoJS.AES.encrypt(textbox, pass); 
 
         document.getElementById("textbox").value = encrypted;
@@ -22,6 +33,11 @@
         var textbox = document.getElementById("textbox").value;
 
         var decrypted = CryptoJS.AES.decrypt(textbox, pass).toString(CryptoJS.enc.Utf8);
+
+        if(decrypted == ""){
+          alert("복호화할 문자열 혹은 복호화키가 잘못됐습니다.\n\nwrong text or passphrase");
+          return;
+        }
 
         document.getElementById("textbox").value = decrypted;
       };
@@ -36,7 +52,11 @@
 </div>
 
 <div>
-  <textarea rows="1" cols="100" id="passphrase" placeholder="비밀 키를 입력하세요. (type in passphrase.)" ></textarea>  
+  <textarea rows="1" cols="100" id="passphrase" placeholder="암/복호화키를 입력하세요. (type in passphrase.)" ></textarea>  
+</div>
+
+<div>
+  <textarea rows="1" cols="100" id="re-passphrase" placeholder="암호화를 위해서라면 암호화키를 재입력하세요. (re-type in passphrase for encryption.)" ></textarea>  
 </div>
 
 <div>
