@@ -6,8 +6,8 @@ categories: Programming
 tags: Setting Apache
 ---
 
-![Apache HTTP Server](https://httpd.apache.org/images/httpd_logo_wide_new.png){:class="imgTitle"}  
-(이미지 출처 : [https://httpd.apache.org](https://httpd.apache.org))  
+![Apache HTTP Server](https://c2.staticflickr.com/8/7640/16527980754_76dfa9c86e_b.jpg){:class="imgTitle"}  
+(이미지 출처 : [https://www.flickr.com/photos/rbowen](https://www.flickr.com/photos/rbowen/16527980754))  
 
 HTTPD 설치방법을 알아봅니다.  
 
