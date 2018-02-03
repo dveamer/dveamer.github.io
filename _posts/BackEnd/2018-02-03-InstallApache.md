@@ -6,6 +6,9 @@ categories: Programming
 tags: Setting Apache
 ---
 
+![Apache HTTP Server](https://httpd.apache.org/images/httpd_logo_wide_new.png){:class="imgTitle"}  
+(이미지 출처 : [https://httpd.apache.org](https://httpd.apache.org))  
+
 HTTPD 설치방법을 알아봅니다.  
 
 Apache에서 만든 [HTTP Server Project](https://httpd.apache.org/)의 결과물이 HTTPD 입니다.  

@@ -6,6 +6,9 @@ categories: Programming
 tags: Setting Linux
 ---
 
+![GCC Compiler](https://gcc.gnu.org/img/gccegg-65.png){:class="imgTitle"}  
+(이미지 출처 : [https://gcc.gnu.org](https://gcc.gnu.org))  
+
 Linux에서 뭔가 설치하려고 인터넷을 검색해보면  
 컴파일 설치 방법에 대해서 가이드가 득실득실 합니다.  
 
