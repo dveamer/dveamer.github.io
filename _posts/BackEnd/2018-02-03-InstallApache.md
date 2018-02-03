@@ -12,8 +12,8 @@ tags: Setting Apache
 HTTPD 로고가 흰색이 많아서 제 홈페이지에 적합하지가 않았습니다.  
 그 덕에 이미지 검색을 했는데 재미있는 사진을 찾았네요. 아래 인용은 사진에 대한 설명입니다.  
 
-> The original Apache Group, and the current httpd committers (2015)
-> Photos by Zaheda Bhorat
+> The original Apache Group, and the current httpd committers (2015)  
+> Photos by Zaheda Bhorat  
 
 
 HTTPD 설치방법을 알아봅니다.  
@@ -244,8 +244,8 @@ $ /user/local/httpd2/bin/apachectl -f /another_path/httpd.conf
 $ /user/local/httpd2/bin/apachectl -k stop
 ~~~
 
-> 부모 프로세스는 즉시 모든 자식을 죽인다. 자식을 완전히 죽이는데는 몇 초가 걸릴 수 있다. 그런후 부모가 종료한다. 처리중인 요청은 중단되고, 더 이상 요청을 받지않는다.
-> ( 출처 : [https://httpd.apache.org/docs/2.4/ko/stopping.html](https://httpd.apache.org/docs/2.4/ko/stopping.html) )
+> 부모 프로세스는 즉시 모든 자식을 종료시킨다. 자식을 완전히 종료시키는데는 몇 초가 걸릴 수 있다. 그런 후 부모가 종료한다. 처리중인 요청은 중단되고, 더 이상 요청을 받지않는다.  
+> ( 출처 : [https://httpd.apache.org/docs/2.4/ko/stopping.html](https://httpd.apache.org/docs/2.4/ko/stopping.html) )  
 
 
 ### Gracefully Restart HTTPD
@@ -254,8 +254,8 @@ $ /user/local/httpd2/bin/apachectl -k stop
 $ /user/local/httpd2/bin/apachectl -k graceful
 ~~~
 
-> 부모 프로세스는 자식들에게 현재 요청을 처리한후 종료하라고 (혹은 현재 아무것도 처리하지 않다면 즉시 종료하라고) 조언한다. 부모는 설정파일을 다시읽고 로그파일도 다시 연다. 자식이 죽을때마다 부모는 죽은 자식대신 새로운 설정 세대에 기초한 자식을 실행하여 즉시 요청을 처리하게 한다.
-> ( 출처 : [https://httpd.apache.org/docs/2.4/ko/stopping.html](https://httpd.apache.org/docs/2.4/ko/stopping.html) )
+> 부모 프로세스는 자식들에게 현재 요청을 처리한후 종료하라고 (혹은 현재 아무것도 처리하지 않다면 즉시 종료하라고) 조언한다. 부모는 설정파일을 다시읽고 로그파일도 다시 연다. 자식이 죽을때마다 부모는 종료된 자식대신 새로운 설정 세대에 기초한 자식을 실행하여 즉시 요청을 처리하게 한다.  
+> ( 출처 : [https://httpd.apache.org/docs/2.4/ko/stopping.html](https://httpd.apache.org/docs/2.4/ko/stopping.html) )  
 
 ### Restart HTTPD
 
@@ -263,7 +263,7 @@ $ /user/local/httpd2/bin/apachectl -k graceful
 $ /user/local/httpd2/bin/apachectl -k restart
 ~~~
 
-> 부모 프로세스는 모든 자식을 죽이지만 부모는 종료하지 않는다. 부모는 설정파일을 다시읽고 로그파일을 다시 연다. 그리고 새로운 자식들을 만들고 서비스를 계속한다.
+> 부모 프로세스는 모든 자식을 종료시키지만 부모는 종료하지 않는다. 부모는 설정파일을 다시읽고 로그파일을 다시 연다. 그리고 새로운 자식들을 만들고 서비스를 계속한다.
 > ( 출처 : [https://httpd.apache.org/docs/2.4/ko/stopping.html](https://httpd.apache.org/docs/2.4/ko/stopping.html) )
 
 #### References
