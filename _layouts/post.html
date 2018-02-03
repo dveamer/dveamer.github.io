@@ -137,6 +137,8 @@ layout: default
 
 <div class="associated_posts">
   <ul class="post-list">
+    {% assign tag_count = 0 %}
+
     {% for post in site.posts %}  
       {% assign exist = false %}
 
@@ -185,16 +187,22 @@ layout: default
                 {% endfor %}
               {% endif %}
 
-
               <hr id="line">
-	            <div class="content">
-	            {{ post.excerpt }}
+
+            {% if tag_count <= 2 %} 
+              <div class="content">
+              {{ post.excerpt }}
               </div>
               <div>
               ... <a href="{{ post.url }}">더 읽기</a>
               </div>
+
+            {% endif %}
+
             </li>
+
             {% assign exist = true %}
+            {% assign tag_count = tag_count | plus: 1 %}
           {% endif %}
         {% endfor %}
       {% endfor %}
