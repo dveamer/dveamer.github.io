@@ -2,7 +2,7 @@
 layout: post
 title:  "유용한 Linux 명령어"
 date:   2018-02-03 00:00:00
-categories: Linux Ubuntu
+categories: Linux
 tags: Command 
 ---
 
