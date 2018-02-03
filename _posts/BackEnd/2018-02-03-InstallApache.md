@@ -263,8 +263,8 @@ $ /user/local/httpd2/bin/apachectl -k graceful
 $ /user/local/httpd2/bin/apachectl -k restart
 ~~~
 
-> 부모 프로세스는 모든 자식을 종료시키지만 부모는 종료하지 않는다. 부모는 설정파일을 다시읽고 로그파일을 다시 연다. 그리고 새로운 자식들을 만들고 서비스를 계속한다.
-> ( 출처 : [https://httpd.apache.org/docs/2.4/ko/stopping.html](https://httpd.apache.org/docs/2.4/ko/stopping.html) )
+> 부모 프로세스는 모든 자식을 종료시키지만 부모는 종료하지 않는다. 부모는 설정파일을 다시읽고 로그파일을 다시 연다. 그리고 새로운 자식들을 만들고 서비스를 계속한다.  
+> ( 출처 : [https://httpd.apache.org/docs/2.4/ko/stopping.html](https://httpd.apache.org/docs/2.4/ko/stopping.html) )  
 
 #### References
 
