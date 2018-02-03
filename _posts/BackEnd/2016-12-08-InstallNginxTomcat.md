@@ -2,6 +2,7 @@
 layout: post
 title:  "How to install Nginx & Tomcat"
 date:   2016-12-07 20:00:00
+lastmod: 2018-02-03 00:00:00
 categories: BackEnd
 tags: Setting Nginx Tomcat
 ---
@@ -200,8 +201,8 @@ $ echo "Tomcat Test" > index.jsp
 # Nginx
 
 Nginx는 WEB서버입니다.  
-정적인 파일 입출력의 성능이 뛰어납니다.  
-Load-balancing과 heart-beat와 같은 기능들을 가지고 WAS서버의 HA확보 기능도 제공합니다.  
+정적파일 출력성능이 뛰어납니다.  
+Load-balancing과 health-check 기능들을 가지고 WAS서버의 HA확보 기능도 제공합니다.  
 HA 관련한 설정은 추후에 다루도록 하겠습니다.  
 
 ```yum```으로 설치를 진행했습니다.  
