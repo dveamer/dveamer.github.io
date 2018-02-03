@@ -2,7 +2,7 @@
 layout: post
 title:  "Linux에서 컴파일 설치법을 알아야하는 이유"
 date:   2018-02-03 00:00:00
-categories: Programming
+categories: BackEnd
 tags: Setting Linux
 ---
 

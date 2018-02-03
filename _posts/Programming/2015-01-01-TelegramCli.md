@@ -2,7 +2,8 @@
 layout: post
 title:  "Interface with Telegram-Cli"
 date:   2015-01-01 12:00:00
-categories: Telegram
+lastmod: 2018-02-03 00:00:00
+categories: Programming
 tags: Lua Telegram-Cli
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "HTTPD (Apache HTTP Server) 설치하기"
 date:   2018-02-03 00:00:00
-categories: Programming
+categories: BackEnd
 tags: Setting Apache
 ---
 
