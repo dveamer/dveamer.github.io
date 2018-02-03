@@ -9,6 +9,13 @@ tags: Setting Apache
 ![Apache HTTP Server](https://c2.staticflickr.com/8/7640/16527980754_76dfa9c86e_b.jpg){:class="imgTitle"}  
 (이미지 출처 : [https://www.flickr.com/photos/rbowen](https://www.flickr.com/photos/rbowen/16527980754))  
 
+HTTPD 로고가 흰색이 많아서 제 홈페이지에 적합하지가 않았습니다.  
+그 덕에 이미지 검색을 했는데 재미있는 사진을 찾았네요. 아래 인용은 사진에 대한 설명입니다.  
+
+> The original Apache Group, and the current httpd committers (2015)
+> Photos by Zaheda Bhorat
+
+
 HTTPD 설치방법을 알아봅니다.  
 
 Apache에서 만든 [HTTP Server Project](https://httpd.apache.org/)의 결과물이 HTTPD 입니다.  
