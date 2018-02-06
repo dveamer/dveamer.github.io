@@ -93,20 +93,20 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
   * [HAProxy Wikipedia](http://en.wikipedia.org/wiki/HAProxy)
   * [Keppalived](http://www.keepalived.org/)
 
-# Installation
 
-## Environment
+
+# Environment
 
   * RHEL 5.5
   * 1 core 2 GB / 2 core 4 GB
 
   마스터 서버를 1core 로 설정했습니다.
 
-## HAProxy
+# HAProxy 설치 & 설정
 
   * Active, Standby L4 서버 모두 동일하게 진행합니다. 설정파일 수정만 다르게 진행됩니다.
 
-### 계정생성 
+## 계정생성 
 
 ~~~terminal
 $ groupadd hapgrp
@@ -114,7 +114,7 @@ $ useradd -g hapgrp hapusr
 $ passwd hapusr
 ~~~
 
-### 설치
+## 설치
 
 Ubuntu에서는 apt-get을 이용해서 쉽게 설치했는데  
 Redhat에서 yum을 이용해 설치를 하다가 실패했습니다.  
@@ -153,7 +153,7 @@ root@localhost:haproxy-1.5.12$ cp ./examples/errorfiles/* /etc/haproxy/errors/
 root@localhost:~$ ln -s /usr/local/sbin/haproxy /usr/sbin/haproxy
 ~~~
 
-### Configuration
+## haproxy.cfg 설정
 
 
 ~~~bash
@@ -207,7 +207,7 @@ listen stats :80
     $ cat /etc/group | grep hapgrp
     ~~~
 
-### Log 설정
+## Log 설정
 
 HAProxy log를 남길 폴더를 생성하고 권한을 제한합니다.  
 
@@ -236,7 +236,9 @@ rsyslog 프로그램을 restart 시킵니다.
 $ service rsyslog restart
 ~~~
 
-### 실행권한 설정
+## 실행 및 종료
+
+## 실행권한 설정
 
 ~~~terminal
 $ echo '# User privilege specification' >> /etc/sudoers
@@ -246,7 +248,7 @@ $ echo 'hapusr ALL=NOPASSWD: service haproxy * ' >> /etc/sudoers
 
 hapusr 계정에게 haproxy에 대해서 sudo 권한을 제공했습니다.  
 
-### 실행
+## 실행
 
 ~~~terminal
 $ /etc/init.d/haproxy start
@@ -271,13 +273,7 @@ $ ps -ef | grep haproxy
 만약 다른 소유자가 hapusr가 아니라면 haproxy.cnf 파일 설정시 uid, gid 설정을 다시 해보시기 바랍니다.  
 
 
-### 부팅시 자동실행 설정
-
-~~~terminal
-$ chkconfig haproxy on
-~~~
-
-### 종료
+## 종료
 
 ~~~terminal
 $ /etc/init.d/haproxy
@@ -293,22 +289,29 @@ OR
 hapusr$ sudo service haproxy stop
 ~~~
 
-### Status 확인
+## 부팅시 자동실행 설정
 
-  * xxx.xxx.xxx.xxx/haproxy.stats 접속합니다.  
+~~~terminal
+$ chkconfig haproxy on
+~~~
 
 
-## Keepalived
+## Status 확인
+
+브라우저로 http://xxx.xxx.xxx.xxx/haproxy.stats 에 접속해보시면 HAProxy의 현재상황을 확인가능합니다. 
+
+
+# Keepalived 설치 & 설정
 
 Active, Standby 서버 모두 동일하게 설치하고 설정파일 수정만 다르게 진행합니다.  
 
-### Kernel Headers 설치
+## Kernel Headers 설치
 
 ~~~console
 $ yum -y install kernel-headers kernel-devel
 ~~~
 
-### 설치 
+## 설치 
 
 컴파일을 통해서 설치했습니다.  
 필요한 버전에 맞춰서 다운받아 사용하세요.  
@@ -337,16 +340,21 @@ root@localhost:rc3.d$ cd /etc/init.d/
 root@localhost:init.d$ ln -s /usr/local/etc/rc.d/init.d/keepalived .
 ~~~
 
-### Configuration for Active(MASTER)
+## Active(MASTER) 서버의 Keepalived 설정
 
-외부 IP와 바인딩 가능하도록 OS설정 수정이 필요합니다.  
+Active(MASTER) 로 사용할 서버의 설정을 진행합니다.  
+
+
+### /etc/sysctl.conf 설정 수정 
+
+일단 외부 IP와 바인딩 가능하도록 OS설정 수정이 필요합니다.  
 
 ~~~terminal 
 $ echo 'net.ipv4.ip_nonlocal_bind=1' >> /etc/sysctl.conf
 $ sysctl -p
 ~~~
 
-/usr/local/etc/sysconfig/keepalived 파일을 수정합니다.  
+### /usr/local/etc/sysconfig/keepalived 파일을 수정
 
 ~~~bash
  # vim /usr/local/etc/sysconfig/keepalived
@@ -366,7 +374,9 @@ HAProxy와 함께 사용하면서 keepalived는 VRRP 기능만 이용할 것이�
 수동으로 설치하면서 configuration 위치를 찾지 못하는 현상이 있어서 직접 위치를 입력합니다.  
 
 
-HAProxy 설정파일(/usr/local/etc/keepalived/keepalived.conf)을 생성/수정 합니다.  
+### /usr/local/etc/keepalived/keepalived.conf 파일 수정
+
+파일이 없다면 생성하시면 됩니다.  
 
 ~~~bash
  # Active(MASTER) L4
@@ -419,11 +429,17 @@ vrrp_instance VI_1 {    # set this to diffrent name on the other machine. When n
   * Event가 발생하게되면 e-mail로 알림을 받게 됩니다. master, backup의 vrrp_instance 명칭을 다르게 세팅하지 않으면 상황파악 어렵습니다.
 
 
-### Configuration for Standby(BACKUP)
+## Standby(BACKUP) 서버의 Keepalived 설정
 
+Standby(BACKUP)로 사용될 서버의 설정을 진행합니다.  
 위의 Active(MASTER) 설정과 딱 1개만 다르고 동일하게 진행해주시면 됩니다.  
 
 HAProxy 설정파일(/usr/local/etc/keepalived/keepalived.conf)을 수정하는 내용만 차이가 있습니다.  
+
+### /usr/local/etc/keepalived/keepalived.conf 파일 수정
+
+파일이 없다면 생성하시면 됩니다.  
+Active(MASTER)와 동일한 내용을 입력하고 아래 내용만 다르게 수정합니다.  
 
 ~~~bash
  # vim /usr/local/etc/keepalived/keepalived.conf
@@ -437,7 +453,9 @@ vrrp_instance VI_2 {
 ~~~
 
 
-### 실행
+## 실행 & 종료 
+
+### 실행 
 
 ~~~terminal
 $ /etc/init.d/keepalived start
@@ -453,7 +471,6 @@ Starting keepalived: /bin/bash: keepalived: command not found
 
 그럴 때는 /etc/init.d/keepalived 파일 수정필요합니다.  
 
-
 ~~~bash
  # vim /etc/init.d/keepalived
 
@@ -468,18 +485,18 @@ start() {
   daemon /usr/local/sbin/keepalived ${KEEPALIVED_OPTIONS}
 ~~~
 
-### 부팅시 자동실행 설정
-
-~~~terminal
-$ chkconfig keepalived on
-~~~
-
 ### 종료
 
 ~~~terminal
 $ /etc/init.d/keepalived stop
 OR
 $ service keepalived stop
+~~~
+
+### 부팅시 자동실행 설정
+
+~~~terminal
+$ chkconfig keepalived on
 ~~~
 
 # Reference
