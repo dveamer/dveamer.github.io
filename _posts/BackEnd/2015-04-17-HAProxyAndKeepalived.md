@@ -100,11 +100,11 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
   * RHEL 5.5
   * 1 core 2 GB / 2 core 4 GB
 
-  마스터 서버를 1core 로 설정했습니다.
+마스터 서버를 1core 로 설정했습니다.  
 
 # HAProxy 설치 & 설정
 
-  * Active, Standby L4 서버 모두 동일하게 진행합니다. 설정파일 수정만 다르게 진행됩니다.
+Active, Standby 서버 모두 동일하게 진행하고 설정파일 수정만 다르게 진행됩니다.  
 
 ## 계정생성 
 
@@ -114,7 +114,7 @@ $ useradd -g hapgrp hapusr
 $ passwd hapusr
 ~~~
 
-## 설치
+## HAProxy 설치
 
 Ubuntu에서는 apt-get을 이용해서 쉽게 설치했는데  
 Redhat에서 yum을 이용해 설치를 하다가 실패했습니다.  
@@ -238,7 +238,7 @@ $ service rsyslog restart
 
 ## 실행 및 종료
 
-## 실행권한 설정
+### 실행권한 설정
 
 ~~~terminal
 $ echo '# User privilege specification' >> /etc/sudoers
@@ -248,7 +248,7 @@ $ echo 'hapusr ALL=NOPASSWD: service haproxy * ' >> /etc/sudoers
 
 hapusr 계정에게 haproxy에 대해서 sudo 권한을 제공했습니다.  
 
-## 실행
+### 실행
 
 ~~~terminal
 $ /etc/init.d/haproxy start
@@ -273,7 +273,7 @@ $ ps -ef | grep haproxy
 만약 다른 소유자가 hapusr가 아니라면 haproxy.cnf 파일 설정시 uid, gid 설정을 다시 해보시기 바랍니다.  
 
 
-## 종료
+### 종료
 
 ~~~terminal
 $ /etc/init.d/haproxy
@@ -289,16 +289,16 @@ OR
 hapusr$ sudo service haproxy stop
 ~~~
 
-## 부팅시 자동실행 설정
+### 부팅시 자동실행 설정
 
 ~~~terminal
 $ chkconfig haproxy on
 ~~~
 
 
-## Status 확인
+### Status 확인
 
-브라우저로 http://xxx.xxx.xxx.xxx/haproxy.stats 에 접속해보시면 HAProxy의 현재상황을 확인가능합니다. 
+브라우저로 http://xxx.xxx.xxx.xxx/haproxy.stats 에 접속해보시면 HAProxy의 현재상황을 확인가능합니다.  
 
 
 # Keepalived 설치 & 설정
@@ -311,7 +311,7 @@ Active, Standby 서버 모두 동일하게 설치하고 설정파일 수정만 �
 $ yum -y install kernel-headers kernel-devel
 ~~~
 
-## 설치 
+## Keepalived 설치 
 
 컴파일을 통해서 설치했습니다.  
 필요한 버전에 맞춰서 다운받아 사용하세요.  
@@ -319,13 +319,13 @@ $ yum -y install kernel-headers kernel-devel
 ~~~terminal
 // download
 root@localhost:~$ cd /usr/local/src
-root@localhost:src$ # wget http://www.keepalived.org/software/keepalived-1.2.16.tar.gz
-root@localhost:src$ # tar -zxvf keepalived-1.2.16.tar.gz
+root@localhost:src$ wget http://www.keepalived.org/software/keepalived-1.2.16.tar.gz
+root@localhost:src$ tar -zxvf keepalived-1.2.16.tar.gz
 ~~~
 
 ~~~terminal
 // compile
-root@localhost:~$ # cd /usr/local/src/keepalived-1.2.16
+root@localhost:~$ cd /usr/local/src/keepalived-1.2.16
 root@localhost:keepalived-1.2.16$ ./configure --with-kernel-dir=/lib/modules/$(uname -r)/build
 root@localhost:keepalived-1.2.16$ make && make install
 ~~~
