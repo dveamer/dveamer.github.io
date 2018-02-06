@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring @Async 비동기처리"
 date:   2016-10-30 12:00:00 
-lastmod: 2016-11-25 12:00:00 
+lastmod: 2018-02-06 00:00:00 
 categories: Java
 tags: Spring Asynchronous Multi-Thread 
 ---
@@ -168,8 +168,8 @@ Thread Pool의 종류를 여러개 설정하고자한다면 SpringAsyncConfig �
 
 좀 더 설명할 것이 남아있지만 일단 여기서 장점을 짚고 넘어가겠습니다.  
 
-save method에 대한 수정없이 처리가 가능하다는 점이 장점입니다.  
-기존에는 동기/비동기에 따라서 save method의 내용이 달라집니다.  
+method1에 대한 수정없이 처리가 가능하다는 점이 장점입니다.  
+기존에는 동기/비동기에 따라서 method1의 내용이 달라집니다.  
 개발할 때 동기/비동기에 대한 고민없이 개발자는 메시지를 저장하는 과정에만 집중하면 됩니다.  
 비동기로 처리해야되면 @Async annotation만 붙여주면 되니까요.  
 
@@ -177,6 +177,7 @@ save method에 대한 수정없이 처리가 가능하다는 점이 장점입니
 우리는 DI(Dependance Injection)만 신경쓰면 부수적인 것은 Spring이 다해줍니다.  
 
 ## 제약사항 
+
   * pulbic method에만 사용가능 합니다.  
   * 같은 객체내의 method끼리 호출시 async method는 동작하지 않습니다.  
 
@@ -301,7 +302,7 @@ public class GreetingService {
 }
 ~~~
 
-save method를 호출한 client에서는 Future의 isDone, get 등의 method를 이용해서 return 값을 사용할 수 있습니다.  
+method1을 호출한 client에서는 Future의 isDone, get 등의 method를 이용해서 return 값을 사용할 수 있습니다.  
 
 #### References
   * [Future](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html)
