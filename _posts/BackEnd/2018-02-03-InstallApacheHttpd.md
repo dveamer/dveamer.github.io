@@ -2,6 +2,7 @@
 layout: post
 title:  "HTTPD (Apache HTTP Server) 설치하기"
 date:   2018-02-03 00:00:00
+lastmod: 2018-02-07 00:00:00 
 categories: BackEnd
 tags: Setting Apache
 ---
@@ -65,9 +66,9 @@ HTTPD와 APR과의 버전 의존성이 있습니다.
 // download
 $ mkdir -p /tmp/install_apache
 $ cd /tmp/install_apache
-$ wget http://mirror.navercorp.com/apache/apr/apr-1.6.3.tar.gz
-$ tar zxvf apr-1.6.3.tar.gz
-$ cd apr-1.6.3
+$ wget http://mirror.navercorp.com/apache/apr/apr-1.5.2.tar.gz
+$ tar zxvf apr-1.5.2.tar.gz
+$ cd apr-1.5.2
 
 // compile
 $ ./configure --prefix=/usr/local/apr
@@ -81,9 +82,9 @@ $ make install
 // download
 $ mkdir -p /tmp/install_apache
 $ cd /tmp/install_apache
-$ wget http://mirror.navercorp.com/apache/apr/apr-util-1.6.1.tar.gz
-$ tar zxvf apr-util-1.6.1.tar.gz
-$ cd apr-util-1.6.1
+$ wget http://mirror.navercorp.com/apache/apr/apr-util-1.5.4.tar.gz
+$ tar zxvf apr-util-1.5.4.tar.gz
+$ cd apr-util-1.5.4
 
 // compile
 $ ./configure --prefix=/usr/local/apr-util
@@ -104,9 +105,9 @@ $ make install
 // download
 $ mkdir -p /tmp/install_apache
 $ cd /tmp/install_apache
-$ wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz
-$ tar zxvf pcre-8.41.tar.gz
-$ cd pcre-8.41
+$ wget https://ftp.pcre.org/pub/pcre/pcre-8.38.tar.gz
+$ tar zxvf pcre-8.38.tar.gz
+$ cd pcre-8.38
 
 // compile
 $ ./configure --prefix=/usr/local/pcre
@@ -126,9 +127,9 @@ $ make install
 // download
 $ mkdir -p /tmp/install_apache
 $ cd /tmp/install_apache
-$ wget https://www.openssl.org/source/openssl-1.0.2n.tar.gz
-$ tar zxvf openssl-1.0.2n
-$ cd openssl-1.0.2n
+$ wget https://www.openssl.org/source/openssl-1.0.2l.tar.gz
+$ tar zxvf openssl-1.0.2l
+$ cd openssl-1.0.2l
 
 // compile
 $ ./config -fPIC --prefix=/usr/local/ssl
@@ -152,9 +153,9 @@ http/2.x 를 이용하기 위한 프로그램입니다.
 // download
 $ mkdir -p /tmp/install_apache
 $ cd /tmp/install_apache
-$ wget https://github.com/nghttp2/nghttp2/releases/download/v1.29.0/nghttp2-1.29.0.tar.gz
-$ tar xfz nghttp2-1.29.0.tar.gz
-$ cd nghttp2-1.29.0
+$ wget https://github.com/nghttp2/nghttp2/releases/download/v1.23.0/nghttp2-1.23.1.tar.gz
+$ tar xfz nghttp2-1.23.1.tar.gz
+$ cd nghttp2-1.23.1
 
 // compile
 $ export LDFLAGS="-l/usr/local/ssl/include"
@@ -179,13 +180,13 @@ $ make install
 // download
 $ mkdir -p /tmp/install_apache
 $ cd /tmp/install_apache
-$ wget http://mirror.navercorp.com/apache/httpd/httpd-2.4.29.tar.gz
-$ tar xfz httpd-2.4.29.tar.gz
-$ cd httpd-2.4.29
+$ wget http://mirror.navercorp.com/apache/httpd/httpd-2.4.25.tar.gz
+$ tar xfz httpd-2.4.25.tar.gz
+$ cd httpd-2.4.25
 
 // compile
 $ ./configure \
---prefix=/user/local/httpd2 \
+--prefix=/usr/local/httpd \
 --enable-unique-id --enable-so --enable-proxy --enable-mods-shared=all \
 --with-mpm=worker --enable-mpms-shared-all \
 --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util \
@@ -216,8 +217,8 @@ $ passwd {account}
 ## Establish Authority
 
 ~~~terminal
-$ chmod 700 /user/local/httpd2 -R
-$ chown {account}:{group} /user/local/httpd2 -R
+$ chmod 700 /usr/local/httpd -R
+$ chown {account}:{group} /usr/local/httpd -R
 ~~~
 
 
@@ -226,22 +227,22 @@ $ chown {account}:{group} /user/local/httpd2 -R
 ### Start HTTPD
 
 ~~~terminal
-$ /user/local/httpd2/bin/apachectl 
+$ /usr/local/httpd/bin/apachectl 
 ~~~
 
-HTTPD를 ```/user/local/httpd2/```에 설치했기 때문에  
-현재 설정파일(httpd.conf)는 ```/user/local/httpd2/conf/httpd.conf```에 위치해있습니다.  
+HTTPD를 ```/usr/local/httpd```에 설치했기 때문에  
+현재 설정파일(httpd.conf)는 ```/usr/local/httpd/conf/httpd.conf```에 위치해있습니다.  
 
 만약 다른 위치의 설정파일을 이용해서 기동하고 싶다면 ```-f``` 옵션을 이용하면 됩니다.  
 
 ~~~terminal
-$ /user/local/httpd2/bin/apachectl -f /another_path/httpd.conf
+$ /usr/local/httpd/bin/apachectl -f /another_path/httpd.conf
 ~~~
 
 ### Stop HTTPD
 
 ~~~terminal
-$ /user/local/httpd2/bin/apachectl -k stop
+$ /usr/local/httpd/bin/apachectl -k stop
 ~~~
 
 > 부모 프로세스는 즉시 모든 자식을 종료시킨다. 자식을 완전히 종료시키는데는 몇 초가 걸릴 수 있다. 그런 후 부모가 종료한다. 처리중인 요청은 중단되고, 더 이상 요청을 받지않는다.  
@@ -251,7 +252,7 @@ $ /user/local/httpd2/bin/apachectl -k stop
 ### Gracefully Restart HTTPD
 
 ~~~terminal
-$ /user/local/httpd2/bin/apachectl -k graceful
+$ /usr/local/httpd/bin/apachectl -k graceful
 ~~~
 
 > 부모 프로세스는 자식들에게 현재 요청을 처리한후 종료하라고 (혹은 현재 아무것도 처리하지 않다면 즉시 종료하라고) 조언한다. 부모는 설정파일을 다시읽고 로그파일도 다시 연다. 자식이 죽을때마다 부모는 종료된 자식대신 새로운 설정 세대에 기초한 자식을 실행하여 즉시 요청을 처리하게 한다.  
@@ -260,7 +261,7 @@ $ /user/local/httpd2/bin/apachectl -k graceful
 ### Restart HTTPD
 
 ~~~terminal
-$ /user/local/httpd2/bin/apachectl -k restart
+$ /usr/local/httpd/bin/apachectl -k restart
 ~~~
 
 > 부모 프로세스는 모든 자식을 종료시키지만 부모는 종료하지 않는다. 부모는 설정파일을 다시읽고 로그파일을 다시 연다. 그리고 새로운 자식들을 만들고 서비스를 계속한다.  
@@ -298,6 +299,8 @@ $ rm -rf /tmp/install_apache
 
 HTTPD 설정은 다음 글에서 작성하겠습니다.  
 
-
+  * Tomcat 연동 - AJP 설정
+  * Tomcat 연동 - Proxy-pass 설정
+  * Forward-Proxy 설정
 
 
