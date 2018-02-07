@@ -86,7 +86,7 @@ $ vi ~/.bash_profile
 $ source ~/.bash_profile
 ~~~
 
-### process, port 상태 확인
+## process, port 상태 확인
 
 ~~~terminal
 $ netstat -nap | grep {port_number}
