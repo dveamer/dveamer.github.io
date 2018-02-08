@@ -158,8 +158,8 @@ $ tar xfz nghttp2-1.23.1.tar.gz
 $ cd nghttp2-1.23.1
 
 // compile
-$ export LDFLAGS="-l/usr/local/ssl/include"
-$ export OPENSSL_CFLAGS="-l/usr/local/ssl/include"
+$ export LDFLAGS="-I/usr/local/ssl/include"
+$ export OPENSSL_CFLAGS="-I/usr/local/ssl/include"
 $ export OPENSSL_LIBS="-L/usr/local/ssl -lssl -lcrypto"
 $ ./configure --prefix=/usr/local/nghttp2
 $ make
@@ -188,11 +188,11 @@ $ cd httpd-2.4.25
 $ ./configure \
 --prefix=/usr/local/httpd \
 --enable-unique-id --enable-so --enable-proxy --enable-mods-shared=all \
---with-mpm=worker --enable-mpms-shared-all \
+--with-mpm=worker --enable-mpms-shared=all \
 --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util \
 --with-pcre=/usr/local/pcre \
 --with-ssl=/usr/local/ssl --enable-ssl \
---with-nghttp2=/usr/local/nghttp2 --enable-http2 --enable-proxy-http2 \
+--with-nghttp2=/usr/local/nghttp2 --enable-http2 --enable-proxy-http2 
 $ make
 $ make install 
 ~~~
