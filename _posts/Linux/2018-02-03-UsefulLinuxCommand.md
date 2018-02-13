@@ -81,7 +81,7 @@ alias tlog='tail -f ${TOMCAT_LOG_PATH}/tomcat.out.${date '+%Y-%m-%d')'
 ```/.bash_profile```에 입력 후 ```source``` 명령어로 재등록해주면 됩니다.  
 
 ~~~terminal
-$ vi ~/.bash_profile
+$ vim ~/.bash_profile
 
 $ source ~/.bash_profile
 ~~~
@@ -107,6 +107,25 @@ tcp        0      0 192.168.0.4:33016       104.74.233.222:443      ESTABLISHED 
 
 netstat 옵션에 -p 를 넣게 되면 PID와 프로세스 이름이 함께 출력 출력됩니다.  
 
+
+## 로그파일에서 특정범위 추출하기
+
+Error 관련 로그를 공유하려고 할때 번거로운 경우가 많습니다.  
+예를들어, vim으로 로그파일을 열었는데 에러건 관련 INFO, ERROR 로그들이 내용이 많아서  
+한 화면에 안잡히면 마우스로 한번에 드래그가 되지 않아서 복사가 쉽지 않습니다.  
+
+vim에서 클립보드로 직접 복사하는 방법이 있긴한데  
+vim 버전, 플러그인 문제로 vim을 새로 설치해야하는 경우가 있습니다.  
+
+vim에서 라인수를 파악하고  
+sed로 해당 라인을 추출하는 방법을 알아봅니다.  
+
+vim 에서 ```:set number``` 명령어를 이용해서 추출하려는 로그의 라인수를 확인하세요.  
+예를들어 뽑아내고 싶은 메시지가 12303 라인부터 12402 라인까지라면 sed를 아래와 같이 사용하시면 됩니다.  
+
+~~~terminal
+sed -n '12303,12402p' raw.log > extracted.log
+~~~
 
 
 
