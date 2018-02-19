@@ -33,10 +33,6 @@ jQuery.fn.center = function () {
 
 
 $(function(){
-    $("#goindex").click(function(event){
-      $("#index_popup").bPopup();
-      //$("#index_popup").show();
-    });
 
     $("input.search").keydown(function(key) {
       if(key.keyCode == '13') { // Enter key

@@ -1,0 +1,98 @@
+
+<br/>
+<div class="subtitle-header">
+  <h3 class="subtitle">
+    Donations ❤
+  </h3>
+  <small>제가 작성한 글이 작게라도 도움이 되었기를 바랍니다.</small><br>
+  <small>관심 가져주시는 분이 있는 것을 느끼고 힘내기 위해 기부 버튼을 만들어봤습니다.</small><br>
+  <small>혹시 가능하시다면 $1 라도 기부 부탁드립니다 ^^</small><br>
+</div>
+<br/>
+
+<div class="donations">
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="BZFECKJKLX3MQ">
+    <button type="submit" class="btn btn-green" >Paypal</button>
+    <img alt="" border="0" src="https://www.paypalobjects.com/ko_KR/i/scr/pixel.gif" width="1" height="1">
+  </form>
+</div>
+
+<div class="donations">
+  <button type="button" id="ripple_btn" class="btn btn-blue" >Ripple</button>
+</div>
+
+<div class="donations">
+  <button type="button" id="ethereum_btn" class="btn btn-red" >Ethereum</button>
+</div>
+
+<br/>
+
+
+<div id="ripple_popup" class="popup chid-center" hidden>
+
+  </br>
+  <div class="subtitle-header">
+    <h3 class="subtitle">
+      Ripple 주소
+    </h3>
+  </div>
+  <br/>
+  
+  rMJukLwgYrMSDFJTzK7oCQyB9511cC4Gs8 <button type="button" onClick="javascript:copy('rMJukLwgYrMSDFJTzK7oCQyB9511cC4Gs8');">copy</button> 
+  <br/>
+  <img alt="ripple_qrcode" src="/images/donations_img/ripple_qr.png">
+
+  <br/>
+  <br/>
+</div>
+
+<div id="ethereum_popup" class="popup chid-center" hidden>
+
+  </br>
+  <div class="subtitle-header">
+    <h3 class="subtitle">
+      Ethereum 주소
+    </h3>
+  </div>
+  <br/>
+  
+  0xd3038400D4FA473a78190b3B23611Ca8ee04E074 <button type="button" onClick="javascript:copy('0xd3038400D4FA473a78190b3B23611Ca8ee04E074');">copy</button>
+  <br/>
+  <img alt="ethereum_qrcode" src="">
+
+  <br/>
+  <small>혹시 거래소를 이용하신다면 ethereum말고 paypal 혹은 ripple을 추천드립니다.</small><br>
+  <small>일반적으로 거래소의 이체수수료는 0.01 코인정도일텐데</small><br>
+  <small>2018년초 기준으로 ethereum은 100만원이기 때문에 이체 수수료를 1만원이나 지불하셔야합니다.</small><br>
+  <br/>
+</div>
+
+<input type="text" id="coin_clipboard" hidden>
+
+
+<script type="text/javascript">
+
+  var copy = function(text) {
+    var copyText = document.getElementById("coin_clipboard");
+    copyText.value = text;
+    copyText.hidden = false;
+    copyText.select();
+    document.execCommand("Copy");
+    copyText.hidden = true;
+  };
+
+  $(function(){
+      $("#ripple_btn").click(function(event){
+        $("#ripple_popup").bPopup();
+      });
+
+      $("#ethereum_btn").click(function(event){
+        $("#ethereum_popup").bPopup();
+      });
+  });
+
+
+</script>
+

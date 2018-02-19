@@ -1,0 +1,41 @@
+
+<br/>
+<div class="subtitle-header">
+  <h3 class="subtitle">
+    Disqus Social Community
+  </h3>
+  <small>SNS계정으로 댓글을 달아도 SNS에 글이 남지 않습니다.</small><br>
+  <small>이메일 주소 입력으로 글을 남길 수 있으며, 답변이 달리면 이메일로 알림을 받을 수 있습니다.</small><br>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var identifier = (function(){
+        return getIdentifier('{{ page.identifier }}', '{{ page.date | date: "%Y%m%d" }}', '{{ page.title }}' );
+    })();
+
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = '{{ site.disqus_comment_username }}';
+    
+    var disqus_config = function () {
+        this.page.url = '{{ site.disqus_domain }}{{ page.url | prepend: site.baseurl }}';
+        this.page.identifier = identifier;
+    };
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    // set a button checking identifier 
+    $(document).ready(function(){
+        $("#identifier").bind("click", function(){
+            $(this).html(identifier);
+        });
+    });
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<br/>
+
