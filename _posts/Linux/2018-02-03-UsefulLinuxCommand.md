@@ -124,10 +124,22 @@ vim 에서 ```:set number``` 명령어를 이용해서 추출하려는 로그의
 예를들어 뽑아내고 싶은 메시지가 12303 라인부터 12402 라인까지라면 sed를 아래와 같이 사용하시면 됩니다.  
 
 ~~~terminal
-sed -n '12303,12402p' raw.log > extracted.log
+$ sed -n '12303,12402p' raw.log > extracted.log
 ~~~
 
+## 디렉토리 용량 확인
 
 
+### 현재 디렉토리의 총 용량 확인
+
+~~~terminal
+$ du -sh
+~~~
+
+### 현재 디렉토리의 구성파일들의 용량 확인
+
+~~~terminal
+$ du -h --max-depth=1
+~~~
 
 
