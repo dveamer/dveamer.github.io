@@ -46,7 +46,7 @@ AWS 홈페이지에서 그 json 규격에 대한 문서가 있을만한데 저�
             "eventTime": "2018-03-23T13:44:30.435Z",
             "eventName": "ObjectCreated:Put",
             "userIdentity": {
-                "principalId": "AWS:AROAJMFYWAJBJ37QIDSKM:goso_s3_image_resizing"
+                "principalId": "AWS:ADODJMDYWAJBJ27QIESKM:name_of_evnet_receiver_like_lambda"
             },
             "requestParameters": {
                 "sourceIPAddress": "111.111.111.111"
