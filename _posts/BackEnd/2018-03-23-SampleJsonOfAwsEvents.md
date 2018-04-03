@@ -30,7 +30,29 @@ AWS 홈페이지에서 그 json 규격에 대한 문서가 있을만한데 저�
 그 대신 필요한 이벤트를 임의로 발생시켜보고  
 전달받은 json을 로깅해서 대략적인 규격을 파악하고 개발을 진행하고 있습니다.  
 
-근데 매번 같은 작업을 하게 되는 것 같아서 json sample을 기록해보려고 합니다.  
+근데 매번 반복 작업을 하는 것 같아서 json sample을 기록해보려고 합니다.  
+
+# How To Log Jsons
+
+일단 Lambda에서 어떤 방법으로 로깅을 했는지 알려드립니다.  
+사용한 language는 Python3.6 입니다.  
+
+~~~python
+
+import json
+
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+def lambda_handler(event, context) :
+    
+  logger.info("event : {}".format(json.dumps(event)))
+
+~~~
+
+예를들어 S3 이벤트에 대한 Lambda를 작성 후 테스트를 하려면  
+자신의 정확한 S3 bucket 정보가 담긴 json sample이 필요하실 것이기 때문에 로깅은 한번쯤 필요합니다.  
 
 # S3
 
@@ -74,5 +96,22 @@ AWS 홈페이지에서 그 json 규격에 대한 문서가 있을만한데 저�
             }
         }
     ]
+}
+~~~
+
+
+# CloudWatch Events
+
+~~~json
+{ 
+  'version': '0', 
+  'id': '2de27334-3716-fy7e-5x43-dwf1a5ac5447', 
+  'detail-type': 'Scheduled Event', 
+  'source': 'aws.events', 
+  'account': '141855812477', 
+  'time': '2018-04-03T16:07:58Z', 
+  'region': 'ap-northeast-1', 
+  'resources': ['arn:aws:events:ap-northeast-1:141855812477:rule/scheduled_event_name_which_you_wrote'], 
+  'detail': {}
 }
 ~~~
