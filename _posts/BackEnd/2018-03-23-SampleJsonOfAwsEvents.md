@@ -104,14 +104,14 @@ def lambda_handler(event, context) :
 
 ~~~json
 { 
-  'version': '0', 
-  'id': '2de27334-3716-fy7e-5x43-dwf1a5ac5447', 
-  'detail-type': 'Scheduled Event', 
-  'source': 'aws.events', 
-  'account': '141855812477', 
-  'time': '2018-04-03T16:07:58Z', 
-  'region': 'ap-northeast-1', 
-  'resources': ['arn:aws:events:ap-northeast-1:141855812477:rule/scheduled_event_name_which_you_wrote'], 
-  'detail': {}
+  "version": "0", 
+  "id": "2de27334-3716-fy7e-5x43-dwf1a5ac5447", 
+  "detail-type": "Scheduled Event", 
+  "source": "aws.events", 
+  "account": "141855812477", 
+  "time": "2018-04-03T16:07:58Z", 
+  "region": "ap-northeast-1", 
+  "resources": ["arn:aws:events:ap-northeast-1:141855812477:rule/scheduled_event_name_which_you_wrote"], 
+  "detail": {}
 }
 ~~~
