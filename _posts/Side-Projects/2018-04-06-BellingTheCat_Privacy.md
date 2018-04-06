@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Belling the Cat 개인정보처리방침"
-date: 2017-04-06 00:00:00
+date: 2018-04-06 00:00:00
 categories: Side-Projects
 ---
 
