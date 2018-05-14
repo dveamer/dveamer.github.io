@@ -116,3 +116,58 @@ def lambda_handler(event, context) :
 }
 ~~~
 
+
+# Dynamo DB
+
+## Dynamo DB Insert
+
+boto3 모듈의 UpdateItem 으로 입력했었습니다.  
+실제 update가 아닌 insert가 발생한다면 eventName이 Insert로 내려오네요.  
+
+~~~json
+
+{
+    "Records": [
+        {
+            "eventID": "ccdc9732e4ad93fc6d1283d850567b66",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "ap-northeast-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1523182120,
+                "Keys": {
+                    "key1": {
+                        "S": "value"
+                    },
+                    "key2": {
+                        "S": "value"
+                    }
+                },
+                "NewImage": {
+                    "key1": {
+                        "S": "value"
+                    },
+                    "key2": {
+                        "S": "value"
+                    },
+                    "column1": {
+                        "S": "column1 value"
+                    },
+                    "column12": {
+                        "N": "column2 value"
+                    }
+                },
+                "SequenceNumber": "159997200000000018442001308",
+                "SizeBytes": 200,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:ap-northeast-1:141855812477:table/your_table_name/stream/2018-03-21T14:31:59.473"
+        }
+    ]
+}
+
+~~~
+
+
+
