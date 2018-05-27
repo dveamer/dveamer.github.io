@@ -1,0 +1,60 @@
+---
+layout: diary_layout
+---
+<div class="post">
+  <br>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}
+      {% if page.author %} • {{ page.author }}{% endif %}
+      {% if page.meta %} • {{ page.meta }}{% endif %}
+      <!-- {% if page.categories %} • {{ page.categories }} {% endif %} -->
+
+      <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span class="post-meta disqus-comment-count" 
+        {% if page.identifier.size > 0 %} data-disqus-identifier="{{ page.identifier }}" {% endif %}
+        data-disqus-url="{{ site.disqus_domain }}{{ page.url | prepend: site.baseurl }}">0 Comments</span>
+
+      {% if page.categories.size > 0 %}
+          <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          {% for category in page.categories %}
+            <span class="post-meta">{{ category }}</span>
+            &nbsp;
+          {% endfor %}
+      {% endif %}
+
+      {% if page.tags.size > 0 %}
+          <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          {% for tag in page.tags %}
+            <span class="post-meta">{{ tag }}</span>
+            &nbsp;
+          {% endfor %}
+      {% endif %}
+
+      <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <span class="post-meta" id="identifier">☛</span>
+
+    </p>
+
+  </header>
+
+
+  <article id="post_content" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
+    {{ page.content}}
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
