@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "11년만에 다시 찾은 남해"
 date:   2016-02-26 12:00:00 
 categories: Diary

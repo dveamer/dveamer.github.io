@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "인생은.."
 date:   2016-06-17 12:00:00 
 categories: Diary

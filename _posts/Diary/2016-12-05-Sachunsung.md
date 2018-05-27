@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "사천성"
 date:   2016-12-05 00:00:00
 categories: Diary

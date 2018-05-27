@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "추운 겨울과 라면 마니아 고양이"
 date:   2016-01-30 16:30:00 
 categories: Diary

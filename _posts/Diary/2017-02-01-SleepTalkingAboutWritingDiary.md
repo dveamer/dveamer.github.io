@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "일기 쓰기에 대한 잠꼬대"
 date:   2017-02-01 12:00:00
 categories: Diary

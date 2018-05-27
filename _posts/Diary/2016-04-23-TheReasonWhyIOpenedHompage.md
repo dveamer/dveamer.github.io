@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "개인 홈페이지를 운영하는 이유"
 date:   2016-04-23 00:00:00 
 categories: Diary

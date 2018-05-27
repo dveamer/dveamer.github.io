@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "인공지능과 사람에 대한 두려움"
 date:   2016-03-12 12:00:00 
 categories: Diary

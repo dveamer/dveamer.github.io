@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "홈페이지에 대한 잠꼬대"
 date:   2017-02-01 12:00:01
 categories: Diary

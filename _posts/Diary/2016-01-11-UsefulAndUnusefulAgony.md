@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "쓸데없지만 쓸데없지 않은 고민"
 date:   2016-01-12 00:00:00
 categories: Diary

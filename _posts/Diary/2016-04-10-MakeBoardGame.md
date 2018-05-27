@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "보드게임을 만들어보자"
 date:   2016-04-10 12:00:00 
 categories: Diary Programming

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: diary
 title:  "새로운 학습모임"
 date:   2018-05-17 00:00:00
 categories: Diary
