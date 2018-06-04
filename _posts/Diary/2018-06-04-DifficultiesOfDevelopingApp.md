@@ -32,7 +32,7 @@ categories: Difficulties
 
 앱 소개글에 "똥"이라는 한 글자 떄문에 앱 업데이트가 거절 당한 것이다.  
 
-앱 소개글에 "똥인지 된장인지 모르겠으면 먹지 않으시면 됩니다 ^^" 라고 적어놨는데  
+[앱 소개글](https://play.google.com/store/apps/details?id=com.dveamer.goso)에 "똥인지 된장인지 모르겠으면 먹지 않으시면 됩니다 ^^" 라고 적어놨는데  
 똥.. 이라는 단어가 그렇게 문제가 되나? ㅋ  
 
 
