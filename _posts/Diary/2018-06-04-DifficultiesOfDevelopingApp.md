@@ -2,7 +2,8 @@
 layout: diary
 title:  "안드로이드 앱 개발하면서 힘든 점"
 date:   2018-06-04 00:00:00
-categories: Difficulties
+categories: Diary
+tags: Difficulties
 ---
 
 ![Google Play](https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png)  
