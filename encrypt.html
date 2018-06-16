@@ -42,30 +42,38 @@ layout: default
         document.getElementById("textbox").value = decrypted;
       };
 
+      var reset = function() {
+        document.getElementById("textbox").value = "";
+        document.getElementById("passphrase").value = "";
+        document.getElementById("re-passphrase").value = "";
+      }
     </script>
 
+<div class="encrypt">
 
+  <div>
+    <a href="/tips/ManagePswd.html">패스워드 관리 팁</a> 참고하기
+  </div>
 
-<div>
-  <a href="/tips/ManagePswd.html">패스워드 관리 팁</a> 참고하기
+  <br/>
+
+  <div>
+    <textarea rows="3" cols="100" id="textbox" placeholder="암호화 혹은 복호화할 문자열을 입력하세요. (copy a text for encryption/decryption.)" ></textarea> 
+  </div>
+
+  <div>
+    <textarea rows="1" cols="100" id="passphrase" placeholder="암/복호화키를 입력하세요. (type in passphrase.)" ></textarea>  
+  </div>
+
+  <div>
+    <textarea rows="1" cols="100" id="re-passphrase" placeholder="암호화를 위해서라면 암호화키를 재입력하세요. (re-type in passphrase for encryption.)" ></textarea>  
+  </div>
+
+  <div>
+    <button class="btn btn-green" onclick="encrypt();" >암호화 (Encrypt)</button>
+    <button class="btn btn-green" onclick="decrypt();" >복호화 (Decrypt)</button>
+
+    <button class="btn btn-gray" onclick="reset();" >초기화(Reset)</button> 
+  <div>
+
 </div>
-
-<br/>
-
-<div>
-  <textarea rows="3" cols="100" id="textbox" placeholder="암호화 혹은 복호화할 문자열을 입력하세요. (copy a text for encryption/decryption.)" ></textarea>  
-</div>
-
-<div>
-  <textarea rows="1" cols="100" id="passphrase" placeholder="암/복호화키를 입력하세요. (type in passphrase.)" ></textarea>  
-</div>
-
-<div>
-  <textarea rows="1" cols="100" id="re-passphrase" placeholder="암호화를 위해서라면 암호화키를 재입력하세요. (re-type in passphrase for encryption.)" ></textarea>  
-</div>
-
-<div>
-  <button onclick="encrypt();" >암호화 (Encrypt)</button>
-  <button onclick="decrypt();" >복호화 (Decrypt)</button>
-<div>
-

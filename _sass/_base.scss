@@ -348,6 +348,17 @@ pre {
     color: white;
 }
 
+.btn-gray {
+    background-color: white; 
+    color: #A0A0A0; 
+    border: 2px solid #A0A0A0;
+}
+
+.btn-gray:hover {
+    background-color: #A0A0A0;
+    color: white;
+}
+
 
 /**
  * Donations
@@ -359,6 +370,16 @@ div.donations {
 
 div.child-center {
   text-align:center;
+}
+
+
+
+/**
+ * Encryption
+ */ 
+
+div.encrypt > div > textarea {
+  padding: 10px;
 }
 
 
