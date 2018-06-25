@@ -7,7 +7,7 @@ tags: Citrix
 identifier: 20151209-485155446
 ---
 
-![citrix](http://docs.citrix.com/content/dam/docs/en-us/legacy-edocs/receiver-windows-43/receiver-x1-icon.png) ![citrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png)
+![citrix](http://docs.citrix.com/content/dam/docs/en-us/legacy-edocs/receiver-windows-43/receiver-x1-icon.png) ![citrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png){:class="imgTitle"}
 
 ( 이미지 출처 : [http://docs.citrix.com](http://docs.citrix.com), [https://upload.wikimedia.org](https://upload.wikimedia.org) )
 

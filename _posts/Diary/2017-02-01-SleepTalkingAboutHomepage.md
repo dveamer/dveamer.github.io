@@ -5,7 +5,7 @@ date:   2017-02-01 12:00:01
 categories: Diary
 ---
 
-![Victorian Style Home Marysville.jpg](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Victorian_Style_Home_Marysville.jpg/748px-Victorian_Style_Home_Marysville.jpg)  
+![Victorian Style Home Marysville.jpg](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Victorian_Style_Home_Marysville.jpg/748px-Victorian_Style_Home_Marysville.jpg){:class="imgTitle"}  
 ( 출처 : [Wikimedia](https://commons.wikimedia.org) )
 
 앞서 짧지 않은 잠꼬대를 했지만..  

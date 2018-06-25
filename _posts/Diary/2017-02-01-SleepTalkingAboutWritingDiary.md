@@ -5,7 +5,7 @@ date:   2017-02-01 12:00:00
 categories: Diary
 ---
 
-![a sleeping dog](https://upload.wikimedia.org/wikipedia/commons/1/17/Dog.in.sleep.jpg)  
+![a sleeping dog](https://upload.wikimedia.org/wikipedia/commons/1/17/Dog.in.sleep.jpg){:class="imgTitle"}  
 ( 출처 : [Wikipedia](https://wikipedia.org) )
 
 

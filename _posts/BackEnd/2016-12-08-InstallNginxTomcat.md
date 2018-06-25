@@ -8,7 +8,7 @@ tags: Setting Nginx Tomcat
 ---
 
 ![Nginx Logo](https://cdn.wp.nginx.com/wp-content/uploads/2015/04/NGINX_logo_rgb-01.png){:class="imgTitle"}
-![Tomcat Logo](https://tomcat.apache.org/images/tomcat.png){:class="imgTitle"}  
+![Tomcat Logo](http://tomcat.apache.org/res/images/tomcat.png){:class="imgTitle"}  
 (이미지 출처 : [https://www.nginx.com](https://www.nginx.com), [http://tomcat.apache.org/](http://tomcat.apache.org/))  
 
 Nginx와 Tomcat을 이용해서 기본적인 WEB-WAS 환경을 구성해보겠습니다.  
