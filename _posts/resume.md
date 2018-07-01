@@ -1,6 +1,10 @@
 ---
 layout: plain
 title:  "resume"
+date:   2018-07-01 00:00:00
+lastmod: 2018-07-01 00:00:00 
+categories: Resume
+tags: Side-Projects
 ---
 
 현재 회사에서는 Software-Architect 로 불리는 역할을 수행 중입니다.  
