@@ -1,5 +1,6 @@
 ---
 layout: plain
+title:  "resume"
 ---
 
 현재 회사에서는 Software-Architect 로 불리는 역할을 수행 중입니다.  
