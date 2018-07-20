@@ -546,7 +546,7 @@ $ curl -i http://localhost
 사용자 리스트 URI를 호출해봅니다. 404 Not Found 에러페이지가 출력될 것입니다.  
 
 ~~~terminal
-$ curl -i http://localhost/news
+$ curl -i http://localhost/authors/
 ~~~
 
 ## Nginx-gunicorn 연동가이드
@@ -574,10 +574,10 @@ server 정보는 38라인부터 57라인에 해당합니다. 백업해놨으니 
 ~~~vim
 # vi /etc/nginx/nginx.conf
 
-
-server {
-    ....
-}
+# 삭제 혹은 주석
+# server {
+#     ....
+# }
 ~~~
 
 ### Nginx server 등록
@@ -633,10 +633,10 @@ $ nginx
 ### 기동 확인
 
 ~~~terminal
-curl -i http://localhost/authors/1/
+$ curl -i http://localhost/authors/
 ~~~
 
-정상적으로 아까 등록해둔 1번 author의 json이 출력됩니다.  
+정상적으로 아까 등록해둔 authors json이 출력됩니다.  
 
 #### References
 
