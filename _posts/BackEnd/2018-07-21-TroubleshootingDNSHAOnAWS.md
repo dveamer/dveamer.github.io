@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AWS를 사용하면서 겪은 트러블슈팅 ( DNS 기반 HA 구성 )"
+title: "AWS를 사용하면서 겪은 트러블슈팅 ( DNS 기반 HA 관련 이슈 )"
 date: 2018-07-21 00:00:00
 categories: BackEnd
 tags: Troubleshooting
@@ -35,7 +35,7 @@ Client 프로그램에서 dveamer.github.io 라는 도메인을 호출할 때 �
 ![DNS질의](https://lh3.googleusercontent.com/iqK3q838DV5_LBqK0rtLAsI335iSjW0VFAaGYdqgODghnN9G-JSTCGcnvnAgy9H1b2RxbJPfUgv3Jl7Yx1VEvk077rnCwGABBMVI_ppWEaoWam9VnfSe4qQSW0aPJqbcnzZVZ5KJohjJZ94diBb0QyXeBn0WAMwIjl_HUFqXuqicglTFiSY8rOOQPefzkwJhuXbv7IlnlTZsoEOU2pQqeGbxpyrf5wUHttoZp6NMndhnT1-iAIxqn2S0-SsRa5SJxBW-KME_MvICWfing1gMKuEWxHdVV1WMVu7AQQAXl0bjUYLjKivETsEh3r23vtpzP3Ooa0gMDDB-vvt0MBnqPgF-WBMT5S58iuJmHgoVyQTW0H2nQsofS4F-WHIm9CKj3cP-J34n0mKC6widv87OrPl5OcpMaDRZW2k_mf9Lr0UXiLum7dDb2qsqFmUO_Dwe4ZN0zoFW1mFPwvOof38h0dkNwK33cTnpS3KSXlKCUOQIAnkAZNXgGFZHsKjT_YAQn8y0D3kqGRbTQ85AcQQM0HdgdyNV6TjULe35UQb85svz3Hyip4XOrCIIGloItgHh2_NGq2tXinl0Zq-265GeV7aRbMpb_S_kBNuc2GagVN2Kfwh9oY1bzjF9w82GcVGsd0J9mjzSRqeLQalNA44ftX1z0gaMFJTt=w667-h384-no)
 
   1. Client는 dveamer.github.io 이라는 목적지 server의 도메인 정보만 알고있는 상황입니다.
-  2. Client의 OS는 DNS server에 질의하여 dveamer.com에 대한 IP 리스트 획득합니다.
+  2. Client의 OS는 DNS server에 질의하여 dveamer.github.io에 대한 IP 리스트 획득합니다.
   3. OS는 dveamer.github.io 도메인과 IP 리스트 정보를 local DNS에 일정시간동안 보관합니다.
   4. Client는 OS로부터 제공받은 IP 리스트 중 하나를 선택하여 호출합니다. 
 
@@ -54,7 +54,7 @@ client는 목적지 서버의 개수나, IP 정보를 모른채
 
 ### DNS 기반 HA를 이용한 DR(Disaster Recovery) 구성 
 
-Server3을 구성하고 DNS server에 server 1, 2의 IP를 server3의 IP로 변경합니다.  
+Server3을 구성하고 DNS server에 목적지 server IP를 server3의 IP로 변경합니다.  
 
 ![DNS를 통한 DR구성](https://lh3.googleusercontent.com/wVelRAGXACvfbScY_FP-rLE8Wj-T-PgNkz3XreCX1LES2yvt4rPnD6HBxLlnHk4qLquLy6uUIMHVa8pCpG2tILNqNnYZXyawevxXTfDsDLKOVDwaJqVvu_VP3amhR5EMgt9sCMrZVBzc_Qa2PzEsqVFwWiEBC0woHU2HQU9FxvYUN1eSsdFZrR2IepcbALvBxa3Zz6yPZRA4QUiY0ezs4mXJV-kJimurTzUHZIR46NhOnMUFlk-J0y6C0gTnmre86lIfu3kfWnQLpJMDb6hAZc4WaRfbTP2fBQndxe6f10MTReOnbOqwYP27Dr9ws6rOg4cmkgO4ukmzoNl5zwGmhQL_PcauKc37LpYsjktKBzmYZ5nxXnI_KWBcVkGdjE8TDObgilbvhmSs_qTxnqM_BeMEnsBEJVTZaap9OFG_7hAxOlQN6l2-S3rO_RppXLEyCCRE4ljkmIWrQjO5yc_BaFw4Ejdef-4GvmWvOdw7usbcwVbWfQAd5ZLURVELUvzh1WrOiA5PPWE16_JkJ4FRpG3PVe5ox8WN7TkBBd27TcrdTZ6WiLJRX_Wnwbq6vcV2TsQmYiZoURqgQnE63mkTlhDLLP9GhBWVXLlnU_3YPCoNNV_k2KAjWxlNkm-ZhidJBi8GsOobWDkdTqsfcYCJxccDnjB2AYAW=w624-h526-no)
 
@@ -114,12 +114,12 @@ Apache HTTPD는 기동시에 자신이 사용해야할 IP를 수집합니다.
 그 뒤 worker는 받아온 올바른 IP를 가지고 worker process는 ELB를 정상적으로 호출하게 됩니다.  
 
 근데 Apache HTTPD의 main process는 주기적으로 worker process의 정보를 초기화 시킵니다.  
-그 이유는 3회연속 접속실패된 IP는 worker procesS가 연동대상에서 제외하는 기능이 있습니다.  
-근데 접속실패 되던 IP의 서버가 정상적으로 복구되었을 때 연동대상에서 제외된 IP를 복구 시키기 위한 처리입니다.  
+그 이유는 3회연속 접속실패된 IP는 worker process가 연동대상에서 제외하는 기능이 있습니다.  
+근데 접속실패 되던 IP의 서버가 정상적으로 복구되었을 때 연동대상에서 제외된 IP를 복구 시키기 위한 방안입니다.  
 관련 Apache HTTPD 파라미터인 maintain 값에 의해 60초마다 worker process가 가진 정보가 초기화 되고 있었습니다.  
 
 그러면 worker process는 다시 main process로부터 IP정보를 받아와야 됩니다.  
-이 시점에서 main process가 정상적인 IP를 제공하면 되는데 엉뚱하게도 잘못된 IP를 제공합니다.  
+이 시점에서 main process가 정상적인 IP를 제공하면 되는데 엉뚱하게도 과거의 IP를 제공합니다.  
 기동시에 파악했던 최초의 IP들만 넘겨주는 것인지 아니면 그것과 함께 추가된 IP들을 제공하는 것인지는 모르겠으나  
 어쨋든 worker process가 또 다시 잘못된 IP에 연결을 시도하고 14초의 응답지연이 발생합니다.  
 
@@ -151,12 +151,12 @@ AWS 직원과 커뮤니케이션 없이 자체적으로 쉽게 테스트 할 수
 Dynamic DNS Resolution 설정을 하지 않으면 Apache HTTPD와 비슷한 결과를 가졌지만  
 Dynamic DNS Resolution 설정을 하면 거의 즉시 올바른 IP로 연결되고 정상상태가 계속 유지되는 것을 확인했습니다.  
 
-이것은 정상적인 설정방식이라서 사용하기 적절했지만  
+나름 적절한 해결방안이었지만  
 보안팀에서 HAProxy를 Web server로 인정해주지 않아서 Web-WAS-DB라는 3 tiers 구성이라는 보안팀 요구사항을 충족시킬 수가 없었습니다.  
 
 ### Nginx 으로 교체
 
-유료 솔루션인 Nginx Plus의 경우는 Dynamic DNS Resolution 기능이 제공되고 있습니다.  
+유료 솔루션인 Nginx Plus의 경우는 Dynamic DNS Resolution 기능이 제공되고 있었지만  
 무료 솔루션인 Nginx Open의 경우는 몇가지 기능이 제공되지 않는데 그 중 하나가 Dynamic DNS Resolution 입니다.  
 
 하지만 Nginx Open으로도 도메인 변수처리와 rewrite 설정을 교묘하게 잘 엮으면 Dynamic DNS Resolution 기능을 동일하게 만들어낼 수 있었습니다.  
@@ -168,7 +168,7 @@ Dynamic DNS Resolution 설정을 하면 거의 즉시 올바른 IP로 연결되�
 
 ### NLB 사용
 
-NLB는 다른 ELB와 달리 AZ별로 고정 IP를 할당 받습니다. AZ가 두개라면 고정 IP를 두개 받게 되고 추후 IP변경은 이뤄지지 않습니다. NLB의 Scale in/out이 일어나도 IP변경은 일어나지 않기 때문에 묹가 발생하지 않습니다. 또한 고정 IP를 Apache HTTPD 설정에 직접 입력 가능합니다.  
+NLB는 다른 ELB와 달리 AZ별로 고정 IP를 할당 받습니다. AZ가 두개라면 고정 IP를 두개 받게 되고 추후 IP변경은 이뤄지지 않습니다. NLB의 scale in/out이 일어나도 IP변경은 일어나지 않기 때문에 문제가 발생하지 않습니다. 또한 고정 IP를 Apache HTTPD 설정에 직접 입력 가능합니다.  
 
 ![NLB사용](https://lh3.googleusercontent.com/kljFyu4IE8Mw_nWbUYsEA3ASEzdNCZN8hl7r7zJK7_CsOMgwsNPPKpAPBxv_rHMaLVLm8ECNQ4kSD9dQtWIWtRTeAMRW5K0-6n7N1N5hSg9ADfEGE3pX97f06uLYNcS85_RMUyi54TgccsKCQpv9oTs47rPwfzy-zIYS8C9k7K-JDHFkKOWwXX9wMoWy2g2n4ZrEe_JZXv1p6EzW8U8hlII7LGm2pqv_ltINzcBJfaJQDPhXrvyozRtaLtumlnBdCyjEuZsWEVdyLImcKNQX1DPU3voUniTxMeqQLhtrNY0S8EdfLnhBlxMJjzYNbaRtG1h7HWJxYg0zFJqCspKW23mPlCeGnMdMoJzgnLu2dZ0xFjAz93DgoNitHTMNqJfJsvozOQo4XrUicrg-BVC8bnM20r8fqeFWR8t0K362IuoTHqiPrMJDtFFrIAhxefSquBDPgaquRHYsvc6P2-fK4e3J5yGR3qJyqPZcTO6NU1AxTJenEI1lJQ225zvYOQEqYNp6M6MV-wHjCj5zf84oT987yTv1B5OSME6KoX-Jpx-Wii1eHXwKKVtGszRRAwRCvBNVksWi8k10BpnrMiDlOnhATjv57W42TNpCqdGfPWVEsYiU6RIRtB4C4__nLmBG5qchs8jB6ulojiFxKytajKYOoP3euPwT=w608-h514-no)
 
@@ -218,7 +218,7 @@ HAProxy, Nginx로는 처리가 가능한 점과 Apache HTTPD를 유지하려면 
 
 최종적으로는 엉뚱하게도 비용관련 이슈를 통해 문제가 해결됐습니다.  
 AWS 비용을 줄일 방법을 고민해달라는 요청을 받아서 Web서버를 제거하면 불필요한 비용도 기술이슈도 해결되며 관리포인트도 줄어든다는 방향으로 설득을 했더니  
-예산담당자가 적극적으로 움직이더니 최종적으로는 보안팀과의 협의를 이뤘고 Web서버를 제거하는 방향으로 진행됐습니다.  
+결정권자들이 적극적으로 움직여서 최종적으로는 보안팀과의 협의를 이뤘고 Web서버를 제거하는 방향으로 진행됐습니다.  
 
 ## 추가내용 
 
@@ -246,13 +246,26 @@ Aurora RDS Fail-over 테스트를 진행했고 생각보다 서비스가 재개�
 WAS의 JVM DNS TTL과 OS의 DNS TTL을 0으로 설정하고 테스트를 하니 3초 정도까지 시간이 크게 줄어들었습니다.  
 하지만 Oracle RAC를 기준 잡혀있는 품질팀으로부터 요구사항은 1초 이내였습니다.  
 
-어느 구간에서 시간을 잡아먹는지 파악하기 위해 테스트를 진행했습니다.  
+## Aurora RDS
+
+Aurora RDS에 대해서 간략하게 설명하겠습니다.  
+
+Aurora RDS도 DNS 기반으로 HA가 확보된 AWS 서비스입니다.  
+이중화 구성이 되어 있는데 하나는 읽기, 쓰기가 가능한 writer 역할이고  
+다른 하나는 읽기만 가능한 reader 역할을 가진 DB입니다.  
+
+이 역할은 고정된 것이 아니라 기동시 정해지고 writer에게 문제가 생기면 다른 DB에게 writer 역할이 넘겨집니다.  
+
+각 DB server는 각자의 도메인을 갖고 있지만 (db01.aws.com , db02.aws.com)  
+상황에 따라 역할이 바뀌기 때문에 WAS에서는 해당 도메인을 사용하지 않습니다.  
+Writer 역할을 갖는 DB를 가리키는 도메인이 하나 더 제공되며 (db-writer.aws.com)  
+WAS에서는 그 도메인을 가지고 연결을 시도합니다.  
 
 ![Aurora DB Fail-Over](https://lh3.googleusercontent.com/p_BM_qDa7YkLnKMgRn4R0RDTaS4tk6h3ChfqitjubrGoe1bnnU2_h9PoVphfBs_pBwkSluApWviNOOsHEZD0PYapp3IIVyLw3tVkj18M2EejlN2RFB8_E7xdzfcl0D9RMg68hGBdPgr4I_mVJRD7Ar7jeDizP1LIXB-L-qeL-bgdOphcW425YIiZUhGztZui4sXoL9NGN8GJ-_RbkDUqCE8Qs6IeHLXkEEHk5kwmIB9p4JYtTZBO1x0FBvjb9p8CF88W6vD9mtmT8FzZrXXCyueMMiJbhEOEyhwk9T8LuW9E0daPtHtSW5nd3oM5X9wjKjdYQR3RFiRzm1Qf-mxjx9hK7lg-y4Z6rKon9qze-ZQ8jBAwuClN4o7xNp77-7qvqZJPQkrQ28mzM5n_FyERXsep9aSe4-OwfiC3a2GWLrBCNSttpHJUtgN0D3KcQIglXhb-7cyp8rlgx1MJoCnGCt2hq7fTHiR5gCg4sWUNPZbmyUM6pnOOulLh4skpI6iNvvhvuPSk6LG-_8vlZTEp_LcKuuic3zFhsH7K08fXYQzyENs8Uqi0uhW2zijZBFrgPCTMhYPWPzjIK8TlISuyYVTB8wCy-pEBJTk5Da92SrlhXI8mMqhga31tv-my0B-EZvRR_wuBpR3D2gCK80DrSD04T3-oZZRi=w520-h510-no)
 
 ## 테스트 
 
-아래와 같이 구간을 나눠봤습니다.  
+어느 구간에서 시간을 잡아먹는지 파악하기 위해 테스트를 진행했습니다.  
 
   1. 이슈인지 : Writer DB (DB01) 이슈발생 인지
   2. DB재기동 : Writer DB (DB01), Reader DB (Db02) 재기동
@@ -264,7 +277,7 @@ WAS의 JVM DNS TTL과 OS의 DNS TTL을 0으로 설정하고 테스트를 하니 
 WAS에 적당한 부하를 줘서 계속해서 DB에 query를 보내는 상황에서  
 강제적으로 Writer DB에 이슈를 발생시켰습니다.  
 
-WAS에서 Exception이 발생한 시점과 추후 정상처리되는 시점을 기록했습니다.  
+WAS에서 Exception 발생 시작시점과 추후 정상처리 시작시점을 기록했습니다.  
 그리고 간단한 스크립트를 짜서 nslookup을 계속 질의하여 Router53에 IP가 반영되는 시점을 확인했습니다.  
 DB의 로그를 전달받아서 이슈가 인지되고 재기동, 역할변동들에 걸리는 시간을 체크해봤습니다.  
 
@@ -276,6 +289,6 @@ DB의 로그를 전달받아서 이슈가 인지되고 재기동, 역할변동�
 
 ## 진행 결과 
 
-AWS 측에 문의해봤으나 당시로써는 더 이상의 시간단축 방법은 없었습니다.  
-꽤나 고생을 했지만 결국은 제어할 수 없는 영역에 의한 처리시간이었고 품질팀과 재논의를 통해 적당히 타협해서 이슈를 종료시킬 수 있었습니다.  
+AWS 측에 문의해봤으나 당시로써는 해당구간에 대해서 더 이상의 시간단축 방법은 없었습니다.  
+꽤나 고생을 했지만 결국은 제어할 수 없는 영역에서의 처리시간이었고 품질팀과 재논의를 통해 적당히 타협해서 이슈를 종료시킬 수 있었습니다.  
 
