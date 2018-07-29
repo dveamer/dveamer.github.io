@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AWS를 사용하면서 겪은 트러블슈팅 ( DNS 기반 HA 관련 이슈 )"
+title: "AWS를 사용하면서 겪은 트러블슈팅 (DNS 기반 HA 관련 이슈)"
 date: 2018-07-21 00:00:00
 categories: BackEnd
 tags: Troubleshooting
