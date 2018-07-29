@@ -26,11 +26,11 @@ Aurora DB fail-over에 걸리는 시간을 최대한 줄여봤지만 3초정도�
 AWS가 ELB와 Aurora DB의 HA(High Availability)를 확보하기 위해 DNS를 이용한다는 점입니다.  
 ( ELB, Aurora DB만이 아니라 AWS 위의 대부분의 인스턴스, 서비스 들은 서로 도메인으로 호출을 하고 DNS를 통해 HA를 확보하는 것으로 알고 있습니다. )  
 
-그러나 이유로 DNS 기반의 HA 구성이 무엇인지에 대해서 먼저 설명합니다.  
+그러한 이유로 DNS 기반의 HA 구성이 무엇인지에 대해서 먼저 설명합니다.  
 
 ## DNS 질의
 
-Client 프로그램에서 dveamer.github.io 라는 도메인을 호출할 때 무슨 일이 일어나는지 살펴봅시다.  
+Client 프로그램에서 dveamer.github.io 라는 도메인을 호출할 때 무슨 일이 일어나는지 설명하겠습니다. 중요한 내용만 뽑아서 단순화하여 설명합니다.  
 
 ![DNS질의](https://lh3.googleusercontent.com/iqK3q838DV5_LBqK0rtLAsI335iSjW0VFAaGYdqgODghnN9G-JSTCGcnvnAgy9H1b2RxbJPfUgv3Jl7Yx1VEvk077rnCwGABBMVI_ppWEaoWam9VnfSe4qQSW0aPJqbcnzZVZ5KJohjJZ94diBb0QyXeBn0WAMwIjl_HUFqXuqicglTFiSY8rOOQPefzkwJhuXbv7IlnlTZsoEOU2pQqeGbxpyrf5wUHttoZp6NMndhnT1-iAIxqn2S0-SsRa5SJxBW-KME_MvICWfing1gMKuEWxHdVV1WMVu7AQQAXl0bjUYLjKivETsEh3r23vtpzP3Ooa0gMDDB-vvt0MBnqPgF-WBMT5S58iuJmHgoVyQTW0H2nQsofS4F-WHIm9CKj3cP-J34n0mKC6widv87OrPl5OcpMaDRZW2k_mf9Lr0UXiLum7dDb2qsqFmUO_Dwe4ZN0zoFW1mFPwvOof38h0dkNwK33cTnpS3KSXlKCUOQIAnkAZNXgGFZHsKjT_YAQn8y0D3kqGRbTQ85AcQQM0HdgdyNV6TjULe35UQb85svz3Hyip4XOrCIIGloItgHh2_NGq2tXinl0Zq-265GeV7aRbMpb_S_kBNuc2GagVN2Kfwh9oY1bzjF9w82GcVGsd0J9mjzSRqeLQalNA44ftX1z0gaMFJTt=w667-h384-no)
 
@@ -38,7 +38,6 @@ Client 프로그램에서 dveamer.github.io 라는 도메인을 호출할 때 �
   2. Client의 OS는 DNS server에 질의하여 dveamer.github.io에 대한 IP 리스트 획득합니다.
   3. OS는 dveamer.github.io 도메인과 IP 리스트 정보를 local DNS에 일정시간동안 보관합니다.
   4. Client는 OS로부터 제공받은 IP 리스트 중 하나를 선택하여 호출합니다. 
-
 
 DNS 기반의 HA 구성이란  
 위에서 나온 DNS server의 도메인, IP 정보에 대한 관리를 통해 목적지 서버의 HA를 확보하는 것을 말합니다.  
