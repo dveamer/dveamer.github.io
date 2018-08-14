@@ -91,7 +91,7 @@ Apache HTTPD는 일시적인 응답지연이 발생하더라도 ELB의 도메인
 ## 원인 분석
 
 Router53에 ELB 도메인을 계속해서 질의하며 ELB scale out시 Router53에 정보갱신이 빠르게 일어나는지도 체크해봤고  
-Apache HTTPD의 로그 레벨을 Debug로 바꿔서도 확인하고 TCP dump 분석도 하고 
+Apache HTTPD의 로그 레벨을 debug로 바꿔서도 확인하고 TCP dump 분석도 하고 
 VPC에 구성해둔 DNS 서버와 Web Server의 local DNS의 TTL도 수정해서 테스트해보는 등 다양한 가설을 세우고 수많은 삽질을 해봤습니다.  
 
 테스트도 굉장히 어려웠습니다.  
