@@ -3,7 +3,7 @@ layout: post
 title:  "홈페이지 현황 ( Log4J 2 관련 대박사건 )"
 date:   2018-08-16 12:00:00
 categories: Homepage
-tags: Log
+tags: Log Search
 ---
 
 [Log4J 공식사이트- Articles and Tutorials](http://logging.apache.org/log4j/2.x/articles.html)에서 제 블로그 글을 링크 걸어두고 있던 것을 발견하여 기록합니다.  
