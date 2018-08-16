@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "홈페이지 현황 ( Log4J 2 관련 대박사건 )"
+date:   2018-08-16 12:00:00
+categories: Homepage
+tags: Log
+---
+
+[Log4J 공식사이트- Articles and Tutorials](http://logging.apache.org/log4j/2.x/articles.html)에서 제 블로그 글을 링크 걸어두고 있던 것을 발견하여 기록합니다.  
+
+큰 의미가 있는 것은 아니지만 개인적으로 기분이 좋네요. (저한테만 대박사건 ㅋ)  
+
+<!--more-->
+
+
+# Log4J 2 공식 페이지
+
+[Log4J 공식사이트 - Articles and Tutorials](http://logging.apache.org/log4j/2.x/articles.html)에 가보면 한국어 튜토리얼 사이트로 2개의 글이 링크되어있습니다.  
+
+그 중 첫번째 링크가 [제가 작성한 글](http://dveamer.github.io/java/Log4j2.html)입니다.  
+
+
+![Log4J 공식사이트](https://lh3.googleusercontent.com/HpHkiMvj6SOyYprkjpA18E3Yg1GyOSGEk2SnEzFP7lH-vEKEQKe_SZ3tVQYTDhWU1Sro2ApYqyJGsUFZdEd-LFF7jTNz316Oa1yFMIWNI77Q3RXy8MbAmsb7xugyPlrGN3WOjbnF7qREpNx3pyEaAfkWCe3NgGFP3JMoFV0aEh96pmuFByCFlfxXudbdQkMGLBuy4RnVyEGg9Kt0pdH7d6hoi11ieDk0P82S7Ppwnpp7h4LZp484w4DJcvRBt0GWNssgmGqNcjD7BdmCXOgJi_MIbr3Io1jwyP4HC310DODCC89Qm-fCmNv4m44LxbddakMkC76cL_uVqgk9wrulqWJElDRqmj2LIvatTSLwxX_mMA619YtGg0q6mOut6c4BCRJPNu1fw23fjN2C8YLH1Y16JlX6luIE8dHpr2_5oYUSsxfjaoB3cCgR8QkdJ5ScAhty2B0roAkBz9GREs4tprqar9txGaWVjpTq7blExlZLyyRCZF3EJ3qV6HzEwskv8qsVKKo2lfszbYcdRYyGV3Xb5npHam_UMYGpvNcDU9RMNepkzCT33yGv755HspijLRdx8nhWgXMzVtnxGwkzhMDHuQHvKPfiXlfVXplPa_AsNdRalin0UFYx84oQYqzBFQIdQ68bt8Lop9ud-VC0amvHWr2gV6gJ=w1003-h637-no)
+
+Google Analystics 앱을 둘러보다가 logging.apache.org에서 유입 된 이력이 있길래 무슨 일인가해서 Log4J 공식페이지를 살펴봤더니 링크가 걸려있는 것을 확인할 수 있었습니다.  
+
+# 홈페이지 현황
+
+## 전체 조회수
+
+평일 조회수는 보통 200 후반 정도이고 적을 때는 200, 많을때는 350까지 줄었다 늘었다 합니다.  
+주말에는 조회 수가 별로 없습니다.  
+
+![조회수](https://lh3.googleusercontent.com/qp8ckTcz1ZDrB7e_T60yAh5dYUV_zC-OIhXFTUZzwpNlj0Th6rabbYq-qD3-nNvqebX0Cev_OTU5hm2bWAp91s4WxngpjZPCpGsdwrxz8EynXCyJDOJlTrLzOXGSCmzLjptWLgyfAQ5PgLCukhoyXdUhOl6Bpt0x4LdSGWxXRz3J0IFsqeL5GAgSWhHpeD0chxGyYM92d_skxTSdCb0m2FolwlLe4Z3fKpkYWPqJwd8LSFqOOcEzIxdj23Ht6SbpVxiBLAeJKZ21tXjjnlvLFuWKJJVhDLcyLh1IIOKjBtgfV6HXawSKKxO152swYeCGNHuZbB2sQ1DOXgwWU-QGQg5QMTUlsS20wuRNGrGI3VGEugPosQjteo4VffyoG8HoBj4_Mc3TN3Dh4VvogQ5pbBnjLIMUKTK3C75rZTfCwoUzHc_PaVpQayr3VwxKnyHD9FCymhGbvOx5xt7YcL7Bom8i_7kOpcVBbb4GaJYMjzfm6FhyRt1lQJb4UH3laGAHCf3gX3WyRw2kl-Zht_AO8KNhL5OAiHBVSOQ77W0mCurSLapzXLPRmwoKvqx-K6aKJy3-Qw2U1jTDiRc1F_n5-OOFiziyMdnoUay4FMf-QW0KyRu1i2ZK5g33viSaJXC6mTL6RT3Vm9bkphfYf3esMGeVKy6mUyA4=w359-h637-no)
+
+## 광고수익
+
+조회수가 고작 300회 정도여서 그런지 광고 수익은 한 달에 $3~$4 정도로 거의 없다고 보시면 됩니다.  
+
+블로깅 자체가 수익을 위해 하고 있는 것이고 아니고  
+개인적인 기록을 위해서 하는 것이기 때문에 크게 신경쓰진 않습니다.  
+
+( 미리 감사합니다~! 광고 한번 눌러주세요~! ㅋ )  
+
+## 유입경로
+
+대부분의 유입은 검색을 통해서 이뤄지고 있습니다.  
+조회 수가 많은 글들을 google에서 검색해보면 상위권으로 검색되는 것을 보아 대부분 google을 통해 유입되고 있을 것으로 예상합니다.  
+
+![유입경로](https://lh3.googleusercontent.com/s94nftv-dcww4ZJaL1Js4ieOqCcJ0Z8Axi8Fb8lZommCVJ_HJSEvNLYvZgMyzPZehl8BSY2wik1JJmjEB7JJA2n6V537HZMhdJPAoN6EL87q_hSmbOBrs7heEIV31RF5vuEEhepVqTIkBaPwK91efVa117jZHz8CBDnq091I_Gwdxbfl_Fzrg4BwgV5WtnxZo5jzBcJdCNyu7ePu75AxLbF5gRs013Bl5bztsuLXLm3fu4VRYOcTj8hKtyK7wZY-5cbm7nG7tAgQcxJVuiEO0C4EVawWQS8MSMHcTv_0XAhDik0L4juo19WIWAYp2KyAYQIuOU0Brn0qZcWV8hxlj9zWbBwY3Br49uWITRlGQvD4IxAYQx_lGL1RP5UXWGj4eGEcnTTbF90DVuBT6Tkpw_xWQmsqROhAHIqOrtmGQmU5omTEpOC-RpeTaN8QcxNXjBzZQM5A9Q3UF_LNtWKSycqo8-pnd_sGlSOzGAy5dKAv7iRP4CBMrgTX_8JQdNRzw8kwRRv_OiAC7GE_idUP0xEyzFDsDWdkfqk5ItUm3xsT9Sx8A1g7CXQ7M4GLRweTCdDPR_h-JDr9Pn3Y7s6aKOm_CUDK8RdoUHD2EngpDlTpoJIKuovKwtFywlrSLaMBcIErwAwnzBW3__4N7LiUzFK6EYSaGlbc=w359-h637-no)
+
+### Log4J 2 검색
+
+세 번째로 검색됩니다. 첫 번째, 두 번째는 공식사이트네요.  
+공식사이트를 제외하면 사실상 첫번째 -_-V  
+
+![Log4J 2 검색](https://lh3.googleusercontent.com/12ArFiLK2Bqbox5yxkRsgWMqR2rL3MQ0KT0VBYjw7OkXMJuuBUo1aeJb-RMHjtS_LdAMKr_KsTiiV1FgttQvsgtW76c_9UsS6lHcoLAOIkKdPcomoLcbDokvAla18hF7BWASO4IgAJuNbyLYd8BlWNnDT4eeJolKuLKFbkmwbRxVJSpeugQpcKetONSDl_DHyx-XDGnydia_V3DQV-0c99XsfW9AVv8LYRivDyDajJ6d4gPSxw8P9-spyW_p-jWI1obcRYt3d7fDFhVOUaOkyJnWG6Sl6G2mB3OY3ZX3I527nREEU15jb6lTE5_MC-ElLZr8saewzT6mgXwPCHC7Me7vZLR2KISFe6V_ivTiEilz0AN5_CDoHb89WHm_MtpPa-19RxM8wDWOiM_d-6YZ4MpaJkNGaRMmrrm_l2UNwP5r53l9XZgMRAwao9ZJ9PL_jXHMvE6_lxTFs6UCpmCBJjB6WcHalbpQm_tZX_XCqrSia1xCqg31EiwCUMV47NWG44mD42k3x7NrlW8n4bYBli6moF_w-6MWzA5CaoRj8cwrsZnWS8iN8jSXddw3SVL2dpMcAiCM_Mzan2QiN-Wy1HBFoCuw7oAPugH09X_PuGaf43wdUbwDcCaDQcimeWy3zaTQ07S2IzZyz-sMNE5NsbBzlaE-6crV=w359-h637-no)
+
+### Spring Async 검색
+
+첫 번째 -_-V  
+
+![Spring Async 검색](https://lh3.googleusercontent.com/_av-CC1LlKUcVz5kEAJWb7f8I39ePV5YrSmGQ8xkbcJ21Y3Ke_vdSDoSIrGgiLobjHAsXJIL2x2uQWIAUE5d8M7TyzeBPVpp2-LPgVWn4kBB8f8obZQlCCgyRdOYeYu75c10xi1hW1rpsaMV497x1grzXOh-Vf2QGobSWwKEI3HO9_dEMYLvUWn8hlSB_s8SBUztDfN98ipLAfQoKzctll2mazPzH2pOkEL5YbRCqWfElcm2Rok9DXpxWRZvNaIkg9JSbSSmc4hSJ7mUNyKh5XGnvVKcmIyoTF5rvM6NFoMI5JHYDil8x_K0HPPRoByPKYwH-JTBnG7-p_L6dHYzCxPmB3jT3xthxnSXpAH6vq64lFpHol8YGidZ7vp7807AjhGzMxMKV6-iCSRtADTNtnuUjp_l0SutHEf7qE6F1tnt-g9QWTTDouaB6bpRpnimZABZo-j_R9dkLFqAFGAStshfAAkIxSKqlRZjKRzdZkNmaQ-EuXaq2ZtiAtH1b7c1LV6Zeb9QO4IQPDkhmiF35rx3FxsAexKgoLFecdq-_JkVqi80Y-MyetaqUHKnR12VL3zRwdB31a0eLQYBo4aDAKyoGpbsp2HN6O1Z_muHjjgnKUWRmwSG63rGkVTnKWJY6e6Waa38G5j8lceZihbjKg7MAn5JIFM1=w359-h637-no)
+
+### HAProxy Keepalived 검색
+
+첫 번째 -_-V  
+
+![HAProxy Keepalived 검색](https://lh3.googleusercontent.com/-iJlavR5im5kwxlFnoG20beOKbsojBpenzl0y7ifsP0v6Z9R-AYj8zGQCOeGenSA6tNz181ALxA6F8g8ROATnjXxvRex1i14oXemLSeMUOF7_FAhRSQv6xzTw0C9T8r5mdgEKF-wpir76CX7wd2jWqIDtNVbFkflHfNC2UmlR15iV172NRUV62mLuRqH05pVrj5y_kpTDTnmeIwW-o8UPdWoBwa2UDTiJjNePNWagQhso0MU0g9THDs56-Sehsv39nw0W_xs_g5wbC4VbcuUQMYviypfAopQ7VsHJ0MHuG5b6i7h4YXJn4gjlStMweDrmVwKmqRpIMpnLes6qWwtrWGc6MlvfOYg5JioN6HGLXvIy8q0Ob8vx4VXt8bdUUz73G7MmamlZIlr__tJVPX9t6E-Cqvjj7BazzJM5HbD1n4evDKvWDTYS-_wQz1jbqRUOuwZR2dKTqk8W7C2MWeoHIIAWfwOUprhlT9i6UUL_88FqfIDzhjWd1NfnEm6tHX9SGRHpZysSA1gYpPffU3AF72EThu4Mgh40tAHR7PPLguzwkqcJEB8i9wn7KweLS_STuqdVYLcpPXFRmdONA5X4NcUBDmrTfElOxuzqsR4fo4S3DHaaHBT6uIy_BMvJMtKmYl5DVWicJzfoovPTlvOH10gkVkM6tq0=w359-h637-no)
+
+### MariaDB 접속 검색
+
+네 번째 -_-V  
+
+![MariaDB 접속 검색](https://lh3.googleusercontent.com/zLo9XV8ybku3pxsXSBr0mOI4qm9UZ_UFoKoy8MtALGCD85d45WmoYq31WBdHgZZJ8TC-YC6wOPSLtErYKvZt5RltA3AICCgzlbOhda_BUHbAq-vOekT3XgG4JeQlqaEId93RK2e06R_tfRmZqBxAEB5wX6jft1D_6wGRo3aS0FmoYpEpdq6EjJEzxieNL-iwHv9qjha7Jpz0ckkILk36KY3J0QGNVT85DJPUpACjO2Yw7HFjjfK_1la9lOGyQg-Th3cnc9l9Ij7aLffP0fu7oolbO_nVuPxdWZlHpclnmHZJJdW2ZatDjan7gsr2rIxQi1bIl3vgcDiq59kB5Hbhf8xacKNASVmrzys4Amb0i8PGSUAH4L7Cd5YyPHfz_5m3gNHOG0UwzxbmSR5cAK9aKNG2jUK7wVKKICX6w54EAhNtydMbWAfLHlVmPVsHltSlUC_JD5543h57yleuAs0KRAoIxd8YTuF51jaMAJl77EFh61BEeI2B2G8A3eCx2f__9L-14yy3BqpNbMHO8GWobJGH6jb8SbG8kcbSNSNst-3-4UUEhbfgP2Tq3sQTKR1nIOG5n0muWZMX3xPiwD1WTixGa4Jt0Ww0qUIyJcUm7HF17aSKirMlpysL9_kDk1rF_WyvEWCCoPgDRx8s0pVkSvHIGehCr__S=w359-h637-no)
+
+
