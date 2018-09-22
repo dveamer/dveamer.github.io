@@ -6,6 +6,9 @@ categories: BackEnd
 tags: Mybatis
 ---
 
+![Mybatis Logo](http://3.bp.blogspot.com/-HKtWXLIvvdk/T6VWCexS-qI/AAAAAAAAATo/QmRUDiFjWd0/s1600/mybatis-superbird-small.png){:class="imgTitle"}  
+(이미지 출처 : [Mybatis](http://www.mybatis.org))  
+
 Mybatis의 cache 기능은 설정하지 않으면 기본이 on 상태입니다.  
 
 개인적으로 기본설정은 캐싱없이 진행하고 추후 성능의 문제가 발생하면 캐싱을 추가하는 것이 맞다고 생각합니다.  

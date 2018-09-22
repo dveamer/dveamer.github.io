@@ -6,6 +6,9 @@ categories: Homepage
 tags: Log Search
 ---
 
+![Apache Logging Service Logo](https://logging.apache.org/log4j/2.x/images/ls-logo.jpg)  
+(이미지 출처 : [https://logging.apache.org](https://logging.apache.org))
+
 [Log4J 공식사이트- Articles and Tutorials](http://logging.apache.org/log4j/2.x/articles.html)에서 제 블로그 글을 링크 걸어두고 있던 것을 발견하여 기록합니다.  
 
 큰 의미가 있는 것은 아니지만 개인적으로 기분이 좋네요. (저한테만 대박사건 ㅋ)  
