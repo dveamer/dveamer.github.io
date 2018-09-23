@@ -3,7 +3,7 @@ layout: post
 title: "Mybatis Cache 제거 방법"
 date: 2018-09-22 00:00:00
 categories: BackEnd
-tags: Mybatis
+tags: Mybatis Cache
 ---
 
 ![Mybatis Logo](http://3.bp.blogspot.com/-HKtWXLIvvdk/T6VWCexS-qI/AAAAAAAAATo/QmRUDiFjWd0/s1600/mybatis-superbird-small.png){:class="imgTitle"}  
@@ -34,7 +34,7 @@ Mybatis configuration.xml 파일에 ```cacheEnable```, ```localCacheScope``` 설
 ~~~
 
 개인적인 의견으로는 Mybatis의 캐싱기능은 모두 종료시키고  
-추후 성능문제로 캐싱 기능이 필요하다면 Mybatis가 아닌 Redis, ehcache와 같은 별도의 솔루션을 사용하는 것이 좋습니다.  
+추후 성능문제로 캐싱 기능이 필요하다면 Mybatis가 아닌 Redis, Ehcache와 같은 별도의 솔루션을 사용하는 것이 좋습니다.  
 
 # 설명
 

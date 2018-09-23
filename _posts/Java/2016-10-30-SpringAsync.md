@@ -32,7 +32,7 @@ public class GreetingService {
 }
 ~~~
 
-가장 소스를 조금 변경해서 method를 비동기방식으로 처리해봅시다.  
+소스코드를 조금 변경해서 method를 비동기방식으로 처리해봅시다.  
 method가 실행되면 새로운 thread를 만들고 그 thread에서 메시지를 저장하도록 처리하면 됩니다.  
 
 ~~~java
@@ -60,7 +60,7 @@ import java.util.concurrent.Executors;
 
 public class GreetingService {
 
-    ExecutorService executorService = Executors.newFixedThreadPool(10);
+    static ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     public void method1(final String message) throws Exception {
         executorService.submit(new Runnable() {
