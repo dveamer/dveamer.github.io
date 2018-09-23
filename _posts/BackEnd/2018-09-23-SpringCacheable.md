@@ -199,10 +199,10 @@ Input parameter가 바뀌거나 개수가 바뀐다면 Spring @Cacheable annotat
 
 ## 주의사항
 
-Spring @Cacheable은 내부적으로 Spring AOP를 이용하기 떄문에 @Async, @Transactional 등과 마찬가지로 아래와 같은 제약사항을 갖습니다.  
+Spring @Cacheable은 내부적으로 Spring AOP를 이용하기 때문에 @Async, @Transactional 등과 마찬가지로 아래와 같은 제약사항을 갖습니다.  
 
   * pulbic method에만 사용가능 합니다.  
-  * 같은 객체내의 method끼리 호출시 async method는 동작하지 않습니다.  
+  * 같은 객체내의 method끼리 호출시에는 @Cacheable이 설정되어있어도 캐싱되지 않습니다.  
 
 AspectJ를 이용하면 제약사항을 회피하기 가능하며 그에 대해서는 추후에 작성하도록 하겠습니다.  
 동일한 원인과 해법에 대해서 다룬 [Spring @Async AspectJ 비동기처리](/java/SpringAsyncAspectJ.html) 글을 읽어보시면 도움이 되실겁니다.  

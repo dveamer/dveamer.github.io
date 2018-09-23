@@ -37,7 +37,7 @@ Mybatis configuration.xml 파일에 ```cacheEnable```, ```localCacheScope``` 설
 추후 성능문제로 캐싱 기능이 필요하다면 Mybatis가 아닌 Redis, Ehcache와 같은 별도의 솔루션을 사용하는 것이 좋습니다.  
 
 Controller-Service-DAO tier로 봤을 때 DAO tier 보다는 Service tier가 캐싱하기에 적당합니다.  
-(Spring @Cacheable 캐싱 처리)[/BackEnd/SpringCachable] 글에서 쉬운 캐싱처리 방법을 가이드하고 있으니 참고하시기 바랍니다.  
+[Spring @Cacheable 캐싱 처리](/BackEnd/SpringCachable) 글에서 쉬운 캐싱처리 방법을 가이드하고 있으니 참고하시기 바랍니다.  
 
 # 설명
 

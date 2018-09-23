@@ -179,7 +179,7 @@ method1에 대한 수정없이 처리가 가능하다는 점이 장점입니다.
 ## 제약사항 
 
   * pulbic method에만 사용가능 합니다.  
-  * 같은 객체내의 method끼리 호출시 async method는 동작하지 않습니다.  
+  * 같은 객체내의 method끼리 호출시에는 @Async가 설정되어있어도 비동기처리가 되지 않습니다.  
 
 [Spring @Async AspectJ 비동기처리](/java/SpringAsyncAspectJ.html) 글에서 AspectJ를 이용해서 제약사항을 회피하는 방법을 설명드립니다.  
 
