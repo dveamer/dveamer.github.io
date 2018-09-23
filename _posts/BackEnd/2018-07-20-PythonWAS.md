@@ -6,11 +6,7 @@ categories: BackEnd
 tags: Setting Python
 ---
 
-
-
-![Django](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Django_logo.svg/278px-Django_logo.svg.png){:class="imgTitle"} ![Gunicorn](http://gunicorn.org/images/logo.jpg){:class="imgTitle"}  
-
-( 출처 : [Wikipedia-Django](https://en.wikipedia.org/wiki/Django_(web_framework)), [Gunicorn](http://gunicorn.org/) ) 
+![WSGI Middleware](https://lh3.googleusercontent.com/HsVbgKmzo36XJWxW-m33OQinSAwKfR1UyG1STM16WGPgtzhIyj7XkPNlvPqz8x7oYubWrclDH7bHsDU8Q84f1cnG1hoxgK2UyPGrqW4nyxfdF3M_daKpDwuEJoE4l8Stv35rA9MEBQ1Qq8V4GLtzkYQyQIiKkEWJI4mHds4_IsrFMhh2ohd1Dwpa6SWcwr9JthOu9cIK9MbWvI6HjohZUmEGkAUrUqNYG2PbtIbLpMVIeunUCqo2dnLs5JVQTTHNpormp-WPbNLJjgJ0Rh1BYmP6Uh-LAao3w9q7vSMCErQ1Hjl2ir31tZP1y2XxDRj-WE00hlDW-3NFFc15rNl8nvSLNB8x8J5Bqfi3Ks9fK7VxVoTzlbhvuT92ReuZyxSHxtIOWq9ruKEgmLbMp6xb7v0rcIDCAcxGwbIcsWXzpTj7nPtjo9zH2MQd7kxWsFgkU7Yt1YsKJanLoaoZrirfFGaCtZjIs6EGdwn9Fl0M5IoVYLK8je1kbyuVTucJ10Tknyd_9XrDzsFxaH0arJ3xZGowjlGmGgymn4k3VcOtzri6TGkrN6KpO-ORBcwlb04XreQ2s54KiLLme3ZgS6wVPkc9SBs6q9faZS8OilVDCCmmgJIsFXvn-4OH6jPftSbbeW82Ubj1zW2h3K64sta3rZqyl4-e-gly=w886-h308-no){:class="imgTitle"}  
 
 Python으로 REST API 서비스를 위한 WAS(Web Application Server) 구축을 진행합니다.  
 
@@ -21,7 +17,6 @@ Django의 runserver는 단순히 테스트만을 위한 기능으로
 운영모드에서 [Gunicorn](http://gunicorn.org/) 같은 WSGI(Web Server Gateway Interface) 미들웨어와 연동이 필요합니다.  
 
 
-![WSGI Middleware](https://lh3.googleusercontent.com/HsVbgKmzo36XJWxW-m33OQinSAwKfR1UyG1STM16WGPgtzhIyj7XkPNlvPqz8x7oYubWrclDH7bHsDU8Q84f1cnG1hoxgK2UyPGrqW4nyxfdF3M_daKpDwuEJoE4l8Stv35rA9MEBQ1Qq8V4GLtzkYQyQIiKkEWJI4mHds4_IsrFMhh2ohd1Dwpa6SWcwr9JthOu9cIK9MbWvI6HjohZUmEGkAUrUqNYG2PbtIbLpMVIeunUCqo2dnLs5JVQTTHNpormp-WPbNLJjgJ0Rh1BYmP6Uh-LAao3w9q7vSMCErQ1Hjl2ir31tZP1y2XxDRj-WE00hlDW-3NFFc15rNl8nvSLNB8x8J5Bqfi3Ks9fK7VxVoTzlbhvuT92ReuZyxSHxtIOWq9ruKEgmLbMp6xb7v0rcIDCAcxGwbIcsWXzpTj7nPtjo9zH2MQd7kxWsFgkU7Yt1YsKJanLoaoZrirfFGaCtZjIs6EGdwn9Fl0M5IoVYLK8je1kbyuVTucJ10Tknyd_9XrDzsFxaH0arJ3xZGowjlGmGgymn4k3VcOtzri6TGkrN6KpO-ORBcwlb04XreQ2s54KiLLme3ZgS6wVPkc9SBs6q9faZS8OilVDCCmmgJIsFXvn-4OH6jPftSbbeW82Ubj1zW2h3K64sta3rZqyl4-e-gly=w886-h308-no)
 
 <!--more-->
 

@@ -16,7 +16,8 @@ tags: Command
 $ grep -rl "before text" * | xargs sed -i 's/before text/after text/g'
 ~~~
 
-일괄적으로 변경되니 조심해서 사용하세요.  
+현재 디렉토리와 하위 디렉토리의 모든 before text를 after text로 변경합니다. 조심해서 사용하세요.  
+
 
 ## n 일 전에 변경된 파일 검색
 

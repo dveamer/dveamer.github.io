@@ -6,8 +6,8 @@ categories: Homepage
 tags: Jekyll Github-Pages Bundler Kramdown Rouge Upgrade Update Suport
 ---
 
-![Bundler](http://ruby-korea.github.io/bundler-site/images/gembundler.png)  
-( 이미지 출처 : [http://ruby-korea.github.io/bundler-site/](http://ruby-korea.github.io/bundler-site/) )
+![Bundler](http://ruby-korea.github.io/bundler-site/images/gembundler.png){:class="imgTitle"}  
+( 이미지 출처 : [http://ruby-korea.github.io/bundler-site/](http://ruby-korea.github.io/bundler-site/) )  
 
 >번들러는 필요한 정확한 gem과 버전을 추적하고 설치하여 루비 프로젝트를 위한 일관된 환경을 제공합니다. 
 번들러는 의존성 지옥에서 벗어나게 하고, 필요한 gem이 개발, 스테이징, 프로덕션에 있는지 확인해 줍니다.

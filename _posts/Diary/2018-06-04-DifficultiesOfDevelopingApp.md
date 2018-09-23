@@ -6,7 +6,7 @@ categories: Diary
 tags: Difficulties
 ---
 
-![Google Play](https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png)  
+![Google Play](https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png){:class="imgTitle"}  
 ( 출처 : [Google Play](https://play.google.com/store/apps) )  
 
 안드로이드 앱을 개발하다보면 힘든 점들이 많다.  

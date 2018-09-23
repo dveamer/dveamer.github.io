@@ -7,7 +7,7 @@ categories: Homepage
 tags: Jekyll Github-Pages Kramdown Rouge Upgrade Update Support
 ---
 
-![Github Pages 의 Jekyll3.0 업그레이드](/images/post_img/Homepage/GithubPagesUseJekyll3.0.png)
+![Github Pages 의 Jekyll3.0 업그레이드](/images/post_img/Homepage/GithubPagesUseJekyll3.0.png){:class="imgTitle"}  
 
 
 오늘 아침 Github 트위터 계정을 통해 Github Pages의 새로운 소식을 들었습니다.

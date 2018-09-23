@@ -7,8 +7,8 @@ categories: Homepage
 tags: Jekyll Github-Pages
 ---
 
-![Jekyll Logo](http://jekyllrb.com/img/logo-2x.png 'Jekyll Logo')  
-( 이미지 출처 : [http://jekyllrb.com](http://jekyllrb.com) )
+![Jekyll Logo](http://jekyllrb.com/img/logo-2x.png 'Jekyll Logo'){:class="imgTitle"}  
+( 이미지 출처 : [http://jekyllrb.com](http://jekyllrb.com) )  
 
 현재 보고있는 블로그는 Jekyll 2 로 만들어졌습니다.
 

@@ -6,9 +6,8 @@ categories: Diary
 tags: 고민
 ---
 
-![agony](http://image.slidesharecdn.com/npeaworkshopfinaldraftweb-120409161657-phpapp02/95/implementing-effective-family-engagement-strategies-2-728.jpg?cb=1335541538)
-
-(이미지 출처 : [http://image.slidesharecdn.com](http://image.slidesharecdn.com))
+![agony](http://image.slidesharecdn.com/npeaworkshopfinaldraftweb-120409161657-phpapp02/95/implementing-effective-family-engagement-strategies-2-728.jpg?cb=1335541538){:class="imgTitle"}  
+( 이미지 출처 : [http://image.slidesharecdn.com](http://image.slidesharecdn.com) )  
 
 <br>
 쓸데없는 고민과 쓸데없지 않은 고민..

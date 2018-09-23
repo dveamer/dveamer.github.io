@@ -6,9 +6,8 @@ categories: Diary Programming
 tags: Programming Board-Game OOP
 ---
 
-![Fugo Wordz](https://lh6.ggpht.com/UCaTSzZweZm2T7I5syJxxPgs3qkbmyxFs2fd3qjveXHzsWm1wuPyJhBEQz8d8BznzeSB=w300-rw)  
-
-( 출처 : [Fugo Wordz](https://play.google.com/store/apps/details?id=tr.com.fugo.kelimeavi2.en) )  
+![Fugo Wordz](https://lh6.ggpht.com/UCaTSzZweZm2T7I5syJxxPgs3qkbmyxFs2fd3qjveXHzsWm1wuPyJhBEQz8d8BznzeSB=w300-rw){:class="imgTitle"}  
+( 이미지 출처 : [Fugo Wordz](https://play.google.com/store/apps/details?id=tr.com.fugo.kelimeavi2.en) )  
 
 집에서 가끔 즐기고 있는 Fugo Wordz라는 게임의 축소판을 한번 만들어 볼까합니다.  
 

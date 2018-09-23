@@ -5,9 +5,9 @@ date:   2015-07-08 22:00:00
 categories: Android
 tags: IDE Android-Studio
 ---
-![AndroidStudio](http://1.bp.blogspot.com/-UGrENgc-ec8/VIJsFPD19aI/AAAAAAAABBk/ICFczO1O6mU/s1000/studio-logo.png)
 
-( 이미지 출처 : [http://1.bp.blogspot.com](http://1.bp.blogspot.com) )
+![AndroidStudio](http://1.bp.blogspot.com/-UGrENgc-ec8/VIJsFPD19aI/AAAAAAAABBk/ICFczO1O6mU/s1000/studio-logo.png){:class="imgTitle"}  
+( 이미지 출처 : [http://1.bp.blogspot.com](http://1.bp.blogspot.com) )  
 
 <!--more-->
 

@@ -5,7 +5,7 @@ date:   2018-05-17 00:00:00
 categories: Diary
 ---
 
-![Pen-writing-notes-studying](https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Pen-writing-notes-studying.jpg/640px-Pen-writing-notes-studying.jpg)  
+![Pen-writing-notes-studying](https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Pen-writing-notes-studying.jpg/640px-Pen-writing-notes-studying.jpg){:class="imgTitle"}  
 ( 출처 : [Wikimedia](https://commons.wikimedia.org/wiki/File:Pen-writing-notes-studying.jpg) )
 
 
