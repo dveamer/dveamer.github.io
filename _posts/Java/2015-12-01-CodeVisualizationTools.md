@@ -6,9 +6,8 @@ categories: Java
 tags: ObjectAid Java-Docs Eclipse Class-Diagram
 ---
 
-![ObjectAid](http://www.objectaid.com/static/images/java-perspective.png;jsessionid=38E7A9419700C4B4FD0102256016089D)
-
-( 이미지 출처 : [http://www.objectaid.com](http://www.objectaid.com) )
+![ObjectAid](http://www.objectaid.com/static/images/java-perspective.png;jsessionid=38E7A9419700C4B4FD0102256016089D){:class="imgTitle"}  
+( 이미지 출처 : [http://www.objectaid.com](http://www.objectaid.com) )  
 
 ObejctAid 는 클래스 다이어그램과 시퀀스 다이어그램을 소스코드로부터 추출해내는 툴이다.  
 Eclipse 플러그인 형태로 제공되며 Java 소스코드와 라이브러리의 다이어그램을 추출 가능하다.  

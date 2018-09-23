@@ -6,8 +6,8 @@ categories: Java
 tags: Spring Asynchronous Weaving AspectJ AOP
 ---
 
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png)  
-( 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
+( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
 
 이 글은 [Spring @Async 비동기처리](/java/SpringAsync.html) 에서 알려드린 Spring @Async의 제약사항에 대해 다시 한번 살펴보고  
 CTW(Compile-Time Weaving)과 LTW(Load-Time Weaving)라는 두가지 방식으로 AspectJ를 이용해서 제약사항을 회피하는 방법을 공유드립니다.  

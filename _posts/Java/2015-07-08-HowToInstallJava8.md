@@ -7,9 +7,8 @@ categories: Java
 tags: Java8 Ubuntu Setting
 ---
 
-![JAVA8](https://eclipse.org/xtend/images/java8_logo.png)
-
-( 이미지 출처 : [https://eclipse.org](https://eclipse.org) )
+![JAVA8](https://eclipse.org/xtend/images/java8_logo.png){:class="imgTitle"}  
+( 이미지 출처 : [https://eclipse.org](https://eclipse.org) )  
 
 기본적인 Java 설치 내용입니다.
 

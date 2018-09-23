@@ -6,8 +6,8 @@ categories: BackEnd
 tags: Spring Cache
 ---
 
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png)  
-( 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
+( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
 
 이 글은 Spring을 사용하면 Redis, Memcached, Ehcache 와 같은 다양한 cache 솔루션 사용이 편해지는지를 설명합니다.  
 Ehcache 솔루션을 기준으로 Spring @Cacheable을 설명하겠습니다.  

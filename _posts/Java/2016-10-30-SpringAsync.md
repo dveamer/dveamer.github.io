@@ -7,8 +7,8 @@ categories: Java
 tags: Spring Asynchronous Multi-Thread 
 ---
 
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png)  
-( 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
+( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
 
 이 글은 Spring을 사용하면 asynchronous, multi-thread 개발이 얼마나 편해지는지를 설명합니다.  
 
