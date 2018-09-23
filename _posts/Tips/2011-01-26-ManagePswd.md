@@ -6,9 +6,8 @@ categories: Tips
 tags: Passphrase
 ---
 
-![PSWD](https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Username_and_password_20170626.jpg/1199px-Username_and_password_20170626.jpg)
-
-( 이미지 출처 : [https://commons.wikimedia.org](https://commons.wikimedia.org/wiki/User:Zunter/Pictures) )
+![PSWD](https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Username_and_password_20170626.jpg/1199px-Username_and_password_20170626.jpg){:class="imgTitle"}  
+( 이미지 출처 : [https://commons.wikimedia.org](https://commons.wikimedia.org/wiki/User:Zunter/Pictures) )  
 
 기억해야하는 패스워드가 너무 많습니다.  
 

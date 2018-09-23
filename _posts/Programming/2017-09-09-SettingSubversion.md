@@ -6,7 +6,7 @@ categories: Programming
 tags: Ubuntu SVN Setting
 ---
 
-![Subversion Logo](https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Subversion_Logo.svg/1280px-Subversion_Logo.svg.png)  
+![Subversion Logo](https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Subversion_Logo.svg/1280px-Subversion_Logo.svg.png){:class="imgTitle"}  
 ( 이미지 출처 : [Wikipedia](https://upload.wikimedia.org) )  
 
 저의 경우,  

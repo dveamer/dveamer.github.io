@@ -7,9 +7,8 @@ tags: Citrix
 identifier: 20151209-485155446
 ---
 
-![citrix](http://docs.citrix.com/content/dam/docs/en-us/legacy-edocs/receiver-windows-43/receiver-x1-icon.png) ![citrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png){:class="imgTitle"}
-
-( 이미지 출처 : [http://docs.citrix.com](http://docs.citrix.com), [https://upload.wikimedia.org](https://upload.wikimedia.org) )
+![citrix](http://docs.citrix.com/content/dam/docs/en-us/legacy-edocs/receiver-windows-43/receiver-x1-icon.png){:class="imgTitle"} ![citrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png){:class="imgTitle"}  
+( 이미지 출처 : [http://docs.citrix.com](http://docs.citrix.com), [https://upload.wikimedia.org](https://upload.wikimedia.org) )  
 
 제가 다니는 회사의 클라우드 컴퓨터에 접속하기 위해서는 Citrix Receiver가 필요합니다.  
 모든 데이터가 클라우드 컴퓨터에 보관되고 작업 환경이 구성되어 있기 때문에   

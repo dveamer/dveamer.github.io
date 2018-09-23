@@ -6,8 +6,8 @@ categories: Ubuntu
 tags: VNC Remote ssh-tunneling
 ---
 
-![VNC Viewer](https://lh6.ggpht.com/RcRUeZKNRYaCfoNGMe8Ic8OORBN-_pXgNyNtvNfSQ-5DFl-7CTuTYC2m96BbbV5IQU0=w300)  
-( 이미지 출처 : [VNC Viewer](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android) )
+![VNC Viewer](https://lh6.ggpht.com/RcRUeZKNRYaCfoNGMe8Ic8OORBN-_pXgNyNtvNfSQ-5DFl-7CTuTYC2m96BbbV5IQU0=w300){:class="imgTitle"}  
+( 이미지 출처 : [VNC Viewer](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android) )  
 
 VNC를 이용해서 Ubuntu에 원격접속을 해봤습니다.  
 

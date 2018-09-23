@@ -6,8 +6,8 @@ categories: Database
 tags: MariaDB
 ---
 
-![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)  
-( 이미지 출처 : [https://downloads.mariadb.org](https://downloads.mariadb.org) )
+![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png){:class="imgTitle"}  
+( 이미지 출처 : [https://downloads.mariadb.org](https://downloads.mariadb.org) )  
 
 MariaDB 외부접속을 하기 위해  
 어떠한 설정작업들이 있는지 확인해보고 작업방법에 대해서 간략하게 알아보자.  

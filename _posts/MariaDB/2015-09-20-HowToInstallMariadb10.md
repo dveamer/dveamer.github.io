@@ -6,9 +6,8 @@ categories: Database
 tags: MariaDB Ubuntu Setting
 ---
 
-![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png)
-
-( 이미지 출처 : [https://downloads.mariadb.org](https://downloads.mariadb.org) )
+![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png){:class="imgTitle"}  
+( 이미지 출처 : [https://downloads.mariadb.org](https://downloads.mariadb.org) )  
 
 mariadb 5.5 가 ubuntu 기본 apt 패키지로 세팅이 되어있어서 저장소를 업데이트 후 새로 설치해야합니다.
 

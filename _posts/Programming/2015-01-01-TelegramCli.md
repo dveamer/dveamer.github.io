@@ -7,8 +7,8 @@ categories: Programming
 tags: Lua Telegram-Cli
 ---
 
-![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg)  
-( 이미지 출처 : [http://ausdroid.net](http://ausdroid.net) )
+![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg){:class="imgTitle"}  
+( 이미지 출처 : [http://ausdroid.net](http://ausdroid.net) )  
 
 Telegram-Cli와 Lua script를 이용해서 Telegram 서버의 API 와 직접 연계합니다.
 

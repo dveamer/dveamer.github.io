@@ -6,9 +6,8 @@ categories: Books
 tags: Programming 
 ---
 
-![Functional Programming in Java 8](http://image.aladin.co.kr/product/4213/39/cover/1195149239_1.jpg)
-
-( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=42133916) )
+![Functional Programming in Java 8](http://image.aladin.co.kr/product/4213/39/cover/1195149239_1.jpg){:class="imgTitle"}  
+( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=42133916) )  
 
  * 벤컷 수브라마니암 지음
  * 장독대 옮김

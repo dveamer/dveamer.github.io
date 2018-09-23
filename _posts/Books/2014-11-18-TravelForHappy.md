@@ -5,9 +5,9 @@ date:   2014-11-18 00:00:00
 categories: Books
 tags: Novel
 ---
-![꾸빼 씨의 행복 여행](http://image.aladin.co.kr/product/50/80/cover/8995501448_2.jpg)
 
-( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=508047) )
+![꾸빼 씨의 행복 여행](http://image.aladin.co.kr/product/50/80/cover/8995501448_2.jpg){:class="imgTitle"}  
+( 이미지 출처 : [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=508047) )  
  
   * 프랑수아 를로르 지음
   * 이지연 그림, 오유란 옮김
