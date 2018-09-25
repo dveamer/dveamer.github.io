@@ -66,12 +66,7 @@ public class Menu4JavaServiceImpl implements MenuService {
 
     ...(생략)
 
-    static CacheManager cacheManager;
-
-    public Menu4JavaServiceImpl(){
-        URL configFile = this.getClass().getResource("/ehcache.xml");
-        cacheManager = new CacheManager(configFile);
-    }
+    CacheManager cacheManager = new CacheManager(getClass().getResource("/ehcache.xml"));
 
     @Override
     public List<Menu> retrieveMenus(Auth auth) throws Exception {
@@ -112,7 +107,7 @@ public class Menu4JavaServiceImpl implements MenuService {
 
 Spring @Cacheable과 비교하기 위해서 위의 세가지 문제점을 기억해주시기 바랍니다.  
 
-그리고 전역변수와 생성자도 추가되었지만 이 글의 맥락상 중요한 사항이 아니니 무시하셔도 됩니다.  
+그리고 전역변수도 추가되었지만 이 글의 맥락상 중요한 사항이 아니니 무시하셔도 됩니다.  
 
 
 # Spring @Cacheable
