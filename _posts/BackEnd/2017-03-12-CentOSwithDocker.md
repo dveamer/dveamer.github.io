@@ -3,7 +3,7 @@ layout: post
 title:  "Install CentOS with Docker"
 date:   2017-03-11 12:00:00
 categories: BackEnd
-tags: Setting Docker CentOS
+tags: BackEnd Setting Docker CentOS
 ---
 
 ![Docker](https://www.docker.com/sites/default/files/social/docker-facebook-share.png){:class="imgTitle"}

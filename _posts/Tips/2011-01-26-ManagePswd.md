@@ -3,7 +3,7 @@ layout: post
 title:  "패스워드 관리 팁"
 date:   2018-01-26 00:00:00
 categories: Tips
-tags: Passphrase
+tags: Tips Passphrase
 ---
 
 ![PSWD](https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Username_and_password_20170626.jpg/1199px-Username_and_password_20170626.jpg){:class="imgTitle"}  

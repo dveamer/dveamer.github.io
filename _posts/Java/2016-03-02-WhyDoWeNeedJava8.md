@@ -3,7 +3,7 @@ layout: post
 title:  "왜 Java 8 을 공부해야 하는가?"
 date:   2016-03-02 12:00:00 
 categories: Java
-tags: Stream Java8
+tags: BackEnd Java8 Stream
 ---
 
 ![http://eclipsesource.com/](http://eclipsesource.com/blogs/wp-content/uploads/2014/03/java8_logo-281x300.png){:class="imgTitle"}  

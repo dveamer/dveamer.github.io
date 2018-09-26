@@ -3,7 +3,7 @@ layout: post
 title:  "Bundler 를 이용한 Jekyll 3.0 업그레이드"
 date:   2016-02-04 23:00:00
 categories: Homepage
-tags: Jekyll Github-Pages Bundler Kramdown Rouge Upgrade Update Suport
+tags: Homepage Jekyll Github-Pages Bundler Kramdown Rouge Upgrade Update Suport
 ---
 
 ![Bundler](http://ruby-korea.github.io/bundler-site/images/gembundler.png){:class="imgTitle"}  

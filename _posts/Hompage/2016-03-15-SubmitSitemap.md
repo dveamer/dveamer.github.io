@@ -3,7 +3,7 @@ layout: post
 title:  "홈페이지 검색 잘 되도록 만들기"
 date:   2016-03-15 12:00:00 
 categories: Homepage
-tags: 검색 Search sitemap rss feed google daum naver 
+tags: Homepage Search Sitemap RSS Feed Google Daum Naver 
 lastmod : 2016-05-14 12:00:00
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "따라하며 배우는 서버 부하분산 입문"
 date:   2015-03-01 00:00:00 
 categories: Books
-tags: Programming
+tags: Books
 ---
 
 ![따라하며 배우는 서버 부하분산 입문](http://image.aladin.co.kr/product/2504/79/cover/8994506608_1.jpg){:class="imgTitle"}  

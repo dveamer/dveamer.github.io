@@ -3,7 +3,7 @@ layout: diary
 title:  "쓸데없지만 쓸데없지 않은 고민"
 date:   2016-01-12 00:00:00
 categories: Diary
-tags: 고민
+tags: Diary Worries
 ---
 
 ![agony](http://image.slidesharecdn.com/npeaworkshopfinaldraftweb-120409161657-phpapp02/95/implementing-effective-family-engagement-strategies-2-728.jpg?cb=1335541538){:class="imgTitle"}  

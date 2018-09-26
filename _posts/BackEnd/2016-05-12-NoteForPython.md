@@ -3,7 +3,8 @@ layout: post
 title:  "Python 학습내용 기록"
 date:   2016-05-12 12:00:00
 categories: BackEnd
-tags: Python
+cates: BackEnd
+tags: BackEnd Python
 lastmod: 2016-05-29 12:00:00
 ---
 

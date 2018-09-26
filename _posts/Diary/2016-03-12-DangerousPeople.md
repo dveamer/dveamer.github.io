@@ -3,7 +3,7 @@ layout: diary
 title:  "인공지능과 사람에 대한 두려움"
 date:   2016-03-12 12:00:00 
 categories: Diary
-tags: Deep-Learning Robot
+tags: Diary Deep-Learning
 ---
 
 SNS에 인공지능과 로봇에 대한 두려움이 떠돌아 다닌다.  

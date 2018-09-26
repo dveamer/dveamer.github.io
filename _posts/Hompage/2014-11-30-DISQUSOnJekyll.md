@@ -3,7 +3,7 @@ layout: post
 title:  "DISQUS on Jekyll"
 date:   2015-11-30 16:50:00
 categories: Homepage
-tags: Jekyll DISQUS
+tags: Homepage Jekyll DISQUS
 ---
 
 DISQUS 는 소셜 댓글 서비스 입니다.  

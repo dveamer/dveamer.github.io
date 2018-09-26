@@ -2,10 +2,28 @@
 layout: default
 ---
 
+<div class="sub-menu">
+  <form action="/cate.html" method="get" >
+     <button type="submit" class="btn btn-gray" >Categroies</button>
+  </form>
+</div>
+
+<div class="sub-menu">
+  <form action="/tag.html" method="get" >
+     <button type="submit" class="btn btn-gray" >Tags</button>
+  </form>
+</div>
+
+<div class="sub-menu">
+   <button type="submit" class="btn btn-green-fixed" >Time-Line</button>
+</div>
+
+<br></br>
+
 <div class="well">
 {%for post in site.posts %}
     {% unless post.next %}
-        <h2>{{ post.date | date: '%Y' }}</h2>
+        <h1>{{ post.date | date: '%Y' }}</h1>
         <ul>
     {% else %}
         {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}

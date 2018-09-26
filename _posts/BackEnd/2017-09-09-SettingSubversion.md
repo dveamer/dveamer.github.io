@@ -2,8 +2,9 @@
 layout: post
 title:  "How To Set Up SVN(Subversion) Repositories"
 date:   2017-09-09 12:00:00
-categories: Programming
-tags: Ubuntu SVN Setting
+lastmod: 2018-09-26 00:00:00 
+categories: BackEnd
+tags: BackEnd Ubuntu SVN Setting
 ---
 
 ![Subversion Logo](https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Subversion_Logo.svg/1280px-Subversion_Logo.svg.png){:class="imgTitle"}  

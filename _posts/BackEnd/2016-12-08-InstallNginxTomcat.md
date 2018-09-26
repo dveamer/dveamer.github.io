@@ -4,7 +4,7 @@ title:  "How to install Nginx & Tomcat"
 date:   2016-12-07 20:00:00
 lastmod: 2018-02-03 00:00:00
 categories: BackEnd
-tags: Setting Nginx Tomcat
+tags: BackEnd Setting Nginx Apache Tomcat
 ---
 
 ![Nginx Logo](https://cdn.wp.nginx.com/wp-content/uploads/2015/04/NGINX_logo_rgb-01.png){:class="imgTitle"}

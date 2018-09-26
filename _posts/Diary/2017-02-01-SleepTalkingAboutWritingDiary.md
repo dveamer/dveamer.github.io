@@ -3,6 +3,7 @@ layout: diary
 title:  "일기 쓰기에 대한 잠꼬대"
 date:   2017-02-01 12:00:00
 categories: Diary
+tags: Diary
 ---
 
 ![a sleeping dog](https://upload.wikimedia.org/wikipedia/commons/1/17/Dog.in.sleep.jpg){:class="imgTitle"}  

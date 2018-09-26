@@ -3,6 +3,7 @@ layout: diary
 title:  "새로운 학습모임"
 date:   2018-05-17 00:00:00
 categories: Diary
+tags: Diary
 ---
 
 ![Pen-writing-notes-studying](https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Pen-writing-notes-studying.jpg/640px-Pen-writing-notes-studying.jpg){:class="imgTitle"}  

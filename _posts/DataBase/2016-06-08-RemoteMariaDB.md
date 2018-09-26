@@ -3,7 +3,7 @@ layout: post
 title:  "MariaDB 외부접속 설정 & 계정 생성"
 date:   2016-06-08 12:00:00
 categories: Database
-tags: MariaDB
+tags: Database MariaDB
 ---
 
 ![mariadb10.1](https://downloads.mariadb.org/static/generated/images/v2/ice_logo-5dcea9e47b780ff52f75c3c3304d54827f56211e.png){:class="imgTitle"}  

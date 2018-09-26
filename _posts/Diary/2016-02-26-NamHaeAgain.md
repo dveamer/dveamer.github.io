@@ -3,7 +3,7 @@ layout: diary
 title:  "11년만에 다시 찾은 남해"
 date:   2016-02-26 12:00:00 
 categories: Diary
-tags: Travel
+tags: Diary Travel
 ---
 
 ![남해](https://lh3.googleusercontent.com/YOPsVRHVu5XHpvcNOgjuEWDogV9_jAvrvky1K6Ddv7GRJ0T68u5eHYl4TniIJYIPxWIKYlkdxgdhUBctv0FBJvLjTvdUOZUMOqKHUV9AD533LCmhD3NeLZ1TT4f41izko-K99DR2txfLVFwJTSfT0ssT5MMw5P8xhOqKDxrnCbJtcz0RW5xeocTmhyx657lstK5lZTOKKeSTeNYXSPi5L7qx8MP1pgZaDhNFNtpUZm3DM47ODHWVkWrbmxWhqU31L3i0SyeT4UEZ_M_UcaEu2xt22uWEOS1aIZ9oCwMVmycWciJ_ZzhDSq2_CsFFUOFzIzJvLF74xAM54Akgg76HzlBzCr9l9ixt_xcmrjgoHiK-GFB2tZgTOzp9bJopcS4jFULUed8vH80Pknq2AH6NY5LS1kDtnpHzIgJ5VCS0c_7I0ZdADtIoG8_uhK3L5TjX4BLwyuTd2SjtNYqtr6H58SU2NR3nt3O0YwwbTENo17a_Z1rh1rLBVeD6mN5oN6aE0SBv9G3Jsx_Llu0yttbwjvv2jtkx-kzU6Sjwjlr5lMkEZ1zqQFJSiB9Xj3xFBRNMXl64=w685-h683-no){:class="imgTitle"}  

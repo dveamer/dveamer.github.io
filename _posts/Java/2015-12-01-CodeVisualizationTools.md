@@ -3,7 +3,7 @@ layout: post
 title:  "Code Visualization Tools"
 date:   2015-12-01 01:00:00
 categories: Java
-tags: ObjectAid Java-Docs Eclipse Class-Diagram
+tags: BackEnd ObjectAid Java-Docs IDE Eclipse Class-Diagram
 ---
 
 ![ObjectAid](http://www.objectaid.com/static/images/java-perspective.png;jsessionid=38E7A9419700C4B4FD0102256016089D){:class="imgTitle"}  

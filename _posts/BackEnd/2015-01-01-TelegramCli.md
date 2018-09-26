@@ -2,9 +2,9 @@
 layout: post
 title:  "Interface with Telegram-Cli"
 date:   2015-01-01 12:00:00
-lastmod: 2018-02-03 00:00:00
-categories: Programming
-tags: Lua Telegram-Cli
+lastmod: 2018-09-26 00:00:00
+categories: BackEnd
+tags: BackEnd Lua Telegram-Cli
 ---
 
 ![Telegram-Cli](http://ausdroid.net/wp-content/uploads/2015/09/telegram.jpg){:class="imgTitle"}  
@@ -19,6 +19,7 @@ Telegram-Cli와 Lua script를 이용해서 Telegram 서버의 API 와 직접 연
 # Plan
 
 ## Recieve msg
+
  * lua script와 연동한 telemgram-cli 로 받아서 API호출하 듯이 java로 넘길 예정
    - luarocks 설치 http://www.luarocks.org/en/Installation_instructions_for_Unix
    - luasocket 설치 http://stackoverflow.com/questions/18011416/installation-of-luasocket-using-luarocks
@@ -54,15 +55,18 @@ local result, respcode, respheaders, respstatus = http.request {
     sink = ltn12.sink.table(respbody)
 }
 ~~~
+
   * Result
     - batch 방식은 진행실패.
     - localhost와 통신이라 get method로 진행.
 
 ## request_msg
+
  * java에서 OS command 실행을 통해 telegram-cli 를 매번 실행시키며 telegram command를 실행시킬 예정.
  * 메시지를 하나 보낼 때 세개 이상의 telegram command를 실행시켜야하는데 java에서 실패. python script로 작성하고 java에서 해당 script 실행하는 방식으로 진행.
 
 ## request & recieve msg
+
  * request_msg 용 telegram-cli르 기동,종료하는 과정이 recieve_msg 용 telegram-cli에 영향을 줘서 메시지 수신이 멈추는 현상 생김. telegram-cli의 configure 를 두개로 분리해서 진행.
    - ./tg/bin/telegram-cli -c "conf위치" -k "key위치" -s "luaScript위치" -W
  
@@ -76,12 +80,14 @@ abcd = {
 ~~~
 
 ## ETC 
+
  * .으로 시작하는 메시지 필터링 : .? , .기능 , .등록 등등
  * phone number, nickname(first_second) 저장
    - nickname 등록방법 : add_contact
    - telegram-cli 가 nickname 정보를 잃어버리면 갖고있는 모든 phone number에 nickname을 새로 매핑하면됨.
 
 ## References
+
   - recieve_msg http://truefeel.tistory.com/224
   - telegram-cli 설치 및 기본구동 http://coffeenix.net/board_view.php?bd_code=1759
   - request_msg http://codeholic.net/post/98145891792/telegram-cli
@@ -90,6 +96,7 @@ abcd = {
   - lua sample https://github.com/vysheng/tg/blob/master/test.lua
 
 # 그 외
+
  * lua mail보내기 http://devnote.tistory.com/244
  * 행아웃으로 진행하기
    - http://clien.net/cs2/bbs/board.php?bo_table=lecture&wr_id=260006&sca=%5BPC%2F%EB%AA%A8%EB%B0%94%EC%9D%BC%5D

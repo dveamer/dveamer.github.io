@@ -359,6 +359,11 @@ pre {
     color: white;
 }
 
+.btn-green-fixed {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
 
 /**
  * Donations
@@ -383,5 +388,14 @@ div.encrypt > div > textarea {
 }
 
 
+
+/**
+ * Encryption
+ */ 
+
+
+div.sub-menu {
+  display: inline-block;
+}
 
 

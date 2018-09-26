@@ -3,7 +3,7 @@ layout: post
 title:  "홈페이지 현황 ( Log4J 2 관련 대박사건 )"
 date:   2018-08-16 12:00:00
 categories: Homepage
-tags: Log Search
+tags: Homepage Log Search
 ---
 
 ![Apache Logging Service Logo](https://logging.apache.org/log4j/2.x/images/ls-logo.jpg){:class="imgTitle"}  

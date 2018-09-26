@@ -4,7 +4,7 @@ title:  "HTTPD (Apache HTTP Server) 설치하기"
 date:   2018-02-03 00:00:00
 lastmod: 2018-02-07 00:00:00 
 categories: BackEnd
-tags: Setting Apache
+tags: BackEnd Setting Apache HTTPD
 ---
 
 ![Apache HTTP Server](https://c2.staticflickr.com/8/7640/16527980754_76dfa9c86e_b.jpg){:class="imgTitle"}  

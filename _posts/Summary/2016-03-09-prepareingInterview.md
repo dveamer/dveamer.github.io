@@ -2,8 +2,9 @@
 layout: post
 title:  "인터뷰 준비"
 date:   2016-10-17 12:00:00 
-categories: Programming
-tags: Career
+lastmod: 2018-09-26 00:00:00 
+categories: Summary
+tags: Summary
 ---
 
 인터뷰 준비

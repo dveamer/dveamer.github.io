@@ -3,7 +3,7 @@ layout: post
 title:  "English for Developers"
 date:   2015-09-26 00:00:00 
 categories: Books
-tags: Programming
+tags: Books
 ---
 
 ![English for Developers](http://image.aladin.co.kr/product/6526/71/cover/8968482195_1.jpg){:class="imgTitle"}  

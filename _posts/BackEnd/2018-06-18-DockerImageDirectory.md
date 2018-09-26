@@ -3,7 +3,7 @@ layout: post
 title:  "Docker 설치 후 이미지 보관 디렉토리 변경"
 date:   2018-06-18 00:00:00
 categories: BackEnd
-tags: Setting Docker
+tags: BackEnd Setting Docker
 ---
 
 ![Docker Logo](https://www.docker.com/sites/default/files/social/docker-facebook-share.png){:class="imgTitle"}  

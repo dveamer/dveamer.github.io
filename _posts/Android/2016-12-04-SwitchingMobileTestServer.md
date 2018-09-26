@@ -3,7 +3,7 @@ layout: post
 title:  "모바일 앱 테스트 팁 - 운영, 개발 서버 스위칭"
 date:   2016-12-04 12:00:00
 categories: Android
-tags: Test
+tags: Android Testing
 ---
 
 집에서 모바일 개발을 시작하시는 분들께  

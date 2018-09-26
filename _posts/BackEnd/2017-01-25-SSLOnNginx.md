@@ -3,7 +3,7 @@ layout: post
 title:  "Nginx SSL 적용방법"
 date:   2017-01-25 12:00:00
 categories: BackEnd 
-tags: Setting Nginx SSL 
+tags: BackEnd Setting Nginx SSL 
 ---
 
 

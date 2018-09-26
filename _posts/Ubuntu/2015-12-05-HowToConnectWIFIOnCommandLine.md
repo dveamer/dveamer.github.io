@@ -3,7 +3,7 @@ layout: post
 title:  "Ubuntu Command Line으로 wifi 접속하기"
 date:   2015-12-05 12:00:00
 categories: Ubuntu
-tags: Network
+tags: Ubuntu Network
 ---
 
 맨날 집에서 키보드를 깎다가 정말 오랜만에 분위기 전환겸 카페에 왔다.  

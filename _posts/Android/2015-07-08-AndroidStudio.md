@@ -3,7 +3,7 @@ layout: post
 title:  "Android Studio"
 date:   2015-07-08 22:00:00
 categories: Android
-tags: IDE Android-Studio
+tags: Andorid IDE Android-Studio
 ---
 
 ![AndroidStudio](http://1.bp.blogspot.com/-UGrENgc-ec8/VIJsFPD19aI/AAAAAAAABBk/ICFczO1O6mU/s1000/studio-logo.png){:class="imgTitle"}  
@@ -17,10 +17,6 @@ tags: IDE Android-Studio
 
 # Shortcut Keys
  * http://www.androidside.com/bbs/board.php?bo_table=B56&wr_id=26482
-
-# Install Android Studio
-
-
 
 # References For Future
   * [에뮬레이터 실행속도 올리는 법](https://www.davidlab.net/ko/tech/how-to-setup-android-dev-env-on-ubuntu-part2/)

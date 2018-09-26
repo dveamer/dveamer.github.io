@@ -2,9 +2,9 @@
 layout: post
 title:  "Install Citrix Receiver On Ubuntu"
 date:   2015-12-09 12:00:00
-categories: Ubuntu-Tools
-tags: Citrix 
-identifier: 20151209-485155446
+lastmod: 2018-09-26 00:00:00
+categories: Ubuntu
+tags: Ubuntu Citrix 
 ---
 
 ![citrix](http://docs.citrix.com/content/dam/docs/en-us/legacy-edocs/receiver-windows-43/receiver-x1-icon.png){:class="imgTitle"} ![citrix](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrix.svg/220px-Citrix.svg.png){:class="imgTitle"}  

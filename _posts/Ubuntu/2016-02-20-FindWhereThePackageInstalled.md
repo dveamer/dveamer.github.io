@@ -3,7 +3,7 @@ layout: post
 title:  "패키지가 설치 된 위치 찾기 in Ubuntu"
 date:   2016-02-20 12:00:00 
 categories: Ubuntu
-tags: Package Install Directory Where
+tags: Linux Package Install Directory Search
 ---
 
 Windows 에서는 대부분 Program files 디렉토리에 설치가 되는 편인데  

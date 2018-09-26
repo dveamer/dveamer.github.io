@@ -3,7 +3,7 @@ layout: diary
 title:  "추운 겨울과 라면 마니아 고양이"
 date:   2016-01-30 16:30:00 
 categories: Diary
-tags: Walk Animal
+tags: Diary Walk Animal
 ---
 
 ![Ramyun Mania Cat](https://lh3.googleusercontent.com/lFUTbYnSzyibYBzZ2LOV6CFwJV9Ojr7uO84fdJvEEv63wn487nzLrMzgPI45ifJR2S21GdYLS-x8NR9u_tb_aQ_7Npdhh586gxbWt5owJTaEXeFD7G2rYSr2lDPrK-k6jrraM8_PIWaraADpl7TKgG9vwxUyb75_WmcLypAsGzmaQwhcw9hFoGXHgNcbos8JEoHQ1XmRdL4U060DBRpJiFR9kuG0i_Y2eitbSo0sEo8PIxRXbmUmMH_sxH3ir3JVnbwCQsj8PAcYJoTbcY9iHiR0J9z2mrf5b9BpaEczePeJC-YAKQ-8thIZiaSdungxSsi-QBvvxEj4aNAh0_loZ41jwxAX4Nn9N8svXzcyWhkXE7ge2HrtUV9LKqJ9IDa5jQH5Rf-eVakRNFGHIWE6gU17QlGEHZV7doMoCSU3nkHHdi845DeDxkMDAPXT8sAUqysh03rw_yfhzMPcAxRhvncv8YbDrM4TEqPWRSujFBx2LbI5vKpbLqohZ1AJV0QlDfjdnhpvUiFvkUdUB7jL7FBarSBF6dbNez9j2HJAKimWmpTk2iS5clWrbQYm03-qlYHx=w776-h437-no){:class="imgTitle"}  

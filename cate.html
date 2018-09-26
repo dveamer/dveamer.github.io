@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<div class="sub-menu">
+   <button type="submit" class="btn btn-green-fixed" >Categroies</button>
+</div>
+
+<div class="sub-menu">
+  <form action="/tag.html" method="get" >
+     <button type="submit" class="btn btn-gray" >Tags</button>
+  </form>
+</div>
+
+<div class="sub-menu">
+  <form action="/archive.html" method="get" >
+     <button type="submit" class="btn btn-gray" >Time-Line</button>
+  </form>
+</div>
+
+<br></br>
+
+
+<div class="well">
+{% capture tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag = tags | split:',' | sort %}
+
+{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% assign exist = false %}
+
+    {% capture tag_word %}{{ tag[item] | strip_newlines }}{% endcapture %}
+    {% for post in site.tags[tag_word] %}
+
+        {% if tag_word != "Diary" and tag_word != "Homepage" and tag_word != "Books"%}
+
+            {% if post.tags[0] == tag_word %}
+                {% assign exist = true %}
+            {% endif %}
+
+        {% endif %}
+
+    {% endfor %}
+
+    {% if exist == true %}
+        <h2 class="category" id="{{ tag_word }}">{{ tag_word }}</h2>
+        <ul>
+        {% for post in site.tags[tag_word] %}
+            {% if post.title != null %}
+                <li><span>{{ post.date | date: "%b %d" }}</span>» <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+{% endunless %}{% endfor %}
+
+
+{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% assign exist = false %}
+
+    {% capture tag_word %}{{ tag[item] | strip_newlines }}{% endcapture %}
+    {% for post in site.tags[tag_word] %}
+
+        {% if tag_word == "Diary" or tag_word == "Homepage" or tag_word == "Books"%}
+
+            {% if post.tags[0] == tag_word %}
+                {% assign exist = true %}
+            {% endif %}
+
+        {% endif %}
+
+    {% endfor %}
+
+    {% if exist == true %}
+        <h2 class="category" id="{{ tag_word }}">{{ tag_word }}</h2>
+        <ul>
+        {% for post in site.tags[tag_word] %}
+            {% if post.title != null %}
+                <li><span>{{ post.date | date: "%b %d" }}</span>» <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+{% endunless %}{% endfor %}
+

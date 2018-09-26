@@ -3,7 +3,7 @@ layout: post
 title:  "Android 앱 설치 / 업데이트 이벤트 처리"
 date:   2017-12-02 01:00:00
 categories: Android 
-tags: Android_BroadcastReceiver
+tags: Android BroadcastReceiver
 ---
 
 ![Android Logo](https://developer.android.com/_static/images/android/touchicon-180.png){:class="imgTitle"}  

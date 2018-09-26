@@ -4,7 +4,7 @@ title:  "Process Status 사용법"
 date:   2016-01-12 12:00:00 
 lastmod: 2018-02-03 00:00:00
 categories: Linux
-tags: Command Memory
+tags: Linux Command Memory
 ---
 
 ~~~

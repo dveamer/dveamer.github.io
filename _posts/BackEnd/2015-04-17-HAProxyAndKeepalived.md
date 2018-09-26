@@ -4,7 +4,7 @@ title:  "HAProxy & Keepalived"
 date:   2015-04-17 08:00:00
 lastmod: 2018-02-06 00:00:00 
 categories: Architecture
-tags: HAProxy Keepalived
+tags: BackEnd HAProxy Keepalived
 ---
 
 ![Haproxy](http://www.haproxy.org/img/logo-med.png) ![Keepalived](http://www.keepalived.org/images/ka-header.png){:class="imgTitle"}  

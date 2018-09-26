@@ -3,6 +3,7 @@ layout: diary
 title:  "홈페이지에 대한 잠꼬대"
 date:   2017-02-01 12:00:01
 categories: Diary
+tags: Diary
 ---
 
 ![Victorian Style Home Marysville.jpg](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Victorian_Style_Home_Marysville.jpg/748px-Victorian_Style_Home_Marysville.jpg){:class="imgTitle"}  

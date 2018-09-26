@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="header-container">
 		<div class="nav">
-			{% if page.path == "index.html" %}
+			{% if page.path == "index.html" or page.path =="" %}
 			<span class="title">
 				<li>
 					<a href="/index.html">Home</a>
@@ -13,39 +13,27 @@
 				</li>			
 			{% endif %}
 
-			{% if page.path == "categories.html" %}
+			{% if page.path == "archive.html" or page.path == "tag.html" or page.path == "cate.html" %}
 			<span class="title">
 				<li>
-					<a href="/categories.html">Categories</a>
+					<a href="/cate.html">Archive</a>
 				</li>
 			</span>			
 			{% else %}
 				<li>
-					<a href="/categories.html">Categories</a>
+					<a href="/cate.html">Archive</a>
 				</li>			
 			{% endif %}
 
 			{% if page.path == "resume.html" %}
 			<span class="title">
 				<li>
-					<a href="/resume.html">Resume</a>
+					<a href="/resume.html">Résumé</a>
 				</li>
 			</span>			
 			{% else %}
 				<li>
-					<a href="/resume.html">Resume</a>
-				</li>			
-			{% endif %}
-
-			{% if page.path == "archive.html" %}
-			<span class="title">
-				<li>
-					<a href="/archive.html">Archive</a>
-				</li>
-			</span>			
-			{% else %}
-				<li>
-					<a href="/archive.html">Archive</a>
+					<a href="/resume.html">Résumé</a>
 				</li>			
 			{% endif %}
 

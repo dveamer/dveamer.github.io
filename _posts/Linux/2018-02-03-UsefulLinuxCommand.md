@@ -3,7 +3,7 @@ layout: post
 title:  "유용한 Linux 명령어"
 date:   2018-02-03 00:00:00
 categories: Linux
-tags: Command 
+tags: Linux Command 
 ---
 
 유용하게 사용하는 Linux 명령어를 기록해봅니다.  

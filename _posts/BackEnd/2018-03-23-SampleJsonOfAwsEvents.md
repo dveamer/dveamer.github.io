@@ -4,6 +4,7 @@ title:  "Sample Json Of AWS Events"
 date:   2018-03-23 00:00:00
 lastmod: 2018-03-23 00:00:00 
 categories: BackEnd
+cates: AWS
 tags: AWS 
 ---
 

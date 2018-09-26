@@ -3,7 +3,7 @@ layout: post
 title: "Spring @Cacheable 캐싱 처리"
 date: 2018-09-23 00:00:00
 categories: BackEnd
-tags: Spring Cache
+tags: Spring Cache AOP
 ---
 
 ![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  

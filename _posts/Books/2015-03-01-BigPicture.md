@@ -3,7 +3,7 @@ layout: post
 title:  "빅 픽처"
 date:   2015-03-01 00:00:00 
 categories: Books
-tags: Novel
+tags: Books
 ---
 
 ![빅 픽처](http://image.aladin.co.kr/product/714/36/cover/8984371025_1.jpg){:class="imgTitle"}  

@@ -4,7 +4,7 @@ title:  "Deploying Python Zip To AWS Lambda"
 date:   2018-05-27 00:00:00
 lastmod: 2018-05-27 00:00:00 
 categories: BackEnd
-tags: AWS-Lambda Python
+tags: AWS Python Deployment
 ---
 
 ![AWS Lambda](https://d1.awsstatic.com/Digital%20Marketing/House/PAC/2up/PAC-Q4_House-Ads_Lambda_2up.62dc7e19b7b2e0a2c06821594c31f1ce00a6bdda.png){:class="imgTitle"} 

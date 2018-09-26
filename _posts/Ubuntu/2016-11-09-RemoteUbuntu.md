@@ -3,7 +3,7 @@ layout: post
 title:  "Ubuntu VNC 원격접속"
 date:   2016-11-09 12:00:00
 categories: Ubuntu
-tags: VNC Remote ssh-tunneling
+tags: Ubuntu VNC Remote ssh-tunneling
 ---
 
 ![VNC Viewer](https://lh6.ggpht.com/RcRUeZKNRYaCfoNGMe8Ic8OORBN-_pXgNyNtvNfSQ-5DFl-7CTuTYC2m96BbbV5IQU0=w300){:class="imgTitle"}  

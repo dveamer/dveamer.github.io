@@ -3,7 +3,7 @@ layout: post
 title:  "Docker를 이용해서 SonarQube 간단히 설정하기"
 date:   2017-11-19 01:00:00
 categories: BackEnd 
-tags: Setting SonarQube Docker
+tags: BackEnd Setting SonarQube Docker
 ---
 
 ![SonarQube Logo](https://www.sonarqube.org/assets/logo-31ad3115b1b4b120f3d1efd63e6b13ac9f1f89437f0cf6881cc4d8b5603a52b4.svg){:class="imgTitle"} 

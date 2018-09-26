@@ -3,7 +3,7 @@ layout: post
 title:  "Functional Programming in Java 8"
 date:   2016-01-31 22:40:00 
 categories: Books
-tags: Programming 
+tags: Books 
 ---
 
 ![Functional Programming in Java 8](http://image.aladin.co.kr/product/4213/39/cover/1195149239_1.jpg){:class="imgTitle"}  

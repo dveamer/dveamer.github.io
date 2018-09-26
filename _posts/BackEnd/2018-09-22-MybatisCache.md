@@ -3,7 +3,7 @@ layout: post
 title: "Mybatis Cache 제거 방법"
 date: 2018-09-22 00:00:00
 categories: BackEnd
-tags: Mybatis Cache
+tags: BackEnd Mybatis Cache
 ---
 
 ![Mybatis Logo](http://3.bp.blogspot.com/-HKtWXLIvvdk/T6VWCexS-qI/AAAAAAAAATo/QmRUDiFjWd0/s1600/mybatis-superbird-small.png){:class="imgTitle"}  

@@ -4,7 +4,7 @@ title:  "Spring @Async 비동기처리"
 date:   2016-10-30 12:00:00 
 lastmod: 2018-02-06 00:00:00 
 categories: Java
-tags: Spring Asynchronous Multi-Thread 
+tags: Spring Asynchronous Multi-Thread AOP
 ---
 
 ![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
