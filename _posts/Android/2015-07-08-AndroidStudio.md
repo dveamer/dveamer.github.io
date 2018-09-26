@@ -3,7 +3,7 @@ layout: post
 title:  "Android Studio"
 date:   2015-07-08 22:00:00
 categories: Android
-tags: Andorid IDE Android-Studio
+tags: Android IDE Android-Studio
 ---
 
 ![AndroidStudio](http://1.bp.blogspot.com/-UGrENgc-ec8/VIJsFPD19aI/AAAAAAAABBk/ICFczO1O6mU/s1000/studio-logo.png){:class="imgTitle"}  

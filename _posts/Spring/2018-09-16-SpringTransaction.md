@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Spring @Transactional DB 트렌젝션 처리"
-date:   2018-09-16 00:00:00
+date:   2038-09-16 00:00:00
 categories: BackEnd
 tags: Spring Transaction
 ---
