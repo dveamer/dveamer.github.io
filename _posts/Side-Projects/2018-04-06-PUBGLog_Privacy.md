@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "OwFriends 개인정보처리방침"
+title:  "배그로그 개인정보처리방침"
 date: 2018-04-06 00:00:00
 categories: Side-Projects
 ---
