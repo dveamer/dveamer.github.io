@@ -31,14 +31,9 @@ public class Menu4JavaServiceImpl implements MenuService {
     @Override
     public List<Menu> retrieveMenus(Auth auth) throws Exception {
 
-        logger.info("menu of {} is loading", auth);
-
         List<Menu> menus = null;
 
-        switch (auth) {
-            case ADMIN : menus = retrieveMenusOfAdmin(); break;
-            case MEMBER : menus = retrieveMenusOfMember(); break;
-        }
+        // do something..
 
         return menus;
     }
@@ -83,12 +78,7 @@ public class Menu4JavaServiceImpl implements MenuService {
             logger.info(ex.getMessage());
         }
 
-        logger.info("menu of {} is loading", auth);
-
-        switch (auth) {
-            case ADMIN : menus = retrieveMenusOfAdmin(); break;
-            case MEMBER : menus = retrieveMenusOfMember(); break;
-        }
+        // do something..
 
         cache.put(new Element(auth, menus));
 
@@ -151,21 +141,14 @@ public class MenuServiceImpl implements MenuService {
     @Cacheable(value = "menuCache", key = "#auth")
     public List<Menu> retrieveMenus(Auth auth) throws Exception {
 
-        logger.info("menu of {} is loading", auth);
-
         List<Menu> menus = null;
 
-        switch (auth) {
-            case ADMIN : menus = retrieveMenusOfAdmin(); break;
-            case MEMBER : menus = retrieveMenusOfMember(); break;
-        }
+        // do something..
 
         return menus;
     }
 }
 ~~~
-
-## @Cacheable의 장점  
 
 
 ### 업무로직과 캐싱로직의 완벽한 분리  
@@ -201,6 +184,9 @@ Spring @Cacheable은 내부적으로 Spring AOP를 이용하기 때문에 @Async
 
 AspectJ를 이용하면 제약사항을 회피하기 가능하며 그에 대해서는 추후에 작성하도록 하겠습니다.  
 동일한 원인과 해법에 대해서 다룬 [Spring @Async AspectJ 비동기처리](/java/SpringAsyncAspectJ.html) 글을 읽어보시면 도움이 되실겁니다.  
+
+
+## Spring 캐시 
 
 # Ehcache 설정
 
@@ -272,8 +258,61 @@ Spring의 경우 ```/src/main/java/resources/``` 아래에 두면 됩니다.
 </ehcache>
 ~~~
 
+## 기타 사항
+
+## Cache 관련 다른 annotation
+
+  * @CachePut : cache를 갱신할 때 사용한다.  
+  * @CacheEvict : cache를 삭제할 때 사용한다.  
+  * @Caching : 여러개의 @CacheEvict 혹은 @CachePut 을 하나의 메소드에 걸어야할 때 사용한다.  
+
+메뉴정보를 캐싱하고 있는데 간혹 변경이 필요하다면 @CachePut을 이용해서 변경을 할 수 있다.  
+
+하지만 @CachePut, @CacheEvict를 사용하지 않고서도 충분히 캐싱을 잘 활용할 수 있다고 생각한다.  
+예를들어 변경되는 일시를 컨트롤할 수 있다면, 서버 배포와 맞물려서 캐싱된 정보가 초기화되도록 처리할 수도 있을 것이다.  
+
+### 주의사항 
+
+  * @CachePut과 @Cacheable을 하나의 메소드에 걸어서는 안된다.  
+  * WAS가 여러대이고 Ehcache가 클러스터링이 안되어있다면 @CachePut과 @Cacheable 모든 WAS에서 실행을 시켜줘야한다.  
+
+
+## @Cacheable KeyGenerator
+
+int, long 과 같은 primitive type의 파라미터만 사용하는 경우가 아니고  
+VO(또는 Map)를 파라미터로 사용한다면 VO가 가진 모든 feild 값을 키로 사용하는 경우는 많지 않을 겁니다.  
+
+그럴 때는 아래와 같은 방법으로 키를 생성해서 사용할 수 있습니다.  
+
+~~~java
+public class MenuServiceImpl implements MenuService {
+
+    @Override
+    @Cacheable(value = "menuCache", key = "T(com.dveamer.sample.KeyGen).generate(#auth)")
+    public List<Menu> retrieveMenus(Auth auth) throws Exception {
+
+        List<Menu> menus = null;
+
+        // do something..
+
+        return menus;
+    }
+}
+~~~
+
+~~~java
+package com.dveamer.sample;
+
+public class KeyGen {
+    public static Object generate(Auth auth) {
+        return auth.getAuthCd() + ":" + auth.getSystem().getSystemCd();
+    }
+}
+~~~
+
 
 #### References
 
   * [http://www.ehcache.org/](http://www.ehcache.org/)
+  * [Spring-Cache-키-생성-유의사항](http://knight76.tistory.com/m/entry/Spring-Cache-%ED%82%A4-%EC%83%9D%EC%84%B1-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD)
 
