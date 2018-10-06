@@ -262,20 +262,21 @@ Spring의 경우 ```/src/main/java/resources/``` 아래에 두면 됩니다.
 
 ## Cache 관련 다른 annotation
 
-  * @CachePut : cache를 갱신할 때 사용한다.  
-  * @CacheEvict : cache를 삭제할 때 사용한다.  
-  * @Caching : 여러개의 @CacheEvict 혹은 @CachePut 을 하나의 메소드에 걸어야할 때 사용한다.  
+  * @CachePut : cache를 갱신할 때 사용
+  * @CacheEvict : cache를 삭제할 때 사용
+  * @Caching : 여러개의 @CacheEvict 혹은 @CachePut 을 하나의 메소드에 걸어야할 때 사용
 
-메뉴정보를 캐싱하고 있는데 간혹 변경이 필요하다면 @CachePut을 이용해서 변경을 할 수 있다.  
+메뉴정보를 캐싱하고 있는데 간혹 변경이 필요하다면 @CachePut을 이용해서 변경을 할 수 있습니다.  
 
-하지만 @CachePut, @CacheEvict를 사용하지 않고서도 충분히 캐싱을 잘 활용할 수 있다고 생각한다.  
-예를들어 변경되는 일시를 컨트롤할 수 있다면, 서버 배포와 맞물려서 캐싱된 정보가 초기화되도록 처리할 수도 있을 것이다.  
+하지만 @CachePut, @CacheEvict를 사용하지 않고서도 충분히 캐싱을 잘 활용할 수 있다고 생각합니다.  
+예를들어 변경되는 일시를 컨트롤할 수 있다면, 서버 배포와 맞물려서 캐싱된 정보가 초기화되도록 처리할 수도 있을 것입니다.  
+
+빈번한 변경이 일어나는 데이터의 경우에는 캐싱의 필요여부부터 다시 고민해봐야할 것 같습니다.  
 
 ### 주의사항 
 
-  * @CachePut과 @Cacheable을 하나의 메소드에 걸어서는 안된다.  
-  * WAS가 여러대이고 Ehcache가 클러스터링이 안되어있다면 @CachePut과 @Cacheable 모든 WAS에서 실행을 시켜줘야한다.  
-
+  * @CachePut과 @Cacheable을 하나의 메소드에 걸어서는 안됨
+  * WAS가 여러대이고 Ehcache가 클러스터링이 안되어있다면 @CachePut과 @Cacheable 모든 WAS에서 실행을 시켜줘야함
 
 ## @Cacheable KeyGenerator
 
