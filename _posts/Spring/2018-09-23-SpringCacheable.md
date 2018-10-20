@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Spring @Cacheable 캐싱 처리"
+title: "Spring @Cacheable Cache 처리"
 date: 2018-09-23 00:00:00
+last_mod: 2018-10-20 00:00:00
 categories: BackEnd
 tags: Spring Cache AOP
 ---
@@ -97,8 +98,6 @@ public class Menu4JavaServiceImpl implements MenuService {
 
 Spring @Cacheable과 비교하기 위해서 위의 세가지 문제점을 기억해주시기 바랍니다.  
 
-그리고 전역변수도 추가되었지만 이 글의 맥락상 중요한 사항이 아니니 무시하셔도 됩니다.  
-
 
 # Spring @Cacheable
 
@@ -186,7 +185,6 @@ AspectJ를 이용하면 제약사항을 회피하기 가능하며 그에 대해�
 동일한 원인과 해법에 대해서 다룬 [Spring @Async AspectJ 비동기처리](/java/SpringAsyncAspectJ.html) 글을 읽어보시면 도움이 되실겁니다.  
 
 
-## Spring 캐시 
 
 # Ehcache 설정
 
