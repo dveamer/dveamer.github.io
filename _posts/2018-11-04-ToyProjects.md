@@ -24,6 +24,8 @@ lastmod: 2018-11-04 00:00:00
 
 # Clean News 
 
+![Clean News](https://lh3.googleusercontent.com/BaRgyqGNoX9TvOaDVXHIdCG5chXyrlk-AoDAVvC3d4mOJb2d0xb-JWv3RqffFX59BnILimO7Sw=w440-h280-e365){:class="imgTitle"}  
+
   * Chrome Add-On : [https://chrome.google.com/webstore/detail/clean-news/mkfndjjcdgdlgnpocgljgcembjpaoekj](https://chrome.google.com/webstore/detail/clean-news/mkfndjjcdgdlgnpocgljgcembjpaoekj)
   * Firefox Add-On : [https://addons.mozilla.org/ko/firefox/addon/clean-news/](https://addons.mozilla.org/ko/firefox/addon/clean-news/)
   * 2018.11 ~
