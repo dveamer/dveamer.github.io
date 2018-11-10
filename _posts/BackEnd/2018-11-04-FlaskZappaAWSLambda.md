@@ -18,7 +18,7 @@ AWS Lambda 위에서 Flask 프레임워크를 사용할 수 있게 해주며
 
 <!--more-->
 
-[AWS Lambda & Python Flask](https://medium.freecodecamp.org/how-to-create-a-serverless-service-in-15-minutes-b63af8c892e5) 글을 통해 Zappa에 대해서 처음 알게 됐습니다.  
+[How to create a serverless service in 15 minutes](https://medium.freecodecamp.org/how-to-create-a-serverless-service-in-15-minutes-b63af8c892e5) 글을 통해 Zappa에 대해서 처음 알게 됐습니다.  
 글을 읽어보시면 AWS 에서 설정해야하는 부분이 꽤 많습니다.  
 
 이번 글에서는 Flask와 Zappa에 대해서만 다룰 예정이기 때문에 AWS 설정에 관래서는 위의 글을 참고해주시기 바랍니다.  
@@ -251,7 +251,7 @@ OS 환경변수 console 화면에서 1회만 변경하면 되지만 Zappa 설정
 
 #### References
 
-  * [AWS Lambda & Python Flask](https://medium.freecodecamp.org/how-to-create-a-serverless-service-in-15-minutes-b63af8c892e5)
+  * [How to create a serverless service in 15 minutes](https://medium.freecodecamp.org/how-to-create-a-serverless-service-in-15-minutes-b63af8c892e5)
 
   * [Flask-API](http://www.flaskapi.org/)
   * [Flask & Decorator ](https://medium.com/@nguyenkims/python-decorator-and-flask-3954dd186cda)
