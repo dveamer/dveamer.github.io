@@ -6,7 +6,7 @@ categories: BackEnd
 tags: BackEnd Python Flask AWS
 ---
 
-![Flask](http://flask.pocoo.org/static/logo.png) ![AWS Lambda](https://d1.awsstatic.com/Digital%20Marketing/House/PAC/2up/PAC-Q4_House-Ads_Lambda_2up.62dc7e19b7b2e0a2c06821594c31f1ce00a6bdda.png){:class="imgTitle"}    
+![Flask](http://flask.pocoo.org/static/logo.png){:class="imgTitle"} ![AWS Lambda](https://d1.awsstatic.com/Digital%20Marketing/House/PAC/2up/PAC-Q4_House-Ads_Lambda_2up.62dc7e19b7b2e0a2c06821594c31f1ce00a6bdda.png){:class="imgTitle"}    
 ( 이미지 출처 : [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language)), [https://aws.amazon.com/ko/lambda/features/](https://aws.amazon.com/ko/lambda/features/) )  
 
 Zappa라는 툴을 공유합니다.  

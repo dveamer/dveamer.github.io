@@ -6,7 +6,7 @@ categories: BackEnd
 tags: BackEnd Python
 ---
 
-![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/260px-Python_logo_and_wordmark.svg.png)  
+![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/260px-Python_logo_and_wordmark.svg.png){:class="imgTitle"}    
 ( 이미지 출처 : [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language)) )  
 
 Python 명령어 한줄로 간단한 HTTP 서버를 띄우는 방법을 알아봅니다.  
