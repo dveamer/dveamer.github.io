@@ -6,7 +6,7 @@ categories: BackEnd
 tags: BackEnd Setting Python
 ---
 
-![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/260px-Python_logo_and_wordmark.svg.png)  
+![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/260px-Python_logo_and_wordmark.svg.png){:class="imgTitle"}  
 ( 이미지 출처 : [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language)) )  
 
 Ubuntu 14.04 LTS에서 Python3.6 을 컴파일 설치하는 법을 알아봅니다.  
