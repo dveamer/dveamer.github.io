@@ -21,11 +21,13 @@ tags: Browser-Extension Chrome Firefox Add-On
 만들어서 제가 써보면서 테스트하기 위해 Firefox로 진행을 시작했습니다.  
 
 그러한 이유로 대부분의 기록들이 Firefox 기준으로 적혀있습니다.  
-
 재미있는 점은 지금은 Chrome으로 먼저 개발을 하고 있습니다. 그 이유는 아래에서 설명드립니다.  
 
+Firefox 와 Chrome을 비교하는 형태로 글을 작성하겠습니다.  
 
 # 확장앱 개발자모드 
+
+앱을 등록하기 전에 브라우저에서 테스트가 가능합니다. 아래 링크로 이동하시면 됩니다.  
 
 ## Firefox 
 
@@ -39,12 +41,12 @@ tags: Browser-Extension Chrome Firefox Add-On
 
 # 확장앱 등록하기
 
-아래 링크로 이동해서 가입 후 등록하시면 됩니다.  
+아래 링크로 이동해서 가입하시면 확장앱을 정식 스토어에 등록 합니다.  
 
 
 ## Firefox
 
-  * [앱 등록](https://addons.mozilla.org/ko/developers)  
+  * [앱 등록 https://addons.mozilla.org/ko/developers](https://addons.mozilla.org/ko/developers)  
   * [압축하는 방법](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Package_your_extension_)  
 
 Firefox는 등록이 매우 간단합니다. 만들어둔 zip 파일, 이미지 1장 그리고 앱의 간략한 설명만 적어주면 등록이 가능합니다.  
@@ -64,7 +66,7 @@ Jquery에서도 innerHTML을 포함하고 있어서 경고 메시지는 받았�
 
 ## Chrome
 
-  * [앱 등록](https://chrome.google.com/webstore/developer/dashboard)  
+  * [앱 등록 https://chrome.google.com/webstore/developer/dashboard](https://chrome.google.com/webstore/developer/dashboard)  
 
 Firefox와 달리 필요한 준비물이 많고 구체적입니다.  
 
@@ -76,44 +78,56 @@ zip파일 외에도 홍보용 이미지, 스캔 이미지 등 준비가 필요�
 
 앱을 올리고 나면 "2~3일 이내에 점검 완료 후 등록 예정" 이라는 메시지가 뜹니다.  
 제가 만든 확장앱이 사용중인 tab의 HTML에 대한 조회 권한이 있어서 인지는 모르겠으나..  
-등록하는데 걸리는 시간이 정말 3일이 걸립니다. 일요일 밤에 등록요청을 해두면 수요일 밤에 등록이 완료되는 것을 경험했습니다.  
+등록하는데 걸리는 시간이 3일 이상 걸립니다. 처음에는 일요일 밤에 등록해서 수요일에 완료됐지만 두번째는 토요일 밤에 등록해서 목요일 밤인 현재도 완료되지 않았습니다. 아직 검토 중이라고 뜨네요.  
+
 
 그리고 등록 도중에 추가 변경 건이 있으면 기존 등록요청을 취소하고 새로운 버전을 등록해야합니다.  
 즉, 한번 등록요청을 하면 추가 개발건이 있어도 등록이 완료 된 뒤에 재 등록요청하는 것이 가장 효율적입니다.  
 최소 3일마다 등록이 가능한 형태 입니다.  
 
 
-# Chrome VS Firefox
-
-위의 등록하는 과정에서는 Firefox가 Chrome보다 개발자 친화적입니다.  
-하지만 시장 규모라던가 보안 측면에서 Chrome이 Firefox보다 낫다는 설명이 되기도 합니다.  
-
-이번에는 개발하는 과정에서의 차이를 얘기해보겠습니다.  
+# API
 
 당연한 이야기지만 API가 다릅니다.  
+
 ```sendMessage``` 라는 API를 예로 들면, chrome은 ```chrome.extension.sendMessage({});```, Firefox는 ```browser.runtime.sendMessage({});```와 같이 사용합니다.  
+
 대부분 Chrome은 ```chrome```으로 시작하고 Firefox는 ```browser```로 시작합니다.  
 
 파리미터 개수가 다른 경우도 많습니다.  
 Firefox는 성공, 실패 두가지 경우의 callback function을 파라미터로 받는 반면,  
 Chrome은 성공에 대한 callback function만 파라미터로 받는 경우가 대부분 입니다.  
 
-그리고 아예 기능이 차이나는 경우도 있습니다.  
+
+"어떤 API가 더 좋다" 는 것은 잘 모르겠고..  
+
+Chrome과 Firefox의 차이가 생각보다 많다보니  
+설계시에 브라우저 API를 호출하는 영역과 그 외 업무내용만 담고있는 영역을 분리하는 것이 중요한 것 같습니다.  
+저의 경우는 초반에 Chrome과 Firefox의 차이를 몰랐지만 습관적으로 영역을 분리시켜 둔 덕에 porting 할 때 그나마 편하게 작업할 수 있었습니다.  
+
+
+# 제공 기능
+
+제공되는 기능에 차이가 있는 경우가 있습니다.  
+
+예를들어,  
 
 Firefox는 ```webRequest```를 이용해서 intercept하고 logging만이 아니라 blocking, redirect가 가능합니다.  
 하지만 Chrome은 ```webRequest``` 으로는 intercept 후 logging만 가능합니다.  
 
 대신 chrome에서는 ```declarativeWebRequest```을 따로 제공하고 제한적인 blocking은 가능합니다.  
-하지만 chrome 도 beta channel에서만 해당 기능이 가능합니다.  
-저의 경우는 Ubuntu에서 Chrome Chromium 브라우저로 테스트를 했는데, 여기서는 잘 돌아가던 ```declarativeWebRequest``` 기능이  
-정식 앱 등록 후에 Windows의 Chrome 브라우저에서 테스트를 했더니 ```declarativeWebRequest```는 beta channel에서만 사용 가능하다는 메시지가 출력됐습니다.  
+하지만 이 기능도 beta channel에서만 해당 기능이 가능합니다.  
+저의 경우는 Ubuntu에서 Chrome Chromium 브라우저로 테스트를 마쳤던 ```declarativeWebRequest``` 기능이 정식 앱 등록 후에 Windows의 Chrome 브라우저에서 테스트를 했더니 ```declarativeWebRequest```는 beta channel에서만 사용 가능하다는 메시지가 출력됐습니다.  
+
+# UX
 
 UX 측면에서는, 파폭은 팝업 화면에서 마우스를 벗어나면 팝업이 자동으로 닫히게 되는데 크롬은 팝업을 닫는 액션을 취하지 않는한 계속 유지됩니다.  
-근데 파폭은 수시로 팝업이 닫히기 때문에 팝업에서 입력한 데이터를 바로바로 보관할 임시보관소가 필요합니다.  
 
-<br>
+제 확장앱의 경우 가입할 때 e-mail 주소와 OTP를 입력받는 내용이 있습니다.  
+Firefox 확장 앱 팝업 화면에서 e-mail 주소를 입력 후, 서버에서 전송한 OTP를 확인하기 위해 다른 탭에서 메일을 확인하고 오면 확장 앱 팝업이 사라집니다. 그리고 팝업을 다시 열었을 때는 아까 입력해뒀던 e-mail 주소가 화면에서 지워지게 됩니다. 만약에 e-mail 주소를 화면에 유지시키고 싶다면 데이터를 storage에 임시적으로 보관하는 등의 방법을 취해야합니다.  
 
-지금까지는 차이점을 줄줄 기술했고 정리해서 제 느낌을 적어보겠습니다.  
+
+# 테스트 
 
 Chrome이 더 엄격하고 테스트하기 편합니다.  
 
@@ -122,9 +136,9 @@ Firefox는 callback function만 실행시켜주고 나몰라라 하는 느낌입
 
 초반에는 Firefox에서 개발하고 Chrome으로 porting을 했습니다. 그러다보니 Firefox에서 잘 돌아간다고 생각했던 기능이 깔끔하게 마무리 되지 않고 있었던 것을 Chrome에서 확인하게 되는 경우가 많았습니다. 그래서 지금은 거꾸로 Chrome에서 개발하고 Firefox로 porting 중입니다.  
 
-<br>
+# Call-Back
 
-그리고 Firefox는 callback의 시작시점도 애매합니다.  
+Firefox는 callback의 시작시점도 애매합니다.  
 storage.local에 데이터 저장을 요청하고 성공 callback function에서 ```location.reload();```로 화면을 재로딩 하는 경우를 예로 들겠습니다.  
 일단 Firefox는 화면이 재로딩은 되지만 데이터는 저장되어있지 않습니다. 반면 Chrome은 재로딩과 저장이 모두 성공적으로 이뤄집니다.  
 제 추측으로는 Firefox의 경우는 저장이 완전히 완료된 후에 callback function이 실행되는 것이 아닌 것 같습니다.  
@@ -138,12 +152,28 @@ callback function에서 ```location.reload();```를 setTimeout을 걸어서 1초
 
 하지만 첫 개발이다보니 초반에는 그 생각을 못했고 당장은 구조를 뜯어고치지 못해서 중요하지 않은 영역에 한해서 setTimeout을 사용 중입니다.  
 
-<br>
+# 모바일
 
-Chrome과 Firefox의 차이가 생각보다 많다보니  
-설계시에 브라우저 API를 호출하는 영역과 그 외 업무내용만 담고있는 영역을 분리하는 것이 중요합니다.  
-저의 경우는 초반에 Chrome과 Firefox의 차이를 몰랐지만 습관적으로 영역을 분리시켜 둔 덕에 porting 할 때 그나마 편하게 작업할 수 있었습니다.  
+Chrome은 PC 브라우저만 확장앱을 사용할 수 있습니다.  
+반면 Firefox는 모바일 브라우저에서도 확장앱을 사용할 수 있습니다.  
 
+재미있는 점은,  
+모바일은 확장 앱의 팝업 페이지가 제공되지 않습니다. UX가 PC 브라우저와 크게 차이가 나게 됩니다.  
+그리고 확장 앱을 정식으로 등록하기 전까지 테스트를 할 방법이 없습니다.  
+
+# 결론 
+
+등록하는 과정에서는 Firefox가 Chrome보다 쉽고 빠르며 개발자 친화적입니다.  
+제가 사용해본 범위 내에서는 Chrome에서 제공해주는 기능이 보다 제한적으로 느껴졌습니다.  
+
+하지만 개발하는 과정에서 테스트도 Chrome이 편하고  
+위에서 얘기한 등록과정이 길고 제공되는 기능이 제한적이라는 점도  
+보안 측면에서 Chrome이 사용자에게 더 안전한 것 같습니다.  
+개발자 입장에서 기능 구현에 제한이 들어가지만 길게 봤을 때 적절한 보안을 처리해주는 플랫폼이 더 유리하다고 생각됩니다.  
+
+게다가 시장(?) 규모가 Chrome이 훨씬 크기 때문에 Firefox 보다는 Chrome을 메인으로 개발할 예정입니다.  
+
+Firefox를 베타버전처럼 등록해서 실 사용을 하면서 테스트를 하고 Chrome에 안정적으로 등록해나갈 생각입니다.  
 
 #### References 
 

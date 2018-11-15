@@ -11,8 +11,7 @@ tags: BackEnd Python Flask AWS
 
 Zappa라는 툴을 공유합니다.  
 
-AWS Lambda 위에서 Flask 프레임워크를 사용할 수 있게 해주며  
-귀찮던 AWS APIGateway path 추가 작업이 필요 없어집니다.  
+AWS Lambda 위에서 Flask 프레임워크를 사용할 수 있게 해주며 귀찮던 AWS APIGateway path 추가 작업이 필요 없어집니다.  
 
 게다가 복잡한 배포 스크립트 작업 없이도 명령어 한줄만으로 배포 가능해집니다.  
 
