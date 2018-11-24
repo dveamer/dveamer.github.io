@@ -19,7 +19,7 @@ lastmod: 2018-11-04 00:00:00
 현재 운영 중인 어플리케이션은 아래 링크에서 확인하실 수 있습니다. 
 
   * [Dveamer`s Android App](https://play.google.com/store/apps/developer?id=dveamer)
-  * [Dveamer`s Chrome Add-On](https://chrome.google.com/webstore/search/dveamer)
+  * [Dveamer`s Chrome Extension](https://chrome.google.com/webstore/search/dveamer)
   * [Dveamer`s Firefox Add-On](https://addons.mozilla.org/ko/firefox/user/dveamer/)
 
 # Clean News 
@@ -65,6 +65,11 @@ Back-End는 예전처럼 Python과 AWS를 이용한 것은 동일하지만 이�
 
   * Front-End : Javascript, Jquery, HTML, CSS
   * Back-End : Python, Flask, Zappa, AWS Lambda, AWS DynamoDB, AWS APIGateway, AWS Route53, AWS CloudFront
+
+## 개발기
+
+  * [Zappa를 이용해 AWS Lambda에 Flask 올리기](/backend/FlaskZappaAWSLambda.html)
+  * [확장앱 개발기 (Chrome Extention, Firefox Add-On 차이 설명)](/browser-extension/BrowserExtension.html)
 
 # 고양이 방울 ( Belling The Cat )
 
@@ -135,6 +140,7 @@ AWS를 사용하면서부터는 자주 사용해오던 Event-Driven 패턴으로
 
   * Front-End : Android Java
   * Back-End : Python3, AWS Lambda, AWS DynamoDB, AWS APIGateway, AWS Route53, AWS CloudFront, Google Firebase
+
 
 # OW Friends
 
