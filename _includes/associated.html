@@ -21,7 +21,17 @@
         {% endif %}
 
         {% for post_tag in post.tags %}
+
+          {% if post.tags[0] == post_tag %}
+            {% continue %}
+          {% endif %}
+
           {% for page_tag in page.tags %}
+
+            {% if page.tags[0] == page_tag %}
+              {% continue %}
+            {% endif %}
+
             {% if exist == true %}
               {% break %}
             {% endif %}
