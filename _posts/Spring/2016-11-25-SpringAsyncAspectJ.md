@@ -2,6 +2,7 @@
 layout: post
 title:  "Spring @Async AspectJ 비동기처리"
 date:   2016-11-25 12:00:00 
+lastmod: 2019-01-05 12:00:00 
 categories: Java
 tags: Spring Asynchronous Weaving AspectJ AOP
 ---

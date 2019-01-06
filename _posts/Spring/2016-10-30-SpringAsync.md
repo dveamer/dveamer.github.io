@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring @Async 비동기처리"
 date:   2016-10-30 12:00:00 
-lastmod: 2018-02-06 00:00:00 
+lastmod: 2019-01-05 12:00:00 
 categories: Java
 tags: Spring Asynchronous Multi-Thread AOP
 ---
@@ -183,12 +183,29 @@ method1에 대한 수정없이 처리가 가능하다는 점이 장점입니다.
 
 [Spring @Async AspectJ 비동기처리](/java/SpringAsyncAspectJ.html) 글에서 AspectJ를 이용해서 제약사항을 회피하는 방법을 설명드립니다.  
 
-## @Async with Logging Exception
+<br>
+
+  * HttpServletRequest 와 Session에 접근 불가
+
+이 사항은 Spring의 제약사항이 아니라 thread가 분리되는 비동기 처리이기 때문에 발생하는 현상입니다.  
+[Spring @Async HttpServletRequest Session](/java/SpringAsyncSession.html) 글에서 @Async를 사용하여 비동기처리를 하면서도 Session 정보를 사용하는 방법을 설명드립니다.  
+
+## @Async with Handler
 
 비동기로 처리되는 method에서 exception이 발생하면 어떻게 될까요?  
-해당 thread만 죽습니다.  
-전체 프로세스에는 영향이 없지만 해당 thread가 소리없이 죽기 때문에 관리가 되지 않습니다.  
-이번에는 SpringAsyncConfig 를 수정해서 logging 처리까지 해보도록 하겠습니다.  
+해당 thread만 죽고 전체 프로세스에는 영향이 없습니다. 하지만 해당 thread가 소리없이 죽기 때문에 관리가 되지 않습니다.  
+Handler를 이용해서 exception에 대한 처리 방법을 알려드립니다.  
+
+그리고 WAS 종료시 threadPoolTaskExecutor가 정상적으로 종료되도록 destroyMethod을 설정했습니다.  
+해당 설정이 없으면 WAS 종료시 아래와 같은 경고 메시지를 만날 수 있습니다.  
+
+~~~
+SEVERE: The web application appears to have started a thread named [taskExecutor-9] but has failed to stop it. This is very likely to create a memory leak.
+~~~
+
+WAS 프로세스가 종료되는 과정에서 threadPoolTaskExecutor bean을 종료해야하는데 그 방법을 약속하지 않았고 결국 종료에 실패해서 발생하는 메시지 입니다. 이 상황에서는 memory leak과는 큰 상관없고 결국 JVM의 heap memory가 OS에게 반환되면서 threadPoolTaskExecutor bean이 차지하던 memory도 당연히 반환됩니다.  
+
+다만 WAS 종료시마다 경고 메시지가 뜨게 되고 이러한 불필요한 경고, 에러 메시지가 많이 발생하는 시스템은 운영자가 정작 중요한 경고, 에러 메시지를 놓치기 쉽기 때문에 메시지가 발생하지 않도록 처리하는 것이 좋습니다.  
 
 Github에 올려둔 [샘플](https://github.com/dveamer/SpringBootSample/tree/master/Async)을 참고하시기 바랍니다.  
 
@@ -212,7 +229,7 @@ public class SpringAsyncConfig {
     protected Logger logger = LoggerFactory.getLogger(getClass());
     protected Logger errorLogger = LoggerFactory.getLogger("error");
 
-    @Bean(name = "threadPoolTaskExecutor")
+    @Bean(name = "threadPoolTaskExecutor", destroyMethod = "destroy")
     public Executor threadPoolTaskExecutor() {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setCorePoolSize(3);
@@ -232,7 +249,7 @@ public class SpringAsyncConfig {
 
         @Override
         public void execute(Runnable task) {
-            executor.execute(task);
+            executor.execute(createWrappedRunnable(task));
         }
 
         @Override
@@ -282,6 +299,11 @@ public class SpringAsyncConfig {
             errorLogger.error("Failed to execute task. ",ex);
         }
 
+        public void destroy() {
+            if(executor instanceof ThreadPoolTaskExecutor){
+                ((ThreadPoolTaskExecutor) executor).shutdown();
+            }
+        }
     }
 
 }
