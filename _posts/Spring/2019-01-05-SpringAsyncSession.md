@@ -23,9 +23,12 @@ SpringBoot 를 사용했으며 java based configuration 방식을 이용했습�
 
 ## 문제 제기 
 
-Spring @Async를 쓰면 업무로직 변화없이 쉽게 비동기 처리를 진행 할 수 있습니다. 하지만 업무로직에서 HttpSession을 이용하거나 HttpServletRequest를 사용한다면 문제가 발생합니다. 물론 HttpSession에서 필요한 값들만 모아서 VO(Value Object)로 service로 넘긴다면 큰 문제가 되지 않겠지만 우리는 필요에 의해 controller, service, DAO 전역에서 HttpServletRequest에 직접 접근하는 방법을 사용하곤 합니다.  
+Spring @Async를 쓰면 업무로직 변화없이 쉽게 비동기 처리를 진행 할 수 있습니다. 하지만 업무로직에서 HttpSession 혹은 HttpServletRequest를 사용한다면 문제가 발생합니다. 일단 비동기를 호출한 thread가 먼저 종료되면 HttpServletRequest의 scope도 함께 종료되어 비동기로 실행 된 로직에서는 사용에 실패하게 됩니다. 또한 Spring RequestContextHolder를 이용해서 HttpServletRequest에 접근하는 메소드를 비동기로 처리하게 되면 thread가 달라져서 Spring RequestContextHolder를 이용하는데 실패하게 됩니다.  
 
-왜 그런 필요가 생기는지와 어떻게 직접 접근하는지에 대해서는 [Spring RequestContextHolder - 어디서든 HttpServletReqeust 사용하기](/BackEnd/SpringRequestContextHolder) 글을 참고해주시기 바랍니다.  
+물론 HttpServletRequest에서 필요한 값들을 모아서 VO(Value Object)로 만들고 파라미터로 service에게 넘긴다면 문제가 되지 않습니다.  
+하지만 우리는 필요에 의해 Spring RequestContextHolder를 이용한 controller, service, DAO 전역에서 HttpServletRequest에 직접 접근하는 방법을 사용하곤 합니다.  
+
+왜 그런 필요가 생기는지와 어떻게 직접 접근하는지에 대해서는 [Spring RequestContextHolder - 어디서든 HttpServletReqeust 사용하기](/BackEnd/SpringRequestContextHolder) 글을 참고해주시기 바랍니다. 참고로 저는 logger, AOP, DAO 등에서 사용하기 위해서 주로 사용합니다.  
 
 ~~~java
 @Service
@@ -85,13 +88,11 @@ SesssionScopeUtil에 대해서는 [Spring RequestContextHolder - 어디서든 Ht
 즉, 다른 WAS에서도 동일한 SESSION_ID를 가진 호출을 받는다면 SessionScopeUtil을 통해서 동일한 attribute를 사용할 수 있습니다.  
 
 만약 mehtod1(), method2()가 모두 비동기가 아닌 동기방식으로 실행되었다면 당연히 모두 성공적으로 loggingCode를 로그에 남길 수 있었을 겁니다.  
-test()에서 session scope에 기록을 했고 같은 process, 같은 thread인 method1()에서 당연히 session scope에서 loggingCode를 꺼낼 수 있습니다.  
+그런데 어떠한 이유로 method1()과 method2()를 비동기방식으로 변경해야된다면 업무로직 변경없이 @Async만 추가하면 원하는 결과가 출력되지 않습니다.  
+test() 와 method1(), method2()는 모두 다른 thread에서 실행 중이며 test()만 HttpServletRequest에 접근이 가능한 상황입니다.  
 
-어떠한 이유로 method1()과 method2()를 비동기방식으로 변경해야된다면 [Spring @Async 비동기처리](/java/SpringAsync.html) 글에서는 얘기한대로 업무로직 변경없이 @Async만 추가하면 될까요?  
-만약 method1()과 method2()가 매우 복잡한 업무로직을 가지고 있다면 @Async를 마음 놓고 추가할 수 있을까요?  
-예를들어, 위와 같이 HttpServletRequest의 Session을 활용하는 업무로직을 비동기 처리하면 정상적인 결과를 얻지 못합니다.  
+하지만 평소 SesssionScopeUtil과 같이 유연성을 더해 Spring RequestContextHolder을 사용하고 있었다면 업무로직 수정없이 설정과 유틸리티 수정만으로도 해결이 가능합니다.  
 
-하지만 SpringAsyncConfig 설정 과정에서 몇가지 작업을 통해 마음놓고 @Async를 적용할 수 있는 해결방법을 알려드립니다.  
 method1()를 비동기 처리하는 threadPoolTaskExecutor은 그냥 기본적인 Spring @Async으로 설정해서 처리실패하도록 하고 method2()를 비동기 처리하는 executorWithSession은 Session을 활용할 수 있도록 설정하겠습니다.  
 
 ## Result
@@ -202,13 +203,11 @@ public class SpringAsyncConfig {
 }
 ~~~
 
-[Spring @Async 비동기처리](/java/SpringAsync.html) 글에서 설명드린 handler는 exception 처리를 위해서만 사용됐습니다.  
-지금은 handler를 약간 수정해서 createWrappedRunnable() 에서 runnable AttributeAwareTask로 wrapping합니다. 그리고 wrapping하는 과정에서 SessionScopeUtil에서 꺼낸 attribute를 전달합니다.  
+[Spring @Async 비동기처리](/java/SpringAsync.html) 글에서 설명드린 handler는 exception 처리를 위해서만 사용됐습니다. 이번에는 SessionScopeUtil에서 꺼낸 attribute를 비동기 실행 요청을 받는 thread에게 전달하는 기능을 추가 합니다.  
 
-앞서 테스트 결과를 통해 설명하자면, GreetingService.test()는 http-nio-8080-exec-1 thread에서 실행됐고 GreetingService.method2()를 호출 했습니다.  
-호출 후 비동기로 실행 되기 직전까지의 과정을 잠시 살펴보겠습니다.  
+앞서 테스트 결과를 통해 설명하자면, test()는 http-nio-8080-exec-1 thread에서 실행됐고 method2()를 호출 했습니다. 호출 후 method2()가 ExecutorWithSession-1 thread에서 비동기로 실행 되기 직전까지의 과정을 잠시 살펴보겠습니다. 
 
-GreetingService.method2()를 실행하라는 내용을 가진 runnable이 생성되어 HandlingExecutor.execute() 로 전달됩니다.  
+method2()를 실행하라는 내용을 가진 task라는 변수명의 runnable을 HandlingExecutor.execute() 로 전달합니다.  
 위의 코드에 포함된 내용이지만 구간별로 나눠서 설명을 하기 위해 HandlingExecutor.execute()의 내용을 한번 더 기술하겠습니다.  
 
 ~~~java
@@ -228,8 +227,8 @@ GreetingService.method2()를 실행하라는 내용을 가진 runnable이 생성
     }
 ~~~
 
-전달된 runnable은 createWrappedRunnable()를 통해 AttributeAwareTask로 wrapping 된 후 AsyncTaskExecutor.execute()에 의해 비동기로 실행됩니다.  
-비동기로 실행되기 전에 wrapping이 이뤄졌음을 주의해주시기 바랍니다. 그러면 이제 아직 비동기로 실행되기 전의 wrapping 과정을 살펴보겠습니다.  
+전달된 runnable은 createWrappedRunnable()를 통해 wrapping 된 후 AsyncTaskExecutor.execute()에 의해 비동기로 실행됩니다.  
+비동기로 실행되기 전에 wrapping이 이뤄졌음을 기억해주시기 바랍니다. 그러면 이제 아직 비동기로 실행되기 전의 wrapping 과정을 살펴보겠습니다.  
 
 ~~~java
     public class HandlingExecutor implements AsyncTaskExecutor {
@@ -255,10 +254,10 @@ GreetingService.method2()를 실행하라는 내용을 가진 runnable이 생성
     }
 ~~~
 
-SessionScopeUtil로부터 attribute를 받고 runnable과 함께 AttributeAwareTask로 wrapping합니다.  
+SessionScopeUtil로부터 받은 attribute를 runnable과 함께 AttributeAwareTask로 wrapping합니다.  
 이 때는 비동기로 실행되기 전이기 때문에 SessionScopeUtil로부터 받은 attribute는 http-nio-8080-exec-1 thread의 HttpServletRequest로부터 받은 attribute 입니다.  
 
-이제 다시 AsyncTaskExecutor.execute()가 호출되고 비동기로 실행된 직후를 살펴보겠습니다.  
+이렇게 wrapping된 runnable은 리턴되어 AsyncTaskExecutor.execute()에 의해 비동기로 실행됩니다.  
 
 ~~~java
     public class AttributeAwareTask<T> implements Callable<T>, Runnable {
@@ -280,21 +279,18 @@ SessionScopeUtil로부터 attribute를 받고 runnable과 함께 AttributeAwareT
     }
 ~~~
 
-비동기로 실행되었으니 현재는 ExecutorWithSession-1 thread로 무대가 바꼈습니다. 새로운 무대에서 아까 전달받은 attribute를 AsyncScopeUtil에 보관합니다.  
-그 결과, method2()에서 SessionSopeUtil의 트릭을 통해 attribute를 꺼낼 수 있게 됩니다.  
+비동기로 실행되었으니 현재는 ExecutorWithSession-1 thread로 무대가 바꼈습니다. 새로운 무대에서 아까 전달받은 attribute를 AsyncScopeUtil에 보관합니다. 그러면 method2()에서 SessionSopeUtil의 트릭을 통해 attribute를 꺼낼 수 있게 됩니다.  
 
-그 작업이 끝나면 runnable이 실행되고 그 후 AsyncScopeUtil에서 아까 보관한 attribute를 제거합니다.  
-만약 제거 과정을 빠뜨리시면 memory leak이 발생되니 절대 빼시면 안됩니다.  
+runnable이 실행된 후 AsyncScopeUtil에서 아까 보관한 attribute를 제거합니다. 만약 제거 과정을 빠뜨리시면 memory leak이 발생됩니다.  
 
 ## SessionScopeUtil & AsyncScopeUtil
 
-위의 설정만으로는 thread가 분리되었음에도 Session에 보관된 attribute를 꺼내쓰는 내용이 설명되지 않습니다.  
-SessionScopeUtil & AsyncScopeUtil 이 가진 간단한 트릭을 설명드립니다.  
+위의 설정만으로는 설명이 부족하고 SessionSopeUtil과 AsyncScopeUtil의 트릭에 대한 설명이 필요합니다.  
 
 ### AsyncScopeUtil
 
 AsyncScopeUtil은 static으로 선언된 Map에 thread ID를 key로하여 자료를 관리합니다.  
-동일한 thread 내에서는 Controller-Service-Dao 중 어느 곳에서든지 attribute를 보관하고 꺼내서 사용할 수 있습니다.  
+동일한 thread 내에서는 Controller-Service-Dao 중 어느 곳에서든지 attribute를 보관하고 꺼내서 사용하게 해줍니다.  
 
 ~~~java
 public class AsyncScopeUtil {
@@ -341,19 +337,17 @@ public class SessionScopeUtil {
 }
 ~~~
 
-```SessionScopeUtil.getAttribute()``` 에는 한가지 트릭이 있습니다.  
-ThreadPoolTaskExecutor이 가진 thread 들은 HttpServletRequest를 가지고 있지 않기 때문에 exception이 발생하고 ```AsyncScopeUtil.getAttribute()``` 가 호출됩니다.  
-그 결과, 동일한 Session ID를 갖는 WAS간의 자료 공유를 이루거나 동일한 thread간의 자료 공유를 이뤄줍니다.  
-
+```SessionScopeUtil.getAttribute()``` 에 핵심 트릭이 있습니다. ThreadPoolTaskExecutor이 가진 thread 들은 HttpServletRequest를 가지고 있지 않기 때문에 exception이 발생하게 되고 ```AsyncScopeUtil.getAttribute()``` 가 호출됩니다. 원래 SessionScopeUtil은 동일한 Session ID를 갖는 WAS간의 자료 공유를 위한 유틸리티 입니다. 하지만 비동기 thread에도 그 정보를 전달할 수 있는 기능을 제공하게 되었습니다.  
 
 ## 주의사항 
 
-위와 같이한다고 모든 것이 다 해결되는 것은 아닙니다.  
+HttpSession에 보관된 정보를 변경하는 것은 최소한으로 하는 것이 좋습니다. 예를들어, 로그인 할 때 필요한 정보들을 보관하고 로그아웃 할 때 모든 정보들을 제거하는 정도가 좋다고 생각합니다. 결론적으로 업무로직에서는 SessionScopeUtil의 getAttribute()만 사용하는 것을 권장합니다. 특히나 비동기로 처리 되면 multi-thread 혹은 multi-process로 동일한 HttpSession을 바라보게 될텐데 쓰기를 진행하는 것은 바람직하지 않습니다.  
 
-동기든 비동기든 업무로직에서 SessionScopeUtil의 getAttribute()만 사용하는 것을 권유 드립니다.  
-비동기로 처리될 때 setAttribute() 혹은 removeAttribute()를 실행하면 에러가 발생합니다.  
+두번째 주의사항은 비동기 thread로 전달하는 대상은 value 혹은 VO여야 합니다. HttpServletRequest, HttpSession와 같은 servlet의 thread와 동일한 thread를 갖는 대상을 전달해선 안됩니다. 그렇지 않으면 servlet의 thread가 비동기 thread 보다 먼저 종료되어 발생되는 문제를 접하게 되실 겁니다.  
 
-두번째 주의사항은 Controller가 실행된 thread가 @Async의 thread 보다 먼저 종료 될 수 있다는 점입니다.  
-저의 경우에는 비동기로 처리할 thread에게 attribute라는 VO를 전달했습니다. 근데 소스를 조금만 수정하면 controller가 가지고 있던 context 혹은 HttpServletRequest를 직접 전달 할 수 있습니다. 하지만 전달 된 것을 사용하는 과정에서 controller가 종료되면 해당 context 혹은 request가 종료되었다는 에러 메시지를 만나게 되실 겁니다.  
 
+
+# Thank You
+
+간단한 내용이라고 생각했는데 상당히 긴 글이 되어버렸습니다. 끝가지 읽어주셔서 고맙습니다.  
 

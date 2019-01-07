@@ -66,9 +66,9 @@ Java에서 HttpServletReqeust에 대한 접근은 제한이 있습니다. servle
 
 Spring에서는 controller에서 작업 없이 그리고 service method에서 해당 VO를 파라미터로 받지 않고서도 해당 VO에 접근할 방법을 제공합니다.  
 
-덕분에 반복되는 파라미터 전달을 줄일 수도 있지만 유용한 기능들을 만들 수 있습니다.  
+덕분에 반복되는 파라미터 전달을 줄이는 것 외에도 유용한 기능들을 만들 수 있습니다.  
 예를들어, 로그인시에 생성한 loggingCode를 HttpSerssion에 보관하고 로그를 파일에 쓸 때 패턴으로 loggingCode를 남길수 있습니다.  
-HttpSession에다가 보관했기 때문에 같은 사용자라면 모든 WAS의 로그에서 같은 loggingCode가 패턴으로 출력됩니다.  
+HttpSession에다가 보관했기 때문에 같은 사용자라면 모든 WAS의 로그에서 같은 loggingCode가 패턴으로 출력됩니다. 로드밸런싱에 의해서 여러 서버에 남겨지고 수많은 사용자들의 로그에 묻힌 특정 사용자의 로그를 추적하는데 유용하겠죠?  
 
 ## Spring RequestContextHolder
 
