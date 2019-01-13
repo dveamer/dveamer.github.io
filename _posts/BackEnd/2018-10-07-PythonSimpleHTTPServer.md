@@ -21,7 +21,7 @@ Linux의 경우 Python이 기본적으로 설치되어있기 때문에 다른 �
 
 ## Python 2.x
 
-~~~python
+~~~terminal
 $ python2 -m SimpleHTTPServer 8000
 ~~~
 
@@ -30,7 +30,7 @@ $ python2 -m SimpleHTTPServer 8000
 
 ## Python 3.x
 
-~~~python
+~~~terminal
 $ python3 -m http.server 8000
 ~~~
 
