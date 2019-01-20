@@ -30,7 +30,7 @@
 
   var coupangAds = [
 
-    { link : "https://coupa.ng/bgrkpy", img : "https://static.coupangcdn.com/image/affiliate/banner/b0390ad9afe26bd916f6ea07ca964551@2x.jpg", desc : "동원샘물 미네마인,..."  },
+    { link : "https://coupa.ng/bgrkpy", img : "https://static.coupangcdn.com/image/affiliate/banner/f895d8c26a786acac2e495f20f75f3f5@2x.jpg", desc : "동원샘물 미네마인,..."  },
     { link : "https://coupa.ng/bgrkqi", img : "https://static.coupangcdn.com/image/affiliate/banner/ad93ec0763bf3da368b479e37e42b567@2x.jpg", desc : "제주삼다수, 2L,..."  },
     { link : "https://coupa.ng/bgrkq7", img : "https://static.coupangcdn.com/image/affiliate/banner/6f8a0d9a325513de96024e9e6a912d7e@2x.jpg", desc : "상하목장 유기농 흰..."  },
     { link : "https://coupa.ng/bgrkrX", img : "https://static.coupangcdn.com/image/affiliate/banner/14f7bfbb629ff497881b32d0e28a435f@2x.jpg", desc : "농심 백산수, 2L..."  },
@@ -77,7 +77,7 @@
   coupangAds.slice(0, 7).forEach(function(item, index){
 
       var img = document.createElement('img');
-      img.src = item.img;
+      img.src = item.img.replace("https://static.coupangcdn.com/image/affiliate/banner/", "https://d2gm49a7zac4f0.cloudfront.net/coupang/").replace("@2x.jpg", "");
       img.alt = item.desc;
       //img.width = 120;
       //img.height = 240;
