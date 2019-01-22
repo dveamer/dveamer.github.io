@@ -6,8 +6,18 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
+    var onAdsBlock = false;
+    var script = document.createElement('script');
+    script.onerror = function() {
+        onAdsBlock = true;
+        var script1 = document.createElement('script');
+        script1.src = "https://d18b9kmcwmintj.cloudfront.net/google/adsbygoogle";
+        document.head.append(script1);
+    };
+    script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    document.head.append(script);
+
     (adsbygoogle = window.adsbygoogle || []).push({
       google_ad_client: "ca-pub-1213240297656328",
       enable_page_level_ads: true
