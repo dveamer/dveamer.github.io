@@ -74,19 +74,13 @@
   shuffle(coupangAds);
 
   var adDiv = document.getElementById('ad_coupang');
-  coupangAds.slice(0, 7).forEach(function(item, index){
 
+  var makeAds = function(item, fnSetSrc, fnOnload, fnOnerror) {
       var img = document.createElement('img');
       img.alt = item.desc;
-      if(onAdsBlock){
-          img.src = item.img.replace("https://static.coupangcdn.com/image/affiliate/banner/", "https://d18b9kmcwmintj.cloudfront.net/coupang/").replace("@2x.jpg", "");
-      }else{
-          img.src = item.img;
-      }
-
-      //img.width = 120;
-      //img.height = 240;
-      //img.style.padding = 2;
+      img.onload = fnOnload;
+      img.onerror = fnOnerror;
+      fnSetSrc(img, item);
 
       var a = document.createElement('a');
       a.href = item.link;
@@ -94,8 +88,28 @@
       a.appendChild(img);
 
       adDiv.appendChild(a);
-  });
+  };
 
+  var fnSetSrc = function(img, item){
+      img.src = item.img;
+  };
+
+  var coupangAdsStartNum = 1;
+  var coupangAdsEndNum = 7;
+  var onload = function() {
+      coupangAds.slice(coupangAdsStartNum, coupangAdsEndNum).forEach(function(item, index){
+          makeAds(item, fnSetSrc, function(){}, function(){});
+      });
+  };
+
+  var onerror = function() {
+      coupangAdsStartNum = 0;
+      fnSetSrc = function(img, item){
+          img.src = item.img.replace("https://static.coupangcdn.com/image/affiliate/banner/", "https://d18b9kmcwmintj.cloudfront.net/coupang/").replace("@2x.jpg", "");
+      };
+  };
+
+  makeAds(coupangAds[0], fnSetSrc, onload, onerror);
 
 </script>
 
