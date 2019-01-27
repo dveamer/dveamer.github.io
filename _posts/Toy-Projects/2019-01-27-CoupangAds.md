@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "Coupang Ads 개발기 - 쿠팡 파트너스를 Google Ads 처럼 만들기 "
+title: "Coupang Ads 개발기 - 쿠팡 파트너스를 Google Ads 처럼 만들기"
 date: 2019-01-27 00:00:00
 categories: ToyProject
 tags: ToyProject 개발기
 ---
 
-![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/260px-Python_logo_and_wordmark.svg.png){:class="imgTitle"}   
-( 이미지 출처 : [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language)) )  
+![Coupang](https://image12.coupangcdn.com/image/coupang/common/logo_coupang_w350.png){:class="imgTitle"}   
+( 이미지 출처 : [Coupang](https://www.coupang.com) )  
 
 [Coupang Ads by Dveamer](https://sda.dveamer.com/index.html) 개발 후기입니다.  
 
 Coupang Ads by Dveamer는 쿠팡파트너스 광고를 블로그에 진열하는데 겪게 되는 어려움들을 해결해주는 서비스 입니다.  
 
-정적인 쿠팡파트너스 광고를 마치 Google Ads처럼 주기적으로 변경해주고 구매 가능성이 높은 다양한 상품들을 노출시켜줍니다. 게다가 Google Ads 만큼이나 설정이 간단합니다. 
+정적인 쿠팡파트너스 광고를 마치 Google Ads처럼 주기적으로 변경해주고 구매 가능성이 높은 다양한 상품들을 노출시켜줍니다. 게다가 Google Ads 만큼이나 설정이 간단합니다.  
 
 <!--more-->
 
