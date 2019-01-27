@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Coupang Ads 개발기 - 쿠팡 파트너스를 Google Ads 처럼 만들기"
+title: "Coupang Ads 개발기 - 쿠팡 파트너스 광고를 Google Ads 처럼 만들기"
 date: 2019-01-27 00:00:00
 categories: ToyProject
 tags: ToyProject 개발기
