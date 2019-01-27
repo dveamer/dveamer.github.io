@@ -12,109 +12,12 @@
 </div>
 <br/>
 
-<div class="ad_coupang" id="ad_coupang">
-</div>
+<div class="coupangadsbydveamer"
+     style="display:block;"
+     data-csda-ltag="AF7892314"
+     data-csda-size="auto"></div>
 
-<script>
-
-  function shuffle(a) {
-      var j, x, i;
-      for (i = a.length - 1; i > 0; i--) {
-          j = Math.floor(Math.random() * (i + 1));
-          x = a[i];
-          a[i] = a[j];
-          a[j] = x;
-      }
-      return a;
-  }
-
-  var coupangAds = [
-
-    { link : "https://coupa.ng/bgrkpy", img : "https://static.coupangcdn.com/image/affiliate/banner/f895d8c26a786acac2e495f20f75f3f5@2x.jpg", desc : "동원샘물 미네마인,..."  },
-    { link : "https://coupa.ng/bgrkqi", img : "https://static.coupangcdn.com/image/affiliate/banner/ad93ec0763bf3da368b479e37e42b567@2x.jpg", desc : "제주삼다수, 2L,..."  },
-    { link : "https://coupa.ng/bgrkq7", img : "https://static.coupangcdn.com/image/affiliate/banner/6f8a0d9a325513de96024e9e6a912d7e@2x.jpg", desc : "상하목장 유기농 흰..."  },
-    { link : "https://coupa.ng/bgrkrX", img : "https://static.coupangcdn.com/image/affiliate/banner/14f7bfbb629ff497881b32d0e28a435f@2x.jpg", desc : "농심 백산수, 2L..."  },
-    { link : "https://coupa.ng/bgrklj", img : "https://static.coupangcdn.com/image/affiliate/banner/b0390ad9afe26bd916f6ea07ca964551@2x.jpg", desc : "구글 크롬캐스트3 ..."  },
-    { link : "https://coupa.ng/bgrknP", img : "https://static.coupangcdn.com/image/affiliate/banner/7d362e9ec1e8cc02875cb807d598b8be@2x.jpg", desc : "구글 크롬캐스트 울..."  },
-    { link : "https://coupa.ng/bgpyhM", img : "https://static.coupangcdn.com/image/affiliate/banner/67625c9e26f32d47115efa2f93bfb379@2x.jpg", desc : "메모리폼 자세교정 ..."  },
-    { link : "https://coupa.ng/bgpyp8", img : "https://static.coupangcdn.com/image/affiliate/banner/c6c7593e35ea40f806a2c787af556b63@2x.jpg", desc : "크레용신짱 짱구 일..."  },
-    { link : "https://coupa.ng/bgpywM", img : "https://static.coupangcdn.com/image/affiliate/banner/6cfba5bad56f68bcad0ad359ca1bbabd@2x.jpg", desc : "PFU 해피 해킹 ..."  },
-    { link : "https://coupa.ng/bgpyx0", img : "https://static.coupangcdn.com/image/affiliate/banner/a4574db11129443ced7c7f29c84455de@2x.jpg", desc : "토프레 Realfo..."  },
-    { link : "https://coupa.ng/bgrhfY", img : "https://static.coupangcdn.com/image/affiliate/banner/b193a924c684ba2ce0d2c6909991a5e3@2x.jpg", desc : "Apple 2018년 MR962KH/A 맥북 프로 터치바 15 (i7-2.2Ghz SSD 256G 16G RP555X)"  },
-    { link : "https://coupa.ng/bgpyqi", img : "https://static.coupangcdn.com/image/affiliate/banner/c03ae7129a50525d0bb60e8b5e4b17da@2x.jpg", desc : "MONTIAN 고양..."  },
-    { link : "https://coupa.ng/bgpyq1", img : "https://static.coupangcdn.com/image/affiliate/banner/4781fb15da4dad609733e3e3555530d8@2x.jpg", desc : "(주)선우 3M 마..."  },
-    { link : "https://coupa.ng/bgpyuW", img : "https://static.coupangcdn.com/image/affiliate/banner/7df56712331b706ab8b74b99faa37064@2x.jpg", desc : "[해외] 탄소 67..."  },
-    { link : "https://coupa.ng/bgpAQW", img : "https://static.coupangcdn.com/image/affiliate/banner/daa428f5310a6094f73f882db2820e02@2x.jpg", desc : "젊은이마켓 우주최강..."  },
-    { link : "https://coupa.ng/bgpyrE", img : "https://static.coupangcdn.com/image/affiliate/banner/ba0275d2469e356f3dcc8b931973faaa@2x.jpg", desc : "엘레컴 메모리폼 키..."  },
-    { link : "https://coupa.ng/bgpyxG", img : "https://static.coupangcdn.com/image/affiliate/banner/1f3a41e05824085f29810fc7eb57809e@2x.jpg", desc : "리얼포스 동프리 키..."  },
-    { link : "https://coupa.ng/bgpASw", img : "https://static.coupangcdn.com/image/affiliate/banner/c0ed3040ddadd2a72f0f3e6fb01d7c86@2x.jpg", desc : "토끼를 품은 무릎담..."  },
-    { link : "https://coupa.ng/bgpyon", img : "https://static.coupangcdn.com/image/affiliate/banner/ca2af24a6e3a9ad3cca17878eaf49d62@2x.jpg", desc : "DGITEM 마우스..."  },
-    { link : "https://coupa.ng/bgpyf2", img : "https://static.coupangcdn.com/image/affiliate/banner/7d0808849aa0ce029a76f28aa3e322e0@2x.jpg", desc : "미르직구 LOFRE..."  },
-    { link : "https://coupa.ng/bgpyBb", img : "https://static.coupangcdn.com/image/affiliate/banner/85b45c08159212fcf0410f5dbec3d5f6@2x.jpg", desc : "애니나라 헬로캣 마..."  },
-    { link : "https://coupa.ng/bgrgPQ", img : "https://static.coupangcdn.com/image/affiliate/banner/654023d75b11e3cd51a1faa2841211b1@2x.jpg", desc : "Apple 2018..."  },
-    { link : "https://coupa.ng/bgpyrv", img : "https://static.coupangcdn.com/image/affiliate/banner/432f2c02241882603ff6d74e8b5ac6cd@2x.jpg", desc : "팔걸이 마우스패드 ..."  },
-    { link : "https://coupa.ng/bgpyp3", img : "https://static.coupangcdn.com/image/affiliate/banner/6cdb0e2be84a9f5cca5ad3f5d5624c4c@2x.jpg", desc : "크리스탈 젤 미니 ..."  },
-    { link : "https://coupa.ng/bgpyrU", img : "https://static.coupangcdn.com/image/affiliate/banner/a59c51679ba2bf20e12888d6659d5549@2x.jpg", desc : "애니나라 헬로캣 마..."  },
-    {  link : "https://coupa.ng/bgpywr", img : "https://static.coupangcdn.com/image/affiliate/banner/542418df6af665b8dda81feb79649a4d@2x.jpg", desc : "PFU Happy ..." },
-    {  link : "https://coupa.ng/bgpysk", img : "https://static.coupangcdn.com/image/affiliate/banner/7505c62b089c8cd011c0be5734d7e2df@2x.jpg", desc : "에코DIY 원목 발..." },
-    {  link : "https://coupa.ng/bgpytD", img : "https://static.coupangcdn.com/image/affiliate/banner/b703d02a2f6b513cff4a4b46a1dbd363@2x.jpg", desc : "[해외] 61 키 ..." },
-    {  link : "https://coupa.ng/bgpAQ7", img : "https://static.coupangcdn.com/image/affiliate/banner/df4588e6fcd4bfeac828fea6cf8c2a0@2x.jpg", desc : "젊은이마켓 우주최강..." },
-    {  link : "https://coupa.ng/bgrhjr", img : "https://static.coupangcdn.com/image/affiliate/banner/f51ba011d22a7eb60872d60b87b3f457@2x.jpg", desc : "Apple 2018..." },
-    {  link : "https://coupa.ng/bgpAP7", img : "https://static.coupangcdn.com/image/affiliate/banner/dc4a7fd09013d9acf6bf7aa2c8346741@2x.jpg", desc : "움직이는 귀여운 토..." },
-    {  link : "https://coupa.ng/bgrgBH", img : "https://static.coupangcdn.com/image/affiliate/banner/a82fb1d2f381560da4ad87c7108956c2@2x.jpg", desc : "Apple 2018..." },
-    {  link : "https://coupa.ng/bgrgH2", img : "https://static.coupangcdn.com/image/affiliate/banner/bd7752929018f60140aeaec2291ff569@2x.jpg", desc : "더숨 황사방역용 마..." },
-    {  link : "https://coupa.ng/bgpywB", img : "https://static.coupangcdn.com/image/affiliate/banner/dd93ab174aa17ffb6339c2e8941de0de@2x.jpg", desc : "PFU Happy ..." },
-    {  link : "https://coupa.ng/bgrgIw", img : "https://static.coupangcdn.com/image/affiliate/banner/d602d5b943e728766af0f46a04929d19@2x.jpg", desc : "[WELLS] 웰스..." },
-    {  link : "https://coupa.ng/bgrhrT", img : "https://static.coupangcdn.com/image/affiliate/banner/86c45cb5b584cbea1c2686e93a9d286e@2x.jpg", desc : "소니 블루투스 헤드..." },
-    {  link : "https://coupa.ng/bgpyxh", img : "https://static.coupangcdn.com/image/affiliate/banner/5909b8eda7eae6e89c56c883993703ca@2x.jpg", desc : "레오폴드 FC750..." },
-    {  link : "https://coupa.ng/bgt2BV", img : "https://static.coupangcdn.com/image/affiliate/banner/38df0b57ef0b447cce2f7ca152bd097a@2x.jpg", desc : "휴플러스 해피룸 목..." },
-    {  link : "https://coupa.ng/bgpysz", img : "https://static.coupangcdn.com/image/affiliate/banner/672920b15d115f67daaa2d5c354b0b8@2x.jpg", desc : "투썬빌리지 발이 편..." }
-
-  ];
-
-  shuffle(coupangAds);
-
-  var adDiv = document.getElementById('ad_coupang');
-
-  var makeImage = function(adDiv, item) {
-      var img = document.createElement('img');
-      img.alt = item.desc;
-
-      var a = document.createElement('a');
-      a.href = item.link;
-      a.target = '_blank';
-      a.appendChild(img);
-
-      adDiv.appendChild(a);
-        
-      return img;
-  };
-
-  var repaceUrl = function(address){
-      return address.replace("https://static.coupangcdn.com/image/affiliate/banner/", "https://d18b9kmcwmintj.cloudfront.net/coupang/").replace("@2x.jpg", "");
-  };
-
-  var onAdsBlock = false;
-  var img0 = makeImage(adDiv, coupangAds[0]);
-  img0.onerror = function() {
-      onAdsBlock = true;
-      img0.src = repaceUrl(coupangAds[0].img);
-  };
-  img0.onload = function() {
-      coupangAds.slice(1, 7).forEach(function(item, index){
-          var img = makeImage(adDiv, item);
-          if(onAdsBlock){
-              img.src = repaceUrl(item.img);
-          }else{
-              img.src = item.img;
-          }
-      });
-  };
-  img0.src = coupangAds[0].img;
-
-
-</script>
-
+<script async="async" src="https://sda.dveamer.com/js/csda.js"></script>
 
 <br/>
 
