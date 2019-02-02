@@ -31,24 +31,32 @@ Coupang Ads by Dveamer는 쿠팡파트너스 광고를 블로그에 진열하는
 
 ## 블로그용 태그
 
-[쿠팡 파트너스](https://partners.coupang.com/)에 가입을하고 승인이 되니 생각보다 쉽게 광고링크를 만들 수 있었고 이미지가 포함된 블로그용 태그도 만들 수 있었습니다. 블로그용 태그가 너무 얇길래 7개정도 만들어서 Google Ads 위에 뿌려주니 나쁘지만은 않았습니다.  
+[쿠팡 파트너스](https://partners.coupang.com/)에 가입을하고 승인이 되니 생각보다 쉽게 광고링크를 만들 수 있었고 이미지가 포함된 블로그용 태그도 만들 수 있었습니다. 블로그용 태그가 너무 얇길래 7개정도 합쳐서 아래 이미지와 같이 블로그에 올렸더니 보기에 나쁘지는 않았습니다.  
 
-게다가 제 블로그는 프로그래밍 관련 글이 대부분이라 Google Ads는 예전부터 맨날 "프로그래밍 입문 교육" 광고만 띄워주는데 큰 효과는 없어보였고 "기계식 키보드" 같은 상품을 진열하면 사람들이 광클을 하지 않을까..? 라는 생각을 예전부터 해왔기 때문에 나름 재미를 느끼면서 열심히 상품들을 조회했습니다.  
+<br/>
 
-근데 이게 시간이 엄청 걸리더군요. 골라놓고 봐도 다른 사이트와 비교해서 가격 경쟁력이 있는지도 확인하기가 쉽지 않고요. 상품을 몇개씩 찾아갈 수록 제가 왠지 쿠팡 직원이 할 일을 대신하고 있는 듯한 느낌도 들었습니다. 그리고 모든 글에 동일한 광고가 매일 똑같이 출력된다고 생각하니 막막했습니다.  
+![최초광고형태](https://lh3.googleusercontent.com/g1jDO6S42USaA9NTX-J2rz4A4SdzgWb4Ft02SCyEAki6BMUk9-Jjb4M9Or7--yk5I5ewLJXGmvgEu0dGop2rSWEwB6dYdEHBeNQlFKnH5Eweuxz0TDtzpL3UDRUNZuSpCVDhi3DLCMfquysO7dtjiPjsTLhtbAyLMzcCEOgt4dc17Ab5NAyHgoQ4iuHK3_8VQoURgNHwjmmkYQSpLQVUYyX3DFr_0gN185SxTI-bPiIcNwIfTinkmjDfGBpH4oGH_f6PHUwuJHlas0otZlLZxqPSnyjNZ7MNEmIeYGkwRW21mtr14Bwqv0VgVUSyN5QVQtVQx7q_32gGgPIivW9T7xgStCPDlEzfxAsw_FoX6ONmeqCq2dMWYmD90PdrKXp_ikg7ppqu0gnvtOofltzbp8Yxkfw_ibixsspRAexm0rQcnMPzW6509UKJMdkoskbR1saB3q1gT9LVCz4L6i-IjqLPJfQvXR8pYvAzEmBkv2dFbe-cr7ETD86Xv7moZDYxIta6JHE6fcxruyUt3W68DqyHVPKLpBy9l-RE57eDenCR6_4lfeg7PJXb-m0-VxmG4ptCVCL8VwbVbnSVvkoKL4CIJo-cT0568EDnU3RZtpmtYiwQKwyjB9LeB_NdJqYCN8NI1AQDyWrlkoAJf5wjVQf_JAs2nBSuHSxmt0529T4AyKiiF_GhVFBtVDdLW9O56_a5r-52WZ1lM0x1rM_bZb5O=w878-h246-no)
+
+<br/>
+
+게다가 처음에는 꽤나 재미있었습니다. 예전부터 Google Ads는 맨날 "프로그래밍 입문 교육" 광고만 띄워주는데 효과는 별로 없어보였거든요. 만약에 "기계식 키보드" 같은 상품을 진열하면 사람들이 광클하진 않을까? 라는 생각을 예전부터 해왔었기 때문에 일단 괜찮아보이는 기계식 키보드 태그들을 열심히 만들었습니다.  
+
+"맨날 기계식 키보드만 띄워두면 효과가 있으려나..?" 라는 생각이 들어서 50개정도의 여러 상품 태그를 숨겨놓고 javascript로 랜덤하게 7개 정도 띄워주도록 만들었습니다.  
+
+근데 상품 50개를 고르는 과정에서 시간이 엄청나게 필요하더군요. 게다가 골라놓고 봐도 다른 사이트와 비교해서 가격 경쟁력이 있는지도 확인하기가 쉽지 않고요. 상품을 몇개씩 찾아갈 수록 제가 왠지 쿠팡 직원이 할 일을 대신하고 있는 듯한 느낌도 들었습니다.  
 
 ## 블로그에 부적합
 
-쿠팡파트너스는 블로거들을 위한 배너형태의 광고수단은 아닌 것 같습니다.  
+쿠팡파트너스는 블로그를 위한 배너형태의 광고수단은 아닌 것 같습니다.  
 
 [https://coupa.ng/bguX7J](https://coupa.ng/bguX7J) 와 같은 형태의 광고링크는 1개의 상품에 연결되고 해당 URL을 통해 쿠팡에 접속해서 상품 구매가 발생해야 수익으로 이어집니다.  
 
 특정 상품의 사용후기를 정성껏 작성했다면 해당 상품의 광고링크를 만들어서 홍보하면 효과가 있을 겁니다. 하지만 블로그의 글은 검색을 통해서 장기적으로 노출 됩니다. 만약 광고링크에서 연결된 상품이 가격이 변경되었거나 상품이 없어진다 하더라도 글 작성자가 알아채기는 쉽지 않습니다. 블로그와 달리 빠르고 짧게 소비되는 SNS에서는 나름 효과가 있을 것 같습니다.  
 
-블로그 글을 위한 광고상품을 찾거나 광고상품을 위한 글을 쓰는 것은 너무나도 많은 노력을 요구하는 일입니다. 블로깅이라는 것이 결국 제 자신을 위한 것이긴하지만 그래도 직장 다니면서 한다는 것이 쉬운 일은 아닌데 광고를 위해 시간을 투자해야한다는 것은 감당할 수가 없는 일이네요.  
+블로그 글을 위한 광고상품을 찾거나 광고상품을 위한 글을 쓰는 것은 너무나도 많은 노력을 요구하는 일입니다. 블로깅이라는 것이 결국 제 자신을 위한 것이긴하지만 그래도 직장 다니면서 한다는 것이 쉬운 일은 아닌데 광고를 위해 시간을 투자해야한다는 것은 저는 감당할 자신이 없었습니다.  
 
 쿠팡 파트너스를 블로그에서 사용하려면 Google Ads와 같은 매체가 필요하다고 생각을 했습니다.  
-그리고 이왕이면 내 블로그만이 아닌 모든 사람들의 블로그에 적용할 수 있도록 만들어보기로 했습니다.  
+크롤링을 해볼까?라는 생각과 이왕이면 내 블로그만이 아닌 모든 사람들의 블로그에 쉽게 적용할 수 있도록 만들기로 했습니다.  
 
 ## 구현작업
 
