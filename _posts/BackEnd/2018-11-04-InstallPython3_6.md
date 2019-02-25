@@ -38,7 +38,7 @@ $ sudo make -j8
 $ sudo make install
 ~~~
 
-네 번째 명령어에서 10분정도의 꽤나 오랜시간이 걸리니 잠시 다른 작업을 하셔도 됩니다.  
+세 번째 명령어에서 10분정도의 꽤나 오랜시간이 걸리니 잠시 다른 작업을 하셔도 됩니다.  
 
 ## 테스트
 
@@ -50,7 +50,7 @@ $ python3 --version
 
 ~~~terminal
 $ cd /tmp
-$ rm -rf install_python3.6
+$ rm -rf install_python3.6/
 ~~~
 
 #### References
