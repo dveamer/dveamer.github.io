@@ -46,6 +46,8 @@ $ sudo make install
 $ python3 --version
 ~~~
 
+터미널 창을 끄고 다시 켜신다음에 확인해보세요.  
+
 ## 작업 완료 후 임시디렉토리 삭제 
 
 ~~~terminal
