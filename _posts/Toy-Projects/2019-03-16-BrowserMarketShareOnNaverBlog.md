@@ -20,7 +20,7 @@ tags: ToyProject 개발기
 
 ![네이버블로그 브라우저 점유율](https://lh3.googleusercontent.com/wmKOE1OhSZsXJQcAHOgBAITQ9GTxQPkK8PIHtRopjFSQOoxqVdj0kP6-JTKNAPS0DFmFq3tNObTrulBfjuu__IlY-wU-snIv4KuJpflzVRSuAAL1WRf6TqEPLCqwL93br2uMZ3yFlHLRZaQ0fhSq-2CYgNYcw7QkZLy8sSH7jkgte8X5N-hqwAB6oY_m1ogW4dufoVM5Q_n8_FIvnACNvWN60nBo8FqAdOgFC4z5dnkEUFvE_OuYNaj9-4KWuPua-Fb20W9I5-WfyLgEgi8NpQ16OMj9AfN4Pl_HAbEtJ9Pfgtjd1CsVvJ7xsra9wHQSow2GFoasqlPgayCgG14S8xuoXTs43S2tCcdaCiBT-mUbmCqga-BTAANN7npuYvpd6AP8TsnPCWjo08n5nrYKIWaTAWL1oaAVzPbngyOhnKKjTdFxrqXr82I2Tn5C-C_bJ2Hpp4tTbVsLGk80x2X9gom6vH2z4Im6OQ7w_zik_iRQveuRvtdeSQ_HGmrxVlyFYj9q_4QB-Nn9ur2QYz3H2jVvRSfqmnN0cvb78v62PlOKgbOSOQjLEW8fACsu5e-YcxfCHnEDB2cFDhVrN_yvuQ5UZRPTiGr82sg9cavZh_xeb-xrBhvCU3PxM0SM-_5JKUFN7eZbQXbKfLlUKgCOdTa0uN7PC5xXwAjtVab4DwfLT1mqcRaTEp-HOKE76f4iZVyfj-hiDjF5ZjP7givP_z0O=w1026-h806-no)  
 
-위 그래프는 [Coupang Ads](https://sda.dveamer.com/guide_naver_blog.html) 출력을 위해 AWS Cloud Front으로 접속한 방문자들이 사용한 브라우저의 통계정보 입니다. Internet Explorer가 50% 이상으로 가장 높고 Chrome이 약 40%를 차지하고 있습니다.  
+위 그래프는 [Coupang Ads](https://sda.dveamer.com/guide_naver_blog.html) 출력을 위해 AWS Cloud Front로 접속한 방문자들의 브라우저의 통계정보 입니다. Internet Explorer가 50% 이상으로 가장 높고 Chrome이 약 40%를 차지하고 있습니다.  
 
 이 자료를 해석하기 전에 참고해야할 점이 몇가지 있습니다.  
 일단 하루 유입수가 1만건이 안될정도로 매우 적습니다.  
