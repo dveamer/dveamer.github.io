@@ -182,6 +182,23 @@ aws_region의 경우에는 사용가능한 모든 region에 배포할 것인지 
 만약에 ```zappa_settings.json```가 원치 않는 방향으로 설정되었다면,  
 직접 수정하셔도 되고 지우시고 다시 ```zappa init```을 실행하셔도 됩니다.  
 
+### 옵션
+
+~~~json
+{
+    "production": {
+        ...(생략)
+
+        "log_level": "WARNING",
+        "memory_size": 128,
+        "timeout_seconds": 30
+    }
+}
+~~~
+
+기본 세팅으로는 실행권한이 너무 방대하고 메모리는 512MB, 실행 제한시간은 30초 입니다. 또한 Zappa 관련 로그가 debug로 남게 됩니다.  
+위와 같이 JSON 설정만으로도 간단하게 변경이 가능합니다. 더 다양한 옵션들은 [https://github.com/Miserlou/Zappa](https://github.com/Miserlou/Zappa) 에 가셔서 살펴보시기 바랍니다.  
+
 ## Zappa 배포 
 
 최초 배포 때는 아래와 같이 deploy합니다.  
@@ -199,6 +216,7 @@ AWS Console 화면으로 접속해서 AWS Lambda와 AWS API Gateway를 가보시
 ~~~
 
 혹시 최초 배포과 정에서 권한을 잘못 넣었거나 다른 문제가 생겨서 실패를 했는데 그 다음부터 deploy도 안되고 update도 안된다면 일단 문제를 해결하시고 자동으로 생성된 Lambda와 API 건들을 제거 후에 다시 배포해보시기 바랍니다.  
+
 
 
 ## 테스트 
@@ -227,16 +245,8 @@ Error: Warning! Status check on the deployed lambda failed. A GET request to '/'
 Zappa에서 배포 후에 해당 URI로 테스트를 진행하고 성공여부를 알려주는 것입니다.  
 
 
-## 장단점
+## 장점
 
-기본 세팅으로는 실행권한이 너무 방대하고 메모리는 512MB, 실행 제한시간은 30초 입니다.  
-
-메모리, 실행 제한시간은 현재는 console 화면에서 수정해주고 있으나 매번 바꿔주기 힘드니 Zappa 설정을 통해 변경하는 법을 찾아봐야겠습니다.  
-실행권한은 미리 만들어두고 Zappa 설정을 통해 선택하는 것이 가장 쉬워보입니다.  
-
-OS 환경변수 console 화면에서 1회만 변경하면 되지만 Zappa 설정을 통해 설정하는 법을 찾아봐야겠습니다.  
-
-위의 단점은 해결방법이 존재할 것으로 예상되며  
 장점은 너무나도 분명하여 다음 프로젝트에서도 저는 Zappa를 이용한 배포를 진행할 생각입니다.  
 
 첫번째, 소스코드 배포가 명령어 한줄로 끝나기 때문에 너무 쉽습니다.  
@@ -265,3 +275,4 @@ OS 환경변수 console 화면에서 1회만 변경하면 되지만 Zappa 설정
   * [Python-Decorator](http://abh0518.net/tok/?p=604)
   * [Python-Error](https://docs.python.org/2/tutorial/errors.html)
 
+  * [https://github.com/Miserlou/Zappa](https://github.com/Miserlou/Zappa)

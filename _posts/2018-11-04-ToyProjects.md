@@ -21,6 +21,37 @@ lastmod: 2018-11-04 00:00:00
   * [Dveamer`s Android App](https://play.google.com/store/apps/developer?id=dveamer)
   * [Dveamer`s Chrome Extension](https://chrome.google.com/webstore/search/dveamer)
   * [Dveamer`s Firefox Add-On](https://addons.mozilla.org/ko/firefox/user/dveamer/)
+  * [Dveamer`s 광고 서비스](https://sda.dveamer.com)
+
+
+# 쿠팡 자동광고 서비스
+
+  * 일반 블로그 전용 : [https://sda.dveamer.com](https://sda.dveamer.com)
+  * 네이버 블로그 전용 : [https://sda.dveamer.com/guide_naver_blog.html](https://sda.dveamer.com/guide_naver_blog.html)
+
+  * 2019.01. ~
+
+블로그에 쿠팡 상품을 광고하고 수익을 쉐어받는 쿠팡 파트너스를 보다 편리하고 효과적으로 사용하기 위해 만든 서비스 입니다.  
+지금의 쿠팡 파트너스는 자동갱신되는 광고를 공식적으로 내놓았지만 초반의 쿠팡 파트너스는 정적인 광고만 제공했습니다.  
+
+블로그를 운영하는 한 사람으로써 정적 광고 상품을 매일 같이 찾아서 노출하는 것은 너무 힘들다고 느껴졌고 구글 애드센스처럼 여러 상품들을 자동으로 갱신하고 최신 정보를 유지시켜주는 기능 만들어봤습니다. 그리고 Javascript 사용불가로 인해 구글 애드센스 조차 사용할 수 없던 네이버 블로그에서도 HTML만으로 자동갱신되는 광고를 제작했습니다.  
+
+## 제공하는 기능
+
+  * 자동광고 : 광고 개수, 상품 자동변경 등
+  * Javascript가 지원되지 않는 네이버 블로그에서도 상품 갱신 기능 제공
+  * 별점, 상품평 개수, 가격, 할인률, 로켓배송여부 등을 기반으로 상품 선정
+  * 별 5개 상품 모아서 보기
+
+## 사용된 기술
+
+  * Front-End : HTML, Javascript
+  * Back-End : Python3, Flask, Zappa, AWS Lambda, AWS DynamoDB, AWS S3, AWS APIGateway, AWS Route53, AWS CloudFront
+
+## 개발기
+
+  * [네이버 블로그 방문자들이 사용하는 브라우저](/toyproject/BrowserMarketShareOnNaverBlog.html)
+  * [Coupang Ads 개발기 - 쿠팡 파트너스 광고를 Google AdSense 처럼 만들기](/toyproject/CoupangAds.html)
 
 # Clean News 
 
@@ -197,6 +228,10 @@ AWS를 사용하면서부터는 자주 사용해오던 Event-Driven 패턴으로
 
   * Front-End : Android Java
   * Back-End : Python3, AWS Lambda, AWS DynamoDB, AWS APIGateway, AWS Route53, AWS CloudFront
+
+## 관련 글
+
+  * [Perfect Trainer for PokemonGo 포켓몬고](/side-projects/PerfectTrainer.html)
 
 # Blind Date
 
