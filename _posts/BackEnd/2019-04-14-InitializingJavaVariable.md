@@ -62,7 +62,7 @@ public class Sample {
 
 # Set
 
-## 변경 가능한 List
+## 변경 가능한 Set
 
 ~~~Java
 public class Sample {
