@@ -14,7 +14,7 @@ tags: BackEnd Java
 
 # Array
 
-~~~Java
+~~~java
 public class Sample {
 
     private final String[] variables0 = new String[]{ "1", "2", "3" };
@@ -28,7 +28,7 @@ public class Sample {
 
 ## 변경 가능한 List
 
-~~~Java
+~~~java
 public class Sample {
     private final List<String> variables0 = new ArrayList<String>() {
         {
@@ -50,7 +50,7 @@ public class Sample {
 초기화 이후에 변경이 불가한 list를 만드는 방법입니다.  
 변경 시도시에는 UnsupportedOperationException 이 발생합니다.  
 
-~~~Java
+~~~java
 public class Sample {
 
     private final List<String> variables0 = Collections.unmodifiableList(Arrays.asList("1", "2", "3"));
@@ -64,7 +64,7 @@ public class Sample {
 
 ## 변경 가능한 Set
 
-~~~Java
+~~~java
 public class Sample {
     private final Set<String> variables = new HashSet<>(Arrays.asList("1", "2", "3"));
 }
@@ -75,7 +75,7 @@ public class Sample {
 초기화 이후에 변경이 불가한 set을 만드는 방법입니다.  
 변경 시도시에는 UnsupportedOperationException 이 발생합니다.  
 
-~~~Java
+~~~java
 public class Sample {
 
     private final Set<String> variables0 = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("1", "2", "3")));
@@ -89,7 +89,7 @@ public class Sample {
 
 ## 변경 가능한 Map
 
-~~~Java
+~~~java
 public class Sample {
     private final Map<String, String> variables = new HashMap<>() {
         {
@@ -109,7 +109,7 @@ public class Sample {
 Collections 는 Collection interface에 대한 utility class입니다.  
 근데 Map interface는 Collection interface를 extend 하지 않음에도 불구하고 Collections으로부터 몇가지 기능을 지원받고 있습니다.  
 
-~~~Java
+~~~java
 public class Sample {
     private final Map<String, String> variables0 = Collections.unmodifiableMap(new HashMap<>() {
         {
@@ -131,7 +131,7 @@ public class Sample {
 항상 비어있는 Collection을 여러 thread에서 필요시마다 계속 생성하는 것은 효율적이지 못한 방법입니다.  
 아래 방법은 process에 유일하게 1개 존재하는 empty-immutable-collection을 모든 thread에서 공유할 수 있도록 해줍니다.  
 
-~~~Java
+~~~java
 public class Sample {
 
     // JDK 5 이상에서 사용 가능
