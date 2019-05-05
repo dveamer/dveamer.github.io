@@ -72,6 +72,8 @@ $ chown -R $USER:$USER ~/.config/rabbitvcs
 
 ~~~
 $ sudo apt-get git
+$ git config --global user.email "your-email-address@example.com"
+$ git config --global user.name "Your Name"
 ~~~
 
 # fav
