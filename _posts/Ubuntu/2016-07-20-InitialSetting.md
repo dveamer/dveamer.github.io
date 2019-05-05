@@ -74,7 +74,23 @@ $ chown -R $USER:$USER ~/.config/rabbitvcs
 $ sudo apt-get git
 ~~~
 
+# fav
 
+  * https://github.com/johngrib/fav-dir
 
+# AWS
+
+## Install Python PIP
+
+~~~terminal
+$ sudo apt-get install python3-pip
+~~~
+
+## Install AWS Client
+
+~~~terminal
+$ pip3 install awscli --upgrade --user
+$ aws configure
+~~~
 
 
