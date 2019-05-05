@@ -12,7 +12,7 @@ Ubuntu 재설치 후 제가 개인적으로 필요로하는 프로그램들을 �
 <!--more-->
 
 # Subversion
-  * [복원하기](/programming/SettingSubversion.html)
+  * [복원하기](/backend/SettingSubversion.html)
 
 # Gradle
 
