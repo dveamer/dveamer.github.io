@@ -124,6 +124,8 @@ controller, service 레이어로 나눠서 ```cotroller.py```서는 front-end와
 ### run.py
 
 ~~~python
+#!.env/bin/python
+
 from controller import app
 
 if __name__ == '__main__':
@@ -134,7 +136,7 @@ if __name__ == '__main__':
 
 아래의 명령어로 실행시키면 테스트용 서버가 기동되며 ```127.0.0.1:8000```으로 테스트 가능합니다.  
 AWS Lambda에서는 ```run.py```를 사용하진 않습니다.  
-
+  
 ~~~terminal
 (.env)$ python run.py
 ~~~
