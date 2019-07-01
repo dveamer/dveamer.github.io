@@ -22,7 +22,7 @@ tags: BackEnd Network
 눈감고 코끼리 다리를 만지며 코끼리의 모습을 설명하는 꼴이 되겠지만  
 네트워크의 정상유무 확인을 목적으로 기록합니다.  
 
-# Success Case
+# Success Cases
 
 모두 성공 응답을 짧은 시간내에 받았습니다.  
 
