@@ -2,6 +2,7 @@
 layout: post
 title:  "유용한 Linux 명령어"
 date:   2018-02-03 00:00:00
+lastmod: 2019-08-10 00:00:00
 categories: Linux
 tags: Linux Command 
 ---
@@ -142,5 +143,41 @@ $ du -sh
 ~~~terminal
 $ du -h --max-depth=1
 ~~~
+
+### tail & quit
+
+특정 단어가 나오면 tail을 중단하는 방법입니다.  
+CI/CD를 구성할 때 로그 모니터링을 통해 정상기동 유무를 체크 할 경우 사용할 수 있습니다.  
+
+~~~terminal
+$ tail -f <filename> | { sed "/<serching word>/ q" ;}
+~~~
+
+예를들어서 test.txt 파일을 tail 걸고 EOF라는 단어가 출력되면 tail 이 중단되는 예제입니다.  
+터미널 창을 두개를 띄우고 한쪽에서는 test.txt 파일을 수정을 합니다.  
+
+~~~terminal
+$ echo 'plain text' >> test.txt
+$ echo 'plain text 2' >> test.txt
+$ echo 'EOFtext' >> test.txt
+$ echo 'EOF text' >> test.txt
+~~~
+
+그리고 앞의 수정이 일어나기 전에 다른 터미널 창에서 tail을 걸고 있었다고하면 아래와 같은 결과가 출력됩니다.  
+마지막에 tail이 종료된 것을 확인할 수 있습니다. EOFtext 라는 단어에는 종료가 되지 않았다는 것을 유의하시기 바랍니다.  
+
+~~~terminal
+$ echo '' > test.txt 
+$ tail -f test.txt | { sed "/EOF/ q" ;}
+
+plain text
+plain text 2
+EOFtext
+$
+~~~
+
+#### References 
+
+  * [stackoverflow : do-a-tail-f-until-matching-a-pattern](https://stackoverflow.com/questions/5024357/do-a-tail-f-until-matching-a-pattern)
 
 

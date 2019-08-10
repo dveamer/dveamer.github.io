@@ -51,7 +51,10 @@ Content-Length: 2039
 
 ## Socket Server
 
-작성 중..  
+HTTP과 같은 표준 프로토콜이 아닌 자체 프로토콜을 사용하는 socket 통신의 경우 응답메시지가 일정치가 않습니다.  
+
+Telnet과 cURL에 의한 테스트는 임시 방편적인 테스트가 되겠지만 empty reply(빈 문자열 응답) 혹은 알수없는 자체 프로토콜만의 메시지들이 출력된다면 연결은 성공적으로 됐다고 볼 수 있습니다.  
+
 
 # Failure Cases
 
@@ -193,7 +196,23 @@ curl :(7) Failed connect to [192.168.0.30:8200](http://192.168.0.30:8200) : Conn
 
 ## Blocked By Firewall
 
-작성 중..  
+출발지와 목적지 사이에 방화벽이 존재하고 해당 port에 대해 방화벽에서 차단을 했을 경우입니다.  
+
+### Telnet
+
+~~~terminal
+$ telnet 192.168.0.20 8404
+Trying 192.168.0.20...
+telnet: Unable to connect to remote host: Connection refused
+~~~
+
+### cURL
+
+~~~terminal
+$ curl -i 192.168.0.20:8404
+curl: (7) Failed to connect to 192.168.0.20 port 8404: Connection refused
+~~~
+
 
 
 
