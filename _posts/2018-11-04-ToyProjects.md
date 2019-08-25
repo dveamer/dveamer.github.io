@@ -12,17 +12,33 @@ lastmod: 2018-11-04 00:00:00
 나름 출시(?)를 하고 사용자를 만들어본 프로젝트에 대해서만 기록합니다.
 열심히 만들기는 했지만 보여줄 방법이 없는 몇몇 예전 토이 프로젝트들이 생각나서 마음이 아프네요 ㅎ  
 
-토이 프로젝트는 회사에서 주로 사용하는 skill set과 무관하게  
+토이 프로젝트는 회사에서 주로 사용하는 기술과 무관하게  
 학습하고 사용해보고 싶은 기술로 마음껏 진행해 볼 수 있어서 큰 도움이 됩니다.  
 기술 외에도 프로젝트를 시작하고 출시하기 위한 전반적인 과정, 예상치 못한 이슈들을 경험하고 이해하는데도 도움이 됐습니다.  
 
-현재 운영 중인 어플리케이션은 아래 링크에서 확인하실 수 있습니다. 
+현재 제가 운영 중인 어플리케이션은 아래 링크에서 확인하실 수 있습니다. 
 
-  * [Dveamer`s Android App](https://play.google.com/store/apps/developer?id=dveamer)
-  * [Dveamer`s Chrome Extension](https://chrome.google.com/webstore/search/dveamer)
-  * [Dveamer`s Firefox Add-On](https://addons.mozilla.org/ko/firefox/user/dveamer/)
-  * [Dveamer`s 광고 서비스](https://sda.dveamer.com)
+  * [isawdat](https://isawdat.com)
+  * [광고 서비스](https://sda.dveamer.com)
+  * [Chrome Extension](https://chrome.google.com/webstore/search/dveamer)
+  * [Firefox Add-On](https://addons.mozilla.org/ko/firefox/user/dveamer/)
+  * [Android App](https://play.google.com/store/apps/developer?id=dveamer)
 
+# I Saw Dat 
+
+  * [isawdat](https://isawdat.com)
+
+  * 2019.06. ~
+
+YouTube 업로드 대행 서비스입니다. 본인만 알고 있지만 직접 공개하기가 부담스러운 동영상을 isawdat에 업로드하면 익명으로 YouTube에 등록합니다. 익명성이 핵심으로 업로드하는 사용자의 정보를 입력받는 과정이 없습니다.  
+
+사회이슈의 묻혀질 수 있는 정보의 공유와 공유자의 안전에 도움을 주고자 프로젝트를 시작했습니다.  
+기술적인 관점에서는 동영상이라는 대용량 파일에 대한 관리 방안과 사용자가 AWS S3에 직접 접근하지만 파일에 대한 접근권한을 제어하는 serverless 기술에 대해 초점을 잡고 진행했습니다.  
+
+## 사용된 기술
+
+  * Front-End : HTML, Javascript
+  * Back-End : Python3, Flask, Zappa, AWS Lambda, AWS S3, AWS APIGateway, AWS Route53, AWS CloudFront
 
 # 쿠팡 자동광고 서비스
 
