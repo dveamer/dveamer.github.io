@@ -49,7 +49,7 @@ Spring Boot에서는 spring-boot-starter라는 사전에 미리 정의한 편리
 >The starters contain a lot of the dependencies that you need to get a project up and running quickly and with a consistent, supported set of managed transitive dependencies.  
 >참고자료 : https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter  
 
-예를들어, 기존에 AOP를 이용하고 싶으면 org.springframework:spring-aop 의존성을 추가하고 사용하다가 aspectJ를 이용한 AOP를 구현하고 싶다면 org.aspectj:aspectjweaver 의존성을 추가해서 사용했었습니다. Spring Boot에선는 [spring-boot-starter-aop](https://github.com/spring-projects/spring-boot/blob/v2.1.7.RELEASE/spring-boot-project/spring-boot-starters/spring-boot-starter-aop/pom.xml) 의존성만 추가하면 이미 관련 의존성 조합이 한번에 추가되고 aspectJ를 사용하려고 한다면 @AspectJ 라는 annotation을 추가함으로써 사용 가능해집니다.  
+예를들어, 기존에 aspectJ를 이용한 AOP를 이용하고 싶으면 org.springframework:spring-aop 의존성과 org.aspectj:aspectjweaver 의존성을 추가해서 사용했었지만 Spring Boot에선는 [spring-boot-starter-aop](https://github.com/spring-projects/spring-boot/blob/v2.1.7.RELEASE/spring-boot-project/spring-boot-starters/spring-boot-starter-aop/pom.xml) 의존성만 추가하면 aspectJ를 사용하기 위한 모든 의존성 조합이 추가 됩니다.  
 
 의존성 조합의 간단한 예가 AOP였던 거고 좀 더 복잡한 의존성 조합을 보고 싶으시다면 다른 starter를 확인해 보시기 바랍니다. 예를들어, [spring-boot-starter-data-jpa v2.1.7.RELEASE](https://github.com/spring-projects/spring-boot/blob/v2.1.7.RELEASE/spring-boot-project/spring-boot-starters/spring-boot-starter-data-jpa/pom.xml)은 아래와 같이 7개의 의존성 조합을 포함하고 있고 잘 살펴보시면 그 7개의 의존성 중에 또 다른 spring-boot-starter가 존재해서 실제는 7개보다 더 많은 의존성이 설정되어있다고 보시면 됩니다. 또한 중복되어 문제가 되는 의존성에서대해서는 exclusion 설정도 되어있습니다.  
 원래는 이 모든 의존성의 관계를 우리가 찾아서 설정해야하지만 미리 작성된 spring-boot-stater를 사용하면 쉽고 빠르고 정확하게 의존성 설정을 할 수 있습니다.  
