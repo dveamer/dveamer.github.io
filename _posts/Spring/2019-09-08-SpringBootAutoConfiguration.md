@@ -242,19 +242,30 @@ WebServlet.java 파일이 classpath에 존재해야지만 @ConditionalOnClass의
   * @ConditionalOnWebApplication : servlet 타입의 web application 일 경우
   * @ConditionalOnProperty : 프로퍼티에 spring.h2.console.enabled=true가 있는 경우 
   * @AutoConfigureAfter : DataSourceAutoConfiguration 이 먼저 진행 된 후에 처리 됩니다.  
-  * @EnableConfigurationProperties : [H2ConsoleProperties.class](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/h2/H2ConsoleProperties.java)를 이용해서 관련 프로퍼티 정보를 읽어옵니다.  
+  * @EnableConfigurationProperties : [H2ConsoleProperties](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/h2/H2ConsoleProperties.java)를 이용해서 관련 프로퍼티 정보를 읽어옵니다.  
 
-위의 조건들 모두가 만족된다면 ServletRegistrationBean<WebServlet> bean이 생성되고 브라우저로 ```/h2-console``` 에 접근하면 console을 사용할 수 있게 됩니다. 그리고 이 모든 과정은 auto configuration에 의해서 진행되고 아래와 같은 H2에 대한 의존성 주입과 프로퍼티 설정만으로도 H2 web console을 사용할 수 있게 된 것입니다.  
+위의 조건들 모두가 만족된다면 ServletRegistrationBean<WebServlet> bean이 생성되고 브라우저로 /h2-console 에 접근하면 console을 사용할 수 있게 됩니다. 그리고 이 모든 과정은 auto configuration에 의해서 진행되고 아래와 같은 H2에 대한 의존성 주입과 프로퍼티 설정만으로도 H2 web console을 사용할 수 있게 된 것입니다.  
+
+```pom.xml```
 
 ~~~xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
-<dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-</dependency>
+    ...(생략)
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+    </dependency>
+    ...(생략)
+~~~
+
+```application.properties```
+
+~~~properties
+...(생략)
+spring.h2.console.enabled=true
 ~~~
 
 
