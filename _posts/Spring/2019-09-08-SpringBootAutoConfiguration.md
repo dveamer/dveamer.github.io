@@ -251,10 +251,6 @@ WebServlet.java 파일이 classpath에 존재해야지만 @ConditionalOnClass의
 ~~~xml
     ...(생략)
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
     </dependency>
