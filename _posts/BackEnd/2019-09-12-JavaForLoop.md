@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Java For-Loop : Array, List, Set, Map"
+title: "Java For-Loop 사용법 : Array, List, Set, Map"
 date: 2019-09-12 00:00:00
 categories: BackEnd
 tags: BackEnd Java
