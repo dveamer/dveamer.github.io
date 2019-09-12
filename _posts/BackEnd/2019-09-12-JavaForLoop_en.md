@@ -6,7 +6,7 @@ categories: BackEnd
 tags: BackEnd Java
 ---
 
-This post describes how to use loops for Array, List, Set, and Map.
+This post describes how to use loops for Array, List, Set, and Map.  
 
 <!--more-->
 
@@ -71,7 +71,7 @@ values.stream()
 
 # Collection
 
-Collection objects (such as List, Set, and Queue) can use the iterator, for-loop, collection forEach, and stream ForEach methods.
+Collection objects (such as List, Set, and Queue) can use the iterator, for-loop, collection forEach, and stream ForEach methods.  
 
 ~~~java
 ...(생략)

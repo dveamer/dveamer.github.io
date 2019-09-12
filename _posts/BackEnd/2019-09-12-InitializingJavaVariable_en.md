@@ -45,8 +45,8 @@ public class Sample {
 
 ## Immutable List
 
-Follows are the how to make immutable List.
-If something attempts to change an immutable List, UnsupportedOperationException will be thrown.
+Follows are the how to make immutable List.  
+If something attempts to change an immutable List, UnsupportedOperationException will be thrown.  
 
 ~~~java
 public class Sample {
@@ -75,8 +75,8 @@ public class Sample {
 
 ## Immutable Set
 
-Follows are the how to make immutable Set.
-If something attempts to change an immutable Set, UnsupportedOperationException will be thrown.
+Follows are the how to make immutable Set.  
+If something attempts to change an immutable Set, UnsupportedOperationException will be thrown.  
 
 
 ~~~java
@@ -107,11 +107,11 @@ public class Sample {
 
 ## Immutable Map
 
-Follows are the how to make immutable Map.
-If something attempts to change an immutable Map, UnsupportedOperationException will be thrown.
+Follows are the how to make immutable Map.  
+If something attempts to change an immutable Map, UnsupportedOperationException will be thrown.  
 
-Collections is a utility class for the Collection interface.
-Although the Map interface does not extend the Collection interface, some feature of Collections class support Collection iterface.
+Collections is a utility class for the Collection interface.  
+Although the Map interface does not extend the Collection interface, some feature of Collections class support Collection iterface.  
 
 ~~~java
 public class Sample {
@@ -132,10 +132,10 @@ public class Sample {
 
 # Empty Immutable Collection
 
-Follows are the how to make empty immutable List, Set, and Map.
-These empty immutable things are very efficient from resources standpoint because only one exists in the process.
+Follows are the how to make empty immutable List, Set, and Map.  
+These empty immutable things are very efficient from resources standpoint because only one exists in the process.  
 
-If something attempts to change these, UnsupportedOperationException will be thrown.
+If something attempts to change these, UnsupportedOperationException will be thrown.  
 
 ~~~java
 public class Sample {
