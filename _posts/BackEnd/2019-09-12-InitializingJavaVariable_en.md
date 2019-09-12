@@ -1,16 +1,14 @@
 ---
 layout: post
-title: "Java 변수 선언 & 초기화 방법 - Array, List, Set, Map"
-date: 2019-04-14 00:00:00
-lastmod: 2019-09-12 00:00:00
+title: "How to initialize Java variables - Array, List, Set, Map"
+date: 2019-09-12 00:00:00
 categories: BackEnd
 tags: BackEnd Java
 ---
 
-변수 선언과 동시에 초기화 작업 방법에 대해서 기술합니다.  
+This post describes how to initialize a variable at the same time as declaring that.  
 
 <!--more-->
-
 
 # Array
 
@@ -19,14 +17,14 @@ public class Sample {
 
     private final String[] values0 = new String[]{ "1", "2", "3" };
 
-    // 위와 동일하지만 배열 선언시에만 사용 가능
+    // only available when declaring an array
     private final String[] values1 = { "1", "2", "3" };
 }
 ~~~
 
 # List
 
-## 변경 가능한 List
+## Mutable List
 
 ~~~java
 public class Sample {
@@ -40,15 +38,15 @@ public class Sample {
 
     private final List<String> values1 = new ArrayList<>(Arrays.asList(new String[]{ "1", "2", "3" }));
 
-    // JDK 5 이상에서 사용 가능
+    // available in JDK 5 or later
     private final List<String> values2 = new ArrayList<>(Arrays.asList("1", "2", "3"));
 }
 ~~~
 
 ## Immutable List
 
-초기화 이후에 변경이 불가한 list를 만드는 방법입니다.  
-변경 시도시에는 UnsupportedOperationException 이 발생합니다.  
+Follows are the how to make immutable List.
+If something attempts to change an immutable List, UnsupportedOperationException will be thrown.
 
 ~~~java
 public class Sample {
@@ -57,17 +55,17 @@ public class Sample {
 
     private final List<String> values1 = Collections.unmodifiableList(new ArrayList<>(values0));
 
-    // JDK 5 이상에서 사용 가능
+    // available in JDK 5 or later
     private final List<String> values2 = Arrays.asList("1", "2", "3");
 
-    // JDK 9 이상에서 사용 가능
+    // available in JDK 9 or later
     private final List<String> values3 = List.of("1", "2", "3");
 }
 ~~~
 
 # Set
 
-## 변경 가능한 Set
+## Mutable Set
 
 ~~~java
 public class Sample {
@@ -77,22 +75,23 @@ public class Sample {
 
 ## Immutable Set
 
-초기화 이후에 변경이 불가한 set을 만드는 방법입니다.  
-변경 시도시에는 UnsupportedOperationException 이 발생합니다.  
+Follows are the how to make immutable Set.
+If something attempts to change an immutable Set, UnsupportedOperationException will be thrown.
+
 
 ~~~java
 public class Sample {
 
     private final Set<String> values0 = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("1", "2", "3")));
 
-    // JDK 9 이상에서 사용 가능
+    // available in JDK 9 or later
     private final Set<String> values1 = Set.of("1", "2", "3");
 }
 ~~~
 
 # Map
 
-## 변경 가능한 Map
+## Mutable Map
 
 ~~~java
 public class Sample {
@@ -108,11 +107,11 @@ public class Sample {
 
 ## Immutable Map
 
-초기화 이후에 변경이 불가한 Map을 만드는 방법입니다.  
-변경 시도시에는 UnsupportedOperationException 이 발생합니다.  
+Follows are the how to make immutable Map.
+If something attempts to change an immutable Map, UnsupportedOperationException will be thrown.
 
-Collections 는 Collection interface에 대한 utility class입니다.  
-근데 Map interface는 Collection interface를 extend 하지 않음에도 불구하고 Collections으로부터 몇가지 기능을 지원받고 있습니다.  
+Collections is a utility class for the Collection interface.
+Although the Map interface does not extend the Collection interface, some feature of Collections class support Collection iterface.
 
 ~~~java
 public class Sample {
@@ -124,8 +123,8 @@ public class Sample {
         }
     });
 
-    // JDK 9 이상에서 사용 가능
-    // 10개의 key, value까지만 사용 가능
+    // available in JDK 9 or later
+    // only 10 keys can be available
     Map<String, String> map1 = Map.of("key01","value01", "key02", "value02");
 }
 ~~~
@@ -133,19 +132,20 @@ public class Sample {
 
 # Empty Immutable Collection
 
-항상 텅비어있는 상태를 유지하는 List, Set, Map을 만드는 방법입니다.  
-프로세스에 유일하게 1개만 존재하기 때문에 자원 관점에서 굉장히 효율적입니다.  
-불변 객체이기 때문에 변경 시도시에는 UnsupportedOperationException 이 발생합니다.  
+Follows are the how to make empty immutable List, Set, and Map.
+These empty immutable things are very efficient from resources standpoint because only one exists in the process.
+
+If something attempts to change these, UnsupportedOperationException will be thrown.
 
 ~~~java
 public class Sample {
 
-    // JDK 5 이상에서 사용 가능
+    // available in JDK 5 or later
     private final List<String> emptyList0 = Collections.emptyList();
     private final Set<String> emptySet0 = Collections.emptySet();
     private final Map<String, String> emptyMap0 = Collections.emptyMap();
 
-    // JDK 9 이상에서 사용 가능
+    // available in JDK 9 or later
     private final List<String> emptyList1 = List.of();
     private final Set<String> emptySet1 = Set.of();
     private final Map<String, String> emptyMap1 = Map.of();
