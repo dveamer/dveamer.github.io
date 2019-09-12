@@ -2,8 +2,8 @@
 layout: post
 title:  "Perfect Trainer for PokemonGo 포켓몬고"
 date: 2017-03-17 12:00:00
-categories: Side-Projects
-tags: Toy-Projects PokemonGo 포켓몬고 Android
+categories: ToyProject
+tags: ToyProject PokemonGo 포켓몬고 Android
 ---
 
 ![Perfect Trainer](https://lh3.googleusercontent.com/eyEz4RTFdZFEh3CbJnLoe9e3u57MaJI6k-9c7pUa5SPNP0zcPyabmcST2QI6Tugq98hSmFBo0Nofwmvq3LPMhFhdde5r2SKhu15NPxX6QBqdUGlk1VvmYg9SsIec1lxgFZM0jDPvGLmEsjDvR5wbTd_dYM7D4isd9U2l7XqabUmM3-trt68MFCx9z12Khf8JZeklb1qhdLar13eF5-Sw8Q404JyJwho2lwN8caSPXEp1BiBDjHW5-xnhoEMC02-YG9GMARjITjZO55tiF3XVDQN0KDqaMcaK6hibJzLK5rtlK_dCqxKkpT36ccjKk0Gj5VSU7rHnM7_qlopYCIEpPz9phSBvgv1ONBvNAvMX_bENwyQOgbDSCFb9G4gWU0RoCCAGm2UsMPMS05dYtGLq4JwuED9GMCeA5I3mznXxQJhpcFiJKSWs3BqkMcIWIT7i_sxAKiNhE311m9d4aVDqGMWIvDu2_Q-PXAgdr_VOKGRZw4jNbKt-vm1agRj4gaonB5d-TeaJSnyEJpGN3VAPdWcJBz5AjEChuj-oWLNPfjsPkU2nu1-rODv8GrUI2h_u9QEDpDJeWHGak7Ovy7yw39MB--lso8wWGLrIO_5DcLxAgt6MFJTXl5tM-ZkOYkDUG77gM8B1YJFbrriY-_4pzF_p6v0bJpFgHIY=s512-no){:class="imgTitle"}

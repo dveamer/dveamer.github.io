@@ -2,8 +2,8 @@
 layout: post
 title: "확장앱 개발기 (Chrome Extention, Firefox Add-On 차이 설명)"
 date: 2018-11-11 00:00:00
-categories: Browser-Extension
-tags: Browser-Extension Chrome Firefox Add-On
+categories: ToyProject
+tags: Browser-Extension ToyProject
 ---
 
 ![Chrome](https://www.google.com/chrome/static/images/chrome-logo.svg){:class="imgTitle"} ![Firefox](https://addons-amo.cdn.mozilla.net/fe725b21e516c3f4810194197c689f6c.svg){:class="imgTitle"}  
