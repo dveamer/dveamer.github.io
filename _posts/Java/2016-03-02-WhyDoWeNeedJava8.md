@@ -2,6 +2,7 @@
 layout: post
 title:  "왜 Java 8 을 공부해야 하는가?"
 date:   2016-03-02 12:00:00 
+lastmod: 2019-09-14 00:00:00 
 categories: Java
 tags: BackEnd Java8 Stream
 ---
@@ -102,6 +103,9 @@ filter, sort, map, collect 와 같이 명확한 표현만 남았다고 보시면
 다만, 좀 난감해보이는 점이있다면  
 기존 Java 에서 볼 수 없었던 문법이 많이 포함되어있습니다.  
 이것은 Lambda 와 default method 에 대한 설명이 필요합니다.  
+
+  * sort 관련 default method : [oracle.com/comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)
+  * collect 관련 default method : [oracle.com/stream/collectors](https://docs.oracle.com/javase/10/docs/api/java/util/stream/Collectors.html)
 
 ## Parallel
   
