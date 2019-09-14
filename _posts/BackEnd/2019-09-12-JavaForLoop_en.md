@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_en
 title: "Java For-Loop : Array, List, Set, Map"
 date: 2019-09-12 00:00:00
 categories: BackEnd

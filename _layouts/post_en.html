@@ -1,0 +1,86 @@
+---
+layout: post_layout_en
+---
+<div class="post">
+  <br>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}
+
+      {% if page.lastmod %}
+          <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          <span class="post-meta">Updated : {{ page.lastmod | date: "%b %-d, %Y" }}</span>
+      {% endif %}
+
+<!-- 
+      {% if page.author %} • {{ page.author }}{% endif %}
+      {% if page.meta %} • {{ page.meta }}{% endif %}
+      {% if page.categories %} • {{ page.categories }} {% endif %}
+ -->
+
+      {% if page.categories.size > 0 %}
+          <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          {% for category in page.categories %}
+            <span class="post-meta">{{ category }}</span>
+            &nbsp;
+          {% endfor %}
+      {% endif %}
+
+      {% if page.tags.size > 0 %}
+          <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          {% for tag in page.tags %}
+            <span class="post-meta">{{ tag }}</span>
+            &nbsp;
+          {% endfor %}
+      {% endif %}
+
+    </p>
+
+  </header>
+
+
+
+  {% assign content_array = page.content | split: site.excerpt_separator %}
+  {% assign excerpt_only = content_array | first %}
+  {% assign content_remainder = content_array | last %}
+
+
+  <article id="post_excerpt" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
+    {{ excerpt_only | append: '</p>'}}
+  </article>
+
+  <br/>
+  <br/>
+
+  <!-- post_bottom2 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-1213240297656328"
+       data-ad-slot="3963543437"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <br/>
+  <br/>
+
+  <article id="post_content" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
+    {{ content_remainder | remove_first: '</p>'}}
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
