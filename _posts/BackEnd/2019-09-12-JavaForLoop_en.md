@@ -30,7 +30,7 @@ for(int v : values){
 // stream forEach
 // available in JDK 8 or later
 Arrays.stream(values)
-        .filter(v -> v<10) // reduce : filter data less than 10.
+        .filter(v -> v<10) // filter data less than 10.
         .forEach(v-> System.out.println(v));
 ~~~
 
@@ -64,7 +64,7 @@ values.forEach(v-> System.out.println(v));
 // stream forEach
 // available in JDK 8 or later
 values.stream()
-        .filter(v -> v<10) // reduce : filter data less than 10.
+        .filter(v -> v<10) // filter data less than 10.
         .forEach(v-> System.out.println(v));
 ~~~
 
@@ -111,7 +111,7 @@ public class ForLoopSample {
         // stream forEach
         // available in JDK 8 or later
         collection.stream()
-                .filter(v -> v instanceof Integer ? ((int)v )<10 : false) // reduce : filter data less than 10.
+                .filter(v -> v instanceof Integer ? ((int)v )<10 : false) // filter data less than 10.
                 .forEach(v-> System.out.println(v));
     }
 
