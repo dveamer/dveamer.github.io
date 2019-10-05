@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring RequestContextHolder - 어디서든 HttpServletReqeust 사용하기"
 date:   2019-01-05 12:00:00 
-lastmod: 2019-01-05 12:00:00  
+lastmod: 2019-10-05 00:00:00  
 categories: BackEnd
 tags: Spring 
 ---
@@ -152,7 +152,7 @@ public class SessionScopeUtil {
 }
 ~~~
 
-## SessionScopeUtil
+## RequestScopeUtil
 
 Spring RequestContextHolder를 활용한 유틸리티 입니다.  
 Controller와 동일한 thread 내에서는 Controller-Service-Dao 전구간에서 HttpServletRequest에 보관해둔 정보를 사용할 수 있습니다.  
