@@ -66,6 +66,7 @@ YouTube 업로드 대행 서비스입니다. 본인만 알고 있지만 직접 �
 
 ## 개발기
 
+  * ~~[짧게 끝나는 쿠팡 자동광고 토이 프로젝트](/toyproject/ClosingCoupangAds.html)~~
   * [네이버 블로그 방문자들이 사용하는 브라우저](/toyproject/BrowserMarketShareOnNaverBlog.html)
   * [Coupang Ads 개발기 - 쿠팡 파트너스 광고를 Google AdSense 처럼 만들기](/toyproject/CoupangAds.html)
 
