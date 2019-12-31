@@ -8,6 +8,19 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:image" content="https://dveamer.github.io/images/logo_white.png">
+  <meta property="og:url" content="https://dveamer.github.io">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="https://dveamer.github.io/images/logo_white.png">
+  <meta name="twitter:domain" content="dveamer.github.io">
+
+  
   <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"</script>
   <script> 
     (adsbygoogle = window.adsbygoogle || []).push({
