@@ -18,11 +18,31 @@ lastmod: 2018-11-04 00:00:00
 
 현재 제가 운영 중인 어플리케이션은 아래 링크에서 확인하실 수 있습니다. 
 
+  * [Luxyry9oods](https://luxury9oods.com)
   * [isawdat](https://isawdat.com)
   * [광고 서비스](https://sda.dveamer.com)
   * [Chrome Extension](https://chrome.google.com/webstore/search/dveamer)
   * [Firefox Add-On](https://addons.mozilla.org/ko/firefox/user/dveamer/)
   * [Android App](https://play.google.com/store/apps/developer?id=dveamer)
+
+
+# Luxury9oods
+
+  * [Luxyry9oods](https://luxury9oods.com)
+
+  * 2019.12. ~
+
+명품 브랜드들의 상품들을 한 페이지에 모아서 보여주는 사이트 입니다. 상품정보는 주기적으로 갱신되어 제공됩니다.  
+
+이번 프로젝트에서 새롭게 도입해본 기술은 없었습니다.  
+다만 기존보다 다양한 종류의 수집(scrapping) 과정을 짧은 시간내 자동화했다는 점에 의미를 두고 싶습니다.  
+각기 다른 패턴, 특성을 가진 여러 브랜드 사이트들을 분석하는 과정에서 HTML, HTTP 등에 대한 이해를 검증했고  
+브랜드의 종류를 확장하더라도 큰 영향 없도록 추상화된 설계가 검증이 되었습니다.  
+
+## 사용된 기술
+
+  * Front-End : HTML, Javascript
+  * Back-End : Python3, AWS S3, AWS Route53, AWS CloudFront
 
 # I Saw Dat 
 
