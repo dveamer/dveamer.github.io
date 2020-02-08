@@ -7,7 +7,7 @@ tags: Spring Properties
 ---
 
 ![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
-( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
+( Image Reference : [https://spring.io/](https://spring.io/) )  
 
 Here's links that have the properties you need to use Spring Boot, Spring Cloud.  
 
