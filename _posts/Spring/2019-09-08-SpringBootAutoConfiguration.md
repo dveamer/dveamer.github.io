@@ -4,7 +4,7 @@ title:  "Spring Boot Auto Configuration 설정과 원리"
 date:   2019-09-08 00:00:00 
 lastmod: 2019-09-08 00:00:00  
 categories: BackEnd
-tags: Spring
+tags: Spring SpringBoot
 ---
 
 ![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  

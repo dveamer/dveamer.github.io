@@ -16,7 +16,6 @@ layout: post_layout_en
       {% if page.author %} • {{ page.author }}{% endif %}
       {% if page.meta %} • {{ page.meta }}{% endif %}
       {% if page.categories %} • {{ page.categories }} {% endif %}
- -->
 
       {% if page.categories.size > 0 %}
           <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
@@ -25,6 +24,8 @@ layout: post_layout_en
             &nbsp;
           {% endfor %}
       {% endif %}
+
+ -->
 
       {% if page.tags.size > 0 %}
           <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>

@@ -16,10 +16,10 @@ layout: default
 
         {% if post.lastmod %}
             <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-            <span class="post-meta">Updated : {{ post.lastmod | date: "%b %-d, %Y" }}</span>
+            <span class="post-meta">updated : {{ post.lastmod | date: "%b %-d, %Y" }}</span>
         {% endif %}
 
-
+<!-- 
         {% if post.categories.size > 0 %}
           <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
           {% for category in post.categories %}
@@ -31,6 +31,7 @@ layout: default
             {% endif %}
           {% endfor %}
         {% endif %}
+-->
 
         {% if post.tags.size > 0 %}
           <span class="post-meta">&nbsp;&nbsp;|&nbsp;&nbsp;</span>

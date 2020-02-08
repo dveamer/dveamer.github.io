@@ -4,7 +4,7 @@ title:  "Spring Boot Starter & Parent 로 간단히 의존성 설정하기"
 date:   2019-09-07 00:00:00 
 lastmod: 2019-09-07 00:00:00  
 categories: BackEnd
-tags: Spring
+tags: Spring SpringBoot
 ---
 
 ![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
