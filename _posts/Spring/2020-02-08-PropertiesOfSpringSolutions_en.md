@@ -3,12 +3,8 @@ layout: post_en
 title: "All Properties Of Spring Boot, Spring Cloud"
 date: 2020-02-08 00:00:00
 categories: BackEnd
-tags: Spring Properties
+tags: BackEnd Spring Properties
 ---
-
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
-( Image References : [https://spring.io/](https://spring.io/) )  
-
 
 Here's links that have the properties you need to use Spring Boot, Spring Cloud.  
 

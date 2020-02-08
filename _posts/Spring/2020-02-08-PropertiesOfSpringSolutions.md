@@ -3,12 +3,8 @@ layout: post
 title: "Spring Boot, Spring Cloud의 설정정보 모음"
 date: 2020-02-08 00:00:00
 categories: BackEnd
-tags: Spring Properties
+tags: BackEnd Spring Properties
 ---
-
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
-( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
-
 
 Spring Boot, Spring Cloud의 설정정보들을 가진 공식 사이트 링크를 모아봤습니다.  
 
