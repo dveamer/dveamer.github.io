@@ -2,7 +2,7 @@
 layout: post_en
 title: "All Properties Of Spring Boot, Spring Cloud"
 date: 2020-02-08 00:00:00
-categories: Spring
+categories: BackEnd
 tags: Spring Properties
 ---
 
