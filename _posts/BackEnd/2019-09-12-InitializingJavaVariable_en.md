@@ -97,9 +97,9 @@ public class Sample {
 public class Sample {
     private final Map<String, String> map = new HashMap<>() {
         {
-            map.put("key01", "val01");
-            map.put("key02", "val02");
-            map.put("key03", "val03");
+            put("key01", "val01");
+            put("key02", "val02");
+            put("key03", "val03");
         }
     };
 }
@@ -117,9 +117,9 @@ Although the Map interface does not extend the Collection interface, some featur
 public class Sample {
     private final Map<String, String> map0 = Collections.unmodifiableMap(new HashMap<>() {
         {
-            map0.put("key01", "val01");
-            map0.put("key02", "val02");
-            map0.put("key03", "val03");
+            put("key01", "val01");
+            put("key02", "val02");
+            put("key03", "val03");
         }
     });
 
