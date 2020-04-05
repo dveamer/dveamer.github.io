@@ -18,7 +18,7 @@ Spring Boot의 auto configuration을 통해 다양한 솔루션들을 쉽게 사
 
 <!--more-->
 
-솔루션들의 공식 사이트는 우리가 어떤 설정할 수 있는지 그리고 그 기본값으 무엇인지 잘 정리해뒀습니다.
+솔루션들의 공식 사이트는 우리가 어떤 설정할 수 있는지 그리고 그 default 값이 무엇인지 잘 정리해뒀습니다.
 
 아래와 같이 ```application.properties``` 혹은 ```application.yml``` 파일에 입력함으로써 사용하시면 됩니다.  
 
