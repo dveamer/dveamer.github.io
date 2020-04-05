@@ -7,7 +7,7 @@ categories: Java
 tags: Spring Asynchronous Multi-Thread AOP
 ---
 
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
+![https://spring.io/](https://spring.io/images/spring-logo-fc4350c59999bb62c468361537212419.svg){:class="imgTitle"}  
 ( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
 
 이 글은 Spring을 사용하면 asynchronous, multi-thread 개발이 얼마나 편해지는지를 설명합니다.  
@@ -327,7 +327,7 @@ public class GreetingService {
 method1을 호출한 client에서는 Future의 isDone, get 등의 method를 이용해서 return 값을 사용할 수 있습니다.  
 
 #### References
-  * [Future](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html)
+  * [Future](http://cr.openjdk.java.net/~iris/se/12/latestSpec/api/java.base/java/util/concurrent/Future.html)
   * [스프링에서 @Async로 비동기처리하기](http://springboot.tistory.com/38)
   * [Spring Async Uncaught Exception handler](http://stackoverflow.com/questions/8735870/spring-async-uncaught-exception-handler)
 

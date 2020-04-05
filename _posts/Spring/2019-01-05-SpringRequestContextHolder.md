@@ -7,7 +7,7 @@ categories: BackEnd
 tags: Spring 
 ---
 
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
+![https://spring.io/](https://spring.io/images/spring-logo-fc4350c59999bb62c468361537212419.svg){:class="imgTitle"}  
 ( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
 
 Spring RequestContextHolder 를 이용해서 controller, service, DAO 전 구간에서 HttpServletRequest에 접근하는 방법을 설명드립니다.  

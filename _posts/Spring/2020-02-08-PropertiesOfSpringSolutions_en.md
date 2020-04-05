@@ -6,7 +6,7 @@ categories: BackEnd
 tags: Spring SpringCloud SpringBoot
 ---
 
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
+![https://spring.io/](https://spring.io/images/spring-logo-fc4350c59999bb62c468361537212419.svg){:class="imgTitle"}  
 ( Image reference : [https://spring.io/](https://spring.io/) )  
 
 Here's links that have the properties you need to use Spring Boot, Spring Cloud.  

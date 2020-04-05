@@ -6,6 +6,10 @@ categories: BackEnd
 tags: BackEnd Java
 ---
 
+![https://openjdk.java.net](https://openjdk.java.net/images/openjdk.png){:class="imgTitle"}  
+( 이미지 출처 : [https://openjdk.java.net](https://openjdk.java.net) )  
+
+
 생성자 혹은 public/protected method는 입력 파라미터에 대해서 제약사항을 지키는지 확인해야한다.  
 
 > 오류는 가능한 한 빨리 (발생한 곳에서) 잡아야 한다.  
@@ -38,7 +42,7 @@ public class User {
 
 # java.util.Obejcts
 
-[java.util.Obejcts](https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html)은 JDK 7부터 Java 언어자체에서 제공하는 기능이기 때문에 다른 라이브러리 참조도 필요 없다.  
+[java.util.Obejcts](https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.base/java/util/Objects.html)은 JDK 7부터 Java 언어자체에서 제공하는 기능이기 때문에 다른 라이브러리 참조도 필요 없다.  
 
 아래 5개 method는 Objects가 가진 null 체크 관련된 method들이다.  
 
@@ -47,7 +51,7 @@ public class User {
 > static \<T\> T requireNonNull​(T obj, Supplier\<String\> messageSupplier) : Checks that the specified object reference is not null and throws a customized NullPointerException if it is.  
 > static \<T\> T requireNonNullElse​(T obj, T defaultObj) : Returns the first argument if it is non-null and otherwise returns the non-null second argument.  
 > static \<T\> T requireNonNullElseGet​(T obj, Supplier\<? extends T\> supplier) : Returns the first argument if it is non-null and otherwise returns the non-null value of supplier.get().  
-> - 참조 : [java.util.Obejcts](https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html)  
+> - 참조 : [java.util.Obejcts](https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.base/java/util/Objects.html)  
 
 
 ## requireNonNull​
@@ -123,7 +127,7 @@ public class User {
 
 # java.util.Optional<T>
 
-[Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html)은 JDK 8부터 Java 언어자체에서 제공하는 기능이기 때문에 다른 라이브러리 참조도 필요 없다.  
+[Optional](https://cr.openjdk.java.net/~iris/se/12/latestSpec/api/java.base/java/util/Optional.html)은 JDK 8부터 Java 언어자체에서 제공하는 기능이기 때문에 다른 라이브러리 참조도 필요 없다.  
 
 ## orElse
 

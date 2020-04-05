@@ -7,7 +7,7 @@ categories: BackEnd
 tags: Spring Cache AOP
 ---
 
-![https://spring.io/](https://spring.io/img/spring-by-pivotal.png){:class="imgTitle"}  
+![https://spring.io/](https://spring.io/images/spring-logo-fc4350c59999bb62c468361537212419.svg){:class="imgTitle"}  
 ( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
 
 이 글은 Spring을 사용하면 Redis, Memcached, Ehcache 와 같은 다양한 cache 솔루션 사용이 편해지는지를 설명합니다.  
