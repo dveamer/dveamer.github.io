@@ -2,9 +2,14 @@
 layout: post_en
 title: "How to initialize Java variables - Array, List, Set, Map"
 date: 2019-09-12 00:00:00
+lastmod: 2020-04-04 00:00:00
 categories: BackEnd
 tags: BackEnd Java
 ---
+
+![https://openjdk.java.net](https://openjdk.java.net/images/openjdk.png){:class="imgTitle"}  
+( 이미지 출처 : [https://openjdk.java.net](https://openjdk.java.net) )  
+
 
 This post describes how to initialize a variable at the same time as declaring that.  
 
@@ -28,11 +33,11 @@ public class Sample {
 
 ~~~java
 public class Sample {
-    private final List<String> values0 = new ArrayList<String>() {
+    private final List<String> values0 = new ArrayList<>() {
         {
-            values.add("1");
-            values.add("2");
-            values.add("3");
+            add("1");
+            add("2");
+            add("3");
         }
     };
 
