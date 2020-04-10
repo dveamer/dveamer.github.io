@@ -2,13 +2,13 @@
 layout: post
 title:  "왜 Java 8 을 공부해야 하는가?"
 date:   2016-03-02 12:00:00 
-lastmod: 2019-09-14 00:00:00 
+lastmod: 2020-04-10 00:00:00 
 categories: Java
-tags: BackEnd Java8 Stream
+tags: BackEnd Java Stream
 ---
 
-![http://eclipsesource.com/](http://eclipsesource.com/blogs/wp-content/uploads/2014/03/java8_logo-281x300.png){:class="imgTitle"}  
-( 이미지 출처 : [http://eclipsesource.com/](http://eclipsesource.com/blogs/2014/03/24/how-to-use-swt-with-java-8/) )  
+![https://openjdk.java.net](https://openjdk.java.net/images/openjdk.png){:class="imgTitle"}  
+( 이미지 출처 : [https://openjdk.java.net](https://openjdk.java.net) )  
 
 Java 8 이 새로 나오고 인터넷의 다양한 매체로부터 Lambda 라는 용어를 수없이 많이 들었습니다.  
 
