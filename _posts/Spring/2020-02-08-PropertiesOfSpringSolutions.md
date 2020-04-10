@@ -6,7 +6,7 @@ categories: BackEnd
 tags: Spring SpringCloud SpringBoot
 ---
 
-![https://spring.io/](https://spring.io/images/spring-logo-fc4350c59999bb62c468361537212419.svg){:class="imgTitle"}  
+![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  
 ( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
 
 Spring Boot, Spring Cloud의 설정정보들을 가진 공식 사이트 링크를 모아봤습니다.  

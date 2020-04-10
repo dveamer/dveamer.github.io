@@ -2,7 +2,7 @@
 layout: post
 title: "Java Validation - null check, Optional"
 date: 2020-04-04 00:00:00
-lastmod: 2020-04-04 00:00:00
+lastmod: 2020-04-10 00:00:00
 categories: BackEnd
 tags: BackEnd Java
 ---
