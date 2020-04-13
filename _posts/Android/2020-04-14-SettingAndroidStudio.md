@@ -137,11 +137,86 @@ $ /opt/android-studio/bin/studio.sh
 
 그 후 ```Run > Run```을 눌러보시면 빌드 & 배포가 진행되고 디바이스에서 앱이 실행되는 것을 확인하실 수 있습니다.  
 
-# Google Play 관련 설정
+
+# 기존 앱 관련 설정
 
 여기서부터는 기존에 Android 앱을 개발해서 Google Play에 등록하셨던 분들을 위한 내용입니다.  
 기존 소스를 clone하고 IntelliJ에서 open 하는 과정은 생략하겠습니다.  
 
+## SDK Manager
+
+```File > Settings```에 들어가서 ```Appearance & Behavior > System Settings > Adnroid SDK``` 를 찾아가보시면 Android의 다양한 버전이 나열 되어있습니다. 그 중 status가 intalled인 버전이 있고 Not installed인 버전들이 있는데 만들어둔 앱 ```app/build.gradle``` 의 compile, target SDK version 은 installed 상태로 만들어주셔야 빌드가 가능합니다.  
+
+
+```app/build.gradle``` 
+
+~~~gradle
+
+...(생략)
+
+    compileSdkVersion 28
+    ...(생략)
+
+    defaultConfig {
+        ...(생략)
+        minSdkVersion 19
+        targetSdkVersion 28
+        ...(생략)
+    }
+
+...(생략)
+~~~
+
+## Gradle Plugin
+
+[gradle-plugin](https://developer.android.com/studio/releases/gradle-plugin.html) 문서의 프러그인 버전과 필요한 gradle 버전이 맵핑되어있는 테이블을 참고해서 플러그인 버전을 ```gradle-wrapper.properties```에 gradle버전을 ```gradle-wrapper.properties```에 입력합니다. 가장 최신의 버전으로 적용하시면 되고 gradle sync를 맞추면 gradle이 관련 의존성 파일들을 다운받는 것을 보실 수 있습니다.  
+
+만약에 가장 최신 버전으로 했을 때 문제가 생기신다면 적절히 낮은 버전으로 적용하시고 진행해보세요. 의존성 파일들을 다운 받고 난 뒤 IntelliJ가 최신 gradle plugin 이 있다는 메시지와 함께 업그레이드를 권할 것입니다. 그 때 업그레이드 하시면 됩니다.  
+
+
+```gradle-wrapper.properties```
+~~~properties
+#Mon Apr 13 20:28:01 KST 2020
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.4-all.zip
+~~~
+
+
+
+```build.gradle```
+
+~~~gradle
+buildscript {
+    repositories {
+        ...(생략)
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.1'
+
+        ...(생략)
+    }
+
+    ...(생략)
+}
+~~~
+
+
+## 확인작업
+
+아까 테스트 프로젝트를 디바이스에 배포했던 것과 동일하게 빌드 및 배포를 해서 디바이스에서 앱이 정상적으로 작동하는 것을 확인하셔야 합니다.  
+
+# Google Play 관련 설정
+
+Google Play 배포를 위한 release 빌드를 했을 때 storeFile 관련한 에러메시지가 발생합니다. 이 것을 해결하기 위한 설정이 필요합니다.  
+
+~~~terminal
+$ gradle assembleRelease
+~~~
+
+만약 에러가 발생하지 않고 빌드가 성공한다면 [잘못된 build.gradle](#잘못된 build.gradle) 설정을 하신 것이 아닐까 의심이 됩니다.  
 
 ## keystore 복사해오기
 
@@ -166,7 +241,7 @@ $ /opt/android-studio/bin/studio.sh
 ...(생략)
 
     signingConfigs {
-				release {
+        release {
             storeFile file(System.getenv("ANDROID_KEYSTORE_PATH"))
             storePassword System.getenv("ANDROID_KEYSTORE_PSWD")
             keyAlias System.getenv("ANDROID_KEY_ALIAS")
@@ -177,7 +252,7 @@ $ /opt/android-studio/bin/studio.sh
     buildTypes {
         release {
             signingConfig signingConfigs.release
-						...(생략)
+            ...(생략)
         }
     }
 
@@ -215,7 +290,7 @@ $ /opt/android-studio/bin/studio.sh
     buildTypes {
         release {
             signingConfig signingConfigs.release
-						...(생략)
+            ...(생략)
         }
     }
 
@@ -242,68 +317,6 @@ $ echo 'export ANDROID_KEY_PSWD="key_1234"' >> ~/.profile
 ~~~
 
 환경변수 설정 후 Ubuntu 로그인을 다시 하신 후 IntelliJ를 사용하셔야 합니다.  
-
-## SDK Manager
-
-```File > Settings```에 들어가서 ```Appearance & Behavior > System Settings > Adnroid SDK``` 를 찾아가보시면 Android의 다양한 버전이 나열 되어있습니다. 그 중 status가 intalled인 버전이 있고 Not installed인 버전들이 있는데 만들어둔 앱의 compile, target SDK version 은 installed 상태여야지 빌드가 가능합니다.  
-
-
-```app/build.gradle``` 
-
-~~~gradle
-
-...(생략)
-
-    compileSdkVersion 28
-		...(생략)
-
-    defaultConfig {
-				...(생략)
-        minSdkVersion 19
-        targetSdkVersion 28
-				...(생략)
-    }
-
-...(생략)
-~~~
-
-## Gradle Plugin
-
-[gradle-plugin](https://developer.android.com/studio/releases/gradle-plugin.html) 문서의 프러그인 버전과 필요한 gradle 버전이 맵핑되어있는 테이블을 참고해서 플러그인 버전을 ```gradle-wrapper.properties```에 gradle버전을 ```gradle-wrapper.properties```에 입력합니다. 가장 최신의 버전으로 적용하시면 되고 gradle sync를 맞추면 gradle이 관련 의존성 파일들을 다운받는 것을 보실 수 있습니다.  
-
-만약에 가장 최신 버전으로 했을 때 문제가 생기신다면 적절히 낮은 버전으로 적용하시고 진행해보세요. 의존성 파일들을 다운 받고 난 뒤 IntelliJ가 최신 gradle plugin 이 있다는 메시지와 함께 업그레이드를 권할 것입니다. 그 때 업그레이드 하시면 됩니다.  
-
-
-
-
-```gradle-wrapper.properties```
-~~~properties
-#Mon Apr 13 20:28:01 KST 2020
-distributionBase=GRADLE_USER_HOME
-distributionPath=wrapper/dists
-zipStoreBase=GRADLE_USER_HOME
-zipStorePath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.4-all.zip
-~~~
-
-
-
-```build.gradle```
-
-~~~gradle
-buildscript {
-    repositories {
-				...(생략)
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.1'
-
-				...(생략)
-    }
-
-		...(생략)
-}
-~~~
 
 
 ## 확인작업
