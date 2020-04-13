@@ -2,7 +2,7 @@
 layout: post
 title:  "유용한 Linux 명령어"
 date:   2018-02-03 00:00:00
-lastmod: 2019-08-10 00:00:00
+lastmod: 2020-04-12 00:00:00
 categories: Linux
 tags: Linux Command 
 ---
@@ -160,11 +160,10 @@ $ tail -f <filename> | { sed "/<serching word>/ q" ;}
 $ echo 'plain text' >> test.txt
 $ echo 'plain text 2' >> test.txt
 $ echo 'EOFtext' >> test.txt
-$ echo 'EOF text' >> test.txt
+$ echo 'test' >> test.txt
 ~~~
 
 그리고 앞의 수정이 일어나기 전에 다른 터미널 창에서 tail을 걸고 있었다고하면 아래와 같은 결과가 출력됩니다.  
-마지막에 tail이 종료된 것을 확인할 수 있습니다. EOFtext 라는 단어에는 종료가 되지 않았다는 것을 유의하시기 바랍니다.  
 
 ~~~terminal
 $ echo '' > test.txt 
@@ -175,6 +174,11 @@ plain text 2
 EOFtext
 $
 ~~~
+
+근데 EOFtext가 입력됐을 때 tail이 종료되지 않고 마지막 test가 입력되었을 때 tail이 종료되는 현상을 확인할 수 있습니다.  
+EOF가 입력 된 이후 어떤 값이든 한 차례 더 입력되어야지만 tail 프로세스가 완전히 종료되는 것을 주의해야합니다.  
+
+즉, EOF 라는 단어를 끝으로 더 이상 로그를 남기지 않는 시스템에 대해서 EOF로 중단유무를 체크한다면 tail 프로세스가 종료되지 않을 수 있습니다.  
 
 #### References 
 
