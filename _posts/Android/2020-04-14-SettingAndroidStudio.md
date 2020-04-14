@@ -213,7 +213,7 @@ buildscript {
 Google Play 배포를 위한 release 빌드를 했을 때 storeFile 관련한 에러메시지가 발생합니다. 이 것을 해결하기 위한 설정이 필요합니다.  
 
 ~~~terminal
-$ gradle assembleRelease
+$ gradle bundleRelease
 ~~~
 
 만약 에러가 발생하지 않고 빌드가 성공한다면 [잘못된 build.gradle](#잘못된 build.gradle) 설정을 하신 것이 아닐까 의심이 됩니다.  
