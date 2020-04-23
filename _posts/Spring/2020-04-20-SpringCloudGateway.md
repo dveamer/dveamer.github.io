@@ -22,13 +22,11 @@ Spring Cloud Gateway의 기본적인 설정 그리고 circuit breaker, retry 설
 
 제가 작업했던 환경은 아래와 같습니다. 필수적인 환경 조건은 아닙니다.  
 
-## 로컬환경 
-
   * Ubuntu 18.04 LTS
   * JDK 11.0.7 ( JDK 8 이상은 확실하게 필요합니다. )
   * Gradle 5.6.4
 
-## 사전작업
+# 사전작업
 
 설명드릴 소스와 테스트를 위한 소스들을 GitHub [SpringCloudGatewayDemo](https://github.com/dveamer/SpringCloudGatewayDemo)에서 내려 받아주시기 바랍니다.  
 
@@ -150,7 +148,7 @@ public class GatewayApplication {
 
   * @EnableDiscoveryClient : service discovery의 auto configuration이 동작하도록 설정합니다.  
   * @EnableCircuitBreaker : circuit breaker의 auto configuration이 동작하도록 설정합니다.  
-  * accessLogEnabled : acess log를 남기기 위한 작업 중 하나로 추후 다시 설명합니다.  
+  * accessLogEnabled : acess log를 남기기 위한 작업 중 하나로 [Access Log 설정](#Access Log 설정)에서 다시 설명합니다.  
 
 ### dependencyManagement
 
@@ -432,11 +430,12 @@ logging:
 
 SLF4J로 되어있으니 LogBack, Log4j2 등 사용하시는 로그 프로그램에 따라 설정하셔서 로그 패턴도 수정하실 수 있습니다.  
 
-# 기동 테스트 
+## 기동 테스트 
 
 실행해서 정상적으로 기동되는지 체크합니다.  
 
 ~~~terminal
+$ cd ~/workspace/SpringCloudGatewayDemo/gateway
 $ gradle bootRun
 ~~~
 
@@ -462,7 +461,7 @@ Spring Cloud Gateway를 로컬환경에서 동작시켜보기 위해서는 Eurek
 신규 터미널 창(단축키 : ```Ctrl+Alt+T```)을 열고 아래의 명령어를 입력합니다.  
 
 ~~~terminal
-$ cd ~/workspace/SpringCloudGatewayDemo/eureka
+$ cd ~/workspace/SpringCloudGatewayDemo/service
 $ SPRING_PROFILES_ACTIVE=service01 gradle bootRun
 or
 $ bash start.sh service01
@@ -497,7 +496,7 @@ Date: Thu, 23 Apr 2020 11:06:30 GMT
 신규 터미널 창(단축키 : ```Ctrl+Alt+T```)을 열고 아래의 명령어를 입력합니다.  
 
 ~~~terminal
-$ cd ~/workspace/SpringCloudGatewayDemo/eureka
+$ cd ~/workspace/SpringCloudGatewayDemo/service
 $ SPRING_PROFILES_ACTIVE=service02 gradle bootRun
 or
 $ bash start.sh service02
@@ -533,7 +532,7 @@ Date: Thu, 23 Apr 2020 11:03:36 GMT
 신규 터미널 창(단축키 : ```Ctrl+Alt+T```)을 열고 아래의 명령어를 입력합니다.  
 
 ~~~terminal
-$ cd ~/workspace/SpringCloudGatewayDemo/eureka
+$ cd ~/workspace/SpringCloudGatewayDemo/service
 $ SPRING_PROFILES_ACTIVE=service03 gradle bootRun
 or
 $ bash start.sh service03
@@ -633,7 +632,9 @@ $ bash start.sh resilience4j
 그리고 서비스 인스턴스를 3개 모두 기동 상태로 하여 부하분산이 고르게 들어가는 것을 확인 한 후 인스턴스 1개를 종료해서 재 테스트 해봅니다.  
 아까와 같은 에러가 발생하지 않습니다. 이제 HA가 보장되었고 무중단 배포와 같은 것도 시도해볼 수 있게 됐습니다.  
 
-Gateway의 ```application-resilience4j.yml``` 을 열어보시면 아래와 같이 설정되어있습니다.  
+새로 기동하면서 spring.profiles.active를 resilience4j 값으로 설정함으로써 ```application-resilience4j.yml``` 프로퍼티 정보가 ```application.yml```와 함께 사용되도록 설정됐습니다.  
+
+```application-resilience4j.yml```  
 
 ~~~yml
 spring:
@@ -654,11 +655,9 @@ spring:
           - java.net.ConnectException
 ~~~
 
-새로 기동하면서 spring.profiles.active를 resilience4j 값으로 설정함으로써 ```application-resilience4j.yml``` 프로퍼티 정보가 ```application.yml```와 함께 사용되도록 설정됐습니다.  
+추가된 설정정보를 살펴보면 ```Retry``` 라는 필터를 default-filters에 추가했습니다.  
 
-그리고 추가된 설정정보를 살펴보면 ```Retry``` 라는 필터를 default-filters에 추가했습니다.  
-
-재시도 요청은 위험이 따릅니다. 예를들어, POST같은 데이터를 입력하는 호출인 경우, client 입장에서는 첫번째 시도가 실패여서 재시도를 했는데 server 입장에서는 첫번째 호출이 오래걸렸지만 아직 처리 중이었다고한다면 2회 이상의 데이터 입력이 발생할 수 있습니다.  
+재시도 요청은 위험이 따릅니다. 예를들어, POST같은 데이터를 입력하는 호출인 경우, client 입장에서는 첫번째 시도가 실패여서 재시도를 했는데 server 입장에서는 첫번째 호출이 오래걸렸지만 아직 처리 중이었다고 한다면 2회 이상의 데이터 입력이 발생할 수 있습니다.  
 
 그래서 이런 경우가 발생하지 않도록 HTTP connection 성공된 건에 대해서는 어떠한 상황에서도 재시도를 하지 않고 connection이 실패한 건에 대해서만 재시도를 하도록 설정했습니다.  
 
@@ -683,7 +682,7 @@ spring:
 Gateway 입장에서의 circuit breaker 사용목적은 단순합니다.  
 문제가 있다고 판단된 API로는 일시적으로 라우팅되지 않도록 해주고 client에게는 일시적으로 사용불가하다는 에러 메시지를 내보냅니다.  
 
-circuit breaker는 API별, 상황별로 적절한 응답을 내보낼 수 있고 그 덕분에 문제 발생시에도 마치 문제가 없는 것처럼 기존에 캐싱된 데이터로 응답할 수 있습니다.  
+Circuit breaker는 API별, 상황별로 적절한 응답을 내보낼 수 있고 그 덕분에 문제 발생시에도 마치 문제가 없는 것처럼 기존에 캐싱된 데이터로 응답할 수도 있습니다.  
 하지만 gateway에서 모든 케이스에 대해서 설정하는 것은 문제가 있습니다. 그러한 세세한 설정은 각 서비스에서 처리해야하는 사항이고 gateway에서는 문제가 생긴 API로는 더 이상 부하가 들어가지 않도록 차단해서 장애가 전파되지 않도록 막는 것이 주된 목적입니다.  
 
 
@@ -707,7 +706,7 @@ spring:
 ~~~
 
 ```CircuitBreaker=myCircuitBreaker``` 를 filter로 추가하는 것만으로 gateway를 위한 Resilience4j에서 제공하는 기본적인 circuit breaker 기능을 사용할 수 있습니다. 하지만 그 기본적인 기능이 굉장히 합리적입니다.  
-여기서 circuit breaker에 의해서 카운팅되는 에러 케이스는 특정 라우팅을 하는 과정에서 gateway 내에서 발생한 에러입니다. 즉, 서비스에서 에러응답을 보낸 것에 대해서는 카운팅하지 않습니다. 앞서 이야기 드렸듯이 서비스에서 발생하는 에러는 서비스에서 마무리 짓게합니다. 다만, gateway의 가용성에 영향을 준다거나 다른 서비스들에 영향을 줄 수 있는 장애전파를 막는 것을 목적으로 합니다.  
+여기서 circuit breaker에 의해서 카운팅되는 에러 케이스는 특정 라우팅을 하는 과정에서 gateway 내에서 발생한 에러입니다. 즉, 서비스에서 에러응답을 보낸 것에 대해서는 카운팅하지 않습니다. 앞서 이야기 드렸듯이 서비스에서 발생하는 에러에 대한 메시지는 그대로 client에게 제공됩니다. 만약 에러 메시지가 아닌 좀 더 매끄러운 응답을 제공하고 싶다면 각 서비스에서 매끄러운 응답을 만들어서 제공하도록 하면 됩니다. 다만, gateway의 가용성에 영향을 준다거나 다른 서비스들에 영향을 주는 장애전파를 막기 위한 기능을 제공합니다.  
 
 예를들면, 주로 해당되는 케이스는 오래걸리는 API입니다. 설정해둔 response-timeout 보다 응답이 오래걸리면 timeout 에러가 발생되고 처리되지만 그런 케이스가 굉장히 많다면 response-timeout의 시간만큼 기다리는 것도 gateway의 가용성에도 영향을 줄 수 있습니다. 또한 뒷단의 서비스들의 가용성에도 영향을 주게 됩니다.  
 
@@ -743,7 +742,7 @@ Content-Length: 183
 
 
 세번째 인스턴스는 고의적인 500(internal server error)를 발생시켰고 그에 대한 에러 응답을 제공합니다.  
-이것은 Resilience4j가 에러로 카운팅하지 않습니다. 이러한 에러 처리는 각 서비스에서 진행해야하는 내용입니다. 
+하지만 이것은 Resilience4j가 에러로 카운팅하지 않습니다. 이러한 에러 처리는 각 서비스에서 처리하면 되는 내용입니다.  
 
 ~~~terminal
 $ curl -i localhost:8080/exception
@@ -779,9 +778,9 @@ Content-Length: 186
 {"timestamp":"2020-04-22T18:28:57.214+0000","path":"/exception","status":503,"error":"Service Unavailable","message":"Upstream service is temporarily unavailable","requestId":"eef85e2c"}
 ~~~
 
-반복적으로 호출하다보면 갑자기 에러 코드가 503(temporarily unavailable)로 변경됩니다.  
+반복적으로 호출하다보면 갑자기 에러 코드가 503(temporarily unavailable)로 변경됩니다. Open 상태로 변경됐다는 의미입니다.  
 
-현재는 최소 5번 호출이 발생 한 뒤에 1번이라도 에러가 발생하면 open 상태로 빠지도록 설정되어있습니다. 그리고 20초 후에 half-open 상태가 되고 2번 이상 성공하면 다시 closed 상태가 되고 만약에 또 실패한다면 다시 open 상태가 됩니다.  
+현재는 최소 5번 호출이 발생 한 뒤에 1번이라도 에러가 발생하면 open 상태로 빠지도록 설정되어있습니다. 그리고 20초 후에 half-open 상태가 되고 2번 이상 성공하면 closed 상태가 되고 만약에 또 실패한다면 다시 open 상태가 됩니다.  
 
 이 수치는 설정을 통해서 적절히 바꿔둬야 합니다. 현재는 테스트를 용이하게 하기 위해서 굉장히 쉽게 open 상태로 빠지도록 설정해둔 상황입니다.  
 yaml 파일로 설정을 하지 않았고 java configuration 을 이용해서 설정했습니다. 그 이유는 [겪었던 삽질 - Resilience4j Configuration](#Resilience4j Configuration)을 참고해주시기 바랍니다.  
