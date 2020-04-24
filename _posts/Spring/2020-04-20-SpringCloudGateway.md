@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spring Cloud Gateway"
+title: "Spring Cloud Gateway - Resilience4j, Kubernetes"
 date: 2020-04-20 00:00:00
 categories: BackEnd
 tags: BackEnd Spring MSA
@@ -169,6 +169,7 @@ management:
 logging:
   level:
     root: WARN
+    com.dveamer.gateway: DEBUG
     reactor.netty.http.server.AccessLog: INFO
 
 
@@ -176,10 +177,11 @@ spring:
   application:
     name: gateway
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     kubernetes:
       enabled: false
-      ribbon:
-        mode: POD
     gateway:
       httpclient:
         connect-timeout: 1000
@@ -204,6 +206,10 @@ Gateway 서비스가 기동되면서 listen하게 될 port 정보입니다.
 
 Spring Actuator 관련 설정 정보입니다. 현재는 모든 현황을 볼 수 있도록 설정되어있지만 보안상 취약하므로 필요에 맞게 설정하셔야 합니다.  
 Kubernetes 환경에서도 그렇고 Eureka를 쓸 때도 그렇고 Actuator를 이용한 health check는 굉장히 유용합니다.  
+
+### spring.cloud.loadbalancer.ribbon
+
+Netflix에서 제공하는 ribbon 대신 ReactorLoadBalancerExchangeFilterFunction 사용하기 위해서 ribbon 기능을 disable 시켰습니다.  
 
 ### spring.cloud.kubernetes
 
@@ -280,6 +286,8 @@ spring.cloud.gateway에 filter를 두개 설정했습니다. 그리고 그 순�
 
   * CircuitBreaker : resilience4j에서 제공하는 기본 circuit breaker 기능을 사용하게 됩니다. 자세한 내용은 [Circuit Breaker 테스트](#Circuit Breaker 테스트)에서 다시 다루겠습니다.  
   * Retry : client의 요청을 서비스로 전달하고 응답을 client에게 전달하는 과정에서 특정 실패가 발생하면 재시도를 하게 해줍니다. 상세한 설명은 [HA 테스트](#HA 테스트)에서 다시 다루겠습니다.  
+
+그리고 이 설정 내용은 applciation.yml에 합치셔도 상관없습니다. 제가 파일을 나눈 이유는 retry가 설정되지 않은 상태의 테스트 진행과 설정된 상태의 테스트 진행 결과를 비교시켜드리기 위해 나눠둔 것입니다.  
 
 
 ## application-hystrix.yml
@@ -371,7 +379,7 @@ Eureka와 연동하기 위한 설정입니다.
 만약 Eureka를 localhost에 기본 port(8761)로 띄웠다면 사실 bootstrap.yml은 추가하실 필요 없습니다.  
 아래 설정 내용이 기본 설정과 동일하기 때문에 굳이 bootstrap.yml파일을 생성해서 아래 설정을 하지 않더라도 Spring Cloud Gateway를 기동시키면 자동으로 Eureka와 연동합니다.  
 
-불필요하지만 bootstap.kubernetes.yml 과 대비하기 위하여 기본 설정이라도 명시적으로 입력했습니다.  
+불필요하지만 bootstap-kubernetes.yml 과 비교하기 위하여 기본 설정이라도 명시적으로 입력했습니다.  
 
 ~~~yaml
 eureka:
@@ -419,6 +427,7 @@ public class GatewayApplication {
 logging:
   level:
     root: WARN
+    com.dveamer.gateway: DEBUG
     reactor.netty.http.server.AccessLog: INFO
 ~~~
 
@@ -823,7 +832,81 @@ public class Resilience4jConfig {
 
 
 
-재미있는 점은 에러 메시지도 "Upstream service is temporarily unavailable" 처럼 보기 좋게 변경된다는 점입니다. Hystrix를 사용했을 시에는 상황별로 우리가 직접 메시지 처리를 해줬어야 하는데 Resilience4j를 사용함으로써 기본적인 메시지가 제공되고 있습니다. 사실 Hystrix fallback에 대해서 exception 종류에 따라 메시지 처리하는 것은 어렵지 않지만 Spring Cloud Gateway에서 exception 종류를 파악하는 방법 자체를 저는 모릅니다. 그게 가능한건지도 모르겠습니다. 그래서 결국 Hystrix를 사용하게 되면 어떤 상황에서든 fallback이 발생하면 같은 에러 메시지를 내보내야 합니다. 하지만 Resilience4j의 기본 기능을 이용함으로써 좀 더 구체적인 상황을 전달할수 있습니다.  
+재미있는 점은 에러 메시지도 "Unable to find instance for service, "Upstream service is temporarily unavailable" 처럼 보기 좋게 변경된다는 점입니다. 저는 개인적으로 사용자에게 출력되는 에러메시지는 화면에서 재처리해야한다고 생각하기 떄문에 앞서 제공됐던 에러 메시지 정도면 충분하지 않을까 싶습니다. Gateway 관점에서 circuit breaker의 주된 역할은 에러메시지를 꾸미는 것이 아니라 "라우팅하는 과정에서 발생가능한 장애전파를 막는 것이다" 라는 것을 다시 강조해봅니다.  
+
+만약 에러 종류별로 에러 메시지를 다르게 바꾸고 싶다면,  
+fallback 을 전달받을 Controller를 하나 만드시고 ```application.yml``` 혹은 ```application-resilience4j.yml``` 등에 설정된 circuit breaker 설정을 변경해야 합니다.  
+
+```com.dveamer.gateway.FallbackController```  
+
+~~~java
+
+@RestController
+public class FallbackController {
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @GetMapping("/fallback")
+    public Mono<String> fallback(ServerWebExchange exchange) {
+        Throwable exception = exchange.getAttribute(ServerWebExchangeUtils.CIRCUITBREAKER_EXECUTION_EXCEPTION_ATTR);
+        logger.debug("", exception);
+        return Mono.just("fallback-gateway");
+    }
+
+}
+~~~
+
+
+```application-resilience4j.yml```  
+
+~~~yaml
+spring:
+  cloud:
+    gateway:
+      default-filters:
+      - name: CircuitBreaker
+        args:
+          name: fetchIngredients
+          fallbackUri: forward:/fallback
+      #- CircuitBreaker=myCircuitBreaker
+      ...(생략)
+~~~
+
+위와 같이 설정하면 Throwable을 얻을 수 있고 그것을 가지고 적절한 에러메시지를 만들어서 응답으로 보낼 수 있습니다.  
+
+Throwable을 로그로 찍어보면 아래와 같이 정상적으로 출력되는 것을 확인할 수 있습니다.  
+
+~~~terminal
+2020-04-24 21:20:44.825 DEBUG 5688 --- [     parallel-1] com.dveamer.gateway.FallbackController   : 
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 1000ms in 'circuitBreaker' (and no fallback has been configured)
+        at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:288) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:273) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:390) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at reactor.core.publisher.StrictSubscriber.onNext(StrictSubscriber.java:89) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:73) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:117) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.3.0.RELEASE.jar:3.3.0.RELEASE]
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+        at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+        at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-04-24 21:20:44.855  INFO 5688 --- [or-http-epoll-2] reactor.netty.http.server.AccessLog      : 127.0.0.1 - - [24/Apr/2020:21:20:43 +0900] "GET /exception HTTP/1.1" 200 16 8080 1184 ms
+~~~
+
+그리고 지금은 "fallback-gateway" 로 하드코딩 해뒀지만 원하는 에러 메시지가 client에게 전달되는 것을 확인했습니다.  
+
+~~~terminal
+$ curl -i localhost:8080/exception
+HTTP/1.1 200 OK
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 16
+
+fallback-gateway
+~~~
 
 
 # 겪었던 삽질
