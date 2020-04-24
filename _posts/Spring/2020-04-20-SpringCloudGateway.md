@@ -2,6 +2,7 @@
 layout: post
 title: "Spring Cloud Gateway - Resilience4j, Kubernetes"
 date: 2020-04-20 00:00:00
+lastmod: 2020-04-24 00:00:00
 categories: BackEnd
 tags: BackEnd Spring MSA
 ---
