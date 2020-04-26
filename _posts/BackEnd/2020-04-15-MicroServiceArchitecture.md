@@ -29,7 +29,7 @@ Kubernetes, Istio에 대한 경험, 자신감 부족과
 VM 환경과 Kubernetes 환경 중 실제로 어디서 프로젝트를 구성할지 정해지지 않았던 상황이었습니다.  
 또한 Kubernetes로 진행한다고 하더라도 PKS(Pivotal Container Service), RedHat OpenShift, GCP GKE(Google Kubernetes Engine), AWS EKS(Elastic Kubernetes Service) 중 어떤 것을 선택하게 될지 모르는 상황이었습니다.  
 
-일단 개발은 시작해야했고 Spring Cloud를 이용해서 개발하면 VM에서도 동작하고 어떤 Kubernetes 위에서도 큰 변경없이 동작이 가능하니 선택했다고 볼수 있습니다.  
+일단 개발은 시작해야했고 Spring Cloud를 이용해서 개발하면 VM 혹은 어떤 Kubernetes 위에서도 큰 변경없이 동작이 가능하니 선택했습니다.  
 덕분에 빠르게 service mesh, 인증/인가 등에 대해서 설계를 빠르게 시작할 수 있었습니다.  
 
 만약 처음부터 Kubernetes에 종속되게 설계했거나 Istio를 사용하도록 설계했는데 막판에 어떠한 다른 이유로 Kubernetes를 사용하지 않는 결정이 일어난다면 굉장히 난감했을 수도 있습니다.  
