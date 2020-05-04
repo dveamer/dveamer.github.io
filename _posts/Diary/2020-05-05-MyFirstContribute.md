@@ -6,10 +6,11 @@ categories: Diary
 tags: Diary
 ---
 
-![FirstPullRequest](/images/post_img/FirstPullRequest.png)
+![FirstPullRequest](/images/post_img/FirstPullrequest/MyFirstPullRequest.png)  
+[Dveamer`s GitHub](https://github.com/dveamer)  
 
-나의 첫 pull request를 [Spring Cloud Gateway](https://github.com/spring-cloud/spring-cloud-gateway) repository로 보냈다.  
-그리고 얼떨결에 contributor가 되어버렸다.  
+나의 첫 pull request를 보냈다.  
+그리고 얼떨결에 [Spring Cloud Gateway](https://github.com/spring-cloud/spring-cloud-gateway) contributor가 되어버렸다.  
 
 <!--more-->
 
@@ -25,7 +26,7 @@ Spring Cloud Gateway의 다른 기능들에 대해서 좀 더 알아보기 위�
 테스트를 통해 확인 후 바로 fork를 받고 수정해서 pull request를 보냈다.  
 의도한 것은 아닌데 pull request 번호도 1700번으로 참 예쁘게 받았다.  
 
-![PullRequest](/images/post_img/PullRequest.png)  
+![PullRequest](/images/post_img/FirstPullrequest/PullRequest.png)  
 
 [pull request #1700](https://github.com/spring-cloud/spring-cloud-gateway/pull/1700)  
 
@@ -40,7 +41,7 @@ Spring Cloud Gateway의 다른 기능들에 대해서 좀 더 알아보기 위�
 
 Commit한 내용은 굉장히 단순하다. 어쩌면 지금까지 contributor 중에서 가장 짧은 수정을 했을지도 모른다. 딱 3글자 수정했다.  
 
-![Commit](/images/post_img/Commit.png)  
+![Commit](/images/post_img/FirstPullrequest/Commit.png)  
 
 [commit](https://github.com/spring-cloud/spring-cloud-gateway/commit/dea0da56338f65488853edb24255f472fbfb6fd0)
 
