@@ -3,7 +3,7 @@ layout: diary
 title:  "나의 첫 Pull Request : Spring Cloud Gateway"
 date:   2020-05-05 00:00:00
 categories: Diary
-tags: Diary
+tags: Diary Spring
 ---
 
 ![FirstPullRequest](/images/post_img/FirstPullrequest/MyFirstPullRequest.png)  
