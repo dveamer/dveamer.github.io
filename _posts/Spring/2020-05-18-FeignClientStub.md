@@ -159,7 +159,7 @@ public interface CommentContract {
 }
 ~~~
 
-@FeignClient 라는 OpenFeign 관련 annotation이 사용됐습니다. OpenFeign에 대해 처음들어보셨다면 [부록 -OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
+@FeignClient 라는 OpenFeign 관련 annotation이 사용됐습니다. OpenFeign에 대해 처음들어보셨다면 [부록 - OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
 
 ## Contract Stub 추가 요청
 
@@ -391,8 +391,14 @@ Contract와 동일한 public method를 갖게되기 때문에 파라미터 타�
 
 
 ~~~java
+package com.dveamer.comment.web;
 
-...(skipped)
+import com.dveamer.contract.comment.ArticleCommentCountDto;
+import com.dveamer.contract.comment.CommentContract;
+import com.dveamer.contract.comment.CommentDto;
+import com.dveamer.contract.comment.ConditionDto;
+
+...(생략)
 
 @RestController
 public class CommentController implements CommentContract {
@@ -642,10 +648,10 @@ dependencies {
 ~~~java
 package com.dveamer.comment.web;
 
-import com.dveamer.comment.component.Article;
-import com.dveamer.comment.component.Comment;
-import com.dveamer.comment.component.CommentService;
-import com.dveamer.comment.component.ConditionVo;
+import com.dveamer.contract.comment.ArticleCommentCountDto;
+import com.dveamer.contract.comment.CommentContract;
+import com.dveamer.contract.comment.CommentDto;
+import com.dveamer.contract.comment.ConditionDto;
 
 ...(생략)
 
@@ -741,7 +747,7 @@ class CommentControllerTests {
 
 ## Provider 배포 
 
-제공자의 배포시에는 항상 contract test가 함께 진행되야 합니다.  
+제공자의 배포시에는 항상 contract test가 함께 진행되도록 CI/CD를 구성해야 합니다. 그리고 그 이후에 contract, contract stub도 REALEASE 버전으로 배포 될 수 있도록 해야 합니다.  
 
 배포가 완료되고 나면 아래 다이어그램처럼 소비자가 직접 HTTP call을 제공자에게 보낼 수 있게 됩니다.  
 
