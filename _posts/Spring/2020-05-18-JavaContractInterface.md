@@ -1,20 +1,21 @@
 ---
 layout: post
-title: "OpenFeign Cotract : 실행되는 Java Interface Contract 로 contract test, component test 해결하기"
+title: "Java Interface Contract : 컴파일, Unit Test 단계에서 Contract 체크 / OpenFeign을 이용한 개발속도 향상"
 date: 2020-05-18 00:00:00
-lastmod: 2020-05-18 00:00:00
+lastmod: 2020-05-24 00:00:00
 categories: BackEnd
 tags: BackEnd Spring MSA
 ---
 
-![API_contract_06](/images/post_img/API_contract_06.png){:class="imgTitle"}  
+![API_contract_08](/images/post_img/APIcontract/API_contract_08.png){:class="imgTitle"}  
 
 API contract를 실제 사용할 Java interface 코드로 작성합니다.  
-OpenFeign을 이용하기 때문에 작성된 API contract interface의 구현체가 컴파일시 자동생성되고 소비자(Consumer)는 HTTP call을 위한 구현을 하지 않아도 됩니다.  
 
 기존에 제공자(Provider)는 unit test단계에서 HTTP spec에 대한 feedback을 받을 수 있었지만 이제는 컴파일 단계에서 HTTP spec에 대한 feedback을 받게되기 때문에 개발 속도가 크게 향상 됩니다.  
 
 기존에 소비자(Consumer)가 테스트할 때 제공자(Provider)와 합의된 HTTP spec과 데이터(stub)에 대해 정상적으로 처리되는지 검증을 하는 단계가 component test이고 HTTP call을 이용해야만 했습니다. 이제는 HTTP spec에 대해서는 컴파일 단계에서 feedback을 받게되고 데이터(stub)에 대해서는 unit test에서 feedback을 받게 되기 때문에 개발 속도가 크게 향상 됩니다.  
+
+OpenFeign을 이용하기 때문에 작성된 API contract interface의 구현체가 컴파일시 자동생성되고 소비자(Consumer)는 HTTP call을 위한 구현을 하지 않아도 됩니다.  
 
 
 <!--more-->
@@ -45,7 +46,7 @@ OpenFeign이 반드시 필요한 것은 아니고 그 역할을 자체적으로 
 
 # Contract Interface 계층 추가
 
-![API_contract_04](/images/post_img/API_contract_04.png)  
+![API_contract_04](/images/post_img/APIcontract/API_contract_04.png)  
 
 댓글을 관리하는 comment 서비스가 있습니다.  
 그리고 comment 서비스는 댓글 정보만이 아니라 댓글이 어떤 글(article)에 달렸는지에 대한 정보도 함께 관리합니다.  
@@ -53,7 +54,7 @@ OpenFeign이 반드시 필요한 것은 아니고 그 역할을 자체적으로 
 Comment 서비스가 제공하는 API는 다른 여러 서비스들이 아래처럼 HTTP 호출을 할 수 있습니다.  
 위 이미지의 점선으로 표시된 화살표는 HTTP call을 의미합니다.  
 
-![API_contract_05](/images/post_img/API_contract_05.png)  
+![API_contract_05](/images/post_img/APIcontract/API_contract_05.png)  
 
 그런데 소비자와 제공자 사이에 contract-comment라는 인터페이스를 만들어 보겠습니다.  
 새롭게 소개된 contract-comment는 실제 Java interface 로써 jar 형태로 제공되며 소비자, 제공자 모두 사용합니다.  
@@ -86,7 +87,7 @@ Comment 서비스가 제공하는 API는 다른 여러 서비스들이 아래처
 
 # 협업 작업 과정
 
-![API_contract_09](/images/post_img/API_contract_09.png)  
+![API_contract_09](/images/post_img/APIcontract/API_contract_09.png)  
 
 Contract 계층은 개념적인 존재가 아니라 코드로 존재하는 실제 계층입니다.  
 즉, 그 코드는 생성되어야하고 보관되어야하고 관리되어야 합니다.  
@@ -425,7 +426,7 @@ Contract test가 성공하게 되면 contract, contract stub에 대한 Pull Reqe
 
 # Consumer 개발 진행
 
-![API_contract_07](/images/post_img/API_contract_07.png)  
+![API_contract_07](/images/post_img/APIcontract/API_contract_07.png)  
 
 필요한 API에 대한 contract, contract stub이 모두 Maven Repository에 배포되어 있다고 하면 소비자는 큰 노력없이 빠르고 쉽게 개발이 진행 가능합니다.  
 위의 다이어그램처럼 소비자 코드는 contract 의 구현체인 stub을 호출하게 됩니다. Java call만으로 테스트가 되기 때문에 stub server의 기동유무에 대해 신경쓸 필요도 없습니다.  
@@ -594,7 +595,7 @@ public class CommentContractStubWrapper extends CommentContractStub {
 
 ## Consumer 배포
 
-![API_contract_08](/images/post_img/API_contract_08.png)  
+![API_contract_08](/images/post_img/APIcontract/API_contract_08.png)  
 
 소비자 측에서는 제공자 측에서 배포가 완료되었는지를 체크 후 배포를 진행해야 합니다. 이를 위한 어떤 다른 장치가 필요할 수도 있습니다.  
 배포가 완료되고 나면 위의 다이어그램처럼 소비자 service가 HTTP call을 제공자에게 보낼 수 있게 됩니다. 이 때는 OpenFeign이 제공한 Contract interface의 구현체가 사용됩니다.  
@@ -602,7 +603,7 @@ public class CommentContractStubWrapper extends CommentContractStub {
 
 # Provider 개발 진행 
 
-![API_contract_06](/images/post_img/API_contract_06.png)  
+![API_contract_06](/images/post_img/APIcontract/API_contract_06.png)  
 
 
 Controller 작성과 그에 대한 unit test를 작성에 대해서 살펴 볼 것입니다.  
@@ -745,7 +746,7 @@ class CommentControllerTests {
 
 배포가 완료되고 나면 아래 다이어그램처럼 소비자가 직접 HTTP call을 제공자에게 보낼 수 있게 됩니다.  
 
-![API_contract_08](/images/post_img/API_contract_08.png)  
+![API_contract_08](/images/post_img/APIcontract/API_contract_08.png)  
 
 
 
