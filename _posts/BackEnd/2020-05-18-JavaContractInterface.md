@@ -143,7 +143,7 @@ Maintainer는 아래 사항들을 확인 후 pull request를 merge합니다.
 
 ![API_contract_14](/images/post_img/APIcontract/API_contract_14.png)  
 
-## Contract Interface 생성
+## Contract Interface 추가 
 
 아래 interface 코드는 contract-comment jar에 포함될 ```CommentContract.java``` 입니다.  
 
@@ -194,7 +194,7 @@ Contract stub을 만들기 위해 아래 명령어로 contract 를 패키징 합
 contract-comment$ gradle install 
 ~~~
 
-## Contract Stub 생성
+## Contract Stub 추가
 
 해당 샘플 코드는 [https://github.com/dveamer/contract/tree/master/contract-comment-stub](https://github.com/dveamer/contract/tree/master/contract-comment-stub)에서 확인 가능합니다.  
 
@@ -211,7 +211,7 @@ dependencies {
 
   ...(생략)
 
-	implementation 'com.dveamer:contract-comment:0.0.1'
+    implementation 'com.dveamer:contract-comment:0.0.1'
 }
 
 ...(생략)
@@ -359,37 +359,37 @@ import feign.jackson.JacksonEncoder;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CommentContractTests {
 
-	Logger logger = LoggerFactory.getLogger(this.getClass());
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	private CommentContract commentContract;
+    private CommentContract commentContract;
 
-	@BeforeAll
-	void setup() {
-    //commentContract = new CommentContractStub(); // 테스트 코드 작성시에만 사용
+    @BeforeAll
+    void setup() {
+        //commentContract = new CommentContractStub(); // 테스트 코드 작성시에만 사용
 
-		Properties properties = System.getProperties();
-		String url = properties.getProperty("api.contract.comment.url");
-		commentContract = Feign.builder()
-				.contract(new SpringMvcContract())
-				.encoder(new JacksonEncoder())
-				.decoder(new JacksonDecoder())
-				.target(CommentContract.class, url);
-	}
+        Properties properties = System.getProperties();
+        String url = properties.getProperty("api.contract.comment.url");
+        commentContract = Feign.builder()
+                .contract(new SpringMvcContract())
+                .encoder(new JacksonEncoder())
+                .decoder(new JacksonDecoder())
+                .target(CommentContract.class, url);
+    }
 
-	@Test
-	void loadCommentsByArticleIdTest() {
-		List<CommentDto> expectedList = new CommentContractStub().loadCommentsByArticleId(ArticleFixture.articleId1());
-		List<CommentDto> actualList = commentContract.loadCommentsByArticleId(ArticleFixture.articleId1());
-		assertThat(actualList, is(samePropertyValuesAs(expectedList)));
-	}
+    @Test
+    void loadCommentsByArticleIdTest() {
+        List<CommentDto> expectedList = new CommentContractStub().loadCommentsByArticleId(ArticleFixture.articleId1());
+        List<CommentDto> actualList = commentContract.loadCommentsByArticleId(ArticleFixture.articleId1());
+        assertThat(actualList, is(samePropertyValuesAs(expectedList)));
+    }
 
-	@Test
-	void loadArticleIdHavingNumerousCommentsTest() {
-		ConditionDto condition = ConditionFixture.conditionDto();
-		List<ArticleCommentCountDto> expectedList = ArticleCommentCountFixture.articleCommentCountList(condition.getBiggerThan(), condition.getBeforeDays());
-		List<ArticleCommentCountDto> actualList = commentContract.loadArticleIdHavingNumerousComments(condition);
-		assertThat(actualList, is(samePropertyValuesAs(expectedList)));
-	}
+    @Test
+    void loadArticleIdHavingNumerousCommentsTest() {
+        ConditionDto condition = ConditionFixture.conditionDto();
+        List<ArticleCommentCountDto> expectedList = ArticleCommentCountFixture.articleCommentCountList(condition.getBiggerThan(), condition.getBeforeDays());
+        List<ArticleCommentCountDto> actualList = commentContract.loadArticleIdHavingNumerousComments(condition);
+        assertThat(actualList, is(samePropertyValuesAs(expectedList)));
+    }
 
 }
 
@@ -401,10 +401,10 @@ class CommentContractTests {
 ```setup()``` 메소드에 주석으로 남겨둔 곳이 있습니다. 이 unit 테스트 작성을 시작할 때는 아래와 같이 ```setup()``` 메소드를 구성합니다.  
 
 ~~~java
-	@BeforeAll
-	void setup() {
-    commentContract = new CommentContractStub(); // 테스트 코드 작성시에만 사용
-	}
+    @BeforeAll
+    void setup() {
+        commentContract = new CommentContractStub(); // 테스트 코드 작성시에만 사용
+    }
 ~~~
 
 그리고 테스트를 실행시키면 재미있게도 예상결과와 실제결과 모두 stub을 통한 결과이기 때문에 항상 참일 수 밖에 없습니다.  
@@ -414,16 +414,16 @@ class CommentContractTests {
 
 ~~~java
 
-	@BeforeAll
-	void setup() {
-		Properties properties = System.getProperties();
-		String url = properties.getProperty("api.contract.comment.url");
-		commentContract = Feign.builder()
-				.contract(new SpringMvcContract())
-				.encoder(new JacksonEncoder())
-				.decoder(new JacksonDecoder())
-				.target(CommentContract.class, url);
-	}
+    @BeforeAll
+    void setup() {
+        Properties properties = System.getProperties();
+        String url = properties.getProperty("api.contract.comment.url");
+        commentContract = Feign.builder()
+                .contract(new SpringMvcContract())
+                .encoder(new JacksonEncoder())
+                .decoder(new JacksonDecoder())
+                .target(CommentContract.class, url);
+    }
 ~~~
 
 그리고 테스트를 실행시켜보면 HTTP 커넥션이 안되서 에러가나는 것을 확인할 수 있습니다.  
@@ -553,9 +553,9 @@ dependencies {
 
   ...(생략)
 
-	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-	implementation 'com.dveamer:contract-comment:0.0.1'
-	testImplementation 'com.dveamer:contract-comment-stub:0.0.1'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'com.dveamer:contract-comment:0.0.1'
+    testImplementation 'com.dveamer:contract-comment-stub:0.0.1'
 
 }
 
@@ -621,32 +621,32 @@ import com.dveamer.contract.comment.stub.ConditionFixture;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ArticleServiceTests {
 
-	private CommentContractStubWrapper commentContract;
-	private ArticleService articleService;
+    private CommentContractStubWrapper commentContract;
+    private ArticleService articleService;
 
-	@BeforeAll
-	public void setup() {
-		commentContract= new CommentContractStubWrapper();
-		articleService = new ArticleServiceImpl(commentContract);
-	}
+    @BeforeAll
+    public void setup() {
+        commentContract= new CommentContractStubWrapper();
+        articleService = new ArticleServiceImpl(commentContract);
+    }
 
-	@Test
-	public void loadCountOfComments_success() throws Exception {
-		int expectedValue = new CommentContractStub().loadCommentsByArticleId(ArticleFixture.articleId1()).size();
-		int actualValue = articleService.loadCountOfComments(ArticleFixture.articleId1());
-		assertThat(actualValue, equalTo(expectedValue));
+    @Test
+    public void loadCountOfComments_success() throws Exception {
+        int expectedValue = new CommentContractStub().loadCommentsByArticleId(ArticleFixture.articleId1()).size();
+        int actualValue = articleService.loadCountOfComments(ArticleFixture.articleId1());
+        assertThat(actualValue, equalTo(expectedValue));
 
-		assertThat(commentContract.loadCommentsByArticleId_wasCalled(), equalTo(true));
-	}
+        assertThat(commentContract.loadCommentsByArticleId_wasCalled(), equalTo(true));
+    }
 
-	@Test
-	public void loadArticleIdHavingNumerousComments_success() throws Exception {
-		int expectedValue = new CommentContractStub().loadArticleIdHavingNumerousComments(ConditionFixture.conditionDto()).size();
-		int actualValue = articleService.loadCountOfFamousArticle();
-		assertThat(actualValue, equalTo(expectedValue));
+    @Test
+    public void loadArticleIdHavingNumerousComments_success() throws Exception {
+        int expectedValue = new CommentContractStub().loadArticleIdHavingNumerousComments(ConditionFixture.conditionDto()).size();
+        int actualValue = articleService.loadCountOfFamousArticle();
+        assertThat(actualValue, equalTo(expectedValue));
 
-		assertThat(commentContract.loadArticleIdHavingNumerousComments_wasCalled(), equalTo(true));
-	}
+        assertThat(commentContract.loadArticleIdHavingNumerousComments_wasCalled(), equalTo(true));
+    }
 
 }
 ~~~
@@ -724,8 +724,8 @@ dependencies {
 
   ...(생략)
 
-	implementation 'com.dveamer:contract-comment:0.0.1'
-	testImplementation 'com.dveamer:contract-comment-stub:0.0.1'
+    implementation 'com.dveamer:contract-comment:0.0.1'
+    testImplementation 'com.dveamer:contract-comment-stub:0.0.1'
 
 }
 
@@ -799,40 +799,40 @@ import com.dveamer.contract.comment.stub.ConditionFixture;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CommentControllerTests {
 
-	private MockMvc mockMvc;
-	private CommentServiceStub commentService;
+    private MockMvc mockMvc;
+    private CommentServiceStub commentService;
 
-	@BeforeAll
-	public void setup() {
-		commentService= new CommentServiceStub();
-		mockMvc = MockMvcBuilders.standaloneSetup(new CommentController(commentService)).build();
-	}
+    @BeforeAll
+    public void setup() {
+        commentService= new CommentServiceStub();
+        mockMvc = MockMvcBuilders.standaloneSetup(new CommentController(commentService)).build();
+    }
 
 
-	@Test
-	public void loadCommentsByArticleId_success() throws Exception {
-		List<CommentDto> expectedCommentDtoList = new CommentContractStub().loadCommentsByArticleId(ArticleFixture.articleId1());
-		mockMvc.perform(get("/articles/{articleId}/comments", ArticleFixture.articleId1()))
-				.andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-				.andExpect(content().string(JsonConverterUtil.toJson(expectedCommentDtoList)));
+    @Test
+    public void loadCommentsByArticleId_success() throws Exception {
+        List<CommentDto> expectedCommentDtoList = new CommentContractStub().loadCommentsByArticleId(ArticleFixture.articleId1());
+        mockMvc.perform(get("/articles/{articleId}/comments", ArticleFixture.articleId1()))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().string(JsonConverterUtil.toJson(expectedCommentDtoList)));
 
-		assertThat(commentService.loadCommentsByArticleId_wasCalled(), equalTo(true));
-	}
+        assertThat(commentService.loadCommentsByArticleId_wasCalled(), equalTo(true));
+    }
 
-	@Test
-	public void loadArticleIdHavingNumerousComments_success() throws Exception {
-		ConditionDto condition = ConditionFixture.conditionDto();
-		List<ArticleCommentCountDto> expectedArticleCommentCountDtoList = new CommentContractStub().loadArticleIdHavingNumerousComments(condition);
-		mockMvc.perform(get("/articles")
-							.queryParam("beforeDays", Integer.toString(condition.getBeforeDays()))
-							.queryParam("biggerThan", Integer.toString(condition.getBiggerThan())))
-				.andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-				.andExpect(content().string(JsonConverterUtil.toJson(expectedArticleCommentCountDtoList)));
+    @Test
+    public void loadArticleIdHavingNumerousComments_success() throws Exception {
+        ConditionDto condition = ConditionFixture.conditionDto();
+        List<ArticleCommentCountDto> expectedArticleCommentCountDtoList = new CommentContractStub().loadArticleIdHavingNumerousComments(condition);
+        mockMvc.perform(get("/articles")
+                            .queryParam("beforeDays", Integer.toString(condition.getBeforeDays()))
+                            .queryParam("biggerThan", Integer.toString(condition.getBiggerThan())))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().string(JsonConverterUtil.toJson(expectedArticleCommentCountDtoList)));
 
-		assertThat(commentService.loadArticleIdHavingNumerousComments_wasCalled(), equalTo(true));
-	}
+        assertThat(commentService.loadArticleIdHavingNumerousComments_wasCalled(), equalTo(true));
+    }
 
 
 }
