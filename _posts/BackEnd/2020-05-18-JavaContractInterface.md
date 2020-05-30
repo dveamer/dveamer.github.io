@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Java Interface Contract : 컴파일, Unit Test 단계에서 Contract 체크 / OpenFeign을 이용한 개발속도 향상"
+title: "Java Interface Contract : MSA Contract Test에 대한 개선방안"
 date: 2020-05-18 00:00:00
 lastmod: 2020-05-24 00:00:00
 categories: BackEnd
@@ -18,7 +18,7 @@ API contract를 실제 사용할 Java interface 코드로 작성합니다.
 OpenFeign을 이용하기 때문에 작성된 API contract interface의 구현체가 컴파일시 자동생성되고 소비자(Consumer)는 HTTP call을 위한 구현을 하지 않아도 됩니다.  
 
 
-<!--more-->
+<!--more--> 
 
 서비스간의 contract라는 개념을 충족시키는 contract interface라는 코드 형태의 실물 계층을 도입할 것입니다.  
 
@@ -49,7 +49,7 @@ Contract interface의 장점을 먼저 소개하고
 제공자는 contrat interface의 구현체인 controller를 만들어서 수신할 것입니다.  
 소비자가 가진 contract interface가 제공자가 가진 contract interface를 HTTP call 하겠지만  
 그 HTTP call은 contract interface가 제공된 시점에 API 계약에 대한 HTTP spec은 이미 검증되어있기 때문에  
-소비자는 마치 Java call을 구현하면 제공자의 controller에 안전하게 메시지가 전달됩니다.  
+소비자는 Java call만 하면 제공자의 controller에 안전하게 메시지가 전달됩니다.  
 그래서 아래 이미지에서는 HTTP call을 의미하는 점선의 화살표가 없고 Java call을 의미하는 실선의 화살표를 그려넣었습니다.  
 
 이 글에서 계속해서 HTTP call은 점선으로 Java call은 실선으로 표시가 될 것이니 기억해주시기 바랍니다.  
@@ -84,7 +84,7 @@ Contract interface의 하위 계층인 제공자는 API를 임의로 수정시 �
 "지금도 개발하기 힘든데 더 힘들어 지고 개발속도가 너무 느려지는 것 아니냐?" 라고 생각할 수 있습니다.  
 하지만 현재 unit test, component test, contract test 등을 하고 있다면  
 작업량이 늘어나지 않습니다. 문서 작업도 없고 개발에 필요한 Java 소스 코드만 작성만 합니다. 오히려 작업량은 줄어듭니다.  
-게다가 컴파일 단계에서 feedback을 받게 되기 떄문에 작업 속도도 빠르고 일의 양도 줄어듭니다.  
+게다가 컴파일 단계에서 feedback을 받게 되기 때문에 작업 속도도 빠르고 일의 양도 줄어듭니다.  
 
 만약에 MSA를 하면서 unit test, component test, contract test 등의 테스트를 안하고 있다면  
 문제가 생겨도 들어나지 않을 뿐이지 나중에 어떤 문제가 생길지 모르는 상황입니다.  
@@ -103,30 +103,30 @@ Contract interface의 하위 계층인 제공자는 API를 임의로 수정시 �
 
 ## 단점 
 
-이글에서 설명하는 내용의 장점을 최대한 취하려면 Java, Spring을 사용해야 합니다.  
-결국 MSA의 장점인 polyglot에 악영향을 줍니다.  
+아키텍트 관점에서 특정 언어, 프레임워크에 의존하는 설계는 좋지 않습니다.  
 
-또한 아키텍트 관점에서 특정 언어, 프레임워크에 의존하는 설계는 좋지 않습니다.  
-Java, Spring 그리고 Java contract interface를 이용해서 장점을 취했다면  
-다른 언어, 프레임워크로 바꾸기 위해서는 그 장점들을 일부분 포기해야할 수 있습니다.  
+근데 이글에서 설명하는 내용의 장점을 최대한 취하려면 Java, Spring을 사용해야 합니다. 이 점이 단점입니다.  
+결국 MSA의 polyglot이 가능하다는 특성에도 악영향을 줍니다.  
+  
+다른 언어, 프레임워크를 사용하기 위해서는 그 장점들을 일부분 포기해야할 수 있습니다.  
 
-하지만 모든 마이크로 서비스가 Java, Spring을 사용해야만하는 것은 아닙니다.  
-이 과정에서 생성되는 stub 서버, contract test는 소비자, 제공자가 Java, Spring 이 아니더라도 활용할 수 있기 때문에  
-장점을 최대한 취할 수는 없지만 타 언어를 사용하는 서비스들도 부분적으로 장점을 취할 수 있습니다.  
+그렇다고 모든 마이크로 서비스가 통일되게 Java, Spring을 사용해야하는 것은 아닙니다.  
+타 언어를 사용하는 소비자 제공자도 stub 서버, contract test는 활용할 수 있기 때문에  
+장점을 최대한 취할 수는 없지만 서비스간의 contract 에는 참여가 가능하고 부분적으로 장점을 취할 수 있습니다.  
 
 현재 운영 중인 대부분의 마이크로 서비스가 Java, Spring을 사용한다면 충분히 유용하게 활용할 수 있는 방법입니다.  
 
 # Contract 생성 과정 
 
+이 글에서는 contract를 소비자가 작성하냐, 제공자가 작성하냐 등의 Consumer-Driven-Test 와 Provider-Driven-Test 에 대한 개념은 다루지 않습니다. 기술적으로는 두 방법 모두 수용 가능합니다.  
+
 Contract 계층은 개념적인 존재가 아니라 코드로 존재하는 실제 계층입니다.  
 즉, 그 코드는 생성되어야하고 보관되어야하고 관리되어야 합니다.  
-
-이 글에서는 Consumer-Driven-Test 와 Provider-Driven-Test 에 대한 개념은 다루지 않습니다. 기술적으로는 두 방법 모두 수용 가능합니다.  
 
 일단 contract, contract stub을 위한 형상관리 repository가 필요합니다.  
 소비자, 제공자 서비스와는 별도의 repository로 구성합니다. 그리고 소비자, 제공자가 아닌 maintainer가 필요합니다.  
 
-예를들어, 소비자가 신규 API 추가 요청을 하고 제공자와 협의를 하는 과정을 생각해보겠습니다.  
+예를들어, 소비자가 신규 API 추가 요청을 하고 제공자와 contract를 만들어가는 과정을 생각해보겠습니다.  
 
 먼저 소비자가 contract, contract stub 코드를 작성해서 pull resquest를 보냅니다.  
 그러면 code review 하듯이 소비자와 제공자가 contract, contract stub 코드를 다듬어 나갈 수도 있고  
@@ -134,12 +134,12 @@ Contract 계층은 개념적인 존재가 아니라 코드로 존재하는 실�
 
 Maintainer는 아래 사항들을 확인 후 pull request를 merge합니다.  
 
-  * API 변경 건 존재 여부 체크 (추가/삭제만 허용)
+  * API 변경 건 존재 여부 체크 (추가만 허용, 삭제는 더 엄밀히 검토 후 허용)
   * Contract test의 정상 수행 여부
   * Contract, contract stub 의 버전 증가여부, 버전 일치여부
 
 그 뒤 maintainer는 contract, contact stub에 대한 jar를 각각 만들어서 원격 Maven repository에 배포 합니다.  
-참고로 앞서 maintainer가 체크, 진행하는 과정은 CI/CD 에서 자동화처리가 가능한 영역입니다.  
+참고로 앞서 maintainer가 체크, 진행하는 과정은 대부분 CI/CD 에서 자동화처리가 가능한 영역입니다.  
 
 ![API_contract_14](/images/post_img/APIcontract/API_contract_14.png)  
 
@@ -147,8 +147,7 @@ Maintainer는 아래 사항들을 확인 후 pull request를 merge합니다.
 
 아래 interface 코드는 contract-comment jar에 포함될 ```CommentContract.java``` 입니다.  
 
-OpenFeign 관련 설정들을 함께 포함하고 있습니다. 하지만 어쩃든 Java interface이기 때문에 소비자는 Java call로 해당 method를 호출 할 수 있습니다.  
-OpenFeign이 어떻게 활용 되는지는 추후에 다시 다루게 됩니다.  
+OpenFeign 관련 설정들을 함께 포함하고 있습니다. 하지만 어쨋든 Java interface이기 때문에 소비자는 Java call로 해당 method를 호출 할 수 있습니다. OpenFeign이 어떻게 활용 되는지는 추후에 다시 다루게 됩니다.  
 
 또한 CommentDto, ArticleCommentCountDto 같은 DTO(Data Tracnfer Object)도 보입니다. DTO 역시 contract-comment jar가 포함하고 있기 때문에 소비자, 제공자 모두 DTO를 새로 만들 필요 없으며 둘 사이의 DTO 불일치는 발생할 수 없습니다.  
 
@@ -179,7 +178,7 @@ public interface CommentContract {
 ~~~
 
 특이한 점으로 ```@SpringQueryMap``` 이라는 OpenFeign에서 제공하는 annotation이 loadArticleIdHavingNumerousComments의 conditionDto 파라미터에 적용됐습니다.  
-HTTP spec을 정의하는 annotation은 모두 spring annotaion을 사용하지만 유일하게 예외인 ```@SpringQueryMap```은 query-string 으로 전달될 파라미터들을 의미합니다.  
+HTTP spec을 정의하는 annotation은 모두 Spring annotaion을 사용하지만 유일하게 예외인 ```@SpringQueryMap```가 사용됐습니다. ```@SpringQueryMap```은 query-string 으로 전달될 파라미터들을 의미합니다.  
 
 @FeignClient 라는 OpenFeign 관련 annotation이 사용됐습니다. OpenFeign에 대해 처음들어보셨다면 [부록 -OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
 
