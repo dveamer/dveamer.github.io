@@ -7,7 +7,7 @@ categories: BackEnd
 tags: BackEnd Spring MSA
 ---
 
-![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)
+![API_contract_15](/images/post_img/APIcontract/API_contract_15.png){:class="imgTitle"}  
 
 API contract를 실제 사용할 Java interface 코드로 작성합니다.  
 
@@ -443,10 +443,11 @@ com.dveamer.contract.comment.CommentContractTests > loadArticleIdHavingNumerousC
 
 ~~~
 
-여전히 테스트의 예상결과는 stub이지만 실행결과는 HTTP call을 통한 응답으로 바꼈습니다.  
-Stub과 contract test를 일치시킴으로써 소비자와 제공자가 동일한 테스트 데이터로 개발해나감을 확신할 수 있습니다.  
+테스트 케이스가 HTTP call을 보내게 됨으로써 contract test를 하기 위한 준비가 모두 끝났습니다.  
 
-이제 contract test 혹은 검증을 하기 위한 준비가 모두 끝났습니다.  
+
+여기서 주의깊게 봐야할 점은, 여전히 테스트의 예상결과는 stub이지만 실행결과는 HTTP call의 응답이라는 점입니다.  
+Stub과 contract test를 일치시킴으로써 소비자와 제공자가 동일한 테스트 데이터로 개발해나감을 확신할 수 있습니다.  
 
 
 ## Contract Test
