@@ -7,25 +7,24 @@ categories: BackEnd
 tags: BackEnd Spring MSA
 ---
 
-![API_contract_15](/images/post_img/APIcontract/API_contract_15.png){:class="imgTitle"}  
+![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
-API contract를 실제 사용할 Java interface 코드로 작성합니다.  
+API contract 개념을 충족시키는 contract interface 계층을 도입합니다.  
+이것은 실제 사용할 Java 코드로 작성되며 기존 contract 검증 방법보다 더 빠르고 명확하게 feedback을 제공합니다.  
 
-기존에 제공자(Provider)는 unit test단계에서 HTTP spec에 대한 feedback을 받을 수 있었지만 이제는 컴파일 단계에서 HTTP spec에 대한 feedback을 받게되기 때문에 개발 속도가 크게 향상 됩니다.  
+제공자(Provider)는 unit test, 소비자(Consumer)는 component test 단계에서 받을 수 있었던 HTTP spec에 대한 feedback을 이제는 컴파일 단계에서 받을 수 있습니다.  
+말이 컴파일 단계지만 IDE를 사용한다면 오타라도 나면 바로 feedback을 준다는 이야기입니다.  
 
-기존에 소비자(Consumer)가 테스트할 때 제공자(Provider)와 합의된 HTTP spec과 데이터(stub)에 대해 정상적으로 처리되는지 검증을 하는 단계가 component test이고 HTTP call을 이용해야만 했습니다. 이제는 HTTP spec에 대해서는 컴파일 단계에서 feedback을 받게되고 데이터(stub)에 대해서는 unit test에서 feedback을 받게 되기 때문에 개발 속도가 크게 향상 됩니다.  
+컴파일 단계에서 알려주기 때문에 HTTP spec 관련된 오류를 담은 코드를 작성할 일이 없어지고 오류를 찾기 위한 디버깅 시간이 없어지기 때문에 개발속도가 크게 향상 됩니다.  
 
-OpenFeign을 이용하기 때문에 작성된 API contract interface의 구현체가 컴파일시 자동생성되고 소비자(Consumer)는 HTTP call을 위한 구현을 하지 않아도 됩니다.  
-
+그리고 소비자(Consumer)는 HTTP call을 위한 구현하지 않고 단순히 Java call만으로 제공자(Provider)의 API를 HTTP call로 정확하게 호출 할 수 있습니다.  
 
 <!--more--> 
 
-서비스간의 contract라는 개념을 충족시키는 contract interface라는 코드 형태의 실물 계층을 도입할 것입니다.  
-
-Contract interface의 장점을 먼저 소개하고  
+Contract interface의 장점을 좀더 상세하게 소개하고  
 샘플코드와 함께 contract interface를 설계, 검증하고 테스트하는 내용들을 살펴보겠습니다.  
 
-참고로 contract, component 테스트를 위해 제가 직접 고민해서 설계한 방법입니다.  
+앞으로 설명드릴 내용은 제가 직접 고민해서 설계한 방법입니다.  
 일반적으로 사용되는 용어들과 약간의 충돌이 있을 수 있습니다. 헷갈리게 표현된 용어가 있다면 양해 부탁 드리고 의견 주시기 바랍니다.  
 
 이 글에서 사용되는 샘플코드는 [https://github.com/dveamer/contract](https://github.com/dveamer/contract)에서 확인하실 수 있습니다.  
@@ -42,7 +41,7 @@ Contract interface의 장점을 먼저 소개하고
 
 기존에 contract는 개념적인 존재였습니다. 혹은 contract test를 통해 contract라는 것이 실제 존재하는 것 처럼 해보려고 했습니다.  
 
-이 글에서 설명하는 내용은 Java contract interface라는 코드 형태의 실물을 contract로 사용합니다.  
+이 글에서 설명하는 내용은 Java contract interface라는 실제 Java 코드를 형태의 실물을 contract로 사용합니다.  
 소비자, 제공자 모두 이 contract interface에 의존성을 갖게 됩니다.  
 
 소비자는 contract interface를 Java call을 하게 할 것이고  
@@ -71,9 +70,7 @@ Contract interface의 장점을 먼저 소개하고
 
 소비자, 제공자 사이에 contract라는 계층이 추가되어 contract가 소비자, 제공자 보다 더 상위계층으로 구성되게 됩니다.  
 
-제공자 입장에서는 쓸데 없는 의존성이 추가된 것으로 보이지만  
-전체 서비스의 입장에서는 서비스간의 계약관계가 제공자의 기능보다 더 중요합니다.  
-사용자에게 가치를 제공해주는 것은 단일 서비스가 아닌 서비스간 협력에 의해서 이뤄집니다.  
+제공자 입장에서는 쓸데 없는 의존성이 추가된 것으로 보이지만 사용자에게 가치를 제공해주는 것은 단일 서비스가 아닌 서비스간 협력에 의해서 이뤄지기 때문에 전체 서비스의 입장에서는 서비스간의 계약관계가 제공자의 기능보다 더 중요합니다.  
 일반적인 MSA라면 contract interface 계층이 더 상위계층으로 설계되는 것이 맞습니다.  
 
 Contract interface의 하위 계층인 제공자는 API를 임의로 수정시 컴파일 단계에서 에러가 나게 됩니다.  
@@ -86,7 +83,7 @@ Contract interface의 하위 계층인 제공자는 API를 임의로 수정시 �
 작업량이 늘어나지 않습니다. 문서 작업도 없고 개발에 필요한 Java 소스 코드만 작성만 합니다. 오히려 작업량은 줄어듭니다.  
 게다가 컴파일 단계에서 feedback을 받게 되기 때문에 작업 속도도 빠르고 일의 양도 줄어듭니다.  
 
-만약에 MSA를 하면서 unit test, component test, contract test 등의 테스트를 안하고 있다면  
+만약에 MSA를 하면서 unit test, component test, contract test 등의 테스트를 하지 않고 있다면  
 문제가 생겨도 들어나지 않을 뿐이지 나중에 어떤 문제가 생길지 모르는 상황입니다.  
 결과적으로는 개발속도가 엄청나게 떨어지는 상황이 생기게 됩니다.  
 
@@ -103,14 +100,14 @@ Contract interface의 하위 계층인 제공자는 API를 임의로 수정시 �
 
 ## 단점 
 
-아키텍트 관점에서 특정 언어, 프레임워크에 의존하는 설계는 좋지 않습니다.  
+아키텍트 관점에서 특정 언어, 특정 프레임워크에 종속되는 설계는 좋지 않습니다.  
 
 근데 이글에서 설명하는 내용의 장점을 최대한 취하려면 Java, Spring을 사용해야 합니다. 이 점이 단점입니다.  
 결국 MSA의 polyglot이 가능하다는 특성에도 악영향을 줍니다.  
   
 다른 언어, 프레임워크를 사용하기 위해서는 그 장점들을 일부분 포기해야할 수 있습니다.  
 
-그렇다고 모든 마이크로 서비스가 통일되게 Java, Spring을 사용해야하는 것은 아닙니다.  
+하지만 그렇다고 모든 마이크로 서비스가 Java, Spring을 사용해야만 적용할 수 있는 것은 아닙니다.  
 타 언어를 사용하는 소비자 제공자도 stub 서버, contract test는 활용할 수 있기 때문에  
 장점을 최대한 취할 수는 없지만 서비스간의 contract 에는 참여가 가능하고 부분적으로 장점을 취할 수 있습니다.  
 
@@ -118,7 +115,7 @@ Contract interface의 하위 계층인 제공자는 API를 임의로 수정시 �
 
 # Contract 생성 과정 
 
-이 글에서는 contract를 소비자가 작성하냐, 제공자가 작성하냐 등의 Consumer-Driven-Test 와 Provider-Driven-Test 에 대한 개념은 다루지 않습니다. 기술적으로는 두 방법 모두 수용 가능합니다.  
+이 글에서는 Consumer-Driven-Testing / Provider-Driven-Testing 와 같은 누가 contract를 작성해야하는지에 대한 이야기는 하지 않습니다. 기술적으로는 두 방법 모두 수용 가능합니다.  
 
 Contract 계층은 개념적인 존재가 아니라 코드로 존재하는 실제 계층입니다.  
 즉, 그 코드는 생성되어야하고 보관되어야하고 관리되어야 합니다.  
@@ -475,12 +472,10 @@ Contract test 때 점검되는 사항은 2가지 입니다.
 
 ### Contract Test 수행
 
-Contract stub의 stub server를 기동시키고 contract stub의 contract test 코드를 실행시킬 것입니다.  
-현재는 제공자의 API 가 아니라 stub server의 API를 호출할 것입니다.  
-그 테스트 결과가 성공이라면 contract test 코드와 stub server의 API 가 http spec 그리고 테스트 케이스를 동일하게 갖췄다는 것이 확인됩니다.  
+Stub server를 기동시키고 contract test 코드를 실행시켜서 stub server의 API를 호출할 것입니다.  
+현재는 stub server의 API를 호출해서 contract test 코드와 stub server의 API가 http spec, 테스트 케이스를 동일하게 갖췄다는 것을 확인하는 것입니다.  
 
-소비자는 stub server를 가지고 테스트를 진행하고  
-제공자는 contract test를 가지고 테스트를 진행하게 됩니다.  
+개발을 진행하면서 소비자는 stub server를 가지고 테스트를 진행하고 제공자는 contract test를 가지고 테스트를 진행하게 됩니다.  
 서로 교류없이 각자 테스트를 진행하더라도 stub server와 contract test 간의 불일치가 없음을 확인했기 때문에  
 소비자와 제공자 사이에서도 불일치가 발생하지 않을 것이라는 확신을 할 수 있습니다.  
 
@@ -565,12 +560,9 @@ dependencies {
 
 ## Service Implementation In Consumer
 
-소비자는 CommentContract를 사용만 하면 됩니다. 원래는 CommentContract의 구현체를 직접 작성해야 되겠지만 OpenFeign을 사용하기 때문에 그 구현체가 컴파일시에 자동으로 생성됩니다.  
-실제로 동작시켜보면 HTTP call을 제공자에게 보내는 것을 확인할 수 있습니다.  
+소비자는 CommentContract를 호출만 하면 됩니다. 원래는 CommentContract가 Java interface이기 때문에 구현체를 직접 작성해야 하지만 OpenFeign을 사용해서 컴파일시에 자동으로 구현체를 생성했습니다. 실제로 동작시켜보면 HTTP call을 제공자에게 보내는 것을 확인할 수 있습니다.  
 
-기존에는 계약단계에서 결정된 API spec을 기준으로 HTTP call을 위한 구현체를 소비자가 직접 작성해야했습니다.  
-하지만 이제는 탄탄하게 점검되어 제공되는 contract를 호출하는 것만으로도 완료가 됩니다.  
-
+기존에는 계약단계에서 결정된 API spec을 기준으로 HTTP call을 위한 구현체를 소비자가 직접 작성해야했습니다. 작성도 간단하지않을 뿐더러 contract와 일치하게 작성했는지 확인하기 위해 stub server 띄우고 몇차례 테스트가 동반되는 과정입니다. 하지만 이제는 탄탄하게 점검되어 제공되는 contract를 호출하는 것만으로도 완료가 됩니다.  
 
 ~~~java
 package com.dveamer.article.component;
@@ -603,6 +595,7 @@ public class ArticleServiceImpl implements ArticleService {
 }
 ~~~
 
+그래도 뭔가 확인 작업이 필요할 것 같으신가요? 개발하시다가 뭔가 오타를 내서 IDE에서 빨간줄로 오류를 표시해주고 있는 상황이 아니라면 더 이상 확인할 것도 확인할 수 있는 것도 없습니다.  
 
 ## Unit Test In Consumer
 
@@ -651,6 +644,9 @@ class ArticleServiceTests {
 }
 ~~~
 
+
+CommentContractStubWrapper는 service 구현체에 대한 unit test 과정에서 wasCalled 체크를 위해서 CommentContractStub 를 감싼 stub입니다.  
+응답에 대한 내용은 CommentContractStub이 모두 제공하기 때문에 CommentContractStubWrapper는 wasCalled에 대한 내용만 담고 있으면 됩니다.  
 
 ~~~java
 package com.dveamer.article.component;
