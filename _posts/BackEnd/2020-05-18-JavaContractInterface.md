@@ -644,14 +644,14 @@ class ArticleServiceTests {
 }
 ~~~
 
-
-CommentContractStubWrapper는 service 구현체에 대한 unit test 과정에서 wasCalled 체크를 위해서 CommentContractStub 를 감싼 stub입니다.  
+Unit test 과정에서 wasCalled 체크를 위해 CommentContractStub를 직접 사용하지 않고 CommentContractStubWrapper로 감싸서 사용했습니다.  
 응답에 대한 내용은 CommentContractStub이 모두 제공하기 때문에 CommentContractStubWrapper는 wasCalled에 대한 내용만 담고 있으면 됩니다.  
 
 ~~~java
 package com.dveamer.article.component;
 
 import com.dveamer.contract.comment.ArticleCommentCountDto;
+import com.dveamer.contract.comment.CommentContract;
 import com.dveamer.contract.comment.CommentDto;
 import com.dveamer.contract.comment.ConditionDto;
 import com.dveamer.contract.comment.stub.CommentContractStub;
@@ -659,10 +659,16 @@ import com.dveamer.contract.comment.stub.ConditionFixture;
 
 import java.util.List;
 
-public class CommentContractStubWrapper extends CommentContractStub {
+public class CommentContractStubWrapper implements CommentContract  {
+
+    private final CommentContract commentContract;
 
     private boolean loadCommentsByArticleId_wasCalled = false;
     private boolean loadArticleIdHavingNumerousComments_wasCalled = false;
+
+    CommentContractStubWrapper() {
+        commentContract = new CommentContractStub();
+    }
 
     public boolean loadCommentsByArticleId_wasCalled() {
         return loadCommentsByArticleId_wasCalled;
@@ -675,13 +681,13 @@ public class CommentContractStubWrapper extends CommentContractStub {
     @Override
     public List<CommentDto> loadCommentsByArticleId(String articleId) {
         loadCommentsByArticleId_wasCalled = true;
-        return super.loadCommentsByArticleId(articleId);
+        return commentContract.loadCommentsByArticleId(articleId);
     }
 
     @Override
     public List<ArticleCommentCountDto> loadArticleIdHavingNumerousComments(ConditionDto conditionDto) {
         loadArticleIdHavingNumerousComments_wasCalled = true;
-        return super.loadArticleIdHavingNumerousComments(ConditionFixture.conditionDto());
+        return commentContract.loadArticleIdHavingNumerousComments(ConditionFixture.conditionDto());
     }
 }
 ~~~
