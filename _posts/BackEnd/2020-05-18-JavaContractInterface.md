@@ -907,10 +907,10 @@ GitHub이라는 interface에 대한 구현체를 작성하지 않아도 OpenFeig
 public interface GitHub {
 
   @GetMapping("/repos/{owner}/{repo}/contributors")
-  List<Contributor> contributors(@Param("owner") String owner, @Param("repo") String repo);
+  List<Contributor> contributors(@PathVariable("owner") String owner, @PathVariable("repo") String repo);
 
   @PostMapping("/repos/{owner}/{repo}/issues")
-  void createIssue(Issue issue, @Param("owner") String owner, @Param("repo") String repo);
+  void createIssue(Issue issue, @PathVariable("owner") String owner, @PathVariable("repo") String repo);
 }
 ~~~
 
@@ -922,7 +922,7 @@ public interface GitHub {
 public class GitHubController {
 
   @GetMapping("/repos/{owner}/{repo}/contributors")
-  List<Contributor> contributors(@Param("owner") String owner, @Param("repo") String repo) {
+  List<Contributor> contributors(@PathVariable("owner") String owner, @PathVariable("repo") String repo) {
 
       // do something...
 
@@ -930,7 +930,7 @@ public class GitHubController {
   }
 
   @PostMapping("/repos/{owner}/{repo}/issues")
-  void createIssue(Issue issue, @Param("owner") String owner, @Param("repo") String repo) {
+  void createIssue(Issue issue, @PathVariable("owner") String owner, @PathVariable("repo") String repo) {
 
       // do something...
 
