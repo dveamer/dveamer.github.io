@@ -2,7 +2,7 @@
 layout: post
 title:  "유용한 Linux 명령어"
 date:   2018-02-03 00:00:00
-lastmod: 2020-04-12 00:00:00
+lastmod: 2020-06-06 00:00:00
 categories: Linux
 tags: Linux Command 
 ---
@@ -144,7 +144,20 @@ $ du -sh
 $ du -h --max-depth=1
 ~~~
 
-### tail & quit
+### 특정 용량 이상의 파일 찾기 
+
+~~~terminal
+$ ls -al `find . -size +1M`
+~~~
+
+위의 방법은 모든 파일을 찾은 다음에 출력되므로 느리고 너무 많은 파일이 발견되면 실패할 때도 있습니다.  
+그럴 때는 find에서 제공하는 옵션을 이용해서 처리 가능합니다.  
+
+~~~terminal
+$ find . -size +1M -exec ls -al {} \;
+~~~
+
+## tail & quit
 
 특정 단어가 나오면 tail을 중단하는 방법입니다.  
 CI/CD를 구성할 때 로그 모니터링을 통해 정상기동 유무를 체크 할 경우 사용할 수 있습니다.  
