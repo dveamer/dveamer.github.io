@@ -2,7 +2,7 @@
 layout: post
 title: "Spring @Cacheable Cache 처리"
 date: 2018-09-23 00:00:00
-last_mod: 2018-10-20 00:00:00
+last_mod: 2020-06-06 00:00:00
 categories: BackEnd
 tags: Spring Cache AOP
 ---
@@ -200,8 +200,12 @@ AspectJ를 이용하면 제약사항을 회피하기 가능하며 그에 대해�
 
 dependencies {
     ....(생략)
+
+    // AOP
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
     // Ehcache
-    compile("net.sf.ehcache:ehcache:2.10.3")
+    implementation 'net.sf.ehcache:ehcache:2.10.3'
 }
 ....(생략)
 ~~~
