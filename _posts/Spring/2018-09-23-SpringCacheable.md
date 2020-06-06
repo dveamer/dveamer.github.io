@@ -197,19 +197,11 @@ AspectJ를 이용하면 제약사항을 회피하기 가능하며 그에 대해�
 
 ~~~gradle
 ....(생략)
-buildscript {
-    ....(생략)
-    ext {
-        ....(생략)
-        ehcacheVersion = '2.10.3'
-    }
-}
-
 
 dependencies {
     ....(생략)
     // Ehcache
-    compile("net.sf.ehcache:ehcache:${ehcacheVersion}")
+    compile("net.sf.ehcache:ehcache:2.10.3")
 }
 ....(생략)
 ~~~

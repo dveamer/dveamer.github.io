@@ -17,7 +17,7 @@ tags: Spring Asynchronous Session Multi-Thread
 SpringBoot 를 사용했으며 java based configuration 방식을 이용했습니다.  
 
 [Spring @Async Session 샘플](https://github.com/dveamer/SpringBootSample/tree/master/AsyncSession)을 Github에 올려뒀으니 참고하시기 바랍니다.  
-위의 샘플은 [Spring @Async AspectJ - CTW 샘플](https://github.com/dveamer/SpringBootSample/tree/master/AsyncCTW)을 기반으로 작성하되 Spring Boot 버전을 높였습니다. Gradle 4.x 버전으로 실행해야 합니다.  
+위의 샘플은 [Spring @Async 비동기처리 샘플](https://github.com/dveamer/SpringBootSample/tree/master/Async)을 기반으로 작성하되 Spring Boot 버전을 높였습니다.  
 
 # @Async with Http Session
 
@@ -84,7 +84,7 @@ public class GreetingService {
 test() 에서 loggingCode를 만들고 SessionScopeUtil에 보관 후 method1()과 method2()를 호출 합니다.  
 method1(), method2() 에서는 SessionScopeUtil에서 loggingCode를 꺼내서 로그에 남깁니다.  
 
-SesssionScopeUtil에 대해서는 [Spring RequestContextHolder - 어디서든 HttpServletReqeust 사용하기](/BackEnd/SpringRequestContextHolder) 글을 참고해주시기 바랍니다. 간단히 설명드리면 SesssionScopeUtil에 보관한 attribute는 HttpServletRequest.setSession()에 보관되는 것과 동일하다고 보시면 됩니다.  
+SesssionScopeUtil에 대해서는 [Spring RequestContextHolder - 어디서든 HttpServletReqeust 사용하기](/backend/SpringRequestContextHolder.html) 글을 참고해주시기 바랍니다. 간단히 설명드리면 SesssionScopeUtil에 보관한 attribute는 HttpServletRequest.setSession()에 보관되는 것과 동일하다고 보시면 됩니다.  
 즉, 다른 WAS에서도 동일한 SESSION_ID를 가진 호출을 받는다면 SessionScopeUtil을 통해서 동일한 attribute를 사용할 수 있습니다.  
 
 만약 mehtod1(), method2()가 모두 비동기가 아닌 동기방식으로 실행되었다면 당연히 모두 성공적으로 loggingCode를 로그에 남길 수 있었을 겁니다.  
