@@ -199,10 +199,10 @@ AspectJ를 이용하면 제약사항을 회피하기 가능하며 그에 대해�
 ....(생략)
 
 dependencies {
-    ....(생략)
 
-    // AOP
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    ....(생략)
 
     // Ehcache
     implementation 'net.sf.ehcache:ehcache:2.10.3'
@@ -210,7 +210,7 @@ dependencies {
 ....(생략)
 ~~~
 
-
+위에서 AOP에 대해서 언급했음에도 불구하고 AOP 관련 dependency가 추가 되지 않는 이유는 ```spring-boot-starter-web``` 내에서 이미 aop를 내포하고 있기 때문입니다.  
 
 ## Ehcache Configruation 작성
 
