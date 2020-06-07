@@ -28,6 +28,9 @@ Contract interface의 장점을 좀더 상세하게 소개하고
 일반적으로 사용되는 용어들과 약간의 충돌이 있을 수 있습니다. 헷갈리게 표현된 용어가 있다면 양해 부탁 드리고 의견 주시기 바랍니다.  
 
 이 글에서 사용되는 샘플코드는 [https://github.com/dveamer/contract](https://github.com/dveamer/contract)에서 확인하실 수 있습니다.  
+빌드 툴을 Maven 과 Gradle 두가지 준비했습니다. 원하시는 것을 사용하시면 됩니다. 제가 테스트시 사용한 빌드 툴 버전은 다음과 같습니다.  
+  * Gradle : 5.6.4
+  * Apache Maven : 3.6.0
 
 # Contract Interface 계층 추가
 
@@ -177,10 +180,10 @@ public interface CommentContract {
 특이한 점으로 ```@SpringQueryMap``` 이라는 OpenFeign에서 제공하는 annotation이 loadArticleIdHavingNumerousComments의 conditionDto 파라미터에 적용됐습니다.  
 HTTP spec을 정의하는 annotation은 모두 Spring annotaion을 사용하지만 유일하게 예외인 ```@SpringQueryMap```가 사용됐습니다. ```@SpringQueryMap```은 query-string 으로 전달될 파라미터들을 의미합니다.  
 
-@FeignClient 라는 OpenFeign 관련 annotation이 사용됐습니다. OpenFeign에 대해 처음들어보셨다면 [부록 -OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
+@FeignClient 라는 OpenFeign 관련 annotation이 사용됐습니다. OpenFeign에 대해 처음들어보셨다면 [부록 - OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
 
 
-## Contract 패키징 
+### Contract 패키징 
 
 앞으로 만들 contract stub은 contract에 의존성을 갖습니다.  
 Contract stub을 만들기 위해 아래 명령어로 contract 를 패키징 합니다.  
@@ -188,6 +191,10 @@ Contract stub을 만들기 위해 아래 명령어로 contract 를 패키징 합
 
 ~~~terminal
 contract-comment$ gradle install 
+
+OR
+
+contract-comment$ mvn install
 ~~~
 
 ## Contract Stub 추가
@@ -263,13 +270,26 @@ Spring Boot 기동시 contract를 만족시키는 stub 서버로 구성 가능�
 
 ~~~terminal
 contract-comment-stub$ gradle bootRun
+
+OR
+
+contract-comment-stub$ mvn spring-boot:run
 ~~~
 
-아래 명령어로 stub server의 jar를 만들수 있습니다. ```build/libs``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생길 것입니다.  
+아래 명령어로 stub server의 jar를 만들수 있습니다. 
+Gradle의 경우는 ```build/libs``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생길 것입니다.  
 
 ~~~terminal
 contract-comment-stub$ gradle bootJar
 ~~~
+
+Maven의 경우는 '''target``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생길 것입니다.  
+
+~~~terminal
+contract-comment-stub$ mvn -DfinalName=contract-comment-stub-server package 
+~~~
+
+<br>
 
 두번째 목적은 stub입니다.  
 ```@RestController```가 존재함에도 불구하고 CommentContractStub 은 Java call을 받을 수 있습니다.  
@@ -282,6 +302,11 @@ Unit test를 작성 시 stub을 활용하기 때문에 테스트 코드 작성�
 
 ~~~terminal
 contract-comment-stub$ gradle install
+
+
+OR
+
+contract-comment$ mvn -Dspring-boot.repackage.skip=true install
 ~~~
 
 ### Swagger 기능 제공
@@ -485,12 +510,20 @@ Stub server를 기동시키고 contract test 코드를 실행시켜서 stub serv
 
 ~~~terminal
 contract-comment-stub$ gradle bootRun
+
+OR 
+
+contract-comment-stub$ mvn spring-boot:run
 ~~~
 
 또 다른 터미널에서 contract test를 실행합니다.  
 
 ~~~terminal
 contract-comment-stub$ gradle test
+
+OR
+
+contract-comment-stub$ mvn -Dapi.contract.comment.url=http://localhost:8080 test
 ~~~
 
 성공여부를 확인합니다. 만약에 실패한다면 contract, contract stub 중 잘못된 곳을 찾아서 수정해줘야 합니다.  

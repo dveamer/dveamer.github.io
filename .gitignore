@@ -4,3 +4,5 @@ _posts/NotOpen
 .svn
 *~
 *.bak
+
+.jekyll-cache/
