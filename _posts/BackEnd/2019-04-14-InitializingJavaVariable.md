@@ -2,7 +2,7 @@
 layout: post
 title: "Java 변수 선언 & 초기화 방법 - Array, List, Set, Map"
 date: 2019-04-14 00:00:00
-lastmod: 2020-04-04 00:00:00
+lastmod: 2020-06-07 00:00:00
 categories: BackEnd
 tags: BackEnd Java
 ---
@@ -87,7 +87,7 @@ public class Sample {
 ~~~java
 public class Sample {
 
-    private final Set<String> values0 = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("1", "2", "3")));
+    private final Set<String> values0 = Collections.unmodifiableSet(new HashSet<String>(Arrays.asList("1", "2", "3")));
 
     // JDK 9 이상에서 사용 가능
     private final Set<String> values1 = Set.of("1", "2", "3");
@@ -100,7 +100,7 @@ public class Sample {
 
 ~~~java
 public class Sample {
-    private final Map<String, String> map = new HashMap<>() {
+    private final Map<String, String> map = new HashMap<String, String>() {
         {
             put("key01", "val01");
             put("key02", "val02");
@@ -120,7 +120,7 @@ Collections 는 Collection interface에 대한 utility class입니다.
 
 ~~~java
 public class Sample {
-    private final Map<String, String> map0 = Collections.unmodifiableMap(new HashMap<>() {
+    private final Map<String, String> map0 = Collections.unmodifiableMap(new HashMap<String, String>() {
         {
             put("key01", "val01");
             put("key02", "val02");

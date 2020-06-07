@@ -2,7 +2,7 @@
 layout: post_en
 title: "How to initialize Java variables - Array, List, Set, Map"
 date: 2019-09-12 00:00:00
-lastmod: 2020-04-04 00:00:00
+lastmod: 2020-06-07 00:00:00
 categories: BackEnd
 tags: BackEnd Java
 ---
@@ -87,7 +87,7 @@ If something attempts to change an immutable Set, UnsupportedOperationException 
 ~~~java
 public class Sample {
 
-    private final Set<String> values0 = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("1", "2", "3")));
+    private final Set<String> values0 = Collections.unmodifiableSet(new HashSet<String>(Arrays.asList("1", "2", "3")));
 
     // available in JDK 9 or later
     private final Set<String> values1 = Set.of("1", "2", "3");
@@ -100,7 +100,7 @@ public class Sample {
 
 ~~~java
 public class Sample {
-    private final Map<String, String> map = new HashMap<>() {
+    private final Map<String, String> map = new HashMap<String, String>() {
         {
             put("key01", "val01");
             put("key02", "val02");
@@ -120,7 +120,7 @@ Although the Map interface does not extend the Collection interface, some featur
 
 ~~~java
 public class Sample {
-    private final Map<String, String> map0 = Collections.unmodifiableMap(new HashMap<>() {
+    private final Map<String, String> map0 = Collections.unmodifiableMap(new HashMap<String, String>() {
         {
             put("key01", "val01");
             put("key02", "val02");
