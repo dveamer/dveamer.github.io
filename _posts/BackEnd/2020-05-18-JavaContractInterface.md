@@ -10,7 +10,7 @@ tags: BackEnd Spring MSA
 ![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
 API 제공자(Provider), 소비자(Consumer) 모두 컴파일 단계에서 계약(Contract)의 API spec 검증할 방법을 제안합니다.  
-기존에 component, contract 테스트에서 받을 수 있었던 API spec 검증 feedback을 컴파일 단계에서 받게되어 개발속도가 크게 향상됩니다.  
+기존에 component, contract 테스트에서 받을 수 있었던 API의 HTTP spec 검증 피드백을 컴파일 단계에서 받게되어 개발속도가 크게 향상됩니다.  
 
 <!--more--> 
 
@@ -29,8 +29,6 @@ API 제공자(Provider), 소비자(Consumer) 모두 컴파일 단계에서 계�
 
 
 ### Provider의 어려움 
-
-제공자는 아래와 같은 어려움이 있습니다.  
 
   * API spec이 바뀌면 다수의 소비자가 영향을 받습니다.  
   * 제공자는 특정 개발 건 완료 후 contract test를 통해 모든 API에 대해서 API spec 변경여부 체크 필요합니다.  
@@ -75,7 +73,7 @@ HTTP call을 의미하는 점선의 화살표가 없어서 의아하시겠지만
 
 
 기존에는 component, contract 테스트 단계에서 HTTP call을 통해 점검할 수 있었던 사항들을  
-제공자, 소비자 모두 컴파일 단계에서 feedback을 받게 되기 때문에 개발 속도가 굉장히 빨라집니다.  
+제공자, 소비자 모두 컴파일 단계에서 피드백을 받게 되기 때문에 개발 속도가 굉장히 빨라집니다.  
 
 # 단점..?
 
@@ -746,7 +744,7 @@ class CommentControllerTests {
 
 HTTP spec에 대한 피드백을 컴파일 단계에서 받고  
 테스트 데이터에 대한 피드백을 유닛 테스트 단계에서 받을 수 있게 되어  
-빨라진 feedback만큼 개발속도가 크게 향상 되었습니다.  
+빨라진 피드백만큼 개발속도가 크게 향상 되었습니다.  
 
 ![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
