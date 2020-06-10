@@ -51,7 +51,7 @@ API spec은 문서를 통해 제공자, 소비자 사이에서 커뮤니케이�
 
 ![API_contract_11](/images/post_img/APIcontract/API_contract_11.png)  
 
-HTTP call을 의미하는 점선의 화살표가 없어서 의아하시겠지만 마이크로 서비스간의 통신이니 당연히 HTTP call은 존재합니다.  
+HTTP call을 의미하는 점선의 화살표는 없지만 마이크로 서비스간의 통신이니 당연히 HTTP call은 존재합니다.  
 
 아래의 이미지가 좀 더 구체적이고 정확한 표현입니다.  
 소비자는 Feign Client라는 contract interface의 구현체를 Java call 합니다. 그러면 Feign Client가 제공자의 Controller를 HTTP call하게 됩니다.  
@@ -82,13 +82,15 @@ HTTP call을 의미하는 점선의 화살표가 없어서 의아하시겠지만
 근데 이글에서 설명하는 내용의 장점을 최대한 취하려면 Java, Spring을 사용해야 합니다. 이 점이 단점입니다.  
 하지만 장점을 최대한 취하지 못한다는 것이지 polyglot을 못한다거나 다른 프레임워크를 사용하지 못하는 것은 아닙니다.  
 
-아래에서 보여드리겠지만 stub server와 Swagger 페이지를 제공합니다.  
+아래에서 보여드리겠지만 stub server와 Swagger-UI 기능을 제공합니다.  
 Swagger-UI 페이지를 통해 문서를 제공하고 수동으로 API를 호출해볼 수 있으며  
-작성한 HTTP call 모듈은 stub server를 호출하며 테스트가 가능합니다.  
+소비자 서비스는 stub server를 호출하며 테스트가 가능합니다. 기존 방식의 테스트를 수행할 수 있습니다.  
+
+만약 MSA를 구성하고 있는 마이크로 서비스들 중에 Java, Spring 구성이 적지 않다면 충분히 장점을 취할 수 있는 방법입니다.  
 
 # Contract 생성 과정 
 
-Contract interface는 코드로 작성될 것이며 Git과 같은 형상관리를 통해 관리되고 Neuxs를 통해 jar로 배포 됩니다.  
+Contract interface는 코드로 작성될 것이며 관리되어야 합니다. 예를들어, Git으로 형상관리가되고 Neuxs를 통해 jar 관리 및 배포가 됩니다.  
 먼저 contract와 contract stub을 위한 git repository 두개가 필요합니다. 이 repository는 소비자, 제공자가 아닌 다른 maintainer가 관리합니다.  
 
 그리고 이 글에서는 Consumer-Driven-Testing / Provider-Driven-Testing 와 같은 누가 contract를 작성해야하는지에 대한 이야기하지 않을 예정이지만 설명을 쉽게하기 위해서 소비자가 신규 API 추가 요청을 하고 제공자와 함께 contract를 만들어가는 과정을 생각해보겠습니다. 기술적으로는 두 방법 모두 수용 가능합니다.  
