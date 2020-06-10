@@ -9,148 +9,114 @@ tags: BackEnd Spring MSA
 
 ![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
-API contract 개념을 충족시키는 contract interface 계층을 도입합니다.  
-이것은 실제 사용할 Java 코드로 작성되며 기존 contract 검증 방법보다 더 빠르고 명확하게 feedback을 제공합니다.  
-
-제공자(Provider)는 unit test, 소비자(Consumer)는 component test 단계에서 받을 수 있었던 HTTP spec에 대한 feedback을 이제는 컴파일 단계에서 받을 수 있습니다.  
-말이 컴파일 단계지만 IDE를 사용한다면 오타라도 나면 바로 feedback을 준다는 이야기입니다.  
-
-컴파일 단계에서 알려주기 때문에 HTTP spec 관련된 오류를 담은 코드를 작성할 일이 없어지고 오류를 찾기 위한 디버깅 시간이 없어지기 때문에 개발속도가 크게 향상 됩니다.  
-
-그리고 소비자(Consumer)는 HTTP call을 위한 구현하지 않고 단순히 Java call만으로 제공자(Provider)의 API를 HTTP call로 정확하게 호출 할 수 있습니다.  
+API 제공자(Provider), 소비자(Consumer) 모두 컴파일 단계에서 계약(Contract)의 API spec 검증할 방법을 제안합니다.  
+기존에 component, contract 테스트에서 받을 수 있었던 API spec 검증 feedback을 컴파일 단계에서 받게되어 개발속도가 크게 향상됩니다.  
 
 <!--more--> 
-
-Contract interface의 장점을 좀더 상세하게 소개하고  
-샘플코드와 함께 contract interface를 설계, 검증하고 테스트하는 내용들을 살펴보겠습니다.  
-
-앞으로 설명드릴 내용은 제가 직접 고민해서 설계한 방법입니다.  
-일반적으로 사용되는 용어들과 약간의 충돌이 있을 수 있습니다. 헷갈리게 표현된 용어가 있다면 양해 부탁 드리고 의견 주시기 바랍니다.  
 
 이 글에서 사용되는 샘플코드는 [https://github.com/dveamer/contract](https://github.com/dveamer/contract)에서 확인하실 수 있습니다.  
 빌드 툴을 Maven 과 Gradle 두가지 준비했습니다. 원하시는 것을 사용하시면 됩니다. 제가 테스트시 사용한 빌드 툴 버전은 다음과 같습니다.  
   * Gradle : 5.6.4
   * Apache Maven : 3.6.0
 
-# Contract Interface 계층 추가
+
+# 기존의 Provider와 Consumer
 
 여러 서비스들이 있는 가운데 댓글을 관리하는 comment 서비스가 제공자(provider)인 경우를 살펴보겠습니다.  
 소비자(Consumer)인 다른 서비스들은 comment 서비스의 API를 HTTP 호출을 합니다. 아래 이미지의 점섬으로 표시된 화살표는 HTTP 호출을 의미합니다.  
 
 ![API_contract_10](/images/post_img/APIcontract/API_contract_10.png)  
 
-소비자와 제공자 사이에는 API에 대한 계약(Contract)이 필요합니다.  
-특히 서비스간 API 호출이 많은 MSA에서는 더 빠르고 강력한 계약이 필요합니다.  
 
-기존에 contract는 개념적인 존재였습니다. 혹은 contract test를 통해 contract라는 것이 실제 존재하는 것 처럼 해보려고 했습니다.  
+### Provider의 어려움 
 
-이 글에서 설명하는 내용은 Java contract interface라는 실제 Java 코드를 형태의 실물을 contract로 사용합니다.  
-소비자, 제공자 모두 이 contract interface에 의존성을 갖게 됩니다.  
+제공자는 아래와 같은 어려움이 있습니다.  
 
-소비자는 contract interface를 Java call을 하게 할 것이고  
-제공자는 contrat interface의 구현체인 controller를 만들어서 수신할 것입니다.  
-소비자가 가진 contract interface가 제공자가 가진 contract interface를 HTTP call 하겠지만  
-그 HTTP call은 contract interface가 제공된 시점에 API 계약에 대한 HTTP spec은 이미 검증되어있기 때문에  
-소비자는 Java call만 하면 제공자의 controller에 안전하게 메시지가 전달됩니다.  
-그래서 아래 이미지에서는 HTTP call을 의미하는 점선의 화살표가 없고 Java call을 의미하는 실선의 화살표를 그려넣었습니다.  
+  * API spec이 바뀌면 다수의 소비자가 영향을 받습니다.  
+  * 제공자는 특정 개발 건 완료 후 contract test를 통해 모든 API에 대해서 API spec 변경여부 체크 필요합니다.  
+  * 발견되어 다행이지만 이미 개발이 많이 진행된 단계여서 시간손실이 발생합니다.  
 
-이 글에서 계속해서 HTTP call은 점선으로 Java call은 실선으로 표시가 될 것이니 기억해주시기 바랍니다.  
-그리고 흰색으로 비워진 실선 화살표는 interface를 구현함을 의미합니다.  
+상태가 좋지 않은 곳에서는 제공자는 무턱대고 API spec을 바꾸고 모든 소비자들이 모든 것을 변경하는 상황도 발생합니다. 소비자들로부터 큰 불평이 오는 것만이 아니라 프로젝트 전체적으로 봤을 때 굉장히 큰 손실이 발생합니다.  
+
+### Consumer의 어려움 
+
+API spec은 문서를 통해 제공자, 소비자 사이에서 커뮤니케이션이 진행되고 소비자는 문서를 보고 API spec에 맞춰 HTTP call하는 모듈을 만들어야 합니다. 숙련자라면 그나마 낫겠지만 이 과정에서 꽤나 많은 불필요한 시간이 소요됩니다. 또한 이 과정은 해당 API를 사용하는 소비자가 늘어날 때마다 반복됩니다.  
+
+# Contract Interface 계층 추가
+
+기존에는 API spec의 실물을 제공자가 들고 있었다면 (예: Spring MVC의 Controller)  
+지금부터는 소비자와 제공자 사이에 ```Contract Interface``` 계층을 추가하고 그곳에 API spec의 실물을 위치 시킬 것입니다.  
+
+소비자는 contract interface를 HTTP call이 아닌 Java call을 하게 되고  
+제공자는 contract에 의존성을 갖게 되어 API spec 변경에 컴파일 단계에서 제약이 생깁니다.  
+아래 이미지에서는 실선 화살표는 Java call을 의미합니다. 그리고 실선 흰색 화살표는 interface를 구현함을 의미합니다.  
 
 ![API_contract_11](/images/post_img/APIcontract/API_contract_11.png)  
 
-아래의 이미지가 좀 더 구체적인 표현입니다.  
-소비자는 FeignClient라는 HTTP client를 이용해서 HTTP call을 하고 있습니다.  
-그리고 제공자는 Controller로 그 HTTP call을 호출 받고 있습니다.  
+HTTP call을 의미하는 점선의 화살표가 없어서 의아하시겠지만 마이크로 서비스간의 통신이니 당연히 HTTP call은 존재합니다.  
+
+아래의 이미지가 좀 더 구체적이고 정확한 표현입니다.  
+소비자는 Feign Client라는 contract interface의 구현체를 Java call 합니다. 그러면 Feign Client가 제공자의 Controller를 HTTP call하게 됩니다.  
 
 ![API_contract_12](/images/post_img/APIcontract/API_contract_12.png)  
 
-첫번째 재미있는 점은 FeignClient, controller 모두 contract의 구현체라는 점입니다.  
-두번째 재미있는 점은 FeignClient라는 구현체는 소비자가 작성하지 않아도 자동으로 구현된다는 점입니다.  
-즉, contract를 Java call하기만하면 개발자의 별다른 구현없이 HTTP call을 정확하게 보낼 수 있습니다.  
+두가지 재미있는 점이 있습니다.  
 
-## Contract Interface 계층의 장점
+  * 소비자의 Feign Client 그리고 제공자의 controller 둘다 contract interface의 구현체입니다.  
+  * HTTP call을 수행하는 Feign Client는 컴파일시 자동으로 작성됩니다.  
 
-소비자, 제공자 사이에 contract라는 계층이 추가되어 contract가 소비자, 제공자 보다 더 상위계층으로 구성되게 됩니다.  
+같은 contract interface의 구현체이기 때문에 Feign Client와 controller의 spec은 동일할 수밖에 없습니다. 그 동일한 spec에 대해서 Feign Cleint가 HTTP call 모듈을 구현해주기 때문에 오류없이 정확하게 호출됩니다. 즉, 소비자측의 개발 양도 줄어들뿐더러 오류도 없어집니다.  
 
-제공자 입장에서는 쓸데 없는 의존성이 추가된 것으로 보이지만 사용자에게 가치를 제공해주는 것은 단일 서비스가 아닌 서비스간 협력에 의해서 이뤄지기 때문에 전체 서비스의 입장에서는 서비스간의 계약관계가 제공자의 기능보다 더 중요합니다.  
-일반적인 MSA라면 contract interface 계층이 더 상위계층으로 설계되는 것이 맞습니다.  
+그리고 그보다 더 큰 장점은 소비자측 개발자는 Java call만으로도 contract에 대한 보장을 받기 때문에 매번 HTTP call을 하며 테스트를 해볼 필요가 없어집니다.  
 
-Contract interface의 하위 계층인 제공자는 API를 임의로 수정시 컴파일 단계에서 에러가 나게 됩니다.  
-기존에 contract tetst 단계에서 체크가 가능했던 API spec 변경여부를 컴파일 단계에서 feedback을 받게 되므로 개발 속도가 향상되고 가장 중요한 계약관계의 안정성이 높아집니다.  
+제공자측 개발자는 실수로 API spec에 변경하는 실수를 하게 되면 대부분 ```Unimplemented Methods```가 존재한다는 컴파일 오류를 받게 됩니다. IDE를 사용하면 실수하는 순간 소스코드에 빨간 줄이 뜨기 시작하는 이야기가 됩니다.  
 
 ![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
-"지금도 개발하기 힘든데 더 힘들어 지고 개발속도가 너무 느려지는 것 아니냐?" 라고 생각할 수 있습니다.  
-하지만 현재 unit test, component test, contract test 등을 하고 있다면  
-작업량이 늘어나지 않습니다. 문서 작업도 없고 개발에 필요한 Java 소스 코드만 작성만 합니다. 오히려 작업량은 줄어듭니다.  
-게다가 컴파일 단계에서 feedback을 받게 되기 때문에 작업 속도도 빠르고 일의 양도 줄어듭니다.  
 
-만약에 MSA를 하면서 unit test, component test, contract test 등의 테스트를 하지 않고 있다면  
-문제가 생겨도 들어나지 않을 뿐이지 나중에 어떤 문제가 생길지 모르는 상황입니다.  
-결과적으로는 개발속도가 엄청나게 떨어지는 상황이 생기게 됩니다.  
+기존에는 component, contract 테스트 단계에서 HTTP call을 통해 점검할 수 있었던 사항들을  
+제공자, 소비자 모두 컴파일 단계에서 feedback을 받게 되기 때문에 개발 속도가 굉장히 빨라집니다.  
 
-## 그 외의 장점
-
-정확히는 contract interface 계층의 장점은 아니지만  
-이 글의 가이드를 따라하면 아래와 같은 장점들이 더 취할 수 있습니다.  
-
-  * 소비자 역시 컴파일 단계에서 feedback을 받음  
-  * 1회 작성된 contract stub 코드가 다수의 소비자, 제공자의 unit 테스트 코드 작성시 재활용됨  
-  * 소비자는 HTTP call에 대한 코드작성을 하지 않고서도 contract 에 대한 정확한 HTTP spec을 만족시킨 HTTP call을 보냄  
-  * Stub server를 제공가능하여 Java 가 아닌 다른 언어의 소비자 시스템도 stub server를 HTTP call하며 테스트 가능  
-  * Stub server는 Swagger-UI 기능을 제공하여 깔끔한 document 및 수동 테스트 가능  
-
-## 단점 
+# 단점..?
 
 아키텍트 관점에서 특정 언어, 특정 프레임워크에 종속되는 설계는 좋지 않습니다.  
 
 근데 이글에서 설명하는 내용의 장점을 최대한 취하려면 Java, Spring을 사용해야 합니다. 이 점이 단점입니다.  
-결국 MSA의 polyglot이 가능하다는 특성에도 악영향을 줍니다.  
-  
-다른 언어, 프레임워크를 사용하기 위해서는 그 장점들을 일부분 포기해야할 수 있습니다.  
+하지만 장점을 최대한 취하지 못한다는 것이지 polyglot을 못한다거나 다른 프레임워크를 사용하지 못하는 것은 아닙니다.  
 
-하지만 그렇다고 모든 마이크로 서비스가 Java, Spring을 사용해야만 적용할 수 있는 것은 아닙니다.  
-타 언어를 사용하는 소비자 제공자도 stub 서버, contract test는 활용할 수 있기 때문에  
-장점을 최대한 취할 수는 없지만 서비스간의 contract 에는 참여가 가능하고 부분적으로 장점을 취할 수 있습니다.  
-
-현재 운영 중인 대부분의 마이크로 서비스가 Java, Spring을 사용한다면 충분히 유용하게 활용할 수 있는 방법입니다.  
+아래에서 보여드리겠지만 stub server와 Swagger 페이지를 제공합니다.  
+Swagger-UI 페이지를 통해 문서를 제공하고 수동으로 API를 호출해볼 수 있으며  
+작성한 HTTP call 모듈은 stub server를 호출하며 테스트가 가능합니다.  
 
 # Contract 생성 과정 
 
-이 글에서는 Consumer-Driven-Testing / Provider-Driven-Testing 와 같은 누가 contract를 작성해야하는지에 대한 이야기는 하지 않습니다. 기술적으로는 두 방법 모두 수용 가능합니다.  
+Contract interface는 코드로 작성될 것이며 Git과 같은 형상관리를 통해 관리되고 Neuxs를 통해 jar로 배포 됩니다.  
+먼저 contract와 contract stub을 위한 git repository 두개가 필요합니다. 이 repository는 소비자, 제공자가 아닌 다른 maintainer가 관리합니다.  
 
-Contract 계층은 개념적인 존재가 아니라 코드로 존재하는 실제 계층입니다.  
-즉, 그 코드는 생성되어야하고 보관되어야하고 관리되어야 합니다.  
-
-일단 contract, contract stub을 위한 형상관리 repository가 필요합니다.  
-소비자, 제공자 서비스와는 별도의 repository로 구성합니다. 그리고 소비자, 제공자가 아닌 maintainer가 필요합니다.  
-
-예를들어, 소비자가 신규 API 추가 요청을 하고 제공자와 contract를 만들어가는 과정을 생각해보겠습니다.  
+그리고 이 글에서는 Consumer-Driven-Testing / Provider-Driven-Testing 와 같은 누가 contract를 작성해야하는지에 대한 이야기하지 않을 예정이지만 설명을 쉽게하기 위해서 소비자가 신규 API 추가 요청을 하고 제공자와 함께 contract를 만들어가는 과정을 생각해보겠습니다. 기술적으로는 두 방법 모두 수용 가능합니다.  
 
 먼저 소비자가 contract, contract stub 코드를 작성해서 pull resquest를 보냅니다.  
-그러면 code review 하듯이 소비자와 제공자가 contract, contract stub 코드를 다듬어 나갈 수도 있고  
-제공자가 주도적으로 코드를 다듬어 나갈 수 있습니다. 그리고 contract stub을 이용해서 생성한 contract를 검증합니다.  
+그러면 code review 하듯이 소비자와 제공자가 contract, contract stub 코드를 다듬어 나갈 수도 있고 제공자가 주도적으로 코드를 다듬어 나갈 수 있습니다.  
 
-Maintainer는 아래 사항들을 확인 후 pull request를 merge합니다.  
+아래 그림의 1, 2 과정을 소비자, 제공자가 함께 진행하는 것입니다.  
+
+![API_contract_14](/images/post_img/APIcontract/API_contract_14.png)  
+
+1, 2 과정이 끝났으면 contract stub을 이용해서 생성한 contract를 검증합니다.  
+만약에 검증이 실패하면 다시 처음부터 contract, contract stub을 수정합니다.  
+
+3번 과정인 contract 확인 작업이 완료되면 maintainer는 아래 사항들을 확인 후 pull request를 merge 해줍니다.  
 
   * API 변경 건 존재 여부 체크 (추가만 허용, 삭제는 더 엄밀히 검토 후 허용)
   * Contract test의 정상 수행 여부
   * Contract, contract stub 의 버전 증가여부, 버전 일치여부
 
 그 뒤 maintainer는 contract, contact stub에 대한 jar를 각각 만들어서 원격 Maven repository에 배포 합니다.  
-참고로 앞서 maintainer가 체크, 진행하는 과정은 대부분 CI/CD 에서 자동화처리가 가능한 영역입니다.  
-
-![API_contract_14](/images/post_img/APIcontract/API_contract_14.png)  
+참고로 maintainer가 체크, 진행하는 과정은 대부분 CI/CD 에서 자동화처리가 가능한 영역입니다.  
 
 ## Contract Interface 추가 
 
-아래 interface 코드는 contract-comment jar에 포함될 ```CommentContract.java``` 입니다.  
-
-OpenFeign 관련 설정들을 함께 포함하고 있습니다. 하지만 어쨋든 Java interface이기 때문에 소비자는 Java call로 해당 method를 호출 할 수 있습니다. OpenFeign이 어떻게 활용 되는지는 추후에 다시 다루게 됩니다.  
-
-또한 CommentDto, ArticleCommentCountDto 같은 DTO(Data Tracnfer Object)도 보입니다. DTO 역시 contract-comment jar가 포함하고 있기 때문에 소비자, 제공자 모두 DTO를 새로 만들 필요 없으며 둘 사이의 DTO 불일치는 발생할 수 없습니다.  
-
+드디어 contract interface를 실제 코드로 보실 수 있습니다. 해당 코드는 contract-comment jar로 배포됩니다.  
 해당 샘플은 [https://github.com/dveamer/contract/tree/master/contract-comment](https://github.com/dveamer/contract/tree/master/contract-comment)에서 확인 가능합니다.  
 
 ~~~java
@@ -177,17 +143,17 @@ public interface CommentContract {
 }
 ~~~
 
+소비자가 Java call을 통해 호출 할수 있는 순수한 Java interface입니다.  
+CommentDto, ArticleCommentCountDto 같은 DTO(Data Tracnfer Object)도 보입니다. DTO도 contract-comment jar에 포함되기 때문에 소비자, 제공자 모두 DTO를 새로 만들 필요 없으며 둘 사이의 DTO 불일치는 발생할 수 없습니다.  
+
+OpenFeign annotation들이 어떻게 활용 되는지는 추후에 다시 다루게 됩니다. OpenFeign에 대해 처음들어보셨다면 [부록 - OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
 특이한 점으로 ```@SpringQueryMap``` 이라는 OpenFeign에서 제공하는 annotation이 loadArticleIdHavingNumerousComments의 conditionDto 파라미터에 적용됐습니다.  
 HTTP spec을 정의하는 annotation은 모두 Spring annotaion을 사용하지만 유일하게 예외인 ```@SpringQueryMap```가 사용됐습니다. ```@SpringQueryMap```은 query-string 으로 전달될 파라미터들을 의미합니다.  
 
-@FeignClient 라는 OpenFeign 관련 annotation이 사용됐습니다. OpenFeign에 대해 처음들어보셨다면 [부록 - OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
-
-
 ### Contract 패키징 
 
-앞으로 만들 contract stub은 contract에 의존성을 갖습니다.  
-Contract stub을 만들기 위해 아래 명령어로 contract 를 패키징 합니다.  
-빌드되고 jar로 묶여서 로컬환경의 Maven repository에 배포 됩니다.  
+다음으로 만들 contract stub은 contract에 의존성을 갖습니다.  
+먼저 contract를 jar로 묶어서 로컬 Maven repository 에 배포해야 합니다.  
 
 ~~~terminal
 contract-comment$ gradle install 
@@ -198,6 +164,26 @@ contract-comment$ mvn install
 ~~~
 
 ## Contract Stub 추가
+
+Contract stub 코드는 다양한 목적으로 사용됩니다.  
+
+그 중 첫번째 목적은 테스트를 통해 최초 contract를 검증하기 위함입니다.  
+그리고 그 테스트는 추후에 CI/CD 과정에서 매번 contract 검증에도 사용할 수 있습니다.  
+
+<br>
+
+그리고 두번째 목적은 소비자, 제공자의 unit 테스트 데이터를 일치 시키기 위함입니다.  
+소비자 unit test에서는 contract의 stub으로 사용되고  
+제공자의 unit test에서는 contract의 예상응답(expeted value)로 사용함으로써  
+각각 다른 시간에 다른 장소에서 unit test를 진행하지만 동일한 테스트 데이터를 가지고 테스트가 진행될 수 있습니다.  
+
+
+<br>
+
+그리고 contract stub은 server로 기동도 가능하며 아래 기능을 제공할 수 있습니다.  
+
+  * Stub server
+  * Swagger-UI 제공 
 
 해당 샘플 코드는 [https://github.com/dveamer/contract/tree/master/contract-comment-stub](https://github.com/dveamer/contract/tree/master/contract-comment-stub)에서 확인 가능합니다.  
 
@@ -224,7 +210,7 @@ dependencies {
 
 ### Stub Implementation Of Contract
 
-contract-comment.jar에서 제공하는 CommentContract에 대한 구현체 stub를 생성합니다.  
+CommentContract를 구현체이자 stub 기능을 제공하는 CommentContractStub 입니다. 
 
 ~~~java
 package com.dveamer.contract.comment.stub;
@@ -259,110 +245,19 @@ public class CommentContractStub implements CommentContract {
 }
 ~~~
 
+구현된 메소드들의 내용을 살펴보면 소비자와 제공자의 계약과정에서 협의된 간단한 케이스들에 해당되는 테스트 데이터들이 담겨있는 stub입니다. 저는 간단하게 작성했지만 성공, 실패, 경계(Boundary) 테스트 케이스에 대해서 조금만 더 다양한 케이스를 작성하시면 됩니다.  
 
-CommentContractStub은 두가지 목적으로 사용됩니다.  
-
-첫번째는 stub server 입니다.  
-해당 stub은 contract와 동일한 RequestMapping annotation들과 URL, 파라미터 들이 선언되어있습니다. 또한 ```@RestController``` 가 선언되어있습니다.  
-Spring Boot 기동시 contract를 만족시키는 stub 서버로 구성 가능합니다. 덕분에 Java가 아닌 타 언어로 작성된 소비자 서비스도 해당 stub server를 이용해서 compoent test가 가능합니다.  
-
-아래 명령어로 Spring Boot를 기동시킬 수 있습니다.  
-
-~~~terminal
-contract-comment-stub$ gradle bootRun
-
-OR
-
-contract-comment-stub$ mvn spring-boot:run
-~~~
-
-아래 명령어로 stub server의 jar를 만들수 있습니다. 
-Gradle의 경우는 ```build/libs``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생길 것입니다.  
-
-~~~terminal
-contract-comment-stub$ gradle bootJar
-~~~
-
-Maven의 경우는 '''target``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생길 것입니다.  
-
-~~~terminal
-contract-comment-stub$ mvn -DfinalName=contract-comment-stub-server package 
-~~~
-
-<br>
-
-두번째 목적은 stub입니다.  
-```@RestController```가 존재함에도 불구하고 CommentContractStub 은 Java call을 받을 수 있습니다.  
-
-소비자는 unit test, component test 작성시 CommentContractStub을 java call해서 stub 데이터를 받아봅니다.  
-제공자는도 CommentContractStub을 unit test, contract test에 활용합니다.  
-Unit test를 작성 시 stub을 활용하기 때문에 테스트 코드 작성시간을 아낄 수 있습니다.  
-
-아래 명령어로 stub jar를 만들수 있습니다. ```build/libs``` 디렉토리와 ```~/.m2/repository/com/dveamer/contract-comment-stub/0.0.1``` 디렉토리에 ```contract-comment-stub-0.0.1.jar``` 파일이 생길 것입니다.  
-
-~~~terminal
-contract-comment-stub$ gradle install
-
-
-OR
-
-contract-comment$ mvn -Dspring-boot.repackage.skip=true install
-~~~
-
-### Swagger 기능 제공
-
-Swagger 설정을 할 수 있습니다.  
-
-~~~java
-
-/*
-* This SpringBootApplication is for Swagger Page of Contract.
-* Boot this application and then go to localhost:8080/swagger-ui.html in browser.
-* */
-
-@EnableSwagger2
-@SpringBootApplication
-public class CommentContractStubApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(CommentContractStubApplication.class, args);
-    }
-
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Comment Contract")
-                .description("Comment Contract - API Example")
-                .build();
-    }
-
-    @Bean
-    public Docket commonApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("example")
-                .apiInfo(this.apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors
-                        .basePackage("com.dveamer.contract.comment.stub"))
-                .paths(PathSelectors.ant("/**"))
-                .build();
-    }
-
-}
-
-~~~
-
-Spring Boot 기동 후 ```localhost:8080/swagger-ui.html``` 에 접속하시면 아래와 같은 API documentation을 볼 수 있고 수동으로 테스트도 보내볼 수 있습니다.  
-
-![API_contract_16](/images/post_img/APIcontract/API_contract_16.png)  
+그리고 이것은 stub이지만 제공자의 controller와 유사하게 생겼습니다. 자세히 보시면 ```@RestController```, ```@GetMapping```, ```@PathVariable``` annotation들이 선언되어있습니다.  
+이것을 Spring Boot로 기동시 contract를 만족시키는 stub server로 활용됩니다.  
 
 
 
 ### Contract Test Codes
 
 Contract-comment-stub jar는 contract test 코드를 가지고 있습니다.  
-Contract test의 예상(expected) 결과는 stub이 되고 실제(actual) 결과는 제공자 서비스의 응답 값이 됩니다.  
-그리고 HTTP call을 호출하는 commentContract의 구현체는 OpenFeign이 생성해준 구현체로 소비자가 사용한 구현체와 동일합니다.  
 
-OpenFeign에 의존성을 갖고 있는 테스트 코드입니다. OpenFeign에 대해 처음들어보셨다면 [부록 - OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
+이 contract test는 HTTP call을 보내게 됩니다. 예상(expected) 결과는 stub이 되고 실제(actual) 결과는 HTTP call에 대한 응답입니다.  
+CommentContract interface의 구현체를 OpenFeign을 이용해서 생성하고 HTTP call 모듈로 활용합니다. 이 것은 소비자가 사용하게 될 HTTP call 모듈과 동일합니다.  
 
 ~~~java
 package com.dveamer.contract.comment;
@@ -386,15 +281,13 @@ class CommentContractTests {
 
     @BeforeAll
     void setup() {
-        //commentContract = new CommentContractStub(); // 테스트 코드 작성시에만 사용
+        ...(생략)
 
-        Properties properties = System.getProperties();
-        String url = properties.getProperty("api.contract.comment.url");
-        commentContract = Feign.builder()
-                .contract(new SpringMvcContract())
-                .encoder(new JacksonEncoder())
-                .decoder(new JacksonDecoder())
-                .target(CommentContract.class, url);
+		    commentContract = Feign.builder()
+				    .contract(new SpringMvcContract())
+				    .encoder(new JacksonEncoder())
+				    .decoder(new JacksonDecoder())
+				    .target(CommentContract.class, url);
     }
 
     @Test
@@ -418,36 +311,7 @@ class CommentContractTests {
 ~~~
 
 
-
-```setup()``` 메소드에 주석으로 남겨둔 곳이 있습니다. 이 unit 테스트 작성을 시작할 때는 아래와 같이 ```setup()``` 메소드를 구성합니다.  
-
-~~~java
-    @BeforeAll
-    void setup() {
-        commentContract = new CommentContractStub(); // 테스트 코드 작성시에만 사용
-    }
-~~~
-
-그리고 테스트를 실행시키면 재미있게도 예상결과와 실제결과 모두 stub을 통한 결과이기 때문에 항상 참일 수 밖에 없습니다.  
-이 과정을 통해서 테스트 케이스를 정상적으로 작성했는지를 체크 합니다.  
-
-그 다음에 contract test를 위해 HTTP call을 날리기 위해 OpenFeign 설정을 합니다.  
-
-~~~java
-
-    @BeforeAll
-    void setup() {
-        Properties properties = System.getProperties();
-        String url = properties.getProperty("api.contract.comment.url");
-        commentContract = Feign.builder()
-                .contract(new SpringMvcContract())
-                .encoder(new JacksonEncoder())
-                .decoder(new JacksonDecoder())
-                .target(CommentContract.class, url);
-    }
-~~~
-
-그리고 테스트를 실행시켜보면 HTTP 커넥션이 안되서 에러가나는 것을 확인할 수 있습니다.  
+테스트를 실행시켜보면 HTTP 커넥션이 안되서 에러가나는 것을 확인할 수 있습니다.  
 
 ~~~terminal
 
@@ -469,44 +333,24 @@ com.dveamer.contract.comment.CommentContractTests > loadArticleIdHavingNumerousC
 
 
 여기서 주의깊게 봐야할 점은, 여전히 테스트의 예상결과는 stub이지만 실행결과는 HTTP call의 응답이라는 점입니다.  
-Stub과 contract test를 일치시킴으로써 소비자와 제공자가 동일한 테스트 데이터로 개발해나감을 확신할 수 있습니다.  
 
+만약에 해당 테스트가 성공하고  
+소비자가 unit test에서 contract의 mock으로 stub을 사용하고  
+제공자가 unit test에서 contract의 예상응답(expeted value)로 stub을 사용한다면  
 
-## Contract Test
+```stub 데이터``` = ```소비자 unit test의 stub``` = ```contract test의 예상응답``` = ```HTTP call에 의한 실제응답``` = '''제공자 unit test의 예상응답``` 이 성립하게 됩니다.  
+이를 통해 소비자와 제공자가 동일한 테스트 데이터로 개발해 나감을 확신할 수 있습니다.  
 
-### Contract Test 의 목적
-
-기존에는 소비자가 제공자의 HTTP API에 대해서 의존성을 가지고 있는 반면에 제공자는 별다른 의존성을 가지고 있지 않았습니다.  
-그로 인해 제공자가 HTTP API를 변경하게 되면 소비자는 영향을 받았습니다.  
-
-그러한 일을 막기 위해서 contract test가 필요해졌고 contract test시에만 제공자는 변경사항을 배포할 수 있도록 제한해야합니다.  
-Contract test 때 점검되는 사항은 2가지 입니다.  
-
-첫번째는 약속해둔 API spec에 변경이 있는지 체크 합니다.  
-
-  * HTTP URI, method 체크  
-  * 특정 파라미터가 HTTP header, query stirng, path variable, HTTP body 중 어디로 전달되는지 체크  
-  * 파라미터들의 데이터 타입 점검  
-
-두번째는 데이터의 결과에 변경이 있는지 체크합니다. 미리 약속해둔 테스트 케이스를 가지고 체크가 됩니다.  
-
-
-하지만 이조차 이론적인 이야기에 불과합니다. 만약에 제공자가 contract test를 무시하거나 contract test 자체를 변경하면서 HTTP API를 변경하게 되면 소비자 측에서는 unit test, component test를 정상적으로 통과했음에도 불구하고 HTTP call을 호출시 문제가 생길 수 있다는 부담감이 있습니다. 즉, 모든 테스트를 다 했음에도 불구하고 배포 후 HTTP call에 대한 추가적인 테스트를 진행해야만 하는 부담을 갖고 있었습니다.  
-
-하지만 contract interface 라는 실물 계층이 생겼고 소비자가 최신버전의 contract, contract stub을 사용한다면 컴파일 단계에서 HTTP spec에 대한 feedback을 받고 unit test 단계에서 데이터에 대한 feedback을 받을 수 있습니다.  
+컴파일 단계에서 HTTP spec에 대한 검증가능해졌다면 unit test 단계에서 테스트 데이터에 대한 검증 가능해진다고 보시면 됩니다.  
 
 ### Contract Test 수행
 
-Stub server를 기동시키고 contract test 코드를 실행시켜서 stub server의 API를 호출할 것입니다.  
-현재는 stub server의 API를 호출해서 contract test 코드와 stub server의 API가 http spec, 테스트 케이스를 동일하게 갖췄다는 것을 확인하는 것입니다.  
+최초 contact 검증을 위한 contract 테스트를 수행합니다.  
 
-개발을 진행하면서 소비자는 stub server를 가지고 테스트를 진행하고 제공자는 contract test를 가지고 테스트를 진행하게 됩니다.  
-서로 교류없이 각자 테스트를 진행하더라도 stub server와 contract test 간의 불일치가 없음을 확인했기 때문에  
-소비자와 제공자 사이에서도 불일치가 발생하지 않을 것이라는 확신을 할 수 있습니다.  
+먼저 stub server를 기동시키고 contract test 코드를 실행시켜서 stub server의 API를 HTTP call할 것입니다.  
+Contract test 코드와 stub server의 API가 http spec, 테스트 케이스를 동일하게 갖췄다는 것을 확인하는 것입니다.  
 
-그 확신을 위해 제공자가 API를 만들지 않은 현 단계에서 stub server와 contract test를 수행합니다.  
-
-일단 stub server를 기동시킵니다.  
+stub server를 기동시킵니다.  
 
 ~~~terminal
 contract-comment-stub$ gradle bootRun
@@ -516,7 +360,7 @@ OR
 contract-comment-stub$ mvn spring-boot:run
 ~~~
 
-또 다른 터미널에서 contract test를 실행합니다.  
+다른 터미널에서 contract test를 실행합니다.  
 
 ~~~terminal
 contract-comment-stub$ gradle test
@@ -529,38 +373,66 @@ contract-comment-stub$ mvn -Dapi.contract.comment.url=http://localhost:8080 test
 성공여부를 확인합니다. 만약에 실패한다면 contract, contract stub 중 잘못된 곳을 찾아서 수정해줘야 합니다.  
 성공하게 되면 contract, contract stub에 대한 Pull Reqeust가 merge가 진행될 수 있도록 처리합니다.  
 
-그러면 이제 소비자와 제공자가 각자 개발을 진행할 수 있습니다.  
-그리고 제공자는 CI(Continuous Integration) 과정에서 contract test 통과여부를 체크 받아야 합니다.  
+그러면 이제 contract, contract stub에 대한 jar 배포만 진행되면 소비자와 제공자가 각자 개발을 진행할 수 있습니다.  
+그리고 contract maintainer는 CI(Continuous Integration) 과정의 contract test 를 통해 제공자가 HTTP spec 및 테스트 케이스를 만족시키는지 매번 체크할 수 있습니다.  
 
 
-# 중간 점검
+![API_contract_08](/images/post_img/APIcontract/API_contract_08.png)  
 
-지금까지 생성한 내용을 아래와 같습니다.  
 
-  * Contract Interface : contract-comment-0.0.1.jar
-  * Contract Stub : contract-comment-stub-0.0.1.jar
-  * Contract Tests : jar 공유가 아닌 CI 과정에서 unit test를 실행시켜서 수행
-  * Contract Stub Server : contract-comment-stub-server-0.0.1.jar
+### Contract Stub Jar 패키징
 
-이 중 contract test, contract stub server는 소비자, 제공자가 Java가 아닌 다른 언어를 사용하더라도 활용 가능합니다.  
+아래 명령어를 수행하면 ```build/libs``` 디렉토리와 ```~/.m2/repository/com/dveamer/contract-comment-stub/0.0.1``` 디렉토리에 ```contract-comment-stub-0.0.1.jar``` 파일이 생깁니다.  
 
-만약 소비자, 제공자가 Java, Spring을 사용한다면 contract interface, contract stub을 이용해서 더욱 안정적이고 빠르게 개발을 진행할 수 있습니다.  
+~~~terminal
+contract-comment-stub$ gradle install
 
-여기서부터는 소비자, 제공자가 모두 Java, Spring을 사용한다고 가정하고 내용을 이어 나가겠습니다.  
+
+OR
+
+contract-comment$ mvn -Dspring-boot.repackage.skip=true install
+~~~
+
+
+### Stub Server Jar 패키징 
+
+ 
+Gradle 명령어를 수행하면 ```build/libs``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생깁니다.  
+
+~~~terminal
+contract-comment-stub$ gradle bootJar
+~~~
+
+Maven 명령어를 수행하면 '''target``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생깁니다.  
+
+~~~terminal
+contract-comment-stub$ mvn -DfinalName=contract-comment-stub-server package 
+~~~
+
+### Swagger 기능 제공
+
+Swagger 설정을 해뒀기 때문에 stub server를 기동 후 ```localhost:8080/swagger-ui.html``` 에 접속하시면 아래와 같은 API documentation을 볼 수 있고 수동으로 테스트도 보내볼 수 있습니다.  
+
+![API_contract_16](/images/post_img/APIcontract/API_contract_16.png)  
 
 
 # Consumer 개발 진행
 
+아래의 다이어그램처럼 소비자 unit 테스트 코드는 contract 의 구현체인 stub을 호출하게 됩니다.  
+
 ![API_contract_07](/images/post_img/APIcontract/API_contract_07.png)  
 
-필요한 API에 대한 contract, contract stub이 모두 Maven Repository에 배포되어 있다고 하면 소비자는 큰 노력없이 빠르고 쉽게 개발이 진행 가능합니다.  
-위의 다이어그램처럼 소비자 코드는 contract 의 구현체인 stub을 호출하게 됩니다. Java call만으로 테스트가 되기 때문에 stub server의 기동유무에 대해 신경쓸 필요도 없습니다.  
-또한 contract 뒤의 제공자 서비스에 대해서도 전혀 신경 쓸 필요가 없습니다.  
 
-Contract를 사용하는 service를 작성하는 내용과 service에 대한 unit test 작성에 대해서 살펴볼 것입니다.  
-contract-comment jar에서 제공하는 CommentContract 와 contract-comment-stub jar에서 제공하는 stub을 사용하기 때문에 개발 속도가 향상됩니다.  
+소비자측의 개발속도는 아래의 이유로 크게 향상 됩니다.  
 
-위와 같은 소비자 측의 개발 속도 향상은 해당 API에 대해 제공자 서비스는 1개지만 소비자 서비스는 다수라는 점에서 더 빛을 발합니다.  
+  * 제공되는 stub 활용  
+  * Stub server 기동유무, 제공자의 개발완료 등과 같은 외부요인과 무관하게 테스트 가능  
+  * Contract interface를 Java call하는 것만으로도 contract의 HTTP spec 준수됨 (컴파일 단계 체크)  
+  * Unit test만으로도 contract의 테스트 데이터 준수됨 (unit test 단계 체크)   
+  * 시간이 오래 걸리고 변수가 많은 HTTP call 수행 없이 개발 진행 가능  
+  * HTTP call 모듈 작성 없이 OpenFeign을 이용한 HTTP call 호출  
+
+이와 같은 소비자측 개발속도 향상은 특정 API에 대해 제공자 서비스는 1개지만 소비자 서비스는 다수라는 점에서 더 빛을 발합니다.  
 
 해당 코드의 샘플은 [https://github.com/dveamer/contract/tree/master/article](https://github.com/dveamer/contract/tree/master/article)에서 확인 가능합니다.  
 
@@ -593,9 +465,7 @@ dependencies {
 
 ## Service Implementation In Consumer
 
-소비자는 CommentContract를 호출만 하면 됩니다. 원래는 CommentContract가 Java interface이기 때문에 구현체를 직접 작성해야 하지만 OpenFeign을 사용해서 컴파일시에 자동으로 구현체를 생성했습니다. 실제로 동작시켜보면 HTTP call을 제공자에게 보내는 것을 확인할 수 있습니다.  
-
-기존에는 계약단계에서 결정된 API spec을 기준으로 HTTP call을 위한 구현체를 소비자가 직접 작성해야했습니다. 작성도 간단하지않을 뿐더러 contract와 일치하게 작성했는지 확인하기 위해 stub server 띄우고 몇차례 테스트가 동반되는 과정입니다. 하지만 이제는 탄탄하게 점검되어 제공되는 contract를 호출하는 것만으로도 완료가 됩니다.  
+소비자는 CommentContract를 Java call하기만 하면 됩니다. OpenFeign가 CommentContract의 구현체를 자동으로 생성하고 HTTP call 수행을 대신해 줍니다.  
 
 ~~~java
 package com.dveamer.article.component;
@@ -632,9 +502,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 ## Unit Test In Consumer
 
-Service 구현에 대한 unit test 작성시에는 Stub을 그대로 사용하면 되기 때문에 테스트 코드 작성 시간을 줄일 수 있습니다.  
-그 뿐만 아니라 제공자의 unit test 그리고 소비자의 unit test에서 동일한 stub을 이용하게 됨으로써 각자 unit test만 잘 지켜도 API가 깨지는 일을 막을 수 있습니다.  
-또한 이러한 장점은 component test 시에도 그대로 활용가능합니다.  
+Service 구현에 대한 unit test 작성시에는 contract stub을 contract의 mock으로 사용하기만 하면 됩니다.  
 
 ~~~java
 package com.dveamer.article.component;
@@ -725,22 +593,17 @@ public class CommentContractStubWrapper implements CommentContract  {
 }
 ~~~
 
-## Consumer 배포
-
-소비자 측에서는 제공자 측에서 배포가 완료되었는지를 체크 후 배포를 진행해야 합니다. 이를 위한 어떤 다른 장치가 필요할 수도 있습니다.  
-배포가 완료되고 나면 아래의 다이어그램처럼 소비자 service가 HTTP call을 제공자에게 보낼 수 있게 됩니다. 이 때도 OpenFeign이 제공한 Contract interface의 구현체가 사용됩니다.  
-
-![API_contract_12](/images/post_img/APIcontract/API_contract_12.png)  
-
 
 # Provider 개발 진행 
 
-![API_contract_08](/images/post_img/APIcontract/API_contract_08.png)  
+제공자의 controller 작성과 그에 대한 unit test를 작성에 대해서 살펴 볼 것입니다.  
 
+제공자측 개발속도는 아래의 이유로 크게 향상 됩니다.  
 
-Controller 작성과 그에 대한 unit test를 작성에 대해서 살펴 볼 것입니다.  
-contract-comment jar에서 제공하는 CommentContract 와 contract-comment-stub jar에서 제공하는 stub을 사용하기 때문에 개발 속도가 향상됩니다.  
-
+  * 제공되는 stub 활용  
+  * Contract interface를 구현하는 것만으로도 contract의 HTTP spec이 대부분 준수됨 (컴파일 단계 체크)  
+  * Unit test만으로도 contract의 테스트 데이터 준수됨 (unit test 단계 체크)  
+  * 시간이 오래 걸리고 변수가 많은 HTTP call 수행 없이 개발 진행 가능  
 
 해당 코드의 샘플은 [https://github.com/dveamer/contract/tree/master/comment](https://github.com/dveamer/contract/tree/master/comment)에서 확인 가능합니다.  
 
@@ -769,10 +632,9 @@ dependencies {
 
 ## Controller Implementing Contract
 
-제공자는 CommentContract의 구현체를 만들면 됩니다. Contract와 동일한 public method를 갖게되기 때문에 파라미터 타입과, 응답 타입 등이 모두 소비자와 동일할 수 밖에 없습니다.  
+제공자의 controller는 contract interface의 구현체이기 때문에 controller의 public method는 contract 의 method와 동일한 파라미터 타입, 응답 타입을 갖을 수 밖에 없습니다.  
 
-다만 annotation들은 사람의 개입이 들어가기 때문에 실수가 발생할 수 있습니다. 가장 좋은 방법은 이미 검증 된 stub의 CommentContractStub의 메소드들을 그대로 복사해오면 검증된 annotation들을 그대로 가져올 수 있습니다. 거의 복사만 하면 되는 수준이기 때문에 오류를 생성할 가능성은 매우 낮습니다. 여기서 만약에 실수가 발생하더라도 추후 contract test를 수행하면 문제점은 바로 발견됩니다.  
-
+다만 annotation들은 사람의 개입이 들어가기 때문에 실수가 발생할 수 있습니다. 가장 좋은 방법은 이미 검증 된 stub의 CommentContractStub의 메소드들을 그대로 복사해오면 검증된 annotation들을 그대로 가져올 수 있습니다. 거의 복사만 하면 되는 수준이기 때문에 오류를 생성할 가능성은 매우 낮습니다. 여기서 만약에 실수가 발생하더라도 추후 CI/CD의 contract test에서 문제점은 바로 발견됩니다. 앞서 최초 contract 테스트를 하며 contract에 대한 검증은 완료된 상태입니다. 여기서 발견된 문제점은 단순히 개발자의 오타일 뿐이므로 바로 수정하면 됩니다. 그로 인해 소비자, 제공자 모두 구현로직이 바뀔일은 없습니다.  
 
 ~~~java
 package com.dveamer.comment.web;
@@ -815,8 +677,7 @@ public class CommentController implements CommentContract {
 
 ## Unit Test For Contract In Provider
 
-Contract 구현에 대한 unit test 작성시에는 contract-comment-stub에서 제공하는 Stub을 예상(expected) 결과로 사용하면 되기 때문에 테스트 코드 작성 시간을 줄일 수 있습니다.  
-그 뿐만 아니라 제공자의 unit test 그리고 소비자의 unit test, component test에서 동일한 stub을 이용하게 됨으로써 각자 unit test만 잘 지켜도 API가 깨지는 일을 막을 수 있습니다.  
+Contract 구현에 대한 unit test 작성시에는 contract-comment-stub에서 제공하는 Stub을 예상(expected) 결과로 사용하면 됩니다.  
 
 ~~~java
 package com.dveamer.comment.web;
@@ -874,35 +735,29 @@ class CommentControllerTests {
 ~~~
 
 
-## Provider 배포 
+## Consumer, Provider 배포 
 
-제공자의 배포시에는 항상 contract test가 함께 진행되야 합니다.  
-
+제공자, 소비자의 배포가 모두 이뤄지고 나면  
 배포가 완료되고 나면 아래 다이어그램처럼 소비자가 직접 HTTP call을 제공자에게 보낼 수 있게 됩니다.  
 
-![API_contract_08](/images/post_img/APIcontract/API_contract_08.png)  
-
+![API_contract_12](/images/post_img/APIcontract/API_contract_12.png)  
 
 # 결론
 
-아키텍트 관점에서는 Java, Spring 에 구속된다는 단점이 있습니다.  
-또한 소비자 서비스가 OpenFeign을 사용해야 장점을 최대한 활용할 수 있다는 단점이 있습니다.  
+HTTP spec에 대한 피드백을 컴파일 단계에서 받고  
+테스트 데이터에 대한 피드백을 유닛 테스트 단계에서 받을 수 있게 되어  
+빨라진 feedback만큼 개발속도가 크게 향상 되었습니다.  
 
-하지만 Java, Spring으로 구성된 마이크로 서비스들로 서비스를 구성 중이라면 많은 장점을 가져갈 수 있는 전략입니다.  
+![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
-Contract interface 계층이 실물로 존재하게 됨으로써  
-기존에는 contract test, component test 단계에서 HTTP call을 보내보며 체크하던 HTTP spec과 테스트 데이터에 대해서  
-Java call만으로도 체크가 가능하게 되어 컴파일 단계에서 HTTP spec을 체크하고 unit test단계에서 테스트 데이터를 체크할 수 있게 되었습니다.  
 
-개발 오류에 대한 feedback을 컴파일, unit test 단계에서 받을 수 있게 되기 때문에 개발 속도가 크게 향상됩니다.  
-
-또한 contract에 대한 관리를 제공자가 아닌 제 3자가 진행할 수 있는 구조가 됐습니다.  
+그리고 Contract interface 계층이 실물로 존재하게 됨으로써 contract에 대한 관리를 제공자가 아닌 제 3자가 진행할 수 있는 구조가 됐습니다.  
 Contract 계층은 MSA에서 굉장히 중요한 영역입니다. "소비자와 제공자 서비스 담당자들끼리 알아서 하세요." 라고 방관할 수도 있지만 많은 우여곡절이 있을 것이 쉽게 예상이 됩니다.  
 모든 서비스들의 contract의 형상관리를 담당하는 관리자를 둠으로써 다수가 겪을 어려움을 피해갈 수 있을 것입니다. 
 기존에 지켜지면 좋고 지켜지지 않으면 어쩔도리 없는 "개발자 행동강령"과 같은 구두 정책으로 관리가 되었다면  
 관리자가 contract 실제 코드에 대한 형상관리를 하기 때문에 코드에 정책으로 관리가 되어 더욱 확실하게 관리가 될 수 있습니다.  
 
-잘 관리된다면 아래 이미지 처럼 왼쪽의 그 복잡하던 MSA간의 연결관계를 오른쪽 처럼 단순하게 그려볼 수 있지 않을까 생각해봅니다.  
+잘 관리된다면 아래 이미지 처럼 왼쪽의 그 복잡하던 마이크로 서비스간의 연결관계를 오른쪽 처럼 단순하게 그려볼 수 있지 않을까 생각해봅니다.  
 
 ![API_contract_17](/images/post_img/APIcontract/API_contract_17.png)  
 
