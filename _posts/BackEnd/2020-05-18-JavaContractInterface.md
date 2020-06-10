@@ -2,7 +2,7 @@
 layout: post
 title: "Java Interface Contract : MSA Contract Test에 대한 개선방안"
 date: 2020-05-18 00:00:00
-lastmod: 2020-05-24 00:00:00
+lastmod: 2020-06-10 00:00:00
 categories: BackEnd
 tags: BackEnd Spring MSA
 ---
