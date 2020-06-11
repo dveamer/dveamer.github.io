@@ -266,7 +266,6 @@ CommentContract interface의 구현체를 OpenFeign을 이용해서 생성하고
 ~~~java
 package com.dveamer.contract.comment;
 
-import com.dveamer.contract.comment.stub.ArticleCommentCountFixture;
 import com.dveamer.contract.comment.stub.ArticleFixture;
 import com.dveamer.contract.comment.stub.CommentContractStub;
 import com.dveamer.contract.comment.stub.ConditionFixture;
@@ -304,7 +303,7 @@ class CommentContractTests {
     @Test
     void loadArticleIdHavingNumerousCommentsTest() {
         ConditionDto condition = ConditionFixture.conditionDto();
-        List<ArticleCommentCountDto> expectedList = ArticleCommentCountFixture.articleCommentCountList(condition.getBiggerThan(), condition.getBeforeDays());
+        List<ArticleCommentCountDto> expectedList = new CommentContractStub().loadArticleIdHavingNumerousComments(condition);
         List<ArticleCommentCountDto> actualList = commentContract.loadArticleIdHavingNumerousComments(condition);
         assertThat(actualList, is(samePropertyValuesAs(expectedList)));
     }
@@ -315,7 +314,7 @@ class CommentContractTests {
 ~~~
 
 
-테스트를 실행시켜보면 HTTP 커넥션이 안되서 에러가나는 것을 확인할 수 있습니다.  
+테스트를 실행시켜보면 HTTP 커넥션이 안되서 ```java.net.ConnectException``` 에러가나는 것을 확인할 수 있습니다.  
 
 ~~~terminal
 
