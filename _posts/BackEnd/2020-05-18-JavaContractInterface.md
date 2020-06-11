@@ -406,7 +406,7 @@ Gradle 명령어를 수행하면 ```build/libs``` 디렉토리에 ```contract-co
 contract-comment-stub$ gradle bootJar
 ~~~
 
-Maven 명령어를 수행하면 '''target``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생깁니다.  
+Maven 명령어를 수행하면 ```target``` 디렉토리에 ```contract-comment-stub-server-0.0.1.jar``` 파일이 생깁니다.  
 
 ~~~terminal
 contract-comment-stub$ mvn -DfinalName=contract-comment-stub-server package 
@@ -414,7 +414,7 @@ contract-comment-stub$ mvn -DfinalName=contract-comment-stub-server package
 
 ### Swagger 기능 제공
 
-Swagger 설정을 해뒀기 때문에 stub server를 기동 후 ```localhost:8080/swagger-ui.html``` 에 접속하시면 아래와 같은 API documentation을 볼 수 있고 수동으로 테스트도 보내볼 수 있습니다.  
+Swagger 설정을 해뒀기 때문에 stub server를 기동 후 ```localhost:8080/swagger-ui.html``` 에 접속하시면 아래와 같은 API document를 공유할 수 있고 수동으로 테스트도 진행할 수 있습니다.  
 
 ![API_contract_16](/images/post_img/APIcontract/API_contract_16.png)  
 
