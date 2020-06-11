@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Java Interface Contract : MSA Contract Test에 대한 개선방안"
+title: "Contract Test 없이 MSA 도전 : Contract Interface"
 date: 2020-05-18 00:00:00
-lastmod: 2020-06-10 00:00:00
+lastmod: 2020-06-11 00:00:00
 categories: BackEnd
 tags: BackEnd Spring MSA
 ---
@@ -16,6 +16,7 @@ API 제공자(Provider), 소비자(Consumer) 모두 컴파일 단계에서 계�
 
 이 글에서 사용되는 샘플코드는 [https://github.com/dveamer/contract](https://github.com/dveamer/contract)에서 확인하실 수 있습니다.  
 빌드 툴을 Maven 과 Gradle 두가지 준비했습니다. 원하시는 것을 사용하시면 됩니다. 제가 테스트시 사용한 빌드 툴 버전은 다음과 같습니다.  
+
   * Gradle : 5.6.4
   * Apache Maven : 3.6.0
 
@@ -134,10 +135,14 @@ import java.util.List;
         , contextId = "${api.contract.commentClient.contextId}")
 public interface CommentContract {
 
-    @GetMapping(path="/articles/{articleId}/comments")
-    List<CommentDto> loadCommentsByArticleId(@PathVariable("articleId") String articleId);
+    String PV_articleId = "articleId";
 
-    @GetMapping(path="/articles")
+    String URI_loadCommentsByArticleId = "/articles/{articleId}/comments";
+    @GetMapping(path= URI_loadCommentsByArticleId)
+    List<CommentDto> loadCommentsByArticleId(@PathVariable(PV_articleId) String articleId);
+
+    String URI_loadArticleIdHavingNumerousComments = "/articles";
+    @GetMapping(path= URI_loadArticleIdHavingNumerousComments)
     List<ArticleCommentCountDto> loadArticleIdHavingNumerousComments(@SpringQueryMap ConditionDto conditionDto);
 
 }
@@ -145,6 +150,7 @@ public interface CommentContract {
 
 소비자가 Java call을 통해 호출 할수 있는 순수한 Java interface입니다.  
 CommentDto, ArticleCommentCountDto 같은 DTO(Data Tracnfer Object)도 보입니다. DTO도 contract-comment jar에 포함되기 때문에 소비자, 제공자 모두 DTO를 새로 만들 필요 없으며 둘 사이의 DTO 불일치는 발생할 수 없습니다.  
+
 
 OpenFeign annotation들이 어떻게 활용 되는지는 추후에 다시 다루게 됩니다. OpenFeign에 대해 처음들어보셨다면 [부록 - OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
 특이한 점으로 ```@SpringQueryMap``` 이라는 OpenFeign에서 제공하는 annotation이 loadArticleIdHavingNumerousComments의 conditionDto 파라미터에 적용됐습니다.  
@@ -198,7 +204,7 @@ contract-comment-stub은 contract-comment에 대한 의존성을 갖고 있습�
 
 dependencies {
 
-  ...(생략)
+    ...(생략)
 
     implementation 'com.dveamer:contract-comment:0.0.1'
 }
@@ -227,8 +233,8 @@ import java.util.List;
 public class CommentContractStub implements CommentContract {
 
     @Override
-    @GetMapping(path="/articles/{articleId}/comments")
-    public List<CommentDto> loadCommentsByArticleId(@PathVariable("articleId") String articleId) {
+    @GetMapping(path=PATH_loadCommentsByArticleId)
+    public List<CommentDto> loadCommentsByArticleId(@PathVariable(PV_articleId) String articleId) {
         if(articleId.equals(ArticleFixture.articleId1())) {
             return CommentFixture.commentList1();
         }
@@ -237,7 +243,7 @@ public class CommentContractStub implements CommentContract {
     }
 
     @Override
-    @GetMapping(path="/articles")
+    @GetMapping(path=PATH_loadArticleIdHavingNumerousComments)
     public List<ArticleCommentCountDto> loadArticleIdHavingNumerousComments(ConditionDto conditionDto) {
         return ArticleCommentCountFixture.articleCommentCountList(conditionDto.getBiggerThan(), conditionDto.getBeforeDays());
     }
@@ -315,7 +321,7 @@ class CommentContractTests {
 
 ~~~terminal
 
-contract-comment-stub$ gradle test
+contract-comment-stub$ gradle contractTest
 
 > Task :test
 
@@ -338,7 +344,7 @@ com.dveamer.contract.comment.CommentContractTests > loadArticleIdHavingNumerousC
 소비자가 unit test에서 contract의 mock으로 stub을 사용하고  
 제공자가 unit test에서 contract의 예상응답(expeted value)로 stub을 사용한다면  
 
-```stub 데이터``` = ```소비자 unit test의 stub``` = ```contract test의 예상응답``` = ```HTTP call에 의한 실제응답``` = '''제공자 unit test의 예상응답``` 이 성립하게 됩니다.  
+```stub 데이터``` == ```소비자 unit test의 stub``` == ```contract test의 예상응답``` == ```HTTP call에 의한 실제응답``` == ```제공자 unit test의 예상응답``` 이 성립하게 됩니다.  
 이를 통해 소비자와 제공자가 동일한 테스트 데이터로 개발해 나감을 확신할 수 있습니다.  
 
 컴파일 단계에서 HTTP spec에 대한 검증가능해졌다면 unit test 단계에서 테스트 데이터에 대한 검증 가능해진다고 보시면 됩니다.  
@@ -363,7 +369,7 @@ contract-comment-stub$ mvn spring-boot:run
 다른 터미널에서 contract test를 실행합니다.  
 
 ~~~terminal
-contract-comment-stub$ gradle test
+contract-comment-stub$ gradle contractTest
 
 OR
 
@@ -451,9 +457,9 @@ contract-comment에 대한 의존성과 contract-comment-stub에 대한 의존�
 
 dependencies {
 
-  ...(생략)
+    ...(생략)
 
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	  implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'com.dveamer:contract-comment:0.0.1'
     testImplementation 'com.dveamer:contract-comment-stub:0.0.1'
 
@@ -634,7 +640,7 @@ dependencies {
 
 제공자의 controller는 contract interface의 구현체이기 때문에 controller의 public method는 contract 의 method와 동일한 파라미터 타입, 응답 타입을 갖을 수 밖에 없습니다.  
 
-다만 annotation들은 사람의 개입이 들어가기 때문에 실수가 발생할 수 있습니다. 가장 좋은 방법은 이미 검증 된 stub의 CommentContractStub의 메소드들을 그대로 복사해오면 검증된 annotation들을 그대로 가져올 수 있습니다. 거의 복사만 하면 되는 수준이기 때문에 오류를 생성할 가능성은 매우 낮습니다. 여기서 만약에 실수가 발생하더라도 추후 CI/CD의 contract test에서 문제점은 바로 발견됩니다. 앞서 최초 contract 테스트를 하며 contract에 대한 검증은 완료된 상태입니다. 여기서 발견된 문제점은 단순히 개발자의 오타일 뿐이므로 바로 수정하면 됩니다. 그로 인해 소비자, 제공자 모두 구현로직이 바뀔일은 없습니다.  
+다만 annotation과 PATH, PV 상수들은 강제성도 없고 사람의 개입이 들어갈 가능성이 있습니다. 가장 좋은 방법은 이미 검증 된 stub의 CommentContractStub의 메소드들을 그대로 복사해오면 검증된 annotation들을 그대로 가져올 수 있습니다. 거의 복사만 하면 되는 수준이기 때문에 오류를 생성할 가능성은 매우 낮습니다. 여기서 만약에 실수가 발생하더라도 추후 CI/CD의 contract test에서 문제점은 바로 발견됩니다. 앞서 최초 contract 테스트를 하며 contract에 대한 검증은 완료된 상태입니다. 여기서 문제점이 발견된다면 그것은 제공자가 실수가 명백하고 제공자 측에서 수정을 해야합니다. 하지만 이미 많은 것들이 제약되어있기 때문에 발견된 문제점으로인해 큰 변경이 있을리 없습니다. 이로 인해 소비자, 제공자 모두 구현로직이 바뀔일은 없습니다.  
 
 ~~~java
 package com.dveamer.comment.web;
@@ -658,13 +664,13 @@ public class CommentController implements CommentContract {
     }
 
     @Override
-    @GetMapping("/articles/{articleId}/comments")
-    public List<CommentDto> loadCommentsByArticleId(@PathVariable("articleId") String articleId) {
+    @GetMapping(PATH_loadCommentsByArticleId)
+    public List<CommentDto> loadCommentsByArticleId(@PathVariable(PV_articleId) String articleId) {
         ...(생략)
     }
 
     @Override
-    @GetMapping("/articles")
+    @GetMapping(PATH_loadArticleIdHavingNumerousComments)
     public List<ArticleCommentCountDto> loadArticleIdHavingNumerousComments(ConditionDto conditionDto) {
         ...(생략)
     }
@@ -683,6 +689,7 @@ Contract 구현에 대한 unit test 작성시에는 contract-comment-stub에서 
 package com.dveamer.comment.web;
 
 
+import com.dveamer.contract.comment.CommentContract;
 import com.dveamer.contract.comment.ArticleCommentCountDto;
 import com.dveamer.contract.comment.CommentDto;
 import com.dveamer.contract.comment.ConditionDto;
@@ -708,7 +715,7 @@ class CommentControllerTests {
     @Test
     public void loadCommentsByArticleId_success() throws Exception {
         List<CommentDto> expectedCommentDtoList = new CommentContractStub().loadCommentsByArticleId(ArticleFixture.articleId1());
-        mockMvc.perform(get("/articles/{articleId}/comments", ArticleFixture.articleId1()))
+        mockMvc.perform(get(CommentContract.PATH_loadCommentsByArticleId, ArticleFixture.articleId1()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().string(JsonConverterUtil.toJson(expectedCommentDtoList)));
@@ -720,7 +727,7 @@ class CommentControllerTests {
     public void loadArticleIdHavingNumerousComments_success() throws Exception {
         ConditionDto condition = ConditionFixture.conditionDto();
         List<ArticleCommentCountDto> expectedArticleCommentCountDtoList = new CommentContractStub().loadArticleIdHavingNumerousComments(condition);
-        mockMvc.perform(get("/articles")
+        mockMvc.perform(get(CommentContract.PATH_loadArticleIdHavingNumerousComments)
                             .queryParam("beforeDays", Integer.toString(condition.getBeforeDays()))
                             .queryParam("biggerThan", Integer.toString(condition.getBiggerThan())))
                 .andExpect(status().isOk())
@@ -744,9 +751,7 @@ class CommentControllerTests {
 
 # 결론
 
-HTTP spec에 대한 피드백을 컴파일 단계에서 받고  
-테스트 데이터에 대한 피드백을 유닛 테스트 단계에서 받을 수 있게 되어  
-빨라진 피드백만큼 개발속도가 크게 향상 되었습니다.  
+HTTP spec에 대한 피드백을 컴파일 단계에서 받고 테스트 데이터에 대한 피드백을 유닛 테스트 단계에서 받을 수 있게 되어 빨라진 피드백만큼 개발속도가 크게 향상 되었습니다.  
 
 ![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
@@ -757,7 +762,7 @@ Contract 계층은 MSA에서 굉장히 중요한 영역입니다. "소비자와 
 기존에 지켜지면 좋고 지켜지지 않으면 어쩔도리 없는 "개발자 행동강령"과 같은 구두 정책으로 관리가 되었다면  
 관리자가 contract 실제 코드에 대한 형상관리를 하기 때문에 코드에 정책으로 관리가 되어 더욱 확실하게 관리가 될 수 있습니다.  
 
-잘 관리된다면 아래 이미지 처럼 왼쪽의 그 복잡하던 마이크로 서비스간의 연결관계를 오른쪽 처럼 단순하게 그려볼 수 있지 않을까 생각해봅니다.  
+잘 관리된다면 아래 이미지 처럼   왼쪽의 그 복잡하던 마이크로 서비스간의 연결관계를 오른쪽 처럼 단순하게 그려볼 수 있지 않을까 생각해봅니다.  
 
 ![API_contract_17](/images/post_img/APIcontract/API_contract_17.png)  
 
