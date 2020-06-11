@@ -31,11 +31,9 @@ API 제공자(Provider), 소비자(Consumer) 모두 컴파일 단계에서 계�
 
 ### Provider의 어려움 
 
-  * API spec이 바뀌면 다수의 소비자가 영향을 받습니다.  
-  * 제공자는 특정 개발 건 완료 후 contract test를 통해 모든 API에 대해서 API spec 변경여부 체크 필요합니다.  
-  * 발견되어 다행이지만 이미 개발이 많이 진행된 단계여서 시간손실이 발생합니다.  
+API spec이 바뀌면 다수의 소비자가 영향을 받기 때문에 제공자는 특정 개발 건 완료 후 contract test를 통해 모든 API에 대해서 API spec 변경여부 체크 필요합니다. 이 때 문제가 발견된다면 다행이지만 이미 개발이 많이 진행된 단계이기 때문에 시간 손실은 피할 수 없습니다.  
 
-상태가 좋지 않은 곳에서는 제공자는 무턱대고 API spec을 바꾸고 모든 소비자들이 모든 것을 변경하는 상황도 발생합니다. 소비자들로부터 큰 불평이 오는 것만이 아니라 프로젝트 전체적으로 봤을 때 굉장히 큰 손실이 발생합니다.  
+간혹 상태가 좋지 않은 프로젝트(?)에서는 제공자는 무턱대고 API spec을 바꾸고 배포해서 모든 소비자들이 변경사항에 대해 맞춰야하는 상황도 발생합니다. 이것은 프로젝트 전체적으로 봤을 때 굉장히 큰 손실을 발생시킵니다.  
 
 ### Consumer의 어려움 
 
@@ -149,7 +147,7 @@ public interface CommentContract {
 ~~~
 
 소비자가 Java call을 통해 호출 할수 있는 순수한 Java interface입니다.  
-CommentDto, ArticleCommentCountDto 같은 DTO(Data Tracnfer Object)도 보입니다. DTO도 contract-comment jar에 포함되기 때문에 소비자, 제공자 모두 DTO를 새로 만들 필요 없으며 둘 사이의 DTO 불일치는 발생할 수 없습니다.  
+CommentDto, ArticleCommentCountDto 같은 DTO(Data Transfer Object)도 보입니다. DTO도 contract-comment jar에 포함되기 때문에 소비자, 제공자 모두 DTO를 새로 만들 필요 없으며 둘 사이의 DTO 불일치는 발생할 수 없습니다.  
 
 
 OpenFeign annotation들이 어떻게 활용 되는지는 추후에 다시 다루게 됩니다. OpenFeign에 대해 처음들어보셨다면 [부록 - OpenFeign 간략설명](# OpenFeign 간략설명)을 참고해주시기 바랍니다.  
