@@ -741,8 +741,7 @@ class CommentControllerTests {
 
 ## Consumer, Provider 배포 
 
-제공자, 소비자의 배포가 모두 이뤄지고 나면  
-배포가 완료되고 나면 아래 다이어그램처럼 소비자가 직접 HTTP call을 제공자에게 보낼 수 있게 됩니다.  
+제공자, 소비자의 배포가 모두 이뤄지고 나면 아래 다이어그램처럼 소비자가 직접 HTTP call을 제공자에게 보낼 수 있게 됩니다.  
 
 ![API_contract_12](/images/post_img/APIcontract/API_contract_12.png)  
 
