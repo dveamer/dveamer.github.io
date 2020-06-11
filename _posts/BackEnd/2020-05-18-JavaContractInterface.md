@@ -289,11 +289,11 @@ class CommentContractTests {
     void setup() {
         ...(생략)
 
-		    commentContract = Feign.builder()
-				    .contract(new SpringMvcContract())
-				    .encoder(new JacksonEncoder())
-				    .decoder(new JacksonDecoder())
-				    .target(CommentContract.class, url);
+        commentContract = Feign.builder()
+                              .contract(new SpringMvcContract())
+                              .encoder(new JacksonEncoder())
+                              .decoder(new JacksonDecoder())
+                              .target(CommentContract.class, url);
     }
 
     @Test
@@ -459,7 +459,7 @@ dependencies {
 
     ...(생략)
 
-	  implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'com.dveamer:contract-comment:0.0.1'
     testImplementation 'com.dveamer:contract-comment-stub:0.0.1'
 
