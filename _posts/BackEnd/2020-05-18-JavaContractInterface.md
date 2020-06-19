@@ -9,8 +9,8 @@ tags: BackEnd Spring MSA
 
 ![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
-API 제공자(Provider), 소비자(Consumer) 모두 컴파일 단계에서 계약(Contract)의 API spec 검증할 방법을 제안합니다.  
-기존에 component, contract 테스트에서 받을 수 있었던 API의 HTTP spec 검증 피드백을 컴파일 단계에서 받게되어 개발속도가 크게 향상됩니다.  
+API 제공자(Provider), 소비자(Consumer) 모두 컴파일 단계에서 계약(Contract)의 API spec을 검증할 방법을 제안합니다.  
+기존에 component, contract 테스트에서 받을 수 있었던 피드백을 컴파일 단계에서 받게되어 개발속도가 크게 향상됩니다.  
 
 <!--more--> 
 
@@ -37,7 +37,7 @@ API spec이 바뀌면 다수의 소비자가 영향을 받기 때문에 제공�
 
 ### Consumer의 어려움 
 
-API spec은 문서를 통해 제공자, 소비자 사이에서 커뮤니케이션이 진행되고 소비자는 문서를 보고 API spec에 맞춰 HTTP call하는 모듈을 만들어야 합니다. 숙련자라면 그나마 낫겠지만 이 과정에서 꽤나 많은 불필요한 시간이 소요됩니다. 또한 이 과정은 해당 API를 사용하는 소비자가 늘어날 때마다 반복됩니다.  
+API spec은 보통 문서를 통해 공유됩니다. 소비자는 문서를 보고 API spec에 맞춰 HTTP call하는 모듈을 만들어야 합니다. 숙련자라면 그나마 낫겠지만 이 과정에서 꽤나 많은 불필요한 시간이 소요됩니다. 또한 이 과정은 해당 API를 사용하는 소비자가 늘어날 때마다 반복됩니다.  
 
 # Contract Interface 계층 추가
 
