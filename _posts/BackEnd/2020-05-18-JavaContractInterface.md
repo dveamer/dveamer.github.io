@@ -135,12 +135,12 @@ public interface CommentContract {
 
     String PV_articleId = "articleId";
 
-    String URI_loadCommentsByArticleId = "/articles/{articleId}/comments";
-    @GetMapping(path= URI_loadCommentsByArticleId)
+    String PATH_loadCommentsByArticleId = "/articles/{articleId}/comments";
+    @GetMapping(path= PATH_loadCommentsByArticleId)
     List<CommentDto> loadCommentsByArticleId(@PathVariable(PV_articleId) String articleId);
 
-    String URI_loadArticleIdHavingNumerousComments = "/articles";
-    @GetMapping(path= URI_loadArticleIdHavingNumerousComments)
+    String PATH_loadArticleIdHavingNumerousComments = "/articles";
+    @GetMapping(path= PATH_loadArticleIdHavingNumerousComments)
     List<ArticleCommentCountDto> loadArticleIdHavingNumerousComments(@SpringQueryMap ConditionDto conditionDto);
 
 }
