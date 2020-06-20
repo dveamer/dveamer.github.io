@@ -2,7 +2,7 @@
 layout: post
 title: "Contract Test 없이 MSA 도전 : Contract Interface"
 date: 2020-05-18 00:00:00
-lastmod: 2020-06-11 00:00:00
+lastmod: 2020-06-20 00:00:00
 categories: BackEnd
 tags: BackEnd Spring MSA
 ---
@@ -70,9 +70,9 @@ HTTP call을 의미하는 점선의 화살표는 없지만 마이크로 서비�
 
 ![API_contract_15](/images/post_img/APIcontract/API_contract_15.png)  
 
-
-기존에는 component, contract 테스트 단계에서 HTTP call을 통해 점검할 수 있었던 사항들을  
-제공자, 소비자 모두 컴파일 단계에서 피드백을 받게 되기 때문에 개발 속도가 굉장히 빨라집니다.  
+Spring Cloud Contract라는 솔루션과 같은 기존 방식에서는  
+component, contract 테스트 단계에서 HTTP call을 통해 점검할 수 있었던 사항들을  
+이제는 contract interface 계층을 추가함으로써 제공자, 소비자 모두 컴파일 단계에서 피드백을 받게되고 덕분에 개발 속도가 굉장히 빨라집니다.  
 
 # 단점..?
 
