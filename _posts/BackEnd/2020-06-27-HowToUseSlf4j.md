@@ -219,15 +219,10 @@ public abstract class AbstractLogger implements ExtendedLogger, Serializable {
 
 ~~~
 
-파라미터가 1개 일때보다 2개의 경우, 가독성이 확실하게 비교됩니다.  
+파라미터가 1개 일때보다 2개의 경우, 가독성이 좋아진 것이 확실하게 비교됩니다.  
 그리고 첫번째, 두번째 방법은 앞서 설명했던 것 처럼 문자열 연산이 가장 먼저 일어나기 때문에 성능 악화가 발생합니다.  
 
-성능과 가독성을 모두 만족시켜주는 세번째 방법을 권장합니다.  
-
-~~~java
-        // good performance, good readability - I recommend this.
-        logger.debug("Hello {}({}).", user.getName(), user.getEmail());
-~~~
+성능과 가독성을 모두 만족시켜주는 세번째의 SLF4J 치환문자(```{}```) 사용 방법을 권장합니다.  
 
 
 ## Binding Many Parameters
@@ -235,17 +230,21 @@ public abstract class AbstractLogger implements ExtendedLogger, Serializable {
 ~~~java
     private void bindManyParameters(User user) {
 
-        // little poor performance
-        logger.debug("User id : {}, name : {}, job : {}", user.getName(), user.getEmail(), user.getJob());
+        // little poor performance, good readability
+        logger.debug("User id : {}, email : {}, job : {}", user.getName(), user.getEmail(), user.getJob());
 
-        // good performance - I recommend this.
+        // good performance, good readability, uncomfortable
+        logger.debug("User name : {}", user.getName());
+        logger.debug("User email : {}", user.getEmail());
+        logger.debug("User job : {}", user.getJob());
+
+        // good performance, good readability - I recommend this.
         logger.debug("User : {}", user);
     }
 ~~~
 
-두 방법 모두 SLF4J의 치환문자(```{}```)를 사용하는 방법입니다.  
-다만, 첫번째 경우는 파라미터의 개수가 여러개이고 두번째 경우는 객체를 통째로 넘겨서 파라미터 개수를 1개로 줄였습니다.  
-
+세 방법 모두 SLF4J의 치환문자(```{}```)를 사용하는 방법입니다.  
+첫번째 경우는 파라미터의 개수가 여러개이고 두번째, 세번째 경우는 파라미터가 1개입니다.  
 파라미터 개수가 3개 이상이면 가용 로그 레벨을 체크하기 전에 ```Object[]``` 를 생성하는 비용이 발생합니다.  
 
 > However, this variant incurs the hidden(and relatively small) cost of creating an <code>Object[]</code> before invoking the method, even if this logger is disabled for DEBUG
@@ -283,7 +282,10 @@ public interface Logger {
 
 그렇기 때문에 최대한 파라미터의 개수를 2개 이하로 맞추기 위해 노력해야 합니다.  
 
-당연한 이야기지만 User 객체의 ```Object.toString()``` 메소드에 대한 override를 통해 원하는 출력형태를 작성하셔야 합니다.  
+다만, 두번째 방법은 로그가 한줄에 출력되는 것이 아니라 세줄로 나눠서 출력되기 때문에 로그가 한곳에 모여있지 않을 수 있습니다. 다른 쓰레드의 로그가 세줄의 로그 사이에 끼어들게 될 것입니다. 만약 파일에 로깅을 하는 상황에서 심할 때는 세줄이 각각 다른 파일에 로깅될 경우도 있을 것입니다. 로깅시 함께 남긴 thread id로 검색해서 확인을 해야할 수 도 있습니다.  
+
+세번째 방법은 로그도 한줄에 남고 성능도 제일 좋으며 가독성도 좋습니다.  
+User 객체의 ```Object.toString()``` 메소드에 대한 override 작업은 필요합니다. (대부분의 IDE에서 자동생성 기능이 제공됩니다.)  
 
 ~~~java
 public class User {
@@ -310,7 +312,7 @@ public class User {
 ## Logging Exception Stack Trace
 
 
-SLF4J는 [Throwable](https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.base/java/lang/Throwable.html) 객체를 마지막 파라미터로 넘기게 되면 stack trace를 로깅시켜 줍니다. 다만, 첫번재 파라미터는 String으로 넘겨주셔야 합니다.  
+SLF4J는 [Throwable](https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.base/java/lang/Throwable.html) 객체를 마지막 파라미터로 넘기게 되면 stack trace를 로깅시켜 줍니다. 다만, 첫번째 파라미터는 String으로 넘겨주셔야 합니다.  
 
 ~~~java
     private void printExceptionStackTrace(User user) {
@@ -390,7 +392,7 @@ java.lang.Exception: Something is wrong.
 
 두번째 방법은 필요한 정보가 모두 기록되지만 가용 로그 레벨 체크보다 ```user.toString()```이 먼저 수행되기 때문에 성능 낭비가 발생합니다.  
 
-세번재 방법은 가용 로그 레벨 체크가 ```user.toStirng()```보다 먼저 수행되기 때문에 성능 낭비가 발생하지 않습니다.  
+세번째 방법은 가용 로그 레벨 체크가 ```user.toStirng()```보다 먼저 수행되기 때문에 성능 낭비가 발생하지 않습니다.  
 이 경우에도 역시 [Binding Many Parameters](#Binding Many Parameters) 때와 마찬가지로 파라미터는 exception을 포함해서 2개 이하로 맞추기 위해 노력해야합니다.  
 
 
