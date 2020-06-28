@@ -226,6 +226,32 @@ li {
     max-width:90%;
 }
 
+/**
+ * float-right
+ */
+
+
+.float-right {
+    visibility: visible;
+
+    position: fixed !important;
+    position: absolute; /*ie6 */
+    right: 15px;
+    bottom: unquote("max(50px, 10%)");
+
+    width: unquote("calc( 50% - 500px )"); 
+    height: unquote("calc( 80% )"); 
+
+    background-color: transparent;
+
+}
+
+@media only screen and (max-width: 1350px) {
+    .float-right {
+        visibility: collapse;
+    }
+}
+
 
 /**
  * ETC
