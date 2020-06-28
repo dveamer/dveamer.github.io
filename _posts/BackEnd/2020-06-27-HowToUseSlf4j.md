@@ -7,7 +7,7 @@ categories: BackEnd
 tags: BackEnd SLF4J Log
 ---
 
-![SLF4J Logo ](http://www.slf4j.org/images/logos/slf4j-logo.jpg){:class="imgTitle"} 
+![SLF4J Logo ](http://www.slf4j.org/images/logos/slf4j-logo.jpg){:class="imgTitle"}  
 (이미지 출처 : [http://www.slf4j.org/](http://www.slf4j.org))  
 
 Logger의 잘못된 사용법은 어플리케이션의 성능에 큰 영향을 줍니다.  
