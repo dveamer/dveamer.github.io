@@ -28,7 +28,7 @@ SLF4J(Simple Logging Facade for Java)를 이용해서 로그를 남기는 것을
 
 # 최악의 방법
 
-```java.lang.System```을 이용한 로깅은 로그 레벨을 관리할 수 없기 때문에 문제가 됩니다.  
+```java.lang.System.out```, ```java.lang.System.err```을 이용한 로깅은 로그 레벨을 관리할 수 없기 때문에 문제가 됩니다.  
 
 ~~~java
 
@@ -38,7 +38,7 @@ SLF4J(Simple Logging Facade for Java)를 이용해서 로그를 남기는 것을
 ~~~
  
 Exception의 stack trace를 로깅할 때도 ```ex.printStackTrace()```를 이용하면 안됩니다.  
-참고로, ```ex.printStackTrace()```은 내부적으로 ```java.lang.System```을 이용해서 로그를 남기게 됩니다.  
+참고로, ```ex.printStackTrace()```은 내부적으로 ```java.lang.System.err```를 이용해서 로그를 남기게 됩니다.  
 
 ~~~java
 
@@ -52,9 +52,6 @@ Exception의 stack trace를 로깅할 때도 ```ex.printStackTrace()```를 이�
 
 ~~~
  
-
-```java.lang.System```이 아닌 로그 솔루션을 쓰면 로그 레벨 관리 뿐만이 아니라 로그를 파일 혹은 원격지에도 남길 수가 있고 비동기로 로깅을 할 수도 있는 등 다양한 이점이 있습니다.  
-
 
 # Binding Parameters
 
