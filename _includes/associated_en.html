@@ -96,12 +96,13 @@
               <div>
               ... <a href="{{ post.url }}">more</a>
               </div>
-
-              {% include associated_ads.html %}
-
             {% endif %}
 
             </li>
+
+            {% if tag_count == 2 %} 
+              {% include associated_ads.html %}
+            {% endif %}
 
             {% assign exist = true %}
             {% assign tag_count = tag_count | plus: 1 %}
