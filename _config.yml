@@ -23,8 +23,7 @@ kramdown:
 
 permalink: /:categories/:title.html
 
-gems :
-     - jekyll-paginate
+plugins: [jekyll-paginate]
 
 paginate: 10
 paginate_path: "/page:num/"
