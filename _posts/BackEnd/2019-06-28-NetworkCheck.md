@@ -56,6 +56,8 @@ HTTP과 같은 표준 프로토콜이 아닌 자체 프로토콜을 사용하는
 Telnet과 cURL에 의한 테스트는 임시 방편적인 테스트가 되겠지만 empty reply(빈 문자열 응답) 혹은 알수없는 자체 프로토콜만의 메시지들이 출력된다면 연결은 성공적으로 됐다고 볼 수 있습니다.  
 
 
+<!--ads-->
+
 # Failure Cases
 
 ## Not Listening Port
@@ -130,6 +132,8 @@ telnet: could not resolve dveamer1.com/telnet: Name or service not known
 $ curl -I dveamer1.com
 curl: (6) Could not resolve host: dveamer1.com
 ~~~
+
+<!--ads-->
 
 ## Shutdowned OS
 

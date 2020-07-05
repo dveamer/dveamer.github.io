@@ -52,6 +52,8 @@ $ dconf-editor
 
 이에 대한 해결방법은 좀 더 아래에서 설명드리겠습니다.  
 
+<!--ads-->
+
 # Android VNC Viewer
 
 VNC viewer는 windows, Linux 등 다양한 OS에 맞춰서 제공됩니다.  
@@ -118,6 +120,8 @@ Google Play에서 [ConnectBot](https://play.google.com/store/apps/details?id=org
   - Port : 22  
 
 SSH 접속을 하실 때는 Android의 wifi scan기능을 끄고 통신사망으로 접속하시면 집밖에서 접속이 가능하다는 것을 확인해볼 수 있습니다.  
+
+<!--ads-->
 
 ## SSH Port Forwarding
 

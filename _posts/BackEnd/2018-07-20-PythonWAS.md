@@ -69,6 +69,7 @@ $ useradd -g g_news u_news
 $ passwd u_news
 ~~~
 
+<!--ads-->
 
 # Python 환경구성
 
@@ -152,6 +153,7 @@ PIP를 이용해서 필요한 패키지를 설치할 수 있습니다.
 이 외에도 필요한 Python 패키지가 있을 경우에는 pip 명령어로 추가 설치하시면 됩니다.
 
 
+<!--ads-->
 
 # Framework : DJango
 
@@ -426,6 +428,8 @@ curl -i http://localhost:8000/authors/1/
   * REST API https://dev.to/enether/managing-restful-urls-in-django-rest-framework
   * http://www.django-rest-framework.org/api-guide/viewsets/
 
+<!--ads-->
+
 # WSGI (Web Server Gateway Interface) 란?
 
 Web서버가 받은 호출을 Python 어플리케이션에게 전달하고 응답받기 위한 호출조약([Calling Convention](https://en.wikipedia.org/wiki/Calling_convention)) 입니다. 
@@ -465,6 +469,8 @@ WSGI는 프레임워크와 웹서버 선택이 자유롭습니다.
   * CherryPy
   * Gunicorn
 
+
+<!--ads-->
 
 # WAS 구성
 

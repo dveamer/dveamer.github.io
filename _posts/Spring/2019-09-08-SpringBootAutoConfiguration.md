@@ -49,6 +49,7 @@ Spring Boot는 @Condition과 @Conditional을 이용해서 이와 같은 문제�
   * [@SpringBootApplication 설정](#@SpringBootApplication)
 
 
+<!--ads-->
 
 # Auto Configuration Filters & Conditions
 
@@ -85,6 +86,7 @@ org.springframework.boot.autoconfigure.data.cassandra.CassandraReactiveDataAutoC
 또한 [@Profile](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Profile.html), [@Lazy](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Lazy.html)와 같은 Spring에서 제공하는 다른 annotation들도 Spring Boot auto configuration에 활용됩니다.  
 
 Auto Configuration Import Filters와 몇가지 @Conditional을 살펴보는 과정을 통해 AutoConfiguration의 원리를 살펴보도록 하겠습니다.  
+
 
 ## Auto Configuration Import Filters
 
@@ -194,6 +196,7 @@ public class CustomizedAsyncConfig {
 
 참고로, 실제 [JdbcTemplateAutoConfiguration.java](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/JdbcTemplateAutoConfiguration.java)은 @ConditionalOnBean을 사용하지는 않습니다.  
 
+<!--ads-->
 
 ## @ConditionalOnClass
 
@@ -264,6 +267,7 @@ WebServlet.java 파일이 classpath에 존재해야지만 @ConditionalOnClass의
 spring.h2.console.enabled=true
 ~~~
 
+<!--ads-->
 
 # Appendices 
 

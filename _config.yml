@@ -10,6 +10,7 @@ github_username:  dveamer
 disqus_comment_username: Dveamer
 disqus_domain: "https://dveamer.github.io" # fixed
 excerpt_separator: <!--more-->
+ads_separator: <!--ads-->
 encoding: utf-8
 
 

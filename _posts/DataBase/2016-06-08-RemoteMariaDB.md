@@ -51,6 +51,8 @@ $ sudo service mysql restart
 ~~~
 
 
+<!--ads-->
+
 # 계정생성 & 권한설정
 
 외부 접속을 허용할 계정을 생성하고 권한을 준다.  

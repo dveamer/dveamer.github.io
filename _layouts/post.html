@@ -44,7 +44,7 @@ layout: post_layout
   {% assign content_array = page.content | split: site.excerpt_separator %}
   {% assign excerpt_only = content_array | first %}
   {% assign content_remainder = content_array | last %}
-
+  {% assign content_array_with_ads = content_remainder | split: site.ads_separator %}
 
   <article id="post_excerpt" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
     {{ excerpt_only | append: '</p>'}}
@@ -74,12 +74,24 @@ layout: post_layout
   (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 
-  <br/>
-  <br/>
-
   <article id="post_content" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
-    {{ content_remainder | remove_first: '</p>'}}
+    {% for content_with_ads in content_array_with_ads %}
+
+      {{ content_with_ads }}
+
+      {% include post_ads.html %}
+    
+    {% endfor %}
+
   </article>
+
+
+<!--  {% include donations.html %} -->
+
+  {% include associated.html %}
+
+<!--  {% include disqus.html %} -->
+
 </div>
 
 

@@ -79,6 +79,8 @@ public class GreetingService {
 
 비동기방식으로 처리하고 싶은 method마다 반복적으로 수정작업을 해야한다는 점을 기억해주시기 바랍니다.  
 
+<!--ads-->
+
 # Spring @Async
 
 ## @Async with SimpleAsyncTaskExecutor
@@ -189,6 +191,8 @@ method1에 대한 수정없이 처리가 가능하다는 점이 장점입니다.
 
 이 사항은 Spring의 제약사항이 아니라 thread가 분리되는 비동기 처리이기 때문에 발생하는 현상입니다.  
 [Spring @Async HttpServletRequest Session](/java/SpringAsyncSession.html) 글에서 @Async를 사용하여 비동기처리를 하면서도 Session 정보를 사용하는 방법을 설명드립니다.  
+
+<!--ads-->
 
 ## @Async with Handler
 

@@ -59,6 +59,7 @@ WAS간의 http session 공유 방법은 HttpServletReqeust에서 제공하는 Ht
 특히 최근에는 in-memory cache solution을 이용한 session manager 서버를 별도로 구성하는 방법을 많이 사용합니다. 이런 경우 HttpSession 객체가 불필요해 지는 경우가 있습니다.  
 하지만 http session을 공유하는 방법에 정답이 있는 것도 아니고 프로젝트의 상황에 따라 상황이 달라지기 때문에 알아두는 것이 필요합니다.  
 
+<!--ads-->
 
 # Spring에서 HttpServletReqeust 접근
 
@@ -94,6 +95,8 @@ HTTP session을 WAS간에 공유하기 위해 session clustering이 이뤄지는
 그리고 controller와 service간의 파라미터를 주고 받는 대용으로 사용하라는 이야기는 절대 아닙니다.  
 WAS간의 공유가 필요한 정보를 이 방법을 이용하면 cotnroller, service, DAO 전 구간에서 쉽게 접근이 가능하다는 이야기입니다.  
 그리고 WAS간의 공유가 불필요하지만 thread 내에서 공통적으로 자주 사용되는 내용은 session scope이 아니라 requset scope을 이용하면 WAS에 무리를 주지 않고도 전 구간에서 접근이 가능합니다.  
+
+<!--ads-->
 
 # HttpServletReqeust Util
 

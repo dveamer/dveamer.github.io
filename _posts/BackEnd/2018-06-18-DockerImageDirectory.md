@@ -82,6 +82,7 @@ Fedora/Centos의 경우 ```/etc/sysconfig/docker``` 파일을 열어서 ```other
 
   * [How do I change the Docker image installation directory?](https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169)
 
+<!--ads-->
 
 ## 주의사항 
 
