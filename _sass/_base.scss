@@ -71,8 +71,8 @@ img {
     vertical-align: middle;
 }
 .post-list img {
-    max-width: 500px; 
-    max-height: 500px; 
+    max-width: unquote("min( 100%, 500px )");
+    max-height: unquote("min( 100%, 500px )");
 }
 
 .post img {
@@ -80,12 +80,12 @@ img {
 }
 
 img.imgTitle {
-    max-width: 250px; 
+    max-width: 100%;
     max-height: 250px; 
 }
 
 img.imgSmall {
-    max-width: 250px; 
+    max-width: unquote("min( 100%, 250px )");
 }
 
 
