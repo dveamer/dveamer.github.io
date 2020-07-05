@@ -70,22 +70,23 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
-.post-list img {
-    max-width: unquote("min( 100%, 500px )");
-    max-height: unquote("min( 100%, 500px )");
-}
 
 .post img {
     max-width: 100%; 
 }
 
 img.imgTitle {
-    max-width: 100%;
+    max-width: unquote("min( 100%, 250px )");
     max-height: 250px; 
 }
 
 img.imgSmall {
     max-width: unquote("min( 100%, 250px )");
+}
+
+.post-list img {
+    max-width: unquote("min( 100%, 500px )");
+    max-height: unquote("min( 100%, 500px )");
 }
 
 
