@@ -34,25 +34,25 @@ JDK 12 기준으로 RuntimeException을 직접 상속하는 예외는 총 58개�
 IllegalArgumentException를 다시 상속하는 예외들도 많이 있습니다. 아래 예시는 그 중 몇가지 자주 사용되는 예외들입니다.  
 다양한 부적절한 인슈 유형들에 대해서 좀 더 구체적인 예외를 발생시킬 수 있게 해줍니다.  
 
-  * [IllegalFormatException ](https://cr.openjdk.java.net/~iris/se/12/latestSpec/api/java.base/java/util/IllegalFormatException.html) : available in 1.5 or later
-  * InvalidKeyException : available in 1.5 or later
-  * InvalidParameterException : available in 1.1 or later
-  * InvalidPathException : available in 1.7 or later
-  * KeyAlreadyExistsException : available in 1.5 or later
-  * NumberFormatException : available in 1.0 or later
-  * ProviderMismatchException : available in 1.7 or later
+  * [IllegalFormatException ](https://cr.openjdk.java.net/~iris/se/12/latestSpec/api/java.base/java/util/IllegalFormatException.html) - available in 1.5 or later
+  * InvalidKeyException - 1.5 
+  * InvalidParameterException - 1.1
+  * InvalidPathException - 1.7
+  * KeyAlreadyExistsException - 1.5
+  * NumberFormatException - 1.0
+  * ProviderMismatchException - 1.7
 
 
 ## IllegalStateException
 
 [IllegalStateException](https://cr.openjdk.java.net/~iris/se/12/latestSpec/api/java.base/java/lang/IllegalStateException.html) 은 호출받은 객체가 요청을 수행하기에 적합하지 않은 상태일때 사용하면 됩니다.  
 
-  * AcceptPendingException : available in 1.7 or later
-  * AlreadyBoundException : available in 1.7 or later
-  * CancellationException : available in 1.5 or later
-  * CancelledKeyException : available in 1.4 or later
-  * ReadPendingException : available in 1.7 or later
-  * WritePendingException : available in 1.7 or later
+  * AcceptPendingException - 1.7
+  * AlreadyBoundException - 1.7
+  * CancellationException - 1.5
+  * CancelledKeyException - 1.4
+  * ReadPendingException - 1.7
+  * WritePendingException - 1.7
 
 
 ## NullPointerException
