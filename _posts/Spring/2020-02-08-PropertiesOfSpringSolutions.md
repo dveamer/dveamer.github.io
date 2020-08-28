@@ -38,6 +38,14 @@ spring.task.execution.pool.keep-alive=60
   * [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html)
   * [Hikari DB Connection Pool](https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby)
 
+  * [Spring Boot Quartz](https://docs.spring.io/spring-boot/docs/2.0.0.M3/reference/html/boot-features-quartz.html)
+    - Boot 관련 설정은 [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html) 에서 확인  
+    - 그 외에 Quartz Scheduler configuration 을 변경하려면 ```spring.quartz.properties.``` 뒤에 Quartz 프로퍼티 정보를 넣어서 작성하면 된다.  
+    - 예를들어, ```org.quartz.threadPool.threadCount``` 값을 설정하고 싶다면 ```spring.quartz.properties.org.quartz.threadPool.threadCount``` 에 입력하면 된다.  
+    - 또는 ```SchedulerFactoryBeanCustomizer``` beans를 이용해서 programmatic하게 Quartz Scheduler configuration 을 변경 가능하다.  
+    - [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/configuration/)
+        
+
 ## Spring Cloud
 
   * [Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/appendix.html)

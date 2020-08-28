@@ -32,6 +32,12 @@ You can also check the default values of properties from the follow links.
   * [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html)
   * [Hikari DB Connection Pool](https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby)
 
+  * [Spring Boot Quartz](https://docs.spring.io/spring-boot/docs/2.0.0.M3/reference/html/boot-features-quartz.html)
+    - Boot configuration for Quarts can be found in [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html)
+    > Quartz Scheduler configuration can be customized using Quartz configuration properties (see spring.quartz.properties.*) and SchedulerFactoryBeanCustomizer beans which allow programmatic SchedulerFactoryBean customization.
+    - [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/configuration/)
+        
+
 ## Spring Cloud
 
   * [Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/appendix.html)
