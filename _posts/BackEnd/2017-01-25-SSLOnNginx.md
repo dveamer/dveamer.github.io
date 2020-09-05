@@ -112,6 +112,8 @@ $ chmod 600 /etc/nginx/ssl/unified-example.com.crt
 nginx$ rm -rf ~/ssl/*
 ~~~
 
+<!--ads-->
+
 ### Configure Nginx XML
 
 ~~~terminal

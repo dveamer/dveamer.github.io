@@ -69,6 +69,8 @@ DNS server에 저장된 정보관리를 통해 server 1, 2로 연결되던 서�
 목적지 서버를 교체하는 과정에서 client를 수정하는 과정없이  
 DNS 정보변경만으로 client가 목적지 server3으로 접근하게 되었다는 점입니다.  
 
+<!--ads-->
+
 # Apache HTTPD 와 ELB
 
 이제 본론으로 들어가서 첫번째 트러블슈팅 경험담입니다.  
@@ -237,6 +239,8 @@ Apache HTTPD, Nginx 기본설정만으로도 문제 없이 ALB와 연동이 가�
 ### 왜 14초인가?
 
 추후에 작성 예정
+
+<!--ads-->
 
 # Aurora DB Fail-Over
 

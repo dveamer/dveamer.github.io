@@ -90,6 +90,8 @@ Session이 추가되거나 삭제되면 WAS에는 등록된 리스너를 호출�
 
 참고로 이러한 중복 로그인 방지처리를 Spring에서는 "Concurrent Session Controll"라고 부릅니다.  
 
+<!--ads-->
+
 # Without Spring Security
 
 Spring Security를 사용하지 않는 시스템에서 중복 로그인을 처리할 방법을 간략하게 소개합니다.  
@@ -185,6 +187,8 @@ session에 attribute까 추가 되면 map에 보관하고 session이 삭제되�
     <listener-class>io.dveamer.sample.CustomHttpSessionListener</listener-class>
 </listener>
 ~~~
+
+<!--ads-->
 
 # WAS 재호출을 이용한 방법
 

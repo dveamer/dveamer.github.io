@@ -198,6 +198,8 @@ $ cd /usr/local/server/tomcat/webapps/ROOT/
 $ echo "Tomcat Test" > index.jsp
 ~~~
 
+<!--ads-->
+
 # Nginx
 
 Nginx는 WEB서버입니다.  
@@ -318,6 +320,8 @@ OS 부팅시 자동으로 실행되도록 등록합니다.
 ~~~terminal
 $ chkconfig nginx on
 ~~~
+
+<!--ads-->
 
 # Integrate Nginx & Tomcat
 

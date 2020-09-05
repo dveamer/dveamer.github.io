@@ -87,6 +87,8 @@ Swagger-UI 페이지를 통해 문서를 제공하고 수동으로 API를 호출
 
 만약 MSA를 구성하고 있는 마이크로 서비스들 중에 Java, Spring 구성이 적지 않다면 충분히 장점을 취할 수 있는 방법입니다.  
 
+<!--ads-->
+
 # Contract 생성 과정 
 
 Contract interface는 코드로 작성될 것이며 관리되어야 합니다. 예를들어, Git으로 형상관리가되고 Neuxs를 통해 jar 관리 및 배포가 됩니다.  
@@ -419,6 +421,8 @@ Swagger 설정을 해뒀기 때문에 stub server를 기동 후 ```localhost:808
 ![API_contract_16](/images/post_img/APIcontract/API_contract_16.png)  
 
 
+<!--ads-->
+
 # Consumer 개발 진행
 
 아래의 다이어그램처럼 소비자 unit 테스트 코드는 contract 의 구현체인 stub을 호출하게 됩니다.  
@@ -597,6 +601,8 @@ public class CommentContractStubWrapper implements CommentContract  {
 ~~~
 
 
+<!--ads-->
+
 # Provider 개발 진행 
 
 제공자의 controller 작성과 그에 대한 unit test를 작성에 대해서 살펴 볼 것입니다.  
@@ -744,6 +750,8 @@ class CommentControllerTests {
 제공자, 소비자의 배포가 모두 이뤄지고 나면 아래 다이어그램처럼 소비자가 직접 HTTP call을 제공자에게 보낼 수 있게 됩니다.  
 
 ![API_contract_12](/images/post_img/APIcontract/API_contract_12.png)  
+
+<!--ads-->
 
 # 결론
 

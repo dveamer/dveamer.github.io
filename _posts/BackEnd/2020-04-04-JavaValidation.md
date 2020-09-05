@@ -168,6 +168,8 @@ public class User {
 } 
 ~~~
 
+<!--ads-->
+
 # org.springframework.util.StringUtils
 
 Spring에서 제공하는 [StringUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/StringUtils.html)는 string에 관련된 기능들을 제공해줍니다. 그 중 isEmpty는 null 체크시 유용합니다.  

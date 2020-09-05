@@ -111,6 +111,8 @@ test()는 http-nio-8080-exec-1 thread에서 실행됐고 method1()은 Executor-1
 
 앞서 얘기 드린대로 추가기능이 설정된 executorWithSession은 SessionScopeUtil을 통해 loggingCode를 전달해주는 것이 확인됩니다.  
 
+<!--ads-->
+
 ## SpringAsyncConfig 
 
 ~~~java

@@ -94,6 +94,7 @@ HAProxy가 죽을 경우를 대비해 Keepalived 이용해서 HAProxy를 Active-
   * [Keppalived](http://www.keepalived.org/)
 
 
+<!--ads-->
 
 # Environment
 
@@ -428,6 +429,8 @@ vrrp_instance VI_1 {    # set this to diffrent name on the other machine. When n
 
   * Event가 발생하게되면 e-mail로 알림을 받게 됩니다. master, backup의 vrrp_instance 명칭을 다르게 세팅하지 않으면 상황파악 어렵습니다.
 
+
+<!--ads-->
 
 ## Standby(BACKUP) 서버의 Keepalived 설정
 

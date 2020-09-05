@@ -198,6 +198,8 @@ public abstract class AbstractLogger implements ExtendedLogger, Serializable {
 
 만약 성능이 너무 중요한 어플리케이션이거나 너무 긴 문자열 생성이 발생하는 경우라면 가용 로그 레벨을 먼저 체크하는 방법을 사용하시기 바랍니다.  
 
+<!--ads-->
+
 ## Binding Two Parameters
 
 ~~~java
@@ -303,6 +305,8 @@ public class User {
     }
 }
 ~~~
+
+<!--ads-->
 
 # Logging Exception
 

@@ -262,6 +262,8 @@ spring:
 참고로 service-a 를 service_a 와 같이 under bar(_)로 설정하면 gateway 기동시 에러가 납니다. 대신 bar(-)를 사용하시면 되고 이는 각 서비스의 spring.apllication.name과 관련되기 때문에 서비스 이름을 정할 때 주의하셔야하는 사항입니다.  
 
 
+<!--ads-->
+
 ## application-resilience4j.yml
 
 ~~~yaml
@@ -392,6 +394,8 @@ eureka:
       enabled: true
 ~~~
 
+
+<!--ads-->
 
 ## Access Log 설정
 
@@ -604,6 +608,8 @@ $ curl localhost:8080
 $ curl localhost:8080
 {"msg":"Hello world from service03"}
 ~~~
+
+<!--ads-->
 
 # 테스트 
 
