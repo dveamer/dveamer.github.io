@@ -1,5 +1,5 @@
 ---
-layout: POST
+layout: post
 title: "HTML Editor과 XSS(Cross Site Scripting) - Python Bleach"
 date: 2020-12-25 00:00:00
 lastmod: 2020-12-25 00:00:00
