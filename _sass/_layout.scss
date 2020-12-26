@@ -237,13 +237,13 @@ li {
     position: fixed !important;
     position: absolute; /*ie6 */
     right: 15px;
-    bottom: unquote("max(50px, 10%)");
-
+    bottom: unquote("max(60px, 10%)");
+ 
     width: unquote("calc( 50% - 500px )"); 
-    height: unquote("calc( 80% )"); 
+    height: unquote("calc( 75% )"); 
 
+    padding-top: 50px;
     background-color: transparent;
-
 }
 
 @media only screen and (max-width: 1350px) {
