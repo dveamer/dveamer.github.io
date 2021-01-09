@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "생강차(Ginger Tea), 생강청 만들기"
+title:  "생강차, 생강청 만들기"
 date: 2021-01-01 12:00:00
 lastmod: 2021-01-01 12:00:00 
 categories: Life
@@ -126,9 +126,5 @@ for(var i=0; i<inputs.length; i++) {
 }
 </script>
 
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
