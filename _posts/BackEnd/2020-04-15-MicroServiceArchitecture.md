@@ -88,6 +88,8 @@ Spring Cloud Gateway 뒷단의 각 micro service간의 호출은 인증, 인가 
 [Spring Cloud Gateway - Resilience4j, Kubernetes](/backend/SpringCloudGateway.html) 글을 보시면 Spring Cloud Gateway에 대한 기본적인 세팅방법과 위 3가지 요소에 대해서 어떻게 설정했는지를 알 수 있습니다.  
 
 
+<!--ads-->
+
 ## Outbound Spring Cloud Gateway
 
 Micro service가 Kubernetes 외부의 다른 시스템과 연동을 할 때 outbound gateway를 거치게 했습니다.  
@@ -133,6 +135,9 @@ Java 개발을 하면서 특정 객체에 특정 책임과 역할을 주고 다�
 물론 MSA에 더 많은 내용이 있겠지만 그 것은 패스하도록 하겠습니다.  
 
 그리고 참고로 Outbound gateway를 거쳐서 외부 시스템과 연동하는 것이 필수 사항은 아닙니다. 예를들어, 방화벽 체크만하는 경우는 그럴 필요가 없습니다.  
+
+
+<!--ads-->
 
 # 인증 & 인가
 

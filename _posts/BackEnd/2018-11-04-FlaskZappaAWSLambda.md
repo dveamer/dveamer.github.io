@@ -141,6 +141,8 @@ AWS Lambda에서는 ```run.py```를 사용하진 않습니다.
 (.env)$ python run.py
 ~~~
 
+<!--ads-->
+
 # Zappa
 
 ## Zappa 설치
@@ -219,7 +221,7 @@ AWS Console 화면으로 접속해서 AWS Lambda와 AWS API Gateway를 가보시
 
 혹시 최초 배포과 정에서 권한을 잘못 넣었거나 다른 문제가 생겨서 실패를 했는데 그 다음부터 deploy도 안되고 update도 안된다면 일단 문제를 해결하시고 자동으로 생성된 Lambda와 API 건들을 제거 후에 다시 배포해보시기 바랍니다.  
 
-
+<!--ads-->
 
 ## 테스트 
 
