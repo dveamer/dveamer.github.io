@@ -94,13 +94,17 @@ To-Do가 처리되어 Done으로 넘어가는 속도보다 새로운 To-Do가 �
 #### 회사에서 특정 파일만 접근하는 방법
 
 회사에서는 ```todo``` 관련 파일 정도만 접속하면 되기 때문에 굳이 private repository의 모든 파일을 clone할 필요가 없습니다.  
-아래의 [특정 파일만 git clone 받는 방법](https://stackoverflow.com/a/2466755)을 이용합니다.  
+Git 1.7.0 이후 버전부터 사용 가능한 sparse-checkout 기능 이용해서 ```some/dir```라는 특정 디렉토리만 pull 해서 사용합니다. [참고](https://stackoverflow.com/a/137389510)  
 
 ~~~
-git clone -n git://path/to/the_repo.git --depth 1
-cd the_repo
-git checkout HEAD name_of_file
+$ git init the_repo
+$ cd the_repo
+$ git config core.sparseCheckout true
+$ git remote add -f origin https://path/to/the_repo.git
+$ echo "some/dir" >> .git/info/sparse-checkout
+$ git pull
 ~~~
+
 
 ### 모바일에서 읽기 / 쓰기
 
