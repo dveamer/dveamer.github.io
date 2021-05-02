@@ -15,6 +15,8 @@ https://twitter.com/elonmusk/status/1388693126206918658
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I love Art Deco</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1388693126206918658?ref_src=twsrc%5Etfw">May 2, 2021</a></blockquote> 
 
+<!--more-->
+
 그리고 그 때쯤 Art Deco 라는 코인은 매매가 시작됐고 급등하기 시작했습니다.  
 
   - 매매 그래프 : https://poocoin.app/tokens/0xbfceea869ef9393ac0b90827eddfdf9dde7c359a
