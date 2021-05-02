@@ -19,7 +19,7 @@ https://twitter.com/elonmusk/status/1388693126206918658
 
 그리고 그 때쯤 Art Deco 라는 코인은 매매가 시작됐고 급등하기 시작했습니다.  
 
-  - 매매 그래프 : https://poocoin.app/tokens/0xbfceea869ef9393ac0b90827eddfdf9dde7c359a
+  - 매매 그래프 : [https://poocoin.app/tokens/0xbfceea869ef9393ac0b90827eddfdf9dde7c359a](https://poocoin.app/tokens/0xbfceea869ef9393ac0b90827eddfdf9dde7c359a)
 
 저는 13시에 그 글을 발견하고 Art Deco 에 대해서 열심히 검색을 해봤으나 어느 거래소에서도 Art Deco를 취급하는 곳은 없었고 
 당시 [Art Deco](https://bscscan.com/token/0xbfceea869ef9393ac0b90827eddfdf9dde7c359a)을 holders는 200명 정도로 굉장히 적었습니다.  
