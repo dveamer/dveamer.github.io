@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Art Deco 사는 방법 ( I Love Art Deco )"
+title:  "Art Deco 코인 사는 방법 ( I Love Art Deco )"
 date:   2021-05-02 00:00:00
 categories: Tips
 tags: Tips 
