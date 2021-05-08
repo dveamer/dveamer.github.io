@@ -187,7 +187,7 @@ AWS를 사용하면서부터는 자주 사용해오던 Event-Driven 패턴으로
 ![BG Log](https://lh3.googleusercontent.com/0ixqBsJvTIbdo22rKEsV7LkXddmZHtlcHK1DgGD9yxpvR43wfB41GSnLqq-lf_Xhlu4O=h310){:class="imgTitle"}  
 
   * Google Play : [https://play.google.com/store/apps/details?id=com.dveamer.pubglog](https://play.google.com/store/apps/details?id=com.dveamer.pubglog)
-  * 2017.09 
+  * 2017.09 ~ 2020.06
   * 다운로드 수 : 10,000 이상 (2017.11 기준)
 
 배틀그라운드(PUBG / Battle Grounds) 게임 점수 갱신시 알림을 주는 앱입니다.  
@@ -213,7 +213,7 @@ AWS를 사용하면서부터는 자주 사용해오던 Event-Driven 패턴으로
 ![OwFriends](https://lh3.googleusercontent.com/DB7QF5c5b6n5uLWpCzGo8ZtWOavIVotAvvhgmLeGOL8wTv4AwU16s41QiNTrDlKtLMM=w300){:class="imgTitle"}  
 
   * Google Play : [https://play.google.com/store/apps/details?id=com.dveamer.owfriends](https://play.google.com/store/apps/details?id=com.dveamer.owfriends)
-  * 2017.02 ~ 
+  * 2017.02 ~ 2021.01
   * 다운로드 수 : 1,000 이상 (2017.11 기준)
 
 오버워치(Over Watch) 게임 점수 갱신시 알림을 주는 앱입니다.  
