@@ -6,6 +6,10 @@ categories: BackEnd
 tags: Spring SpringBoot Properties Kubernetes
 ---
 
+![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"} ![https://kubernetes.io/](https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/247px-Kubernetes_logo_without_workmark.svg.png)  
+( Image reference : [https://spring.io/](https://spring.io/) [https://upload.wikimedia.org](https://upload.wikimedia.org) ) 
+
+
 이 글은 OS 환경변수를 Spring Boot의 프로퍼티에 바인딩하는 방법을 다룹니다.  
 그리고 그 방법을 이용해서 Kubernetes configmap을 Spring Boot 프로퍼티에 바인딩 하는 방법도 다룹니다.  
 
