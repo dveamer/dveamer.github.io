@@ -7,8 +7,8 @@ categories: BackEnd
 tags: Spring SpringBoot
 ---
 
-![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  
-( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/200px-Spring_Framework_Logo_2018.svg.png){:class="imgTitle"}  
+( 이미지 출처 : [https://upload.wikimedia.org](https://upload.wikimedia.org) )  
 
 Spring Boot에서 제공하는 auto configuration을 설정하는 방법과 그 원리에 대해서 간략히 설명합니다.  
 

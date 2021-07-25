@@ -7,8 +7,8 @@ categories: BackEnd
 tags: Spring Asynchronous Session Multi-Thread 
 ---
 
-![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  
-( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/200px-Spring_Framework_Logo_2018.svg.png){:class="imgTitle"}  
+( 이미지 출처 : [https://upload.wikimedia.org](https://upload.wikimedia.org) )  
 
 이 글은 [Spring @Async 비동기처리](/java/SpringAsync.html) 에서 알려드린 Spring @Async의 제약사항 중 thread 분리에 의해 HttpServletRequest에 접근 못하는 상황을 다시 한번 살펴보고 해결방법에 대해서 알려드립니다.  
  

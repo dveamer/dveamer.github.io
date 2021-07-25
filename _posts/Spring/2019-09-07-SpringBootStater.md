@@ -7,8 +7,8 @@ categories: BackEnd
 tags: Spring SpringBoot
 ---
 
-![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  
-( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/200px-Spring_Framework_Logo_2018.svg.png){:class="imgTitle"}  
+( 이미지 출처 : [https://upload.wikimedia.org](https://upload.wikimedia.org) )  
 
 굉장히 쉽고 빠르고 정확하게 의존성 설정을 할 수 있도록 도와주는 spring-boot-stater와 spring-boot-stater-parent에 대해서 설명합니다.  
 

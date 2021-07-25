@@ -7,8 +7,8 @@ categories: Java
 tags: Spring Asynchronous Multi-Thread AOP
 ---
 
-![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  
-( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/200px-Spring_Framework_Logo_2018.svg.png){:class="imgTitle"}  
+( 이미지 출처 : [https://upload.wikimedia.org](https://upload.wikimedia.org) )  
 
 이 글은 Spring을 사용하면 asynchronous, multi-thread 개발이 얼마나 편해지는지를 설명합니다.  
 

@@ -7,8 +7,8 @@ categories: BackEnd
 tags: BackEnd Spring MSA
 ---
 
-![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  
-( 이미지 출처 : [https://spring.io/](https://spring.io/) )  
+![https://spring.io/](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/200px-Spring_Framework_Logo_2018.svg.png){:class="imgTitle"}  
+( 이미지 출처 : [https://upload.wikimedia.org](https://upload.wikimedia.org) )  
 
 Spring Cloud Gateway의 기본적인 설정 그리고 circuit breaker, retry 설정들을 살펴봅니다.  
 그리고 Kubernetes 환경에서는 [Spring Cloud Kubernetes](https://cloud.spring.io/spring-cloud-static/spring-cloud-kubernetes/1.1.2.RELEASE/reference/html/)를 이용하고 로컬환경에서는 [Netflix Eureka](https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.2.2.RELEASE/reference/html/)를 이용하는 방법을 소개합니다.  
