@@ -2,7 +2,7 @@
 layout: post
 title: "Spring Boot, Spring Cloud의 설정정보 모음"
 date: 2020-02-08 00:00:00
-lastmod: 2020-04-22 00:00:00
+lastmod: 2021-07-25 00:00:00
 categories: BackEnd
 tags: Spring SpringCloud SpringBoot Properties
 ---
