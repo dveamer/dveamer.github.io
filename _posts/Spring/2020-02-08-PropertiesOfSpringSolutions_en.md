@@ -2,9 +2,9 @@
 layout: post_en
 title: "All Properties Of Spring Boot, Spring Cloud"
 date: 2020-02-08 00:00:00
-lastmod: 2020-04-22 00:00:00
+lastmod: 2021-07-25 00:00:00
 categories: BackEnd
-tags: Spring SpringCloud SpringBoot
+tags: Spring SpringCloud SpringBoot Properties
 ---
 
 ![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  

@@ -4,7 +4,7 @@ title: "Spring Boot, Spring Cloud의 설정정보 모음"
 date: 2020-02-08 00:00:00
 lastmod: 2020-04-22 00:00:00
 categories: BackEnd
-tags: Spring SpringCloud SpringBoot
+tags: Spring SpringCloud SpringBoot Properties
 ---
 
 ![https://spring.io/](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg){:class="imgTitle"}  
