@@ -26,4 +26,24 @@ tags: Tips
   * 테스트 케이스 다건 활용 가능
 
 
+## 시간 계산
+
+### Epoch Converter
+
+[Epoch Converter](https://www.epochconverter.com/)는 "epoch converter" 혹은 "epoch time" 이라고 구글링 하면 가장 맨 위에 검색되는 사이트이다.  
+
+현재 epoch time 기능, 양방향(epoch <-> human readable) 변환기능 등 제공해주는 기능도 있지만  
+가장 마음에 드는 점은 내가 갖고 있는 epoch time이 초 단위인지 밀리초 단위인지 고민하지 않고 복사해서 넣으면 알아서 판단해준다는 점이다.  
+
+
+## 맞춤법
+
+### 한국어 맞춤법/문법 검사기
+
+[한국어 맞춤법/문법 검사기](https://speller.cs.pusan.ac.kr/)는 너무 오래전부터 유명한 사이트라 별도 언급하지 않겠다.  
+
+### YAML
+
+[yaml-online-parser](https://yaml-online-parser.appspot.com/)는 YAML을 json으로 변환하는 기능을 제공하는데 YAML 문법이 잘못되었을 때 에러 메시지를 상세하게 찍어주기 때문에 YAML 맞춤법 검사기로도 유용하다.  
+
 
