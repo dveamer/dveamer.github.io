@@ -38,12 +38,23 @@ tags: Tips
 
 ## 맞춤법
 
+### YAML
+
+[yaml-online-parser](https://yaml-online-parser.appspot.com/)는 YAML을 json으로 변환하는 기능을 제공하는데 YAML 문법이 잘못되었을 때 에러 메시지를 상세하게 찍어주기 때문에 YAML 맞춤법 검사기로도 유용하다.  
+
 ### 한국어 맞춤법/문법 검사기
 
 [한국어 맞춤법/문법 검사기](https://speller.cs.pusan.ac.kr/)는 너무 오래전부터 유명한 사이트라 별도 언급하지 않겠다.  
 
-### YAML
+### 번역기
 
-[yaml-online-parser](https://yaml-online-parser.appspot.com/)는 YAML을 json으로 변환하는 기능을 제공하는데 YAML 문법이 잘못되었을 때 에러 메시지를 상세하게 찍어주기 때문에 YAML 맞춤법 검사기로도 유용하다.  
+  * [구글 번역기](https://translate.google.co.kr/?hl=ko)
+  * [파파고 번역기](https://papago.naver.com/)
+
+### Paraphrase 
+
+내가 작성한 영어문장을 의역해서 좀 더 나은 영어 문장으로 바꿔준다. fluency, standard, creative 라는 타입으로 의역이 가능하다.  
+
+  * [paraphraser](https://www.paraphraser.io/) : Ubuntu chrome, firefox 에서 안됨  
 
 
