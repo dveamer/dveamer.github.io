@@ -4,6 +4,8 @@ title:  "보드게임을 만들어보자"
 date:   2016-04-10 12:00:00 
 categories: Diary
 tags: Diary Programming Board-Game OOP
+hidden: true
+published: true
 ---
 
 ![Fugo Wordz](https://lh6.ggpht.com/UCaTSzZweZm2T7I5syJxxPgs3qkbmyxFs2fd3qjveXHzsWm1wuPyJhBEQz8d8BznzeSB=w300-rw){:class="imgTitle"}  

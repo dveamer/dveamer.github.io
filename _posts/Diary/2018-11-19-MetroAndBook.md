@@ -4,6 +4,8 @@ title:  "지하철과 독서"
 date:   2018-11-19 00:00:00
 categories: Diary
 tags: Diary
+hidden: true
+published: true
 ---
 
 

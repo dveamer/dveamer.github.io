@@ -4,6 +4,8 @@ title:  "사천성"
 date:   2016-12-05 00:00:00
 categories: Diary
 tags: Diary
+hidden: true
+published: true
 ---
 
 중, 고딩학생 때 했던 게임을 요즘 다시 열심히하고 있다.  

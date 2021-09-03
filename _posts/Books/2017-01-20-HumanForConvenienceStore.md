@@ -3,7 +3,9 @@ layout: post
 title:  "편의점 인간"
 date:   2017-01-20 12:00:00 
 categories: Books
-tags: Books 
+tags: Books
+hidden: true
+published: true 
 ---
 
 ![편의점 인간](http://image.aladin.co.kr/product/9536/81/cover150/8952235266_1.jpg){:class="imgTitle"}  

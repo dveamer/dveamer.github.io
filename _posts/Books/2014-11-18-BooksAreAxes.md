@@ -4,6 +4,8 @@ title:  "책은 도끼다"
 date:   2014-11-18 00:00:00 
 categories: Books
 tags: Books
+hidden: true
+published: true
 ---
 ![책은 도끼다](http://image.aladin.co.kr/product/1318/66/cover/8956055467_2.jpg)
 

@@ -4,6 +4,8 @@ title:  "예전 홈페이지 백업"
 date:   2019-05-06 00:00:00
 categories: Diary
 tags: Diary Backup
+hidden: true
+published: true
 ---
 
 학생 때 제로보드와 Moniwiki를 가지고 운영하던 개인 홈페이지를 미러링 작업을 통해 HTML로 백업을 진행했다.  

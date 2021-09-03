@@ -4,6 +4,8 @@ title:  "꾸빼 씨의 행복 여행"
 date:   2014-11-18 00:00:00 
 categories: Books
 tags: Books
+hidden: true
+published: true
 ---
 
 ![꾸빼 씨의 행복 여행](http://image.aladin.co.kr/product/50/80/cover/8995501448_2.jpg){:class="imgTitle"}  

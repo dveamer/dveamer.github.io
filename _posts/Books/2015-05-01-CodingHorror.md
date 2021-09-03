@@ -4,6 +4,8 @@ title:  "코딩 호러가 들려주는 진짜 소프트웨어 개발이야기"
 date:   2015-05-30 00:00:00 
 categories: Books
 tags: Books
+hidden: true
+published: true
 ---
 
 ![코딩 호러가 들려주는 진짜 소프트웨어 개발이야기](http://image.aladin.co.kr/product/3334/44/cover/8998139367_1.jpg){:class="imgTitle"}  

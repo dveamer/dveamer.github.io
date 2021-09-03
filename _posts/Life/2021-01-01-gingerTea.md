@@ -5,6 +5,8 @@ date: 2021-01-01 12:00:00
 lastmod: 2021-01-01 12:00:00 
 categories: Life
 tags: Life
+hidden: true
+published: true
 ---
 
 ![Ginger-Tea](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2021/ginger-tea/resized_PXL_20210101_140301739.jpg){:class="imgTitle"}  

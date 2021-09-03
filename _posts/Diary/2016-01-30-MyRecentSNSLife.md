@@ -4,6 +4,8 @@ title:  "트위터, 페이스북 사용에 대한 내 근황"
 date:   2016-01-30 12:35:00
 categories: Diary
 tags: Diary SNS
+hidden: true
+published: true
 ---
 
 ![Andorid Battery](http://developer.android.com/sdk/images/battery.png){:class="imgTitle"}  

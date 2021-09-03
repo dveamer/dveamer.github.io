@@ -3,7 +3,9 @@ layout: post
 title:  "객체지향의 사실과 오해"
 date:   2017-01-20 12:00:00 
 categories: Books
-tags: Books 
+tags: Books
+hidden: true
+published: true 
 ---
 
 ![객체지향의 사실과 오해](http://image.aladin.co.kr/product/6055/2/cover150/8998139766_1.jpg){:class="imgTitle"}      

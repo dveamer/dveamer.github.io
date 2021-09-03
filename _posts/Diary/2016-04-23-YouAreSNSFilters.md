@@ -4,6 +4,8 @@ title:  "당신은 SNS Filter"
 date:   2016-04-23 00:00:00
 categories: Diary
 tags: Diary SNS
+hidden: true
+published: true
 ---
 
 사회 속에서 개개인이 반드시 어떠한 역할을 가져야하는 것은 아니지만  

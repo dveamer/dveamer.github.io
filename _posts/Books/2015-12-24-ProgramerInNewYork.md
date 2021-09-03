@@ -4,6 +4,8 @@ title:  "뉴욕의 프로그래머"
 date:   2015-12-24 00:00:00 
 categories: Books
 tags: Books
+hidden: true
+published: true
 ---
 
 ![뉴욕의 프로그래머](http://image.aladin.co.kr/product/97/93/cover150/8979145128_1.jpg){:class="imgTitle"}  

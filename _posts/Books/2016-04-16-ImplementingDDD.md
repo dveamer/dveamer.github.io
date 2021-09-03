@@ -3,7 +3,9 @@ layout: post
 title:  "Implementing Domain-Driven Design(도메인 주도 설계 구현)"
 date:   2016-04-16 12:00:00 
 categories: Books
-tags: Books 
+tags: Books
+hidden: true
+published: true 
 ---
 
 ![Implementing Domain-Driven Design](http://image.aladin.co.kr/product/8025/4/cover/8960778427_1.jpg){:class="imgTitle"}  
