@@ -2,7 +2,7 @@
 layout: post
 title: "Spring Boot, Spring Cloud의 설정정보 모음"
 date: 2020-02-08 00:00:00
-lastmod: 2021-07-25 00:00:00
+lastmod: 2021-09-04 00:00:00
 categories: BackEnd
 tags: Spring SpringCloud SpringBoot Properties
 ---
@@ -58,4 +58,7 @@ spring.task.execution.pool.keep-alive=60
     - [Rate Limiter](https://resilience4j.readme.io/docs/ratelimiter)  
     - [Retry](https://resilience4j.readme.io/docs/retry)  
     - [Time Limiter](https://resilience4j.readme.io/docs/timeout)  
-    - [Cache](https://resilience4j.readme.io/docs/cache)  
+    - [Cache](https://resilience4j.readme.io/docs/cache)
+
+
+  * [GCP Pub/Sub](https://docs.spring.io/spring-cloud-gcp/docs/1.2.6.RELEASE/reference/html/appendix.html)  

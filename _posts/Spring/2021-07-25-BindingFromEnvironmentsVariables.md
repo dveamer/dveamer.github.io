@@ -2,6 +2,7 @@
 layout: post
 title:  "Spring Boot Configuration & Kubernetes ConfigMap: OS 환경변수 바인딩"
 date:   2021-07-25 00:00:00
+lastmod: 2021-09-04 00:00:00
 categories: BackEnd
 tags: Spring SpringBoot Properties Kubernetes
 ---
@@ -18,6 +19,11 @@ tags: Spring SpringBoot Properties Kubernetes
 개발환경, 운영환경 등에 필요한 프로퍼티는 각 OS 환경변수 혹은 Kubernetes configmap을 활용해서 관리합니다.  
 
 <!--more-->
+
+이와 같은 방법을 이용하면 Spring Boot, Spring Cloud의 기본적으로 설정된 정보들도 환경별로 다르게 설정할 때도 소스코드 수정 없이 쉽게 할 수 있습니다.  
+
+  * [Spring Boot, Spring Cloud 설정정보 모음](/backend/PropertiesOfSpringSolutions.html)
+
 
 ## Spring Boot Externalized Configuration
 

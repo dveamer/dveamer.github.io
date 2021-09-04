@@ -2,7 +2,7 @@
 layout: post_en
 title: "All Properties Of Spring Boot, Spring Cloud"
 date: 2020-02-08 00:00:00
-lastmod: 2021-07-25 00:00:00
+lastmod: 2021-09-04 00:00:00
 categories: BackEnd
 tags: Spring SpringCloud SpringBoot Properties
 ---
@@ -52,3 +52,4 @@ You can also check the default values of properties from the follow links.
     - [Time Limiter](https://resilience4j.readme.io/docs/timeout)  
     - [Cache](https://resilience4j.readme.io/docs/cache)  
 
+  * [GCP Pub/Sub](https://docs.spring.io/spring-cloud-gcp/docs/1.2.6.RELEASE/reference/html/appendix.html)  
