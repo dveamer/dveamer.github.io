@@ -1,0 +1,20 @@
+
+<script>
+  setTimeout(function () {
+    var ad = document.querySelector("ins.adsbygoogle");
+    if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+
+      const sdaList = document.querySelector(".coupangadsbydveamer");
+      for (const sda in sdaList) { 
+          sdaList.style.display="block";
+      }
+
+      const script = document.createElement('script');
+      script.async = "async";
+      script.src = 'https://sda.dveamer.com/js/csda.js';
+      var head = document.getElementsByTagName("head")[0];
+      head.appendChild(script);
+    }
+  }, 3000);
+</script>
+
