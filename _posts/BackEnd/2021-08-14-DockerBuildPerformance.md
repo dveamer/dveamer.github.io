@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Docker 빌드 성능 개선 : dockerignore, node_modules"
-date: 2021-08-14 00:00:00
-lastmod: 2021-08-14 00:00:00
+date: 2021-09-12 00:00:00
+lastmod: 2021-09-12 00:00:00
 categories: BackEnd Docker CICD 
 tags: BackEnd Docker CICD
 hidden: false
