@@ -391,7 +391,7 @@ div.encrypt > div > textarea {
 
 
 /**
- * Encryption
+ * Sub Menu
  */ 
 
 
@@ -408,5 +408,32 @@ div.ad_coupang > a > img {
   width: 120px;
   height: 240px;
   padding : 2px;
+}
+
+
+/**
+ * Table
+ */ 
+table {
+  width: 100%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+  margin: 10px;
+}
+th, td {
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+th {
+  background-color: lightGray;
+  text-align: left;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f0f0f1;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid lightGray;
 }
 
