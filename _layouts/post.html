@@ -63,13 +63,6 @@ layout: post_layout
 
   {% include detect_adblock.html %}
 
-  <div class="coupangadsbydveamer"
-       style="display:none;"
-       data-csda-ltag="AF7892314"
-       data-csda-subid="blogcontents"
-       data-csda-categories="000000"
-       data-csda-size="5"></div>
-
 
   <script data-ad-client="ca-pub-1213240297656328" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -83,6 +76,13 @@ layout: post_layout
   <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
+
+  <div class="coupangadsbydveamer"
+       style="display:none;"
+       data-csda-ltag="AF7892314"
+       data-csda-subid="blogcontents"
+       data-csda-categories="000000"
+       data-csda-size="5"></div>
 
   <article id="post_content" class="post-content" style="{% if page.background %} background-image: url('{{ page.background }}'); {% endif %} {% if page.style %} {{ page.style }} {% endif %}">
     {% for content_with_ads in content_array_with_ads %}
