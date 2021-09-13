@@ -12,8 +12,8 @@
     var isAdsbygoogleEnable = function() {
         try {
             var ads = document.querySelectorAll("ins.adsbygoogle");
-            for (var ad in ads) { 
-                if (ad.innerHTML.replace(/\s/g, "").length == 0) {
+            for(var index=0; index<ads.length; index++) {
+                if (ads[index].innerHTML.replace(/\s/g, "").length == 0) {
                     return false;
                 }
             }
