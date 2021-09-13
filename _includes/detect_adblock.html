@@ -1,10 +1,5 @@
 
 <script>
-    var sleep = function(ms) {
-      const wakeUpTime = Date.now() + ms;
-      while (Date.now() < wakeUpTime) {}
-    }
-
     var doesAdsbygoogleNotExists = function() {
         var ads = document.querySelectorAll("ins.adsbygoogle");
         if(!ads) {
@@ -20,10 +15,10 @@
                 if (ads[index].innerHTML.replace(/\s/g, "").length != 0) {
                     return true;
                 }              
-                sleep(500);
             }  
             return false;
         } catch(ex) {
+            console.log(ex);
             return false;
         }
     };
@@ -67,6 +62,6 @@
         makeCoupangadsEnable();
     };
 
-    setTimeout(detectAdblock, 100);
+    setTimeout(detectAdblock, 1500);
 </script>
 
