@@ -2,7 +2,7 @@
 layout: post
 title:  "퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진"
 date: 2021-09-12 00:00:00
-lastmod: 2021-09-12 00:00:00
+lastmod: 2021-09-13 00:00:00
 categories: Investing
 tags: Investing Quant-Investing
 hidden: true

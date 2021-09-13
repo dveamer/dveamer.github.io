@@ -2,7 +2,7 @@
 layout: post
 title:  "첫번째 퀀트투자 전략 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진"
 date: 2021-09-12 00:00:00
-lastmod: 2021-09-12 00:00:00
+lastmod: 2021-09-13 00:00:00
 categories: Investing
 tags: Investing Quant-Investing
 hidden: true
@@ -34,7 +34,7 @@ published: true
 다만, 자신 연구해본 전략을 검증하기 위해 백테스트를 하는 것인데  
 저의 경우는 퀀트킹에서 추천하는 전략들을 백테스트 돌려보는 정도밖에 안된다는 것이 좀 아쉽습니다.  
 
-강환국님이 [할수있다 퀀트투자](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=116836634) 책도 새로 냈다는데 좀 읽어보고 다른 분들의 책들도 좀 읽어보면서 지식을 쌓은 다음에나 백테스트를 올바르게 사용해볼 수 있을 것 같습니다.  
+강환국님이 [하면된다 퀀트투자](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=278845793) 책도 새로 냈다는데 좀 읽어보고 다른 분들의 책들도 좀 읽어보면서 지식을 쌓은 다음에나 백테스트를 올바르게 사용해볼 수 있을 것 같습니다.  
 
 ## 고정 요소
 
