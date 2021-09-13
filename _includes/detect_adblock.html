@@ -1,20 +1,67 @@
 
 <script>
-  setTimeout(function () {
-    var ad = document.querySelector("ins.adsbygoogle");
-    if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
 
-      const sdaList = document.querySelector(".coupangadsbydveamer");
-      for (const sda in sdaList) { 
-          sdaList.style.display="block";
-      }
+    var doesAdsbygoogleNotExists = function() {
+        var ads = document.querySelectorAll("ins.adsbygoogle");
+        if(!ads) {
+            return true;
+        }
+        return ads.length==0;
+    };
 
-      const script = document.createElement('script');
-      script.async = "async";
-      script.src = 'https://sda.dveamer.com/js/csda.js';
-      var head = document.getElementsByTagName("head")[0];
-      head.appendChild(script);
-    }
-  }, 5000);
+    var isAdsbygoogleEnable = function() {
+        try {
+            var ads = document.querySelectorAll("ins.adsbygoogle");
+            for (var ad in ads) { 
+                if (ad.innerHTML.replace(/\s/g, "").length == 0) {
+                    return false;
+                }
+            }
+            return true;
+        } catch(ex) {
+            return false;
+        }
+    };
+
+    var makeAdsbygoogleHidden = function() {
+        var ads = document.querySelectorAll("ins.adsbygoogle");
+        for(var index=0; index<ads.length; index++) {
+            ads[index].style.display="none";
+        }
+    };
+
+    var makeCoupangadsEnable = function() {
+        var sdaList = document.querySelectorAll(".coupangadsbydveamer");
+        if(!sdaList || sdaList.length==0) {
+            return;
+        }
+
+        for(var index=0; index<sdaList.length; index++) {
+            sdaList[index].style.display="block";
+        }
+
+        var script = document.createElement('script');
+        script.async = "async";
+        script.src = 'https://sda.dveamer.com/js/csda.js';
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(script);
+    };
+
+    var detectAdblock = function() {
+
+        if(doesAdsbygoogleNotExists()) {
+            return;
+        }
+
+        if(isAdsbygoogleEnable()) {
+            return;
+        }
+
+        makeAdsbygoogleHidden();
+
+        makeCoupangadsEnable();
+    };
+
+    setTimeout(detectAdblock, 2000);
 </script>
 
