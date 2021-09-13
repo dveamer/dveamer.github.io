@@ -1,5 +1,9 @@
 
 <script>
+    var sleep = function(ms) {
+      const wakeUpTime = Date.now() + ms;
+      while (Date.now() < wakeUpTime) {}
+    }
 
     var doesAdsbygoogleNotExists = function() {
         var ads = document.querySelectorAll("ins.adsbygoogle");
@@ -16,6 +20,7 @@
                 if (ads[index].innerHTML.replace(/\s/g, "").length != 0) {
                     return true;
                 }              
+                sleep(500);
             }  
             return false;
         } catch(ex) {
@@ -62,6 +67,6 @@
         makeCoupangadsEnable();
     };
 
-    setTimeout(detectAdblock, 2000);
+    setTimeout(detectAdblock, 100);
 </script>
 
