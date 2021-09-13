@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "퀀트투자 결과 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진"
+title:  "퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진"
 date: 2021-09-12 00:00:00
 lastmod: 2021-09-12 00:00:00
 categories: Investing
@@ -10,6 +10,7 @@ published: true
 ---
 
 하위20% 소형주 + 고성장 + 저벨류 + 고마진 이라는 전략으로 퀀트투자를 진행한 결과를 기록하는 페이지입니다.  
+평가 수익, 수익률을 공개 합니다.  
 
 선택한 전략에 대한 설명은 [첫번째 퀀트투자 전략 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진](/investing/MyFirstStrategy.html) 페이지를 참고하시기 바랍니다.  
 
@@ -28,23 +29,29 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
   * 종목 개수 : 20 종목
   * 제외 업종 : 해외본사(중국기업 등), 스팩 업종
   * 거래정지시 손실처리율 : 100%
-  * 매도수수료 : 1%
+  * 수수료 + 슬리피지 : 1%
 
 ## 백테스트 결과 
 
   * 백테스트 툴 : [퀀트킹](http://www.quantking.co.kr)
+  * 백테스트 기간 : 14개년 (2008~2021)
 
-|연평균수익률|월평균수익률|누적수익률|MDD|거래정지종목수|
+|연평균 수익률|월평균 수익률|누적 수익률|MDD|거래정지 종목수|
 |---:|---:|---:|---:|---:|
 |44.3%|3.4%|16,895.9%|42.1|2|
 
 ## 투자 원금 기록
 
-  * 2021년 9월 6일 : 4,937,630 원
+추후 계산을 편리하게 하기 위해 거래 증권사를 하나 더 만들어서 진행 중입니다.  
+
+  * 2021년 9월 6일 : 투자원금 4,937,630 원 / 수수료 610원 / 예치금 61,760원
 
 <!--ads-->
 
 ## 수익률 현황
+
+아래 수익률 현황은 매수, 매도 수수료 같은 비용 계산을 포함하지 않은 정보입니다.  
+
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1087516519&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
 
