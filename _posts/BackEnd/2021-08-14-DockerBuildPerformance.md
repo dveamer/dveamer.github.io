@@ -9,6 +9,9 @@ hidden: false
 published: true
 ---
 
+![Docker Logo](https://www.docker.com/sites/default/files/social/docker-facebook-share.png){:class="imgTitle"}  
+(이미지 출처 : [https://www.docker.com](https://www.docker.com))  
+
 "도커 빌드가 예전에는 빨랐는데.. 요즘 왜 이렇게 느리지?" 라는 생각이 드신다면 이 글이 도움이 될 수 있습니다.  
 
 <!--more-->
