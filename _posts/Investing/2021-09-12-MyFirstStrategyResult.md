@@ -58,7 +58,7 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 
 ## 수익률 현황 
 
-2021.09.21 부터 수집을 시작했기 때문에 2021.09.07 ~ 2021.09.20 기간의 정보는 누락되었습니다.  
+수집을 늦게 시작해서 2021.09.07 ~ 2021.09.16 기간의 정보는 누락되었습니다.  
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:700px;max-height:2200px;"></iframe>  
 
