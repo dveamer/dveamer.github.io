@@ -2,7 +2,7 @@
 layout: post
 title: "SLF4J Logger 사용법 & 잘못된 사용법: Binding Parameters, Logging Exception Stack Trace"
 date: 2020-06-27 00:00:00
-lastmod: 2020-06-27 00:00:00
+lastmod: 2021-10-30 00:00:00
 categories: BackEnd
 tags: BackEnd SLF4J Log
 ---
@@ -313,7 +313,7 @@ public class User {
 ## Logging Exception Stack Trace
 
 
-SLF4J는 [Throwable](https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.base/java/lang/Throwable.html) 객체를 마지막 파라미터로 넘기게 되면 stack trace를 로깅시켜 줍니다. 다만, 첫번째 파라미터는 String으로 넘겨주셔야 합니다.  
+SLF4J는 [Throwable](https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.base/java/lang/Throwable.html) 객체를 두번재 파라미터로 넘기게 되면 stack trace를 로깅시켜 줍니다.  
 
 ~~~java
     private void printExceptionStackTrace(User user) {
@@ -322,11 +322,11 @@ SLF4J는 [Throwable](https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java
             throw new Exception("Something is wrong.");
         } catch(Exception ex) {
 
-            // good performance, poor information
+            // poor information
             logger.error("", ex);
 
-            // good performance, good information - I recommend this.
-            logger.error("User : {}", user, ex);
+            // good information - I recommend this.
+            logger.error("User : " + user, ex);
         }
     }
 ~~~
@@ -348,6 +348,10 @@ java.lang.Exception: Something is wrong.
 하지만 첫번째 방법은 stack trace만 남기 때문에 문제 해결에 필요한 정보가 부족합니다.  
 두번째 방법은 아래와 같이 User 객체의 정보가 함께 로깅 되기 때문에 보다 빠른 문제 해결이 가능합니다.  
 
+주의할 사항은 앞서 이야기 드렸지만 Throwable 객체가 반드시 두번째 파라미터로 전달되어야지 stack trace가 남게 됩니다.  
+그래서 문자열 직접 연산을 통해서 완성된 메시지를 첫번째 파라미터로 넘겨야 합니다.  
+대부분 ERROR 로그 레벨은 항상 출력하므로 문자열 직접 연산을 사용 유무와 성능이 관련 없습니다.  
+
 ~~~log
 2020-06-27 23:54:41,974 ERROR i.d.s.m.ManualController [http-nio-8080-exec-1] User : User{email='dveamer@gmail.com', name='Dveamer', job='developer'}
 java.lang.Exception: Something is wrong.
@@ -360,7 +364,6 @@ java.lang.Exception: Something is wrong.
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
 ~~~
 
-[Binding Many Parameters](#Binding Many Parameters) 때와 마찬가지로 파라미터는 exception을 포함해서 2개 이하로 맞추기 위해 노력해야합니다.  
 
 ## Logging Exception Message
 
