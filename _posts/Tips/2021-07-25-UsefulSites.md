@@ -28,12 +28,16 @@ tags: Tips
 
 ## 시간 계산
 
-### Epoch Converter
+### Epoch 변환
 
 [Epoch Converter](https://www.epochconverter.com/)는 "epoch converter" 혹은 "epoch time" 이라고 구글링 하면 가장 맨 위에 검색되는 사이트이다.  
 
 현재 epoch time 기능, 양방향(epoch <-> human readable) 변환기능 등 제공해주는 기능도 있지만  
 가장 마음에 드는 점은 내가 갖고 있는 epoch time이 초 단위인지 밀리초 단위인지 고민하지 않고 복사해서 넣으면 알아서 판단해준다는 점이다.  
+
+### Bash 시간 출력
+
+[zxq9.com : Most command Bash date commands for timestamping](https://zxq9.com/archives/795) 에 시간 출력을 위한 bash command에 대해서 잘 정리가 되어있다.  
 
 
 ## 맞춤법
