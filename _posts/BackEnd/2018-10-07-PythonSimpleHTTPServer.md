@@ -2,7 +2,7 @@
 layout: post
 title: "Python SimpleHTTPServer"
 date: 2018-10-07 00:00:00
-lastmod: 2021-11-12 00:00:00
+lastmod: 2021-11-16 00:00:00
 categories: BackEnd
 tags: BackEnd Python
 ---
@@ -37,6 +37,19 @@ $ python3 -m http.server 8000
 
 Python 2.x 와 동일한 결과를 출력합니다.  
 
+
+## 멀티 유저 접속
+
+SimpleHTTPServer 는 단일 쓰레드로 돌아가기 때문에 동시 접속이 한명 밖에 되지 않습니다.  
+앞에서도 이야기 드렸지만 간단하게 테스트 하는 목적으로만 사용해야지 여러명이 접속해야 하는 환경에는 부적합합니다.  
+
+멀티 쓰레드를 처리하도록 Python 코드를 간단하게 작성할 수도 있지만  
+그 보다는 Nginx, Apache HTTPD 와 같은 제대로 된 웹서버를 사용하는 것을 권장 드립니다.  
+만약 docker 가 설정되어있고 인터넷이 되는 환경이라면 아래처럼 간단하게 띄울 수 있습니다.  
+
+~~~
+$ docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -p 8000:80 -d nginx
+~~~
 
 ## SSL 적용
 
