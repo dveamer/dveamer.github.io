@@ -75,10 +75,55 @@ $ sudo apt-get git
 $ git config --global user.email "your-email-address@example.com"
 $ git config --global user.name "Your Name"
 ~~~
+ 
+  
+# fzf 설치
 
-# fav
+~~~
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+~~~
 
-  * https://github.com/johngrib/fav-dir
+## fzf preview 
+
+fzf를 이용해서 파일을 찾을 떄 파일 내용에 대한 미리보기를 제공하는 방법입니다.  
+
+**~/.bashrc** 혹은 **~/.zshrc**을 열어서 아래내용을 추가합니다.  
+
+~~~terminal
+function fzfpw() {
+  fzf --preview '[[ $(file --mime {}) =~ binary ]] &&
+                 echo {} is a binary file ||
+                 (highlight -O ansi -l {} ||
+                  coderay {} ||
+                  rougify {} ||
+                  cat {}) 2> /dev/null | head -500'
+}
+~~~
+
+터미널을 다시 열고 **fzfpw** 라는 명령어를 쳐보시면 미리보기가 제공되는 것을 확인할 수 있습니다.  
+
+#### References
+
+ * [fzf preview](https://seungdols.tistory.com/749)
+
+# fav-dir 설치
+
+최신 [fav-dir](https://github.com/johngrib/fav-dir/tree/master) 은 homebrew를 이용한 설치 방법이 가이드 되어있습니다.  
+Ubuntu에서 linuxbrew 사용 없이 직접 설치 방법은 아래와 같습니다.  
+
+~~~
+git clone https://github.com/johngrib/fav-dir.git
+cd fav-dir
+mkdir -p ~/.local/bin/
+cp ./fav-dir.sh ~/.local/bin/
+~~~
+
+그 후 **~/.bashrc** 혹은 **~/.zshrc**을 열어서 아래내용을 추가합니다.  
+
+~~~bash
+[ -f ~/.local/bin/fav-dir.sh ] && source ~/.local/bin/fav-dir.sh
+~~~
 
 # AWS
 
