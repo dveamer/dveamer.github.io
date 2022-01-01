@@ -20,8 +20,8 @@ GCP를 이용해서 프로젝트를 진행하면서 겪은 트러블슈팅 중 l
 
 GCP HTTP(S) LB는 keep-alive 값을 10분으로 고정합니다. GCP HTTP(S) LB 뒤에 연결된 모든 백엔드 서버는 keep-alive 설정을 반드시 10분 이상으로 잡아줘야 됩니다.  
 
-> HTTP 연결 유지 제한 시간: 값이 10분(600초)으로 고정됩니다. 백엔드 서비스를 수정하는 방법으로 이 값을 구성할 수 없습니다. 백엔드가 사용하는 웹 서버 소프트웨어는 백엔드가 연결을 조기에 닫지 않도록 연결 유지 제한시간을 600초보다 길게 설정해야 합니다. 이 제한 시간은 WebSocket에는 적용되지 않습니다. 다음 표는 일반적인 웹 서버 소프트웨어의 연결 유지 제한 시간을 수정할 때 필요한 변경사항을 보여줍니다.
-> 출처 : [외부 HTTP(S) LB - cloud.google.com](https://cloud.google.com/load-balancing/docs/https), [내부 HTTP(S) LB - cloud.google.com](https://cloud.google.com/load-balancing/docs/l7-internal)
+> HTTP 연결 유지 제한 시간: 값이 10분(600초)으로 고정됩니다. 백엔드 서비스를 수정하는 방법으로 이 값을 구성할 수 없습니다. 백엔드가 사용하는 웹 서버 소프트웨어는 백엔드가 연결을 조기에 닫지 않도록 연결 유지 제한시간을 600초보다 길게 설정해야 합니다. 이 제한 시간은 WebSocket에는 적용되지 않습니다. 다음 표는 일반적인 웹 서버 소프트웨어의 연결 유지 제한 시간을 수정할 때 필요한 변경사항을 보여줍니다.  
+> 출처 : [외부 HTTP(S) LB](https://cloud.google.com/load-balancing/docs/https), [내부 HTTP(S) LB](https://cloud.google.com/load-balancing/docs/l7-internal)  
 
 만약 10분보다 짧게 설정되어있다면 LB에서는 연결이 유지되어있다고 가정하고 동작하지만 실제로 서버에서는 연결을 정리해둔 상태라 에러가 발생합니다.  
 서버에서 설정한 keep-alive 값이 1분이라고 하면 1분 동안 트래픽이 없다가 1~10분 사이에 발생하는 소켓별 첫 트래픽들은 에러가 발생할 것입니다.  
@@ -65,12 +65,11 @@ LB가 문제인가? 라는 의심은 했지만 GCP 콘솔의 LB 설정 화면을
 
 2021년도 GCP LB의 retry 기능에 버그가 있었고 그로인해 발생한 트러블슈팅 내용입니다.  
 
-[외부 HTTP(S) LB - cloud.google.com](https://cloud.google.com/load-balancing/docs/https), [내부 HTTP(S) LB - cloud.google.com](https://cloud.google.com/load-balancing/docs/l7-internal)의 기본 retry 정책은 서로 다르고 수정 가능합니다.  
-하나 공통점은 POST에 대해서는 재시도를 하지 않는다는 점입니다. (GET, PUT, DELETE는 멱등성을 보장해야하는 HTTP method )
+[외부 HTTP(S) LB](https://cloud.google.com/load-balancing/docs/https), [내부 HTTP(S) LB](https://cloud.google.com/load-balancing/docs/l7-internal)의 기본 retry 정책은 서로 다르고 수정 가능합니다. 하나 공통점은 POST에 대해서는 재시도를 하지 않는다는 점입니다. (GET, PUT, DELETE는 멱등성을 보장해야하는 HTTP method )  
 
 근데 POST API를 호출 후 발생한 5xx 에러건에 대해 이중요청이 들어오는 문제가 발생했엇습니다.  
 
-Browser -> LB -> G/W -> service 와 같은 구조에서 발견되어 처음에는 G/W 설정 문제를 확인했으나 로컬환경에서 문제 없는 것을 확인했고 로그상 G/W의 access log에 2회 호출이 들어오는 것을 발견할 수 있었습니다.  
+**Browser -> LB -> G/W -> server** 와 같은 구조에서 발견되어 처음에는 G/W 설정 문제를 확인했으나 LB가 없는 로컬환경에서는 재현이 안되는 것을 확인했고 테스트 환경의 G/W의 access log에 2회 호출이 들어오는 것을 발견할 수 있었습니다.  
 GCP 측에다가 문의하였고 처음에는 LB 문제가 아니라는 답변을 받았지만 테스트 내용을 가지고 재질의하여 LB 버그로 확인되고 조치하는 방향으로 진행됐습니다.  
 재미있던 점은 서울 리전에서 이슈를 올린 것인데 조치는 미국쪽 리전들에 먼저 적용되고 서울 리전은 몇 주뒤에 적용되었다는 점입니다.  
 해당 내용은 2021년도 상반기에 조치 된 사항입니다.  
