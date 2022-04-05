@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진"
+title:  "2차 퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진"
 date: 2021-12-03 00:00:00
-lastmod: 2021-12-03 00:00:00
+lastmod: 2022-04-05 00:00:00
 categories: Investing
 tags: Investing Quant-Investing
 hidden: true
@@ -22,7 +22,7 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
   * 전략 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진
   * 리밸런싱 주기 : 분기별(3/31, 5/31, 8/31, 11/30)
   * 종목 개수 : 20 종목
-  * 제외 업종 : 해외본사(중국기업 등), 스팩 업종
+  * 제외 업종 : 해외본사(중국기업 등), 스팩, 금융, 지주사 업종
   * 거래정지시 손실처리율 : 100%
   * 수수료 + 슬리피지 : 1%
 
@@ -87,15 +87,20 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 
 매도, 매수를 진행한 2021.12.02 의 정보는 누락되었습니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=875176517&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
 
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
 
 
+## 결과 
 
+20종목 중 2종목만 마이너스이고 18종목이 플러스의 결과를 갖었습니다. 14.94% 이상의 수익률 결과를 얻었습니다.  
+참고로 4/3 종가 기준으로 수익률을 그려서 4/2, 4/3 이틀간의 수익은 집계하지 못한 결과 입니다. 제대로 수집했다면 살딱 더 높은 결과였을 것으로 예상됩니다.  
 
+우연이겠지만 백테스트의 월평균 수익률 3.6%와 얼추 비슷한 결과를 갖었습니다.  
+게다가 코스피, 코스닥은 마이너스 결과를 갖었다는 점에서 더 큰 의미가 있습니다.  
 
-
+전 분기 투자기간동안 발생한 마이너스를 합치면 5.4% 누적 수익입니다.  (21년 9월 투자원금 5백만원 기준)
 
 

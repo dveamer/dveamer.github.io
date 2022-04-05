@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진"
+title:  "1차 퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진"
 date: 2021-09-12 00:00:00
-lastmod: 2021-12-03 00:00:00
+lastmod: 2021-04-05 00:00:00
 categories: Investing
 tags: Investing Quant-Investing
 hidden: true
@@ -27,7 +27,7 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
   * 전략 : 하위20% 소형주 + 고성장 + 저벨류 + 고마진
   * 리밸런싱 주기 : 분기별(3/31, 5/31, 8/31, 11/30)
   * 종목 개수 : 20 종목
-  * 제외 업종 : 해외본사(중국기업 등), 스팩 업종
+  * 제외 업종 : 해외본사(중국기업 등), 스팩, 금융, 지주사 업종
   * 거래정지시 손실처리율 : 100%
   * 수수료 + 슬리피지 : 1%
 
@@ -59,10 +59,7 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 
 수집을 늦게 시작해서 2021.09.07 ~ 2021.09.16 기간의 정보는 누락되었습니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
-
-
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1769325566&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
 
 
 
