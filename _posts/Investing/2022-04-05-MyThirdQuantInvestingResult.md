@@ -77,17 +77,21 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 아래 수익률 현황은 매수, 매도 수수료 같은 비용 계산을 포함하지 않은 정보입니다. 또한 실제와 약간의 오차가 있을 수 있습니다.  
 
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1967941242&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=136611245&single=true" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
 <!--ads-->  
 
 ## 수익률 그래프 
 
 2,000만원 투자금 추가로 인해 그래프가 망가져서 2021.04.01~04.03 의 정보는 그래프에서 누락시켰습니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=536525309&single=true" style="width:100%;min-height:500px;max-height:8000px;"></iframe>  
 
+## 결과 
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
+4/1(금) 리밸런싱 후 이틀간 6%의 수익률을 거뒀지만  
+4/5(화) 투자금 추가와 재 리밸런싱 후 바로 마이너스의 수익률을 가졌습니다.  
 
+처음에는 재 리밸린성의 종목들이 잘못되었을까를 의심했었는데 첫 리밸런싱 때의 종목들을 추적해보니 그 종목들도 4/5(화)부터 수익률이 내려가기 시작했다는 것을 알수  있었습니다. 결국 코스닥, 코스피처럼 전반적인 하락장의 영향이었던 것 같습니다.  
 
-
+다만, 인플레이션, 금리인상, 러시아-우크라이나 전쟁 그리고 식료품 부족예상 등 다양한 악재 속에서  
+미국주식이나 국내IT 주식들이 10% 이상씩 간혹가다가 몇몇 주식은 40%씩 떨어질 때 -3.6% 정도라면 잘 견딘 것 같습니다.  
