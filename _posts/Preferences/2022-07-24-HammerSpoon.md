@@ -37,15 +37,15 @@ Windows , Ubuntu 환경에 익숙하던 사용자로써 MacOS 를 처음 사용�
 
 아래 인용문은 HammerSpoon이 무엇인지에 대한 설명입니다.  
 
-> What is Hammerspoon?
-> This is a tool for powerful automation of macOS. At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. What gives Hammerspoon its power is a set of extensions that expose specific pieces of system functionality, to the user.
-> 출처 : [HammerSpoon](https://www.hammerspoon.org/)
+> What is Hammerspoon?  
+> This is a tool for powerful automation of macOS. At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. What gives Hammerspoon its power is a set of extensions that expose specific pieces of system functionality, to the user.  
+> 출처 : [HammerSpoon](https://www.hammerspoon.org/)  
 
 좀 더 간단하게 설명하면,  
 lua 스크립트를 이용해서 MacOS에서 새로운 단축키를 추가할 수 있게 해주고 기존 키를 다른 키로 변환도 가능합니다.  
 
 "굳이 코딩을 해야돼?" 라는 의문이 들게 됩니다. 예를 들어, [spectacle](https://www.spectacleapp.com/) 과 같은 윈도우를 자유롭게 리사이징하고 옮기는 훌륭한 앱들이 이미 있습니다.  
-하지만 저는 코딩을 할 수 있는 사람이라면 HammerSpoon이 가진 숨겨진 장점들이 훨씬 유용하다고 생각합니다.  
+그럼에도 불구하고 저는 코딩을 할 수 있는 사람이라면 HammerSpoon이 가진 숨겨진 장점들이 훨씬 유용하다고 생각합니다.  
 
 첫째로, 자유도가 높습니다. 정해진 기능이 아닌 내가 원하는 기능, 남이 만들어둔 기능을 쉽게 적용할 수 있습니다.  
 
@@ -57,7 +57,7 @@ lua 스크립트를 이용해서 MacOS에서 새로운 단축키를 추가할 �
 
 ## 적용방법
 
-맥 장비에 HammerSpoon을 설치하신 뒤 [hammerspoon-config](https://github.com/dveamer/hammerspoon-config)의 init.lua 파일과 modules 디렉토리를 ~/.hammerspoon/ 에 위치시키시고 HammerSpoon을 껐다가 켜시면 됩니다.  
+맥 장비에 HammerSpoon을 설치하신 뒤 [hammerspoon-config](https://github.com/dveamer/hammerspoon-config)의 ```init.lua``` 파일과 ```modules``` 디렉토리를 ```~/.hammerspoon/``` 에 위치시키시고 HammerSpoon을 껐다가 켜시면 됩니다.  
 MacOS 기동시 자동으로 HammerSpoon이 켜지도록 설정하시는 것이 편합니다.  
 
 ## 단축키 설명
