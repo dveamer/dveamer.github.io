@@ -49,7 +49,7 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 그 결과 유상증자(1곳), 전환사채(6곳), 자기주식처분(1곳) 이 발견되어 매수대상에서 제외했습니다.  
 
 5년치 공시자료로 조사를 하다보니  
-전환사채가 존재함에도 불구하고 2차 리밸런싱 때 투자했고 14%의 수익을 냈던 회사 1곳이 발견됐습니다.  
+전환사채가 존재함에도 불구하고 2차 리밸런싱 때 투자했고 14%의 수익을 냈던 피델릭스 라는 기업 1곳이 발견됐습니다.  
 그 때는 1년치 공시자료로만 조사하다보니 유효한 전환사채가 있는 것을 발견못했고 투자했으나 수익은 본 셈이었습니다.  
 게다가 전환사채의 마지막 전환 가능날짜가 2020.06.11 로 이번 리밸런싱 후 곧 주식으로 전환 기회는 마감되는 것으로 보여졌습니다.  
 
@@ -67,17 +67,19 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 아래 수익률 현황은 매수, 매도 수수료 같은 비용 계산을 포함하지 않은 정보입니다. 또한 실제와 약간의 오차가 있을 수 있습니다.  
 
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1967941242&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1505993373&single=true" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
 <!--ads-->  
 
 ## 수익률 그래프 
 
 투자금 추가가 없는 관계로 그래프는 지난 투자와 이어서 작성합니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=931692571&single=true" style="width:100%;min-height:500px;max-height:8000px;"></iframe>  
 
+## 결과 
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
+-26%까지 떨어지는 순간까지 있었고 최종적으로는 -12%정도로 마감했습니다.  
+전체적으로 코스피, 코스닥, ETF 와 거의 동일한 그래프를 그리는 3분기였습니다.  
+풀렸던 돈이 환수되고 유동성이 많이 떨어지는 상황에서는 종목의 옥석을 가리는 행위가 무의미한 것처럼 보여집니다.  
 
-
-
+그리고 고민을 하다가 결국 매수 제외했던 피델릭스는 어떤 결과를 가졌을까하고 살펴보니 이 또한 비슷한 그래프를 그리고 있는 것을 확인할 수 있었고 이 또한 건질만한 정보는 없었습니다.  
