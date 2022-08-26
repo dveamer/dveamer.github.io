@@ -65,17 +65,24 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 
 아래 수익률 현황은 매수, 매도 수수료 같은 비용 계산을 포함하지 않은 정보입니다. 또한 실제와 약간의 오차가 있을 수 있습니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1967941242&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=2059109509&single=true" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
 <!--ads-->  
 
 ## 수익률 그래프 
 
 투자금 추가가 없는 관계로 그래프는 지난 투자와 이어서 작성합니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1423457495&single=true" style="width:100%;min-height:500px;max-height:8000px;"></iframe>  
 
+## 결과 
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
+인플레이션, 금리상승, 전쟁 등으로 2022년 3분기도 전 세계의 대부분의 시장이 좋지 않았습니다.  
+그래도 3분기 동안에는 최종적으로는 +1.58%로 마무리했고 누적 총수익은 -8.08%로 마무리 되었습니다.  
 
+정리를 하면서 발견한 내용인데 이글루라는 기업은 21년도에 잦은 자가주식처분을 해서 투자대상에서 제외했었는데 자기주식처분 목적이 주식매수선택권 행사와 직원 상여금 또는 투자 등과 같은 스타트업에서 발생하는 자연스러운 행위로 다음에는 목적을 살핀 후 투자대상에서 제외하지 않기로 결정했습니다.  
 
+그 외의 제외했던 기업들은 별다른 특이사항은 없었습니다.  
 
+퀀트킹에 대해서 발견한 특이사항이 하나 있습니다.  
+백테스트 기간이 최대 14년도로 되어있는데 그러다보니 이제 2008년도에 대한 백테스팅이 거의 이뤄지지 않는 다는 점입니다. 
+그러다보니 수익률도 변하고 MDD도 변하게 됩니다. 전략을 변경하게 되면 가장 심하게 떨어진 2008년도의 MDD를 파악할 수 없다는 이야기 입니다.  

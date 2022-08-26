@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "6차 퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진"
+date: 2022-11-20 00:00:00
+lastmod: 2022-11-20 00:00:00
+categories: Investing
+tags: Investing Quant-Investing
+hidden: true
+published: true
+---
+
+하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진 이라는 전략으로 퀀트투자를 진행한 결과를 기록하는 페이지입니다.  
+평가 수익, 수익률을 공개 합니다.  
+
+<!--more-->  
+
+google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 현재가를 출력하지 않습니다.  
+주식시장이 종료되고 난 후 넉넉히 시간을 두고 오후 4시 40분 이후에 확인하는 것이 좋습니다.  
+
+## 투자 전략
+
+  * 전략 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진
+  * 리밸런싱 주기 : 분기별(3/31, 5/31, 8/31, 11/30)
+  * 종목 개수 : 20 종목
+  * 제외 업종 : 해외본사(중국기업 등), 스팩, 금융, 지주사 업종
+  * 거래정지시 손실처리율 : 100%
+  * 수수료 + 슬리피지 : 1%
+
+## 백테스트 결과 
+
+  * 백테스트 툴 : [퀀트킹](http://www.quantking.co.kr)
+  * 백테스트 기간 : 14개년 (2008~2022)
+
+|연평균 수익률|월평균 수익률|누적 수익률|MDD|거래정지 종목수|
+|---:|---:|---:|---:|---:|
+|50.2%|3.7%|29,860.1%|27.3|1|
+
+
+## 변경 사항 
+
+### 매수 시기
+
+11월 20일 퀀트킹 기준으로 이미 95.4%의 2분기 공시정보가 업데이트가 완료된 상황이라 11월 21일 리밸런싱을 진행했습니다.
+
+### 퀀트데이터 vs 백테스트
+
+구매시점에는 퀀트데이터를 이용했었는데 백테스트의 결과와 차이가 발생하는 케이스가 있어서 이번부터는 리밸런싱 당일 백테스트를 돌려서 나온 결괄르 이용하기로 했습니다.  
+아마도 퀀트데이터는 현제 주가 반영이 느린 것으로 보여집니다.  
+
+### 매수 제외 기업
+
+10년치 공시자료를 기준으로 확인결과,  
+
+전환사채(1곳)을 매수 대상에서 제외했습니다.   
+
+2023년 4월과 5월에 두개의 전환사채가 만료되는데 요즘 시장 상황이 돈을 다시 끌어오기 어려운 상황이라고 판단되어 매수 대상에서 제외했습니다.  
+
+그 외에도 전환사채를 가진 기업이 5곳 더 있었지만 만료기간이 투자기간과 무관하고 주식전환가액이 현재가격보다 낮은 관계로 제외하지 않았습니다.  
+
+### 5일간 평균거래대금
+
+5일간 평균거래대금이 0.1억 이상인 건들을 대상으로 했습니다.  
+
+## 종목별 수익률 현황
+
+아래 수익률 현황은 매수, 매도 수수료 같은 비용 계산을 포함하지 않은 정보입니다. 또한 실제와 약간의 오차가 있을 수 있습니다.  
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1967941242&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
+<!--ads-->  
+
+## 수익률 그래프 
+
+투자금 추가가 없는 관계로 그래프는 지난 투자와 이어서 작성합니다.  
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
+
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
+
+
+
