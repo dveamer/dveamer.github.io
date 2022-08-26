@@ -9,6 +9,10 @@ hidden: false
 published: true
 ---
 
+![Brick Breaker](https://assetstorev1-prd-cdn.unity3d.com/key-image/160a39ab-bf4c-42ea-984d-9ce11078fa9f.webp){:class="imgTitle"}  
+(이미지 출처 : [https://assetstore.unity.com/](https://assetstore.unity.com/))  
+
+
 [Brick Breaker](https://assetstore.unity.com/packages/templates/packs/template-bricks-breaker-175322) 라는 에셋을 구매했는데 설치하는데 삽질을 좀 많이 했습니다.  
 유니티 설치해본지도 2주 밖에 되지 않아서 기본 배경지식도 부족하고 첫 에셋 설치라 그런지 더 삽질을 하지 않았나 싶습니다.  
 
