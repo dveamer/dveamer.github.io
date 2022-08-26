@@ -20,7 +20,7 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 ## 투자 전략
 
   * 전략 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진
-  * 리밸런싱 주기 : 분기별(3/31, 5/31, 8/31, 11/30)
+  * 리밸런싱 주기 : 분기별(3/31, 5/15, 8/15, 11/15)
   * 종목 개수 : 20 종목
   * 제외 업종 : 해외본사(중국기업 등), 스팩, 금융, 지주사 업종
   * 거래정지시 손실처리율 : 100%
@@ -45,7 +45,7 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 ### 퀀트데이터 vs 백테스트
 
 구매시점에는 퀀트데이터를 이용했었는데 백테스트의 결과와 차이가 발생하는 케이스가 있어서 이번부터는 리밸런싱 당일 백테스트를 돌려서 나온 결괄르 이용하기로 했습니다.  
-아마도 퀀트데이터는 현제 주가 반영이 느린 것으로 보여집니다.  
+아마도 퀀트데이터는 현재 주가 반영이 느린 것으로 보여집니다.  
 
 ### 매수 제외 기업
 
@@ -65,17 +65,18 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 
 아래 수익률 현황은 매수, 매도 수수료 같은 비용 계산을 포함하지 않은 정보입니다. 또한 실제와 약간의 오차가 있을 수 있습니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1967941242&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1667994127&single=true" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
 <!--ads-->  
 
 ## 수익률 그래프 
 
 투자금 추가가 없는 관계로 그래프는 지난 투자와 이어서 작성합니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1223819601&single=true" style="width:100%;min-height:500px;max-height:8000px;"></iframe>  
 
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
+## 결과 
 
-
-
+이번 퀀트투자는 별다른 특징 없이 무난히 진행됐으나 이익을 내지는 못한 아쉬운 투자였습니다.  
+앞선 투자기간의 손해를 만회할만큼 분위기가 좋은 기간도 있었으나 3월 중순에 수익률이 크게 떨어져서 6차 투자기간은 결국 이익도 손실도 거의 없는 결과를 가졌습니다.  
+재미있는 점은 이제까지 가장 낮은 수익률을 보여주던 코스닥 EFT가 급격하게 상승하면서 수익률을 가장 높게 가져갔습니다.  
