@@ -13,7 +13,7 @@ published: true
 (이미지 출처 : [https://assetstore.unity.com/](https://assetstore.unity.com/))  
 
 
-[Brick Breaker](https://assetstore.unity.com/packages/templates/packs/template-bricks-breaker-175322) 라는 에셋을 구매했는데 설치하는데 삽질을 좀 많이 했습니다.  
+[Brick Breaker](https://assetstore.unity.com/packages/templates/packs/template-bricks-breaker-175322) 라는 에셋을 구매했는데 설치과정에서 삽질을 좀 많이 했습니다.  
 유니티 설치해본지도 2주 밖에 되지 않아서 기본 배경지식도 부족하고 첫 에셋 설치라 그런지 더 삽질을 하지 않았나 싶습니다.  
 
 다른 분들과 나중에 또 설치할지 모를 미래의 저를 위해 기록을 남기고자 합니다.  
