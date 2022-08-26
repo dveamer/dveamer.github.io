@@ -5,13 +5,9 @@ date: 2022-12-18 00:00:00
 lastmod: 2022-12-18 00:00:00
 categories: BackEnd
 tags: BackEnd Visualization 
-hidden: false
+hidden: true
 published: true
 ---
-
-![GCP Load-Balancing](https://cloud.google.com/load-balancing/images/regional-ext-https-lb.svg){:class="imgTitle"}  
-(이미지 출처 : [https://cloud.google.com](https://cloud.google.com))  
-
 
 코드간 의존성이 얼마나 있는지 파악하기 위해 사용할 수 있는 visualization tools 를 기록합니다.  
 
