@@ -2,7 +2,7 @@
 layout: post
 title: "Terraform, Helm을 이용한 AWS EKS 구성"
 date: 2020-08-28 00:00:00
-lastmod: 2020-08-28 00:00:00
+lastmod: 2022-04-07 00:00:00
 categories: BackEnd
 tags: BackEnd Terraform, Helm, Kubernetes, AWS
 ---
@@ -42,7 +42,7 @@ Ubuntu 18.04 LTS 환경에서 진행했습니다. 진행하기에 앞서 사전�
 ~~~terminal
 $ cd ~
 $ git clone https://github.com/terraform-providers/terraform-provider-aws.git
-$ cd terraform-provider-aws/example/eks-getting-started
+$ cd terraform-provider-aws/examples/eks-getting-started
 ~~~
 
 디렉토리의 파일들을 확인해보면 ```.tf``` 확장자 파일들이 존재하는 것을 확인할 수 있습니다. 이 파일들이 terraform 스크립트이며 샘플 EKS 클러스터를 구성하도록 작성되어있습니다.  
@@ -384,11 +384,16 @@ $ terraform destroy
 
 # 준비작업 
 
+2020년도에 작성했던 준비작업을 가지고 2022년도에 다시 진행해보니 많은 내용이 바뀌었습니다.  
+다시 진행하면서 변경된 사항을 최신화 해두지만 추후 시간이 지나면 또 변경사항들이 있을 것으로 예상됩니다.  
+진행하시다가 잘 안되는 것이 있다면 링크 걸어둔 공식사이트를 참고하시기 바랍니다.  
+
 ## Install Terraform
 
 [Hashicorp 공식사이트](https://learn.hashicorp.com/tutorials/terraform/install-cli)의 Ubuntu 설치 가이드를 보고 진행했습니다.  
 
 ~~~terminal
+$ sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
 $ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 $ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 $ sudo apt-get update && sudo apt-get install terraform
@@ -396,8 +401,6 @@ $ sudo apt-get update && sudo apt-get install terraform
 
 
 ## Install Helm
-
-https://helm.sh/docs/intro/install/#from-apt-debianubuntu
 
 [Helm](https://helm.sh/docs/intro/install/#from-apt-debianubuntu)의 Ubuntu 설치 가이드를 보고 진행했습니다.  
 
@@ -419,12 +422,14 @@ $ helm repo update
 
 ## Install Kubectl
 
-[Kubernetes](https://kubernetes.io/ko/docs/tasks/tools/install-kubectl/)의 Ubuntu 설치 가이드를 보고 진행했습니다.  
+[Kubernetes](https://kubernetes.io/ko/docs/tasks/tools/install-kubectl-linux/)의 Ubuntu 설치 가이드를 보고 진행했습니다.  
 
-~~~terminal
-$ sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
-$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-$ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+~~~terminal 
+$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+$ sudo apt-get update
+$ sudo apt-get install -y apt-transport-https ca-certificates curl
+$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+$ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 $ sudo apt-get update
 $ sudo apt-get install -y kubectl
 ~~~
@@ -434,11 +439,17 @@ $ sudo apt-get install -y kubectl
 Kubectl로 AWS EKS에 접근하기 위해서는 AWS-IAM-AUTHENICATOR가 필요합니다.  
 [install-aws-iam-authenticator](https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/install-aws-iam-authenticator.html)의 Ubuntu 설치 가이드를 보고 진행했습니다.  
 
-~~~
+~~~terminal
 $ curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.7/2020-07-08/bin/linux/amd64/aws-iam-authenticator
 $ chmod +x ./aws-iam-authenticator
 $ mkdir -p $HOME/bin && mv ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
 $ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+~~~
+
+zsh 사용하신다면 마지막 명령어는 아래와 같이 바꿔서 실행하시면 됩니다.  
+
+~~~terminal
+$ echo 'export PATH=$PATH:$HOME/bin' >> ~/.zshrc
 ~~~
 
 ## AWS 계정
@@ -456,6 +467,9 @@ aws_secret_access_key = AAAAAAAAAAAAAAAAAAAAAAA/BBBBBBBBBBBBBBB
 region = ap-northeast-2
 aws_access_key_id = CCCCCCCCCCCCCCCCCCCCC
 ~~~
+
+[AWS Provider - Authentication and Configuration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#authentication-and-configuration) 를 참고하시면 AWS access, secret key를 terraform에 전달하는 다른 방법도 확인하실 수 있습니다.  
+
 
 [Terraform-AWS-EKS IAM 설정](https://github.com/terraform-aws-modules/terraform-aws-eks/blob/master/docs/iam-permissions.md)의 내용가진 IAM 정책을 하나 생성하고 사용 중이신 AWS 사용자 계정에 정책을 할당하시면 됩니다.  
 
