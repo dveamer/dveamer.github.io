@@ -10,7 +10,7 @@ published: true
 ---
 
 ![JWT Logo](https://jwt.io/img/facebook-card.png){:class="imgTitle"}  
-(이미지 출처 : [ttps://jwt.io](ttps://jwt.io))  
+(이미지 출처 : [https://jwt.io](https://jwt.io))  
 
 JWT(JSON Web Token) 를 사용한 인증처리를 갖춘 시스템들을 구축해보면서 기억에 남았던 것들을 적어보겠습니다.  
 JWT에 대한 기본적인 설명들은 다른 곳에서도 쉽게 접할 수 있으니 생략하도록 하겠습니다.  
