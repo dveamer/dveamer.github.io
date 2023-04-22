@@ -34,6 +34,8 @@ lastmod: 2018-11-04 00:00:00
     * [Java Namer](https://chat.openai.com/g/g-rXdT0Ez9J-java-namer)  
     * [Python Namer](https://chat.openai.com/g/g-gqlqXwA84-python-namer)  
     * [Node.js Namer](https://chat.openai.com/g/g-xwQriDxlU-node-js-namer)  
+  * [RESTful URI Namer](https://chat.openai.com/g/g-PR0c06cpo-restful-uri-namer) : RESTful 하게 URI 를 추천해줍니다.
+
 
 # Luxury9oods
 
