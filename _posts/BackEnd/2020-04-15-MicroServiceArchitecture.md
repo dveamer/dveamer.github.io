@@ -146,8 +146,8 @@ Java 개발을 하면서 특정 객체에 특정 책임과 역할을 주고 다�
 위의 이미지에 설명을 적어놨지만 어설픈 영어로 적어놨으니 한글로 공손하게 다시 적어보겠습니다.  
 이미지의 숫자와 매칭해서 보시면 됩니다.  
 
-  1. Gateway 인증처리 
-    * 요청을 받은 gateway는 HTTP header의 쿠키로부터 JWT를 추출합니다.  
+  1. Gateway 인증처리  
+    * 요청을 받은 gateway는 HTTP header로부터 JWT를 추출합니다.  
     * 그리고 JWT의 변조여부를 체크 합니다.  
     * 변조되지 않은 JWT에서 user_id, user_roles를 추출합니다.  
     * 만약 JWT가 존재하지 않는다면, user_id, user_roles 대신에 미리 정해둔 public_id, public_role를 사용합니다.  
@@ -159,13 +159,13 @@ Java 개발을 하면서 특정 객체에 특정 책임과 역할을 주고 다�
 
   4. PAPI checker는 호출받은 api_name에 대해서 접근가능한 역할 리스트를 PAPI server에 질의합니다.  
 
-  5. PAPI checker 인가 처리 
+  5. PAPI checker 인가 처리  
     * PAPI chekcer는 PAPI server로부터 받은 해당 api_name에 접근가능한 역할 리스트와 JWT에서 추출한 user_roles를 비교합니다.  
     * 만약 두 리스트 사이에서 공통집합이 없다면, 해당 요청은 권한이 없는 요청으로 판단되어 401 HTTP status code로 응답합니다.  
     * 공통잡합이 있다면 권한이 있는 요청으로 판단되어 controller method를 처리할 수 있도록 해줍니다.  
     * 만약 접근가능한 역할 리스트 중에 public_role이 있다면 항상 권한이 있는 요청으로 판단됩니다.  
 
-  6. user_id, user_roles 전달
+  6. user_id, user_roles 전달  
     * 마이크로 서비스 1의 controller method가 실행되는 과정에서 마이크로 서비스 2가 호출되는 경우가 있다면 user_id, user_roles 그리고 from_which(MS1)을 HTTP header에 담아 전달합니다.  
 
 여기서 PAPI Server, PAPI Checker는 인증/인가를 위해 만든 라이브러리로 JAR 형태로 제공됩니다. 참고로 PAPI는 Permissions API의 약자입니다.  
