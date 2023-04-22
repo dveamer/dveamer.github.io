@@ -26,6 +26,15 @@ lastmod: 2018-11-04 00:00:00
   * [Android App](https://play.google.com/store/apps/developer?id=dveamer)
 
 
+# My GPT ( Open AI - Chat GPT 4 )
+
+  * [English Word Chain Master](https://chat.openai.com/g/g-FlHHBc66H-english-word-chain-master) : 영단어 끝말잇기를 하며 다양한 영단어를 소개합니다.  
+  * [Refusal](https://chat.openai.com/g/g-8GfzIf31h-refusal) : 요청 받은 사항을 입력하면 그에 대한 거절 멘트를 생성해줍니다.  
+  * Namer : 상황 설명을 해주면 적절한 클래스명, 메소드명, 변수명 등을 추천해줍니다.  
+    * [Java Namer](https://chat.openai.com/g/g-rXdT0Ez9J-java-namer)  
+    * [Python Namer](https://chat.openai.com/g/g-gqlqXwA84-python-namer)  
+    * [Node.js Namer](https://chat.openai.com/g/g-xwQriDxlU-node-js-namer)  
+
 # Luxury9oods
 
   * [Luxyry9oods](https://luxury9oods.com)
