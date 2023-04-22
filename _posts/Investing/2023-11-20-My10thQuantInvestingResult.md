@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "9차 퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진"
-date: 2023-08-21 00:00:00
-lastmod: 2023-08-21 00:00:00
+title:  "10차 퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진"
+date: 2023-11-20 00:00:00
+lastmod: 2023-11-20 00:00:00
 categories: Investing
 tags: Investing Quant-Investing
 hidden: true
@@ -30,37 +30,37 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 ## 백테스트 결과 
 
   * 백테스트 툴 : [퀀트킹](http://www.quantking.co.kr)
-  * 백테스트 기간 : 20개년 (2003~2023)
+  * 백테스트 기간 : 20개년 (2003.10~2023.10)
 
 |연평균 수익률|월평균 수익률|누적 수익률|MDD|거래정지 종목수|
 |---:|---:|---:|---:|---:|
-|49.9%|3.76%|327,948.5%|34.86|0|
+|49.75%|3.76%|321,793.61%|38.24|2|
 
 ## 변경 사항 
 
 ### 매수 시기
 
-8/15에 공시마감이 이뤄져서 리밸런싱을 해야했지만 8/21에 리밸런싱을 진행합니다. 
-5월달에도 일주일 늦게 진행했는데 이번에도 또 늦어버렸네요. 퀀트킹 업데이트 현황은 실적 93%, 재무 91.1% 인 상태입니다.  
-
+11/15 공시마감 당일과 그 다음날에는 퀀트킹 업데이트 현황이 너무 낮아서 진행하지 않았고 주말을 보낸뒤 11/20 진행했습니다. 실적 91.8%, 재무 88.9% 로 진행했습니다.
 
 ### 매수 제외 기업
 
-이번 분기 매수 제외 기업은 0곳 입니다.  
+이번 분기 매수 제외 기업은 1곳 입니다. "전환사채매각효력정지등가처분" 관련 소송 중으로 파악되었고 부정적인 영향이 있을지 알수있는 것이 없어서 제외했습니다.  
 
 ## 종목별 수익률 현황
 
 아래 수익률 현황은 매수, 매도 수수료 같은 비용 계산을 포함하지 않은 정보입니다. 또한 실제와 약간의 오차가 있을 수 있습니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1099590235&single=true" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1967941242&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%;min-height:700px;max-height:2200px;"></iframe>
 <!--ads-->  
 
 ## 수익률 그래프 
 
 투자금 추가가 없는 관계로 그래프는 지난 투자와 이어서 작성합니다.  
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=659500008&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1631942239&single=true" style="width:100%;min-height:500px;max-height:2200px;"></iframe>  
 
-## 결과 
 
-우크라이나-러시아 전쟁에 이어 팔레스타인-이스라엘 전쟁이 발생했고 연준 금리가 5.5%로 동결이 유지되고 있는 상황입니다.  
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
+
+
+
