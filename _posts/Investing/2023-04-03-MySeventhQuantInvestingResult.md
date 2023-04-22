@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "7차 퀀트투자 수익, 수익률 공개 : 하위20% 소형주 + 고성장 + 분기 PFCR 저벨류 + 고마진"
-date: 2022-04-03 00:00:00
+date: 2023-04-03 00:00:00
 lastmod: 2023-05-22 00:00:00
 categories: Investing
 tags: Investing Quant-Investing
