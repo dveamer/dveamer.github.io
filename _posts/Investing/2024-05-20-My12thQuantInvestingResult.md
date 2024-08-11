@@ -69,3 +69,9 @@ google spreadsheet 의 googlefinance 기능을 이용했기 때문에 실시간 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHclJcL_QjTWm0g7gGzg-zn501Naf9ooeW5baGNkW86TSpbHulGFBWhZr77I9qk_HN7apM5oJSyUOg/pubhtml?gid=1057887183&single=true" style="width:100%;min-height:500px;max-height:5000px;"></iframe>  
 
 
+## 결론 
+
+최근에 퀀트킹 투자가 반복해서 코스닥, 코스피에 비해서도 수익률이 좋지 않은 것으로 보여지고 곧 미국 금리를 낮춰야되는 상황이 된 것으로 보여져서 2024.07.31 부터 퀀트킹 투자를 중단했습니다.  
+그 이후 일주일 정도 후에 8%정도 급격하게 더 떨어지는 상황이 발생했지만 다행히 그 하락은 피할 수 있었습니다.  
+2021.09.12 에 시작했던 퀀트킹 투자가 2024.07.31 쯤에 종료되었네요. 시장이 좋지 않을 때 시작해서 인지 전략 자체에 문제가 있는 것인지 아니면 좀 더 버티고 기다렸어야하는데 중단하는 것인지 모르겠지만 결국 좋은 결과를 가지진 못했습니다.  
+
