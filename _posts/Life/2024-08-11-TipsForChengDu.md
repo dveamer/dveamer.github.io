@@ -132,13 +132,10 @@ published: true
 
 
 시킨 음식들
+순두부 중 하나는 그냥 꽈배기 순두부이고 다른 하나는 소고기찜 꽈배기 순두부입니다.  
 ![음식사진1](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_064810864.jpg)   
-
-꽈배기라고 번역되는 튀김을 보여드리기 위한 다른 사진 입니다. 하나는 순수 꽈배기 순두부고 하나는 소고기 찜이 들어간 꽈배기 순두부예요.  
-![음식사진2](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_064712270.jpg)   
-
 
 마라 알갱이의 존재를 늦게 발견해서 마라 알갱이를 골라먹지 않고 마구 먹다가 음료와 물을 사먹었더니 사장님이 공짜로 주신 음식입니다. 아주 살짝 달콤하면서 시원해서 입안의 얼얼함을 제거해줬습니다. 메뉴판에 8위안으로 있는 것 같던데 매워하는 보습이 안쓰러우셨는지 공짜로 주셨네요 ㅋ  
 
-![음식사진3](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070950968.jpg)   
+![음식사진2](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070950968.jpg)   
 
