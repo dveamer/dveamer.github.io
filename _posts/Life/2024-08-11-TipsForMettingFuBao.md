@@ -16,6 +16,8 @@ published: true
 
 <!--more-->
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pvZUVHgXq20?si=_UAHF6ifUI7cyLye" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ## 워룽선수핑기지 마을 지도 정보
 
