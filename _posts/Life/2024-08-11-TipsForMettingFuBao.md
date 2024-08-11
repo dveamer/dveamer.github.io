@@ -4,7 +4,7 @@ title:  "푸바오 만나기 팁 : 워룽선수핑기지 매표소, 아메리카
 date: 2024-08-11 12:00:00
 lastmod: 2024-08-11 12:00:00 
 categories: Life
-tags: Life, Trip, FuBao
+tags: Life Trip FuBao
 hidden: true
 published: true
 ---

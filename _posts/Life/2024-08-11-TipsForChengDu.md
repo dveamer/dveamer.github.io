@@ -4,7 +4,7 @@ title:  "청두(Cheng Du) 관광 팁 : 날씨, 저렴한 마사지샵, 구안교
 date: 2024-08-11 12:00:00
 lastmod: 2024-08-11 12:00:00 
 categories: Life
-tags: Life, Trip, Cheng-Du
+tags: Life Trip Cheng-Du
 hidden: true
 published: true
 ---
