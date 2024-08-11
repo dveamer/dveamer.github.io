@@ -9,7 +9,7 @@ hidden: true
 published: true
 ---
 
-![Fu Bao](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-fubao/resized_PXL_20240801_020055947.jpg){:class="imgTitle"}  
+![Fu Bao](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-fubao/resized_PXL_20240801_020055947.jpg)
 
 푸바오(FuBao)를 보기 위해 워룽선수핑기지를 다녀왔습니다.  
 인터넷 검색으로 찾지 못했었지만 실제로 2박 3일을 워룽선수핑기지 주변 마을에서 지내면서 얻은 정보를 공유합니다.  

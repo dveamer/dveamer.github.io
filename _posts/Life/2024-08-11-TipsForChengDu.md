@@ -9,8 +9,6 @@ hidden: true
 published: true
 ---
 
-![Fu Bao](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-fubao/resized_PXL_20240801_020055947.jpg){:class="imgTitle"}  
-
 푸바오(Fu Bao)를 보기 위해 워룽선수핑기지를 갔다가 청두(Cheng Du)를 관광했습니다.  
 인터넷 검색으로 찾지 못했었지만 실제로 3박 4일을 청두에서 보내면서 얻은 정보를 공유합니다.  
 
@@ -53,7 +51,7 @@ published: true
 
 시설은 깔끔하고 30~40대 정도로 비교적 젊어보이는 마사지사 분들이 계셨고 실제로 아픕니다. 이틀간 이곳에서 마시지를 받았는데 "태국 마사지는 황실을 위해서 개발된 마사지라면 중국은 무협지에 나오는 무술인들을 위해서 개발된 마사지가 아닐까?" 라는 생각을 해봤습니다. "이런 곳을 찾아내서 이렇게 쎼게 마사지한다고?" 라는 느낌이었습니다 ㅋ 개인적으로 저는 태국 마사지를 좋아합니다.  
 
-![야시장 마사지 샵 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_map_massage_1.jpg)   
+[야시장 마사지 샵 위치](https://maps.app.goo.gl/EAKQdnwR52L6o6xaA)   
 
 ![야시장 마사지 샵 가격표](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240801_142444920.jpg)   
 
@@ -64,7 +62,7 @@ published: true
 제 일행은 나이가 좀 있으신 여성 마사지사분이 진행해주셨고 굉장히 만족해했습니다. 아프진 않으면서 시원하게 잘해주셨다고 하더라고요.  
 제 경우는 남자 마사지사분이 해주셨는데 담배를 피고 오셨는지 머리마사지해주시면서 숨쉬실 때 담배냄새가 나더라고요. 마사지 자체는 나쁘지는 않았는데 왼팔, 오른팔 해주는 것도 서로 다르고 좀 미숙했습니다.  
 
-![다른 마사지 샵 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_map_massage_2.jpg)   
+[다른 마사지 샵 위치](https://maps.app.goo.gl/Sb9GnWDWbX6SH19XA)   
 
 ![다른 마사지 샵 모습 1](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_134851932.jpg)   
 
@@ -77,7 +75,7 @@ published: true
 
 <!--ads-->
 
-## 구안교 야경 선착장 
+## 안순량교 야경 선착장 
 
 구안교, 안순량교 근처로 가보시면 저녁에 굉장히 핫플레이스입니다.  
 
@@ -86,15 +84,15 @@ published: true
 맥주 한병 마시려고 들어가봤는데 맥주는 6병 세트로만 팔고 안주 가격도 꽤 비싸서 그냥 나오긴했습니다.  
 호객행위도 꽤 많고 거리에 노래가 울리는 핫 플레이스입니다.  
 
-![배 선착장 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_125001548.jpg)   
+
+![배 선착장 건너편에서 본 야경](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_125001548.jpg)   
 
 구안교, 안순량교 야경을 볼 수 있는 배를 타기로 계획하고 갔는데 인터넷에서 선착장 위치를 못 찾아서 직접 걸어다니며 장소를 찾았습니다.  
 가격은 인당 118위안으로 싸지 않고 40분가량 줄서서 탔네요. 마지막 배 타는 시각은 오후 11시 입니다. 낮에 타면 인당 58위안이라고 하네요.  
 
-![배 선착장 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_map_boat.jpg)   
+[안순량교 주변 배 선착장 위치](https://maps.app.goo.gl/fd1mVMA4WGPR73GT7)  
 
 ![배 가격표](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_130435573.jpg)   
-
 
 <!--ads-->
 
@@ -133,14 +131,14 @@ published: true
 ![메뉴판](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
 
 
-시킨 메뉴들
-![음식사진1](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
+시킨 음식들
+![음식사진1](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_064810864.jpg)   
 
 꽈배기라고 번역되는 튀김을 보여드리기 위한 다른 사진 입니다. 하나는 순수 꽈배기 순두부고 하나는 소고기 찜이 들어간 꽈배기 순두부예요.  
-![음식사진2](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
+![음식사진2](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_064712270.jpg)   
 
 
 마라 알갱이의 존재를 늦게 발견해서 마라 알갱이를 골라먹지 않고 마구 먹다가 음료와 물을 사먹었더니 사장님이 공짜로 주신 음식입니다. 아주 살짝 달콤하면서 시원해서 입안의 얼얼함을 제거해줬습니다. 메뉴판에 8위안으로 있는 것 같던데 매워하는 보습이 안쓰러우셨는지 공짜로 주셨네요 ㅋ  
 
-![음식사진3](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
+![음식사진3](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070950968.jpg)   
 
