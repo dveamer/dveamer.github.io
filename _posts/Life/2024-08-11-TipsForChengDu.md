@@ -16,8 +16,6 @@ published: true
 
 <!--more-->
 
-<br/>
-<br/>
 
 ## 날씨
 

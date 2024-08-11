@@ -16,9 +16,6 @@ published: true
 
 <!--more-->
 
-<br/>
-<br/>
-
 
 ## 워룽선수핑기지 마을 지도 정보
 
@@ -107,5 +104,5 @@ published: true
 
 ## 전체 지도 
 
-![커피 가게 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-fubao/resized_map_all.jpg)  
+![전체 지도](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-fubao/resized_map_all.jpg)  
 
