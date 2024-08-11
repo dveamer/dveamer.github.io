@@ -1,0 +1,148 @@
+---
+layout: post
+title:  "청두(Cheng Du) 관광 팁 : 날씨, 저렴한 마사지샵, 구안교 야경 배 선착장"
+date: 2024-08-11 12:00:00
+lastmod: 2024-08-11 12:00:00 
+categories: Life
+tags: Life, Trip, Cheng-Du
+hidden: true
+published: true
+---
+
+![Fu Bao](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-fubao/resized_PXL_20240801_020055947.jpg){:class="imgTitle"}  
+
+푸바오(Fu Bao)를 보기 위해 워룽선수핑기지를 갔다가 청두(Cheng Du)를 관광했습니다.  
+인터넷 검색으로 찾지 못했었지만 실제로 3박 4일을 청두에서 보내면서 얻은 정보를 공유합니다.  
+
+<!--more-->
+
+<br/>
+<br/>
+
+## 날씨
+
+![타임존 맵](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_map_timezone.jpg)   
+( 참조 : [www.timeanddate.com](https://www.timeanddate.com/time/map/) )
+
+청두(A)는 서울(B)보다 적도에 훨씬 가깝습니다. 서울보다 그리고 제주보다 햇빛이 뜨겁다고 생각하시면 됩니다.  
+
+가장 더운 시간은 피해서 관광하기 위해서 가장 해가 중천에 떠서 지면이 갖아 뜨거울 시간인 12시 ~ 14시에는 식당 혹은 마시지 샵에서 쉴 생각으로 여행을 했습니다.  
+근데 돌아다니면서 생각해보니 해가 중천에 뜨는 시각이 12시가 아니라 13시 일것 같더군요.  
+
+중국의 수도인 베이징(B)은 UTC+8 타임존이라서 청두(A)도 UTC+8 타임존에 따라 사람들이 생활합니다.  
+근데 실제 위치상으로는 UTC+7에 해당하는 베트남 하노이(D)와 같은 경도에 위치합니다.  
+
+중국 베이징이 가장 더울 때보다 베트남 하노이가 가장 더울 때 청두도 가장 덥다고 생각하면 되지 않을까 싶습니다. 그렇다면 13~15시 사이가 가장 더운 시간대가 아닌가 싶습니다.  
+
+<!--ads-->
+
+## 디디추싱 택시
+
+디디추싱은 가격이 굉장히 쌉니다. 청두시내에서 이곳저곳 다녀봤지만 5천원 이상 나온적이 없습니다. 춘시루에서 진리거리로 이동할 때 차가 꽤 막혀서 20분 정도로 타고 갔는데도 저렴하더라고요.  
+지하철보다는 살짝 비싸긴하지만 뜨거운 햇빛 아래에서 숙소에서 지하철역까지 걸어가고 지하철역에서 목적지까지 걸어가는 것 등등을 생각하면 디디추싱을 이용하는 것을 권장 드립니다.  
+
+디디추싱으로 호출을 하면 택시가 올 때도 있고 일반 차량이 올 때도 있습니다. 우리나라랑 달리 일반 차량도 디디추싱을 이용해서 영업을 할 수 있는 것으로 보이고 그로인해 가격 담합이 안되고 공급이 많아서 저렵한 가격에 이용할 수 있는 것이 아닐까 싶습니다.  
+
+## 마사지
+
+중국마시지가 좀 아프긴하지만 한국보다는 가격이 저렴할 것을 기대하고 검색해봤는데 잘 못찾겠더라고요.  
+아직도 정확히 모르겠지만 SPAO 라는 이름을 가진 마사지샵이나 마사지코스는 한국보다 더 비싸거나 비슷한 가격입니다. SPAO 는 마사지 외에도 마실 것 먹을 것 등등을 주면서 하는 것 같은데 기분 좋게 해주는 곳 같은데 저는 그런 것보다는 낮에 열심히 걸어서 아픈 발과 평소에 굳어있는 어깨, 허리를 풀기 위해서라서 저렴한 곳을 찾아봤습니다.  
+
+백종원 푸드파이터에서 소개된 야시장 주변에 위치한 마사지샵은 70위안이라는 저렴한 가격을 간판에 내걸고 있습니다.  
+안타깝게도 간판 사진을 찍어오질 않았는데 지도보고 걷다보시면 70이라는 숫자가 꽤 크게 적혀있어서 쉽게 찾으실 겁니다.  
+70위안인 것이 두개가 있는데 족욕포함된 발마사지 50분과 족욕없는 전신마사지 60분입니다.  
+저는 첫날은 70위안짜리 50분 족욕발마사지를 받았고 둘째날은 110분 짜리 90분 전신마사지를 받았습니다.  
+
+시설은 깔끔하고 30~40대 정도로 비교적 젊어보이는 마사지사 분들이 계셨고 실제로 아픕니다. 이틀간 이곳에서 마시지를 받았는데 "태국 마사지는 황실을 위해서 개발된 마사지라면 중국은 무협지에 나오는 무술인들을 위해서 개발된 마사지가 아닐까?" 라는 생각을 해봤습니다. "이런 곳을 찾아내서 이렇게 쎼게 마사지한다고?" 라는 느낌이었습니다 ㅋ 개인적으로 저는 태국 마사지를 좋아합니다.  
+
+![야시장 마사지 샵 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_map_massage_1.jpg)   
+
+![야시장 마사지 샵 가격표](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240801_142444920.jpg)   
+
+
+셋째날에는 다른 마사지샵을 찾아봤습니다.  
+저는 98위안짜리 60분 전신마사지를 받았습니다.  
+
+제 일행은 나이가 좀 있으신 여성 마사지사분이 진행해주셨고 굉장히 만족해했습니다. 아프진 않으면서 시원하게 잘해주셨다고 하더라고요.  
+제 경우는 남자 마사지사분이 해주셨는데 담배를 피고 오셨는지 머리마사지해주시면서 숨쉬실 때 담배냄새가 나더라고요. 마사지 자체는 나쁘지는 않았는데 왼팔, 오른팔 해주는 것도 서로 다르고 좀 미숙했습니다.  
+
+![다른 마사지 샵 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_map_massage_2.jpg)   
+
+![다른 마사지 샵 모습 1](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_134851932.jpg)   
+
+![다른 마사지 샵 가격](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_120326851.jpg)   
+
+위 마사지샵 바로 옆옆에 마사지샵이 하나 더 있었는데 지나가면서 봤을 때 여성 마사지사 두분이 너무 나이가 많아보이셨고 시설도 오래되어 보여서 옆옆 마사지샵을 갔었습니다.  
+근데 마사지하는데 시설은 크게 상관없고 아픈 중국마사지라서 "오히려 나이 많으신 분들이 해주실 때 아프지 않고 시원하게 즐길 수 있지 않았을까" 라는 생각이 들어서 하루 더 시간이 있었다면 이곳을 찾아갔을 것 같습니다.  
+
+![다른 마사지 샵 모습 2](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_134908525.jpg)   
+
+<!--ads-->
+
+## 구안교 야경 선착장 
+
+구안교, 안순량교 근처로 가보시면 저녁에 굉장히 핫플레이스입니다.  
+
+구안교, 안순량교 야경이 꽤 멋지며 강 따라서 화려한 불빛을 뿜어내는 가게들이 이어집니다.  
+구안교를 도보로 건너가보니 가게들은 모두 밴드들이 라이브 공연을 하고 있는 라이브 바 같은 곳이었습니다.  
+맥주 한병 마시려고 들어가봤는데 맥주는 6병 세트로만 팔고 안주 가격도 꽤 비싸서 그냥 나오긴했습니다.  
+호객행위도 꽤 많고 거리에 노래가 울리는 핫 플레이스입니다.  
+
+![배 선착장 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_125001548.jpg)   
+
+구안교, 안순량교 야경을 볼 수 있는 배를 타기로 계획하고 갔는데 인터넷에서 선착장 위치를 못 찾아서 직접 걸어다니며 장소를 찾았습니다.  
+가격은 인당 118위안으로 싸지 않고 40분가량 줄서서 탔네요. 마지막 배 타는 시각은 오후 11시 입니다. 낮에 타면 인당 58위안이라고 하네요.  
+
+![배 선착장 위치](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_map_boat.jpg)   
+
+![배 가격표](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_130435573.jpg)   
+
+
+<!--ads-->
+
+## 식사
+
+### 예상외로 맛있었던 궁바오지딩
+
+원래 백종원 스트리트 푸트 파이터에서 궁바오지딩이 소개 나왔었는데 닭고기 볶음이 거기서 거기 아닌가 라는 생각이 있었고 일정상 소개에 나온 식당을 가지 못했고 생략하고 넘어갈 음식 중에 하나였습니다. 근데 무후사 근처에 위치한 첸마파두부 체인점에서 마파두부, 철판가지볶음, 궁바오지딩을 먹었는데 궁바오지딩이 정말 놀랍도록 맛있었습니다. 첸마파두부의 궁바오지딩이 특별히 맛있는 것인지는 모르겠으나 "닭고기 볶음이 이렇게 부드럽다고?" 하는 느낌이 들었습니다. 철판가지볶음 도 맛있었는데 마파두부는 역시 생각대로 굉장히 쎄서 많이 먹진 못했습니다.  
+
+1862년 오픈했다는 첸마파두부 
+
+![첸마파두부](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_065209674.jpg)   
+
+궁바오지딩 
+
+![궁바오지딩](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_071945602.jpg)   
+
+철판가지볶음
+![철판가지볶음](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_072945490_.jpg)   
+
+마파두부
+![마파두부](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240802_074326632.jpg)   
+
+
+### 100년 된 순부두집
+
+꽈배기 순두부라는 메뉴인데 맛있고 진한 순두부 찌개에 얇고 식감 굉장히 좋은 튀김이 들어가있다고 보시면 됩니다. 맛있었습니다.  
+갈리지 않은 마라 알갱이가 들어가있는 것 같은데 잘 골라먹으면 입이 아리진 않습니다.  
+
+
+1928년 오픈했다는 순두부집
+![순두부집](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_063651402.jpg)   
+
+
+맛있지만 저렴한 가격의 메뉴판 
+![메뉴판](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
+
+
+시킨 메뉴들
+![음식사진1](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
+
+꽈배기라고 번역되는 튀김을 보여드리기 위한 다른 사진 입니다. 하나는 순수 꽈배기 순두부고 하나는 소고기 찜이 들어간 꽈배기 순두부예요.  
+![음식사진2](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
+
+
+마라 알갱이의 존재를 늦게 발견해서 마라 알갱이를 골라먹지 않고 마구 먹다가 음료와 물을 사먹었더니 사장님이 공짜로 주신 음식입니다. 아주 살짝 달콤하면서 시원해서 입안의 얼얼함을 제거해줬습니다. 메뉴판에 8위안으로 있는 것 같던데 매워하는 보습이 안쓰러우셨는지 공짜로 주셨네요 ㅋ  
+
+![음식사진3](https://s3.ap-northeast-2.amazonaws.com/media.dveamer.com/images/2024/tips-chengdu/resized_PXL_20240803_070901389.jpg)   
+
