@@ -2,6 +2,7 @@
 layout: post
 title:  "Full Screen Mirror 개인정보처리방침"
 date: 2026-01-24 00:00:00
+lastmod: 2026-02-14 00:00:00
 categories: Side-Projects
 hidden: true
 published: true
