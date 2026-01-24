@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mirror (Full Screen) 개인정보처리방침"
+title:  "Full Screen Mirror 개인정보처리방침"
 date: 2026-01-24 00:00:00
 categories: Side-Projects
 hidden: true
@@ -11,7 +11,7 @@ published: true
 
 Dveamer(이하 “운영자”)는 「개인정보 보호법」 등 관련 법령을 준수하며,
 이용자의 개인정보를 중요하게 생각합니다.  
-본 개인정보처리방침은 **Mirror (Full Screen)** 앱(이하 “앱”)과 관련하여
+본 개인정보처리방침은 **Full Screen Mirror** 앱(이하 “앱”)과 관련하여
 이용자의 개인정보 처리 방침을 설명합니다.
 
 ---
