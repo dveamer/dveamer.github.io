@@ -5,6 +5,8 @@ date: 2024-04-27 00:00:00
 lastmod: 2024-04-27 00:00:00
 categories: ToyProject
 tags: ToyProject
+hidden: true
+published: false
 ---
 
 요새 갑작스럽게 모르는 사람이 텔레그램 그룹방에 초대하는 일이 잦아졌습니다.  
@@ -14,6 +16,7 @@ tags: ToyProject
 이런 것을 수차례 반복시도하다보면 어쩌다가 낚이는 사람들이 있으니 계속 시도하는 것일텐데 
 신고된 케이스에 대해서 또 낚이는 케이스가 발생하지 않도록 도움을 주기 위해 생각해봅니다.  
 
+<!--more-->
 
 # 보호 전략
 

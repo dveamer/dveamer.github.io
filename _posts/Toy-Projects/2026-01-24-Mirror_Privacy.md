@@ -3,6 +3,8 @@ layout: post
 title:  "Mirror (Full Screen, No Ads) 개인정보처리방침"
 date: 2026-01-24 00:00:00
 categories: Side-Projects
+hidden: true
+published: true
 ---
 
 # 개인정보처리방침
