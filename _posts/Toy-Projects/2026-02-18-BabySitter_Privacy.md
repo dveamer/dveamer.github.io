@@ -119,4 +119,4 @@ https://policies.google.com/privacy
 
 ---
 
-**시행일자:** 2026년 1월 24일
+**시행일자:** 2026년 2월 18일
